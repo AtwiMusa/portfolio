@@ -4,257 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Academic Portfolio – Moussa Atwi</title>
-
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
-
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-  <style>
-    :root {
-      --bg: #0f172a;
-      --card: #111827;
-      --accent: #38bdf8;
-      --accent-soft: rgba(56,189,248,0.15);
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(180deg, #020617, var(--bg));
-      color: var(--text);
-      line-height: 1.7;
-    }
-
-    header {
-      padding: 5rem 2rem 4rem;
-      text-align: center;
-    }
-
-    header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-
-    header p {
-      max-width: 700px;
-      margin: 0 auto;
-      color: var(--muted);
-      font-size: 1.1rem;
-    }
-
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-top: 2.5rem;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: var(--text);
-      padding: 0.6rem 1.1rem;
-      border-radius: 999px;
-      border: 1px solid var(--accent-soft);
-      background: transparent;
-      transition: all 0.3s ease;
-      font-size: 0.95rem;
-    }
-
-    nav a:hover {
-      background: var(--accent-soft);
-      color: var(--accent);
-      transform: translateY(-2px);
-    }
-
-    main {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 3rem 2rem 5rem;
-      display: grid;
-      gap: 3rem;
-    }
-
-    section {
-      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 1.5rem;
-      padding: 2.5rem;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-    }
-
-    section h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1.2rem;
-      font-family: 'Playfair Display', serif;
-    }
-
-    .about {
-      display: grid;
-      grid-template-columns: 180px 1fr;
-      gap: 2rem;
-      align-items: center;
-    }
-
-    .about img {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid var(--accent-soft);
-    }
-
-    .about p {
-      color: var(--muted);
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .card {
-      background: var(--card);
-      border-radius: 1.2rem;
-      padding: 1.8rem;
-      border: 1px solid rgba(255,255,255,0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-    }
-
-    .card h3 {
-      margin-bottom: 0.6rem;
-      font-size: 1.2rem;
-    }
-
-    .card p {
-      color: var(--muted);
-      font-size: 0.95rem;
-      margin-bottom: 1rem;
-    }
-
-    .card a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.9rem;
-    }
-
-    ul {
-      margin-top: 1rem;
-      padding-left: 1.2rem;
-    }
-
-    li {
-      margin-bottom: 0.5rem;
-      color: var(--muted);
-    }
-
-    footer {
-      text-align: center;
-      padding: 2.5rem 1rem;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 700px) {
-      .about {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-
-      .about img {
-        margin: 0 auto;
-      }
-    }
-  
-    /* CONTACT ICONS & TOOLTIP */
-    .contact-row {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1.2rem;
-      margin-top: 1.5rem;
-    }
-
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      padding: 0.6rem 1.1rem;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.1);
-      color: var(--text);
-      text-decoration: none;
-      font-size: 0.95rem;
-      transition: all 0.3s ease;
-      position: relative;
-    }
-
-    .contact-item i {
-      font-size: 1.1rem;
-      color: var(--accent);
-    }
-
-    .contact-item:hover {
-      background: var(--accent-soft);
-      transform: translateY(-3px);
-    }
-
-    .contact-item::after {
-      content: attr(data-tooltip);
-      position: absolute;
-      bottom: -2.2rem;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #020617;
-      color: var(--muted);
-      padding: 0.3rem 0.6rem;
-      font-size: 0.75rem;
-      border-radius: 0.4rem;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-      white-space: nowrap;
-    }
-
-    .contact-item:hover::after {
-      opacity: 1;
-    }
-
-    .contact-group {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-  </style>
+  <!-- Link to your separate CSS file -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
   <header>
     <h1>Moussa Atwi</h1>
     <p>
-      PhD Student in Mathematics · Nonlinear Inverse Problems · Deep Unrolling ·
-      Complex-Valued Optimization
+      PhD Student in Mathematics · Nonlinear Inverse Problems · Deep Unrolling · 
+      Complex-Valued Optimization 
     </p>
-
     <nav>
       <a href="#about">About</a>
       <a href="#publications">Publications</a>
@@ -263,154 +26,112 @@
       <a href="#contact">Contact</a>
     </nav>
   </header>
-
   <main>
-
     <section id="about">
-  <h2>About Me</h2>
-  <div class="about about-styled">
-    <div class="about-image">
-      <img src="Port_Image.jpg" alt="Your photo" />
-      <span class="image-ring"></span>
-    </div>
-
-    <div class="about-text">
-    <p class="about-intro">Mathematics · Inverse Problems · Deep Unfolding</p>
-
-    <p>
-      I am a <strong>PhD student in mathematics</strong> working on
-      <strong>nonlinear inverse problems</strong>, with a focus on
-      <strong>exit wave reconstruction</strong> and
-      <strong>phase retrieval</strong> arising in Transmission Electron Microscopy.
-    </p>
-
-    <!-- <p>
-      My research combines <em>variational modeling</em>,
-      <em>proximal optimization algorithms</em>, and
-      <em>deep unfolding</em>, where iterative methods such as the
-      proximal gradient algorithm are mapped to interpretable neural network
-      architectures inspired by ISTA/LISTA.
-    </p>
-
-    <p>
-      A central part of my work is the <strong>theoretical analysis of unfolded
-      networks</strong>, including <em>generalization error bounds</em> in
-      nonlinear settings and the study of parameter perturbation effects as the
-      network depth increases.
-    </p> -->
-
-    <p>
-      In addition to research, I have teaching experience at the
-      <strong>high-school level</strong>, and I write
-      <strong>Arabic poetry.</strong>   
-    </p>
-  </div>
-
-  </div>
-</section>
-
-<section id="publications">
-  <h2>Publications & Preprints</h2>
-  <div class="cards">
-
-    <div class="card">
-      <h3>A generalization bound for exit wave reconstruction via deep unfolding</h3>
-      <p>Preprint, 2025</p>
-
-      <a href="pdfs/exit-wave-deep-unfolding.pdf" target="_blank">
-        View PDF
-      </a>
-      ·
-      <a href="https://arxiv.org/abs/2511.06413" target="_blank">
-        arXiv
-      </a>
-    </div>
-
-  </div>
-</section>
-
-
+      <h2>About Me</h2>
+      <div class="about about-styled">
+        <div class="about-image">
+          <img src="Port_Image.jpg" alt="Your photo" />
+          <span class="image-ring"></span>
+        </div>
+        <div class="about-text">
+          <p class="about-intro">Mathematics · Inverse Problems · Deep Unfolding</p>
+          <p>
+            I am a <strong>PhD student in mathematics</strong> working on 
+            <strong>nonlinear inverse problems</strong>, with a focus on 
+            <strong>exit wave reconstruction</strong> and 
+            <strong>phase retrieval</strong> arising in Transmission Electron Microscopy. 
+          </p>
+          <!-- <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My research combines <em>variational modeling</em>, &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>proximal optimization algorithms</em>, and &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>deep unfolding</em>, where iterative methods such as the &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;proximal gradient algorithm are mapped to interpretable neural network &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;architectures inspired by ISTA/LISTA. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A central part of my work is the <strong>theoretical analysis of unfolded &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;networks</strong>, including <em>generalization error bounds</em> in &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nonlinear settings and the study of parameter perturbation effects as the &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;network depth increases. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p> -->
+          <p>
+            In addition to research, I have teaching experience at the 
+            <strong>high-school level</strong>, and I write 
+            <strong>Arabic poetry.</strong>
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="publications">
+      <h2>Publications & Preprints</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>A generalization bound for exit wave reconstruction via deep unfolding</h3>
+          <p>Preprint, 2025</p>
+          <a href="pdfs/exit-wave-deep-unfolding.pdf" target="_blank">
+            View PDF 
+          </a>
+          ·
+          <a href="https://arxiv.org/abs/2511.06413" target="_blank">
+            arXiv 
+          </a>
+        </div>
+      </div>
+    </section>
     <section id="poetry">
-  <h2>Arabic Poetry</h2>
-  <p style="color: var(--muted)">
-    A selection from my Arabic poetry. The full collection is published online.
-  </p>
-
-  <p>
-    <a href="https://write.as/atwimusa/" target="_blank"
-       style="color: var(--accent); font-weight: 600;">
-      Read the full poetry collection →
-    </a>
-  </p>
-</section>
-
-      <section id="cv">
-      <h2>Curriculum Vitae</h2>
-
+      <h2>Arabic Poetry</h2>
       <p style="color: var(--muted)">
-        Two versions of my CV are available: a concise, current version and an
-        extended academic CV with full details on research and education.
+        A selection from my Arabic poetry. The full collection is published online. 
       </p>
-
       <p>
-        <a href="pdfs/Latest_version.pdf" target="_blank" style="color: var(--accent); font-weight: 600;">
-          Current CV (PDF)
-        </a>
-        <br />
-        <a href="pdfs/General_version.pdf" target="_blank" style="color: var(--accent); font-weight: 600;">
-          Extended Academic CV (PDF)
+        <a href="https://write.as/atwimusa/" target="_blank" 
+          style="color: var(--accent); font-weight: 600;">
+          Read the full poetry collection →
         </a>
       </p>
     </section>
-
-
+    <section id="cv">
+      <h2>Curriculum Vitae</h2>
+      <p style="color: var(--muted)">
+        Two versions of my CV are available: a concise, current version and an 
+        extended academic CV with full details on research and education. 
+      </p>
+      <p>
+        <a href="pdfs/Latest_version.pdf" target="_blank" style="color: var(--accent); font-weight: 600;">
+          Current CV (PDF) 
+        </a>
+        <br />
+        <a href="pdfs/General_version.pdf" target="_blank" style="color: var(--accent); font-weight: 600;">
+          Extended Academic CV (PDF) 
+        </a>
+      </p>
+    </section>
     <section id="contact">
-  <h2>Contact</h2>
-
-  <div class="contact-row">
-
-    <!-- Direct -->
-    <a href="mailto:atwi@ssd.rwth-aachen.de" class="contact-item" data-tooltip="Email">
-      <i class="fa-solid fa-envelope"></i>
-      <span>Email</span>
-    </a>
-
-    <!-- Code -->
-    <a href="https://github.com/AtwiMusa" target="_blank"
-    class="contact-item" data-tooltip="GitHub repositories">
-    <i class="fa-brands fa-github"></i>
-    <span>GitHub</span>
-    </a>
-
-    <!-- Professional -->
-    <a href="https://www.linkedin.com/in/musaatwi/" target="_blank"
-    class="contact-item" data-tooltip="LinkedIn profile">
-    <i class="fa-brands fa-linkedin"></i>
-    <span>LinkedIn</span>
-    </a>
-
-    <!-- Academic -->
-    <a href="https://www.researchgate.net/profile/Moussa-Atwi" target="_blank"
-       class="contact-item" data-tooltip="ResearchGate profile">
-      <i class="fa-brands fa-researchgate"></i>
-      <span>ResearchGate</span>
-    </a>
-
-    <!-- Citations -->
-    <a href="https://scholar.google.com" target="_blank"
-       class="contact-item" data-tooltip="Google Scholar citations">
-      <i class="fa-solid fa-graduation-cap"></i>
-      <span>Google Scholar</span>
-    </a>
-
-  </div>
-</section>
-
+      <h2>Contact</h2>
+      <div class="contact-row">
+        <!-- Direct -->
+        <a href="mailto:atwi@ssd.rwth-aachen.de" class="contact-item" data-tooltip="Email">
+          <i class="fa-solid fa-envelope"></i>
+          <span>Email</span>
+        </a>
+        <!-- Code -->
+        <a href="https://github.com/AtwiMusa" target="_blank" 
+        class="contact-item" data-tooltip="GitHub repositories">
+        <i class="fa-brands fa-github"></i>
+        <span>GitHub</span>
+        </a>
+        <!-- Professional -->
+        <a href="https://www.linkedin.com/in/musaatwi/" target="_blank" 
+        class="contact-item" data-tooltip="LinkedIn profile">
+        <i class="fa-brands fa-linkedin"></i>
+        <span>LinkedIn</span>
+        </a>
+        <!-- Academic -->
+        <a href="https://www.researchgate.net/profile/Moussa-Atwi" target="_blank" 
+          class="contact-item" data-tooltip="ResearchGate profile">
+          <i class="fa-brands fa-researchgate"></i>
+          <span>ResearchGate</span>
+        </a>
+        <!-- Citations -->
+        <a href="https://scholar.google.com" target="_blank" 
+          class="contact-item" data-tooltip="Google Scholar citations">
+          <i class="fa-solid fa-graduation-cap"></i>
+          <span>Google Scholar</span>
+        </a>
+      </div>
+    </section>
   </main>
-
   <footer>
-    © 2025 Moussa Atwi · Mathematics & Poetry
+    © 2025 Moussa Atwi · Mathematics & Poetry 
   </footer>
-
 </body>
 </html>
