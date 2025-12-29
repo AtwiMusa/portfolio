@@ -229,3 +229,73 @@ footer {
   gap: 1rem;
   flex-wrap: wrap;
 }
+/* Publications enhancements */
+.pub-date {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+}
+
+.abstract-details {
+  margin: 1.2rem 0;
+  cursor: pointer;
+}
+
+.abstract-details summary {
+  font-weight: 600;
+  color: var(--accent);
+  font-size: 0.95rem;
+  padding: 0.6rem 0;
+  outline: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.abstract-details summary::marker {
+  color: var(--accent);
+}
+
+.abstract-details[open] summary {
+  margin-bottom: 0.8rem;
+}
+
+.abstract-content {
+  background: rgba(255,255,255,0.04);
+  padding: 1rem 1.2rem;
+  border-radius: 0.8rem;
+  border-left: 3px solid var(--accent);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.abstract-content p {
+  margin-bottom: 0.8rem;
+}
+
+.keywords {
+  color: var(--muted);
+  font-style: italic;
+  margin-top: 1rem !important;
+}
+
+.pub-links {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+.pub-links a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+
+.pub-links a:hover {
+  text-decoration: underline;
+}
+
+.pub-links i {
+  margin-right: 0.4rem;
+  font-size: 1rem;
+}
