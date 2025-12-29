@@ -299,60 +299,126 @@ footer {
   margin-right: 0.4rem;
   font-size: 1rem;
 }
-/* Poetry Section Styling */
-.poetry-cards {
+/* Arabic Romantic Poetry - Elegant Cards with Expandable Text */
+.poetry-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .poem-card {
+  position: relative;
   background: var(--card);
-  border-radius: 1.2rem;
-  padding: 2rem;
-  border: 1px solid rgba(255,255,255,0.08);
-  text-align: center;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease;
+  border-radius: 1.4rem;
+  padding: 2rem 1.8rem 1.8rem;
+  border: 1px solid rgba(56,189,248,0.15);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  transition: all 0.4s ease;
+  overflow: hidden;
 }
 
 .poem-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(56,189,248,0.15);
+}
+
+.poem-card::before,
+.poem-card::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--accent);
+  opacity: 0.2;
+}
+
+.poem-card::before {
+  top: 15px;
+  left: 15px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.poem-card::after {
+  bottom: 15px;
+  right: 15px;
+  border-left: none;
+  border-top: none;
+}
+
+.poem-card > .poem-title::before,
+.poem-card > .poem-title::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--accent);
+  opacity: 0.15;
+}
+
+.poem-card > .poem-title::before {
+  top: 20px;
+  right: 20px;
+  border-left: none;
+  border-bottom: none;
+}
+
+.poem-card > .poem-title::after {
+  bottom: 20px;
+  left: 20px;
+  border-right: none;
+  border-top: none;
 }
 
 .poem-title {
   font-family: 'Playfair Display', serif;
-  font-size: 1.6rem;
-  margin-bottom: 1.5rem;
+  font-size: 1.7rem;
+  text-align: center;
+  margin-bottom: 1.8rem;
   color: var(--accent);
   font-weight: 700;
 }
 
-.poem-text {
+.poem-preview,
+.full-text {
   font-size: 1.05rem;
-  line-height: 2.2;
+  line-height: 2.3;
   color: var(--text);
-  white-space: nowrap; /* Keeps lines intact */
-  direction: rtl;
 }
 
-.poem-text br {
-  display: block;
-  margin-bottom: 1.2rem;
-  content: "";
+.poem-full {
+  margin-top: 1.5rem;
 }
 
-/* Responsive adjustment */
+.poem-full summary {
+  text-align: center;
+  cursor: pointer;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.poem-full summary:hover {
+  text-decoration: underline;
+}
+
+.poem-full[open] summary {
+  margin-bottom: 1rem;
+  color: var(--muted);
+}
+
+.poem-full[open] summary::after {
+  content: " (Read less)";
+}
+
 @media (max-width: 700px) {
-  .poetry-cards {
+  .poetry-grid {
     grid-template-columns: 1fr;
   }
   .poem-title {
-    font-size: 1.4rem;
-  }
-  .poem-text {
-    font-size: 1rem;
-    line-height: 2;
+    font-size: 1.5rem;
   }
 }
