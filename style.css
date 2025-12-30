@@ -299,7 +299,7 @@ footer {
   margin-right: 0.4rem;
   font-size: 1rem;
 }
-/* Arabic Romantic Poetry - 2x2 Grid + Click-to-Expand Cards */
+/* Arabic Romantic Poetry - Uniform Cards + Expand Inside */
 .poetry-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
@@ -311,20 +311,21 @@ footer {
 }
 
 .poem-card-wrapper {
-  cursor: pointer;
-  border-radius: 1.6rem;
-  overflow: hidden;
+  height: fit-content;
 }
 
 .poem-card {
   position: relative;
   background: var(--card);
+  border-radius: 1.6rem;
+  padding: 2.2rem 2rem 1.8rem;
   border: 1px solid rgba(56,189,248,0.2);
   box-shadow: 0 12px 35px rgba(0,0,0,0.35);
   transition: all 0.5s ease;
   transform: perspective(1000px) rotateX(2deg);
-  padding: 2.2rem 2rem 2rem;
-  margin: 0;
+  overflow: hidden;
+  cursor: pointer;
+  height: auto;
 }
 
 .poem-card:hover {
@@ -373,11 +374,31 @@ footer {
 }
 
 .poem-preview,
-.poem-full-text {
+.poem-full {
   font-size: 1.08rem;
   line-height: 2.6;
   color: var(--text);
-  font-weight: 300; /* Thinner text */
+  font-weight: 300;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+.poem-full {
+  display: none;
+}
+
+.poem-card.expanded .poem-preview {
+  display: none;
+}
+
+.poem-card.expanded .poem-full {
+  display: block;
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .more-indicator {
@@ -388,28 +409,18 @@ footer {
   display: block;
 }
 
-.poem-full-text {
-  margin-top: 1.8rem;
-  padding: 1.5rem 2rem 2rem;
-  background: var(--card);
-  border-top: 1px solid rgba(56,189,248,0.2);
-  animation: fadeIn 0.6s ease;
-  border-bottom-left-radius: 1.6rem;
-  border-bottom-right-radius: 1.6rem;
-  border: 1px solid rgba(56,189,248,0.2);
-  border-top: none;
+.expand-toggle {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-details[open] .poem-card {
-  transform: translateY(-8px) perspective(1000px) rotateX(0deg);
-  border-bottom: none;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+.poem-card.expanded .expand-toggle::after {
+  content: " (إغلاق)";
+  color: var(--muted);
 }
 
 /* Responsive */
