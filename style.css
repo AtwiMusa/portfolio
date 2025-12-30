@@ -354,8 +354,8 @@ footer {
 }
 
 .poem-preview, .poem-full {
-  font-family: 'Reem Kufi', sans-serif;
-  font-size: 1.1rem;
+  font-family: 'Cairo', sans-serif;
+  font-weight: 300; /* very thin and normal */
   line-height: 2.8;
   font-weight: 400; /* Thin and elegant */
   color: var(--text);
