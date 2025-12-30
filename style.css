@@ -312,18 +312,19 @@ footer {
 
 .poem-card-wrapper {
   cursor: pointer;
+  border-radius: 1.6rem;
+  overflow: hidden;
 }
 
 .poem-card {
   position: relative;
   background: var(--card);
-  border-radius: 1.6rem;
-  padding: 2.2rem 2rem 2rem;
   border: 1px solid rgba(56,189,248,0.2);
   box-shadow: 0 12px 35px rgba(0,0,0,0.35);
   transition: all 0.5s ease;
-  overflow: hidden;
   transform: perspective(1000px) rotateX(2deg);
+  padding: 2.2rem 2rem 2rem;
+  margin: 0;
 }
 
 .poem-card:hover {
@@ -376,6 +377,7 @@ footer {
   font-size: 1.08rem;
   line-height: 2.6;
   color: var(--text);
+  font-weight: 300; /* Thinner text */
 }
 
 .more-indicator {
@@ -388,9 +390,14 @@ footer {
 
 .poem-full-text {
   margin-top: 1.8rem;
-  padding-top: 1.5rem;
+  padding: 1.5rem 2rem 2rem;
+  background: var(--card);
   border-top: 1px solid rgba(56,189,248,0.2);
   animation: fadeIn 0.6s ease;
+  border-bottom-left-radius: 1.6rem;
+  border-bottom-right-radius: 1.6rem;
+  border: 1px solid rgba(56,189,248,0.2);
+  border-top: none;
 }
 
 @keyframes fadeIn {
@@ -400,6 +407,9 @@ footer {
 
 details[open] .poem-card {
   transform: translateY(-8px) perspective(1000px) rotateX(0deg);
+  border-bottom: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 /* Responsive */
