@@ -299,10 +299,10 @@ footer {
   margin-right: 0.4rem;
   font-size: 1rem;
 }
-/* Arabic Romantic Poetry - Nice Square Cards with Expand Inside */
+/* Arabic Romantic Poetry - Nice Square Cards with Uniform Previews */
 .poetry-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); /* Wider for better line wrapping */
   gap: 2.5rem;
   margin-top: 1rem;
 }
@@ -315,7 +315,7 @@ footer {
   position: relative;
   background: var(--card);
   border-radius: 1.6rem;
-  padding: 2.5rem;
+  padding: 2.5rem 2.8rem; /* More space for lines */
   border: 1px solid rgba(56,189,248,0.2);
   box-shadow: 0 12px 35px rgba(0,0,0,0.35);
   transition: all 0.5s ease;
@@ -373,6 +373,14 @@ footer {
   line-height: 2.6;
   font-weight: 300;
   color: var(--text);
+  text-align: center; /* Better for poetry */
+}
+
+.poem-preview {
+  min-height: 180px; /* Uniform height for all cards */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .poem-full {
@@ -413,10 +421,4 @@ footer {
   .poetry-grid {
     grid-template-columns: 1fr;
   }
-}
-.poem-preview {
-  min-height: 160px; /* Forces all previews to same height */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
