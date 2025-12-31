@@ -372,10 +372,7 @@ footer {
   line-height: 2.6;
   font-weight: 300;
   color: var(--text);
-  text-align: right;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  text-align: right; /* natural right-align for Arabic RTL */
 }
 
 .poem-full {
