@@ -372,8 +372,7 @@ footer {
   line-height: 2.6;
   font-weight: 300;
   color: var(--text);
-  white-space: pre-line; /* Preserves <br> line breaks exactly as in HTML */
-  text-align: right; /* Right-aligned for Arabic RTL - no centering */
+  text-align: right; /* right-aligned */
 }
 
 .poem-full {
