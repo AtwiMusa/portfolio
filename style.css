@@ -367,12 +367,9 @@ footer {
 
 .poem-preview,
 .poem-full {
-  font-family: 'Cairo', sans-serif;
-  font-size: 1.08rem;
-  line-height: 2.6;
-  font-weight: 300;
-  color: var(--text);
-  text-align: right; /* right-aligned */
+  white-space: nowrap; /* Prevents any wrapping — lines stay on one line */
+  overflow: hidden; /* Hides any overflow if needed (rare) */
+  text-overflow: ellipsis; /* Adds "..." if line is too long (optional, but nice) */
 }
 
 .poem-full {
