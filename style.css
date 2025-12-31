@@ -414,3 +414,9 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+.poem-preview {
+  min-height: 160px; /* Forces all previews to same height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
