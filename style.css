@@ -224,11 +224,6 @@ footer {
   opacity: 1;
 }
 
-.contact-group {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
 /* Publications enhancements */
 .pub-date {
   color: var(--muted);
@@ -299,10 +294,11 @@ footer {
   margin-right: 0.4rem;
   font-size: 1rem;
 }
-/* Arabic Romantic Poetry - Nice Square Cards with Uniform Previews */
+
+/* Arabic Romantic Poetry - Balanced Square Cards with More Horizontal Space */
 .poetry-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); /* Wider for better line wrapping */
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); /* Wider cards for better line wrapping */
   gap: 2.5rem;
   margin-top: 1rem;
 }
@@ -315,7 +311,7 @@ footer {
   position: relative;
   background: var(--card);
   border-radius: 1.6rem;
-  padding: 2.5rem 2.8rem; /* More space for lines */
+  padding: 2.5rem 3.2rem; /* More horizontal padding */
   border: 1px solid rgba(56,189,248,0.2);
   box-shadow: 0 12px 35px rgba(0,0,0,0.35);
   transition: all 0.5s ease;
@@ -340,18 +336,21 @@ footer {
   opacity: 0.25;
   transition: opacity 0.4s ease;
 }
+
 .poem-card::before {
   top: 18px;
   left: 18px;
   border-right: none;
   border-bottom: none;
 }
+
 .poem-card::after {
   bottom: 18px;
   right: 18px;
   border-left: none;
   border-top: none;
 }
+
 .poem-card:hover::before,
 .poem-card:hover::after {
   opacity: 0.5;
@@ -373,11 +372,11 @@ footer {
   line-height: 2.6;
   font-weight: 300;
   color: var(--text);
-  text-align: center; /* Better for poetry */
+  text-align: center;
 }
 
 .poem-preview {
-  min-height: 180px; /* Uniform height for all cards */
+  min-height: 180px; /* Uniform height for all previews */
   display: flex;
   flex-direction: column;
   justify-content: center;
