@@ -271,8 +271,8 @@ footer {
 .poem-card {
   position: relative;
   background: var(--card);
-  border-radius: 1.6rem;
-  padding: 1.8rem 1.6rem;
+  border-radius: 1.0rem;
+  padding: 1.2rem 1.0rem;
   border: 1px solid rgba(56,189,248,0.2);
   box-shadow: 0 12px 35px rgba(0,0,0,0.35);
   transition: all 0.5s ease;
@@ -297,8 +297,8 @@ footer {
 .poem-card::after {
   content: '';
   position: absolute;
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 20px;
   border: 2px solid var(--accent);
   opacity: 0.25;
   transition: opacity 0.4s ease;
@@ -321,18 +321,18 @@ footer {
 }
 .poem-title {
   font-family: 'Playfair Display', serif;
-  font-size: 1.45rem;
+  font-size: 1.3rem;
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
   color: var(--accent);
-  font-weight: 700;
+  font-weight: 500;
 }
 .poem-preview,
 .poem-full {
   font-family: 'Cairo', sans-serif;
-  font-size: 0.95rem; /* Reduced font size */
+  font-size: 0.7rem; /* Reduced font size */
   line-height: 2.0; /* Reduced vertical spacing */
-  font-weight: 300;
+  font-weight: 200;
   color: var(--text);
   text-align: right;
   white-space: pre-line;
