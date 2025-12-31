@@ -299,11 +299,11 @@ footer {
   margin-right: 0.4rem;
   font-size: 1rem;
 }
-/* Arabic Romantic Poetry - Uniform Height + Thinner Handwriting Font */
+/* Arabic Romantic Poetry - Smaller Rectangular Cards */
 .poetry-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Smaller cards */
+  gap: 2rem; /* Slightly less gap */
   margin-top: 1rem;
 }
 
@@ -313,65 +313,49 @@ footer {
 
 .poem-card {
   background: var(--card);
-  border-radius: 1.6rem;
-  padding: 2.2rem 2rem 1.8rem;
+  border-radius: 1.4rem; /* Slightly smaller radius for smaller card */
+  padding: 1.8rem 1.6rem 1.6rem; /* Reduced padding */
   border: 1px solid rgba(56,189,248,0.2);
-  box-shadow: 0 12px 35px rgba(0,0,0,0.35);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3); /* Slightly softer shadow */
   transition: all 0.5s ease;
   transform: perspective(1000px) rotateX(2deg);
   cursor: pointer;
-  min-height: 380px; /* Makes all cards same height before expand */
+  min-height: 300px; /* Smaller fixed height before expand */
+  max-width: 380px; /* Limits width → rectangular shape */
+  margin: 0 auto; /* Centers cards in grid */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
 .poem-card:hover {
-  transform: translateY(-12px) perspective(1000px) rotateX(0deg);
-  box-shadow: 0 25px 50px rgba(56,189,248,0.2);
+  transform: translateY(-10px) perspective(1000px) rotateX(0deg);
+  box-shadow: 0 20px 40px rgba(56,189,248,0.2);
   border-color: var(--accent);
 }
 
-/* Corner decorations */
+/* Corner decorations - slightly smaller */
 .poem-card::before, .poem-card::after {
-  content: '';
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  border: 2px solid var(--accent);
-  opacity: 0.25;
+  width: 40px;
+  height: 40px;
 }
-.poem-card::before { top: 18px; left: 18px; border-right: none; border-bottom: none; }
-.poem-card::after { bottom: 18px; right: 18px; border-left: none; border-top: none; }
-.poem-card:hover::before, .poem-card:hover::after { opacity: 0.5; }
+.poem-card::before { top: 14px; left: 14px; }
+.poem-card::after { bottom: 14px; right: 14px; }
 
 .poem-title {
   font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;
+  font-size: 1.5rem; /* Smaller title */
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.6rem;
   color: var(--accent);
 }
 
 .poem-preview, .poem-full {
   font-family: 'Cairo', sans-serif;
-  font-weight: 300; /* very thin and normal */
-  line-height: 2.8;
-  font-weight: 400; /* Thin and elegant */
+  font-size: 1rem; /* Smaller text */
+  line-height: 2.4; /* Adjusted for smaller card */
+  font-weight: 300;
   color: var(--text);
-}
-
-.poem-full {
-  display: none;
-}
-
-.poem-card.expanded .poem-preview {
-  display: none;
-}
-
-.poem-card.expanded .poem-full {
-  display: block;
-  animation: fadeIn 0.6s ease;
 }
 
 .expand-toggle {
@@ -380,21 +364,16 @@ footer {
   padding-top: 1rem;
   color: var(--accent);
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.9rem; /* Smaller toggle text */
 }
 
-.poem-card.expanded .expand-toggle {
-  content: "إغلاق القراءة";
-  color: var(--muted);
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
+/* Responsive: stack on small screens */
 @media (max-width: 900px) {
-  .poetry-grid { grid-template-columns: 1fr; }
-  .poem-card { min-height: auto; }
-  .poem-title { font-size: 1.6rem; }
+  .poetry-grid {
+    grid-template-columns: 1fr;
+  }
+  .poem-card {
+    min-height: auto;
+    max-width: none;
+  }
 }
