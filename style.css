@@ -295,7 +295,7 @@ footer {
   font-size: 1rem;
 }
 
-/* Arabic Romantic Poetry - Original Square Cards (no centering) */
+/* Arabic Romantic Poetry - Original Square Cards (no centering in poem text) */
 .poetry-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
