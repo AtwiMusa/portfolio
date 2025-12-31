@@ -372,7 +372,7 @@ footer {
   line-height: 2.6;
   font-weight: 300;
   color: var(--text);
-  text-align: right; /* right-aligned for Arabic */
+  text-align: right; /* right-aligned for Arabic RTL */
 }
 
 .poem-full {
