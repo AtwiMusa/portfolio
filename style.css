@@ -261,9 +261,9 @@ footer {
 /* Arabic Romantic Poetry - 2 Wide Cards Side by Side */
 .poetry-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Always 2 columns */
-  gap: 2.5rem;
-  margin-top: 2rem;
+  grid-template-columns: repeat(3, 1fr); /* Always 2 columns */
+  gap: 1.2rem;
+  margin-top: 0rem;
 }
 .poem-card-wrapper {
   cursor: pointer;
@@ -271,8 +271,8 @@ footer {
 .poem-card {
   position: relative;
   background: var(--card);
-  border-radius: 1.6rem;
-  padding: 2.2rem 2rem;
+  border-radius: 1.0rem;
+  padding: 1.2rem 1.4rem;
   border: 1px solid rgba(56,189,248,0.2);
   box-shadow: 0 12px 35px rgba(0,0,0,0.35);
   transition: all 0.5s ease;
@@ -320,21 +320,25 @@ footer {
 }
 .poem-title {
   font-family: 'Playfair Display', serif;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 0rem;
   color: var(--accent);
-  font-weight: 700;
+  font-weight: 200;
 }
 .poem-preview,
 .poem-full {
   font-family: 'Playfair Display', sans-serif;
-  font-size: 1.05rem;
-  line-height: 1.2;
-  font-weight: 300;
+  font-size: 0.80rem;
+  line-height: 1.0;
+  font-weight: 10;
   color: var(--text);
   text-align: right;
   white-space: pre-line; /* Respects your <br> tags */
+  padding-left: 0.05rem;   
+  padding-right: 0.6rem;
+  margin-top: -0.6rem;     /* ← ADD THIS: pulls text upward */
+  /* your existing padding if any */
 }
 .poem-full {
   display: none;
@@ -345,8 +349,8 @@ footer {
 .poem-card.expanded .poem-full {
   display: block;
   animation: fadeIn 0.6s ease;
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
   border-top: 1px solid rgba(56,189,248,0.2);
 }
 @keyframes fadeIn {
@@ -355,14 +359,14 @@ footer {
 }
 .expand-toggle {
   text-align: center;
-  margin-top: 1rem; /* Reduced gap from last line to "اقرأ المزيد" */
+  margin-top: 0rem; /* Reduced gap from last line to "اقرأ المزيد" */
   color: var(--accent);
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.6rem;
 }
 .poem-card.expanded .expand-toggle {
   color: var(--muted);
-  margin-top: 1.8rem;
+  margin-top: 0.5rem;
 }
 /* Responsive: Stack on mobile */
 @media (max-width: 900px) {
@@ -372,4 +376,30 @@ footer {
   .poem-card {
     padding: 2.5rem 2rem;
   }
+}
+.expand-toggle {
+  text-align: center;
+  margin-top: 0.1rem;
+  color: var(--accent);
+  font-weight: 100;
+  font-size: 0.6rem;
+}
+
+.poem-card.expanded .expand-toggle {
+  display: none;   /* ← ADD THIS BLOCK */
+}
+.poem-card.expanded .poem-full {
+  display: block;
+  animation: fadeIn 0.6s ease;
+  margin-top: 0.8rem;                 /* Keeps top spacing */
+  padding-top: 0.8rem;
+  padding-bottom: 2.5rem;             /* ← ADD THIS: adds space at the bottom */
+  border-top: 1px solid rgba(56,189,248,0.2);
+  white-space: pre-line;
+}
+.poetry-page .poetry-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 4 on wide, 3 on medium, 2/1 on small */
+  gap: 2rem;
+  max-width: none; /* Full space */
+  padding: 0 2rem; /* Breathing room on sides */
 }
