@@ -329,15 +329,15 @@ footer {
 .poem-preview,
 .poem-full {
   font-family: 'Playfair Display', sans-serif;
-  font-size: 0.80rem;
+  font-size: 0.85rem;
   line-height: 1.0;
-  font-weight: 10;
+  font-weight: 5;
   color: var(--text);
   text-align: right;
   white-space: pre-line; /* Respects your <br> tags */
   padding-left: 0.05rem;   
   padding-right: 0.6rem;
-  margin-top: -0.6rem;     /* ← ADD THIS: pulls text upward */
+  margin-top: -1.0rem;     /* ← ADD THIS: pulls text upward */
   /* your existing padding if any */
 }
 .poem-full {
@@ -402,4 +402,179 @@ footer {
   gap: 2rem;
   max-width: none; /* Full space */
   padding: 0 2rem; /* Breathing room on sides */
+}
+/* Natural bottom breathing room for short poems (no toggle) */
+.poem-card:not(.expanded) .poem-content {
+  padding-bottom: 1.5rem; /* Soft space at bottom for 1-3 line poems */
+}
+
+/* When expanded (long poems), keep normal padding */
+.poem-card.expanded .poem-content {
+  padding-bottom: 1rem;
+}
+
+/* "اقرأ المزيد" only appears on long poems (those with toggle in HTML) */
+.expand-toggle {
+  text-align: center;
+  margin-top: -1.5rem;
+  color: var(--accent);
+  font-weight: 100;
+  font-size: 0.7rem;
+  opacity: 0.7;
+}
+
+.poem-card.expanded .expand-toggle {
+  display: none;
+}
+
+/* .....*/
+
+.poetry-header {
+  text-align: left;
+  margin-bottom: 1.0rem;
+}
+
+.poetry-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;           /* Matches your other section titles */
+  font-weight: 700;
+  color: var(--text);
+  display: inline-block;
+  margin: 0;
+}
+
+.collection-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;           /* Slightly smaller but still prominent */
+  color: var(--accent);        /* Your beautiful blue */
+  font-weight: 800;
+  margin-left: 1.2rem;
+  opacity: 0.8;
+}
+
+.poetry-description em {
+  font-style: normal;
+  color: var(--accent);
+  font-weight: 200;
+}
+.desc-en {
+  display: block;
+}
+
+.desc-ar {
+  display: block;
+  direction: rtl;              /* Makes Arabic start from the right */
+  text-align: right;           /* Aligns the whole line to the right */
+  margin-top: 0.0rem;
+}
+.poetry-description {
+  font-size: 1rem;
+  color: var(--muted);
+  margin: 1.0rem 0 1.0rem 0;   /* Space below title, space before poems */
+  line-height: 1.7;
+}
+
+
+
+.poetry-link {
+  text-align: center;
+  margin: 2.5rem auto 0.2rem;
+}
+
+.full-collection-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.5rem 1.2rem;              /* Smaller padding → smaller button */
+  font-size: 1.0rem;                  /* Slightly smaller text */
+  font-weight: 400;
+  color: var(--accent);
+  background: rgba(201, 217, 224, 0.15); /* Much softer background (was 0.15+) */
+  border: 1px solid rgb(57, 107, 129); /* Softer, less bright border */
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 12px rgba(14, 70, 94, 0.08); /* Very subtle shadow */
+}
+
+.full-collection-btn:hover {
+  transform: translateY(-3px);         /* Smaller lift on hover */
+  background: rgba(56, 189, 248, 0.18); /* Slightly stronger on hover, still soft */
+  box-shadow: 0 8px 20px rgba(56, 189, 248, 0.15);
+  color: white;
+}
+
+.full-collection-btn i {
+  font-size: 1.2rem;                   /* Slightly smaller icon */
+}
+
+.btn-en, .btn-ar {
+  font-size: inherit;
+}
+
+.btn-separator {
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+
+/* Remove the pulse animation if you don't want any "light" movement */
+
+
+/* .......*/
+
+
+
+.title-lines {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;                   /* Space between the two lines */
+  margin: 0rem auto 0rem;  /* Reduced top/bottom space → brings poems closer */
+}
+
+.title-lines .line {
+  width: 80px;
+  height: 1px;
+  background: var(--accent);
+  opacity: 0.6;
+}
+
+/* Optional: make the lines slightly thicker or softer */
+.title-lines .line {
+  height: 1.0px;
+  border-radius: 1px;
+}
+
+
+
+
+header {
+  position: relative;           /* Important - allows absolute positioning inside */
+  padding: 5rem 2rem 4rem;
+  text-align: center;
+}
+
+.back-nav {
+  position: absolute;
+  top: 6.0rem;                  /* Distance from top */
+  right: 10rem;                  /* Distance from right edge - adjust 2rem to 6rem as needed */
+}
+
+.back-nav a {
+  color: var(--muted);
+  font-size: 0.95rem;
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border: 1px solid var(--accent-soft);
+  border-radius: 999px;
+  background: rgba(17,24,39,0.7);
+  backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
+}
+
+.back-nav a:hover {
+  color: var(--accent);
+  background: var(--accent-soft);
+  transform: translateY(-2px);
 }
