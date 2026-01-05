@@ -470,7 +470,7 @@ footer {
 .poetry-description {
   font-size: 1rem;
   color: var(--muted);
-  margin: 1.0rem 0 1.0rem 0;   /* Space below title, space before poems */
+  margin: 1.0rem 0 2.0rem 0;   /* Space below title, space before poems */
   line-height: 1.7;
 }
 
