@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Curriculum Vitae - Moussa Atwi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@500;700&family=Cairo:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .cv-section { margin-bottom: 3rem; }
+    .cv-item {
+      background: var(--card);
+      padding: 1.5rem;
+      border-radius: 1rem;
+      margin-bottom: 1.2rem;
+      border-left: 4px solid var(--accent);
+    }
+    .cv-item h4 { margin: 0 0 0.5rem 0; color: var(--accent); }
+    .cv-item .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 0.8rem; }
+    .expandable { cursor: pointer; }
+    .expandable .content { display: none; }
+    .expandable.expanded .content { display: block; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Moussa Atwi — Curriculum Vitae</h1>
+    <nav class="back-nav top-right">
+      <a href="index.html">← Back to Portfolio</a>
+    </nav>
+  </header>
+
+  <main style="max-width: 1000px; margin: 0 auto; padding: 2rem 1.5rem;">
+    
+    <!-- Contact -->
+    <div class="cv-section">
+      <h2>Contact</h2>
+      <p><strong>Email:</strong> musa-atwi@hotmail.com | <strong>Phone:</strong> (+49) 015118507765 | <strong>Location:</strong> Aachen, Germany</p>
+    </div>
+
+    <!-- Experience -->
+    <div class="cv-section">
+      <h2>Professional Experience</h2>
+      
+      <div class="cv-item">
+        <h4>Doctoral Researcher (75% Position)</h4>
+        <div class="meta">RWTH Aachen University | Aug 2023 – Present | Aachen, Germany</div>
+        <strong>Sparse Exit Wave Reconstruction via Deep Unfolding</strong><br>
+        Phase Retrieval, Image Processing, Optimization, Deep Neural Networks. Developing hybrid model-based and data-driven approaches for Transmission Electron Microscopy.
+      </div>
+
+      <div class="cv-item">
+        <h4>E-Learning and Assessment Assistant (25% Position)</h4>
+        <div class="meta">RWTH Aachen University | 2024 – Present | Aachen, Germany</div>
+        <ul>
+          <li>Managed Verständnisaufgaben and Rechenaufgaben via Dynexite</li>
+          <li>Coordinated Bonuspunktetests (BPT) and online assessment workflows</li>
+          <li>Published exercises, solutions, and announcements</li>
+          <li>Reviewed, graded submissions, and handled student feedback/complaints</li>
+          <li>Uploaded grades to Moodle and maintained assessment records</li>
+        </ul>
+      </div>
+
+      <div class="cv-item">
+        <h4>Student Researcher – Koopman Theory (Internship + Master's Thesis)</h4>
+        <div class="meta">Zuse Institute Berlin (ZIB) | Sep 2022 – May 2023 | Berlin, Germany</div>
+        <strong>"Approximation of Koopman Operators Using Random Basis Functions"</strong><br>
+        EDMD with Random Gaussians and Neural Networks (trained & untrained). Python + Deeptime framework.
+      </div>
+
+      <div class="cv-item">
+        <h4>Student Researcher – Optimal Transport (Internship + Thesis)</h4>
+        <div class="meta">Université de Bordeaux | Feb 2020 – Aug 2020 | Bordeaux, France</div>
+        <strong>"Semi-discrete Optimal Transport for Large-Scale Problems"</strong><br>
+        Gradient Descent & Stochastic Gradient Descent for image processing and ML applications.
+      </div>
+
+      <div class="cv-item">
+        <h4>Other Positions</h4>
+        <div class="meta">Berlin, Germany</div>
+        <ul>
+          <li>Grocery Delivery Rider (Gorillas GmbH) – Oct 2021 – Apr 2022</li>
+          <li>Rapid Corona Test Assistant – Jun 2021 – Aug 2021</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <div class="cv-section">
+      <h2>Education</h2>
+      
+      <div class="cv-item">
+        <h4>M.Sc. in Scientific Computing (GPA 1.2 ~ Excellent)</h4>
+        <div class="meta">Technical University of Berlin (TUB) | Apr 2021 – May 2023 | Berlin, Germany</div>
+      </div>
+
+      <div class="cv-item">
+        <h4>M.Sc. in Mathematics, Modeling and Simulation</h4>
+        <div class="meta">University of Pau and Pays de l'Adour (UPPA) | Oct 2019 – Sep 2020 | Pau, France</div>
+      </div>
+
+      <div class="cv-item">
+        <h4>M.Sc. in Mathematics (Rank 1, GPA 1.0 ~ Excellent)</h4>
+        <div class="meta">Lebanese International University (LIU) | Feb 2018 – Aug 2019 | Beirut, Lebanon</div>
+      </div>
+
+      <div class="cv-item">
+        <h4>Master 1 in Pure Mathematics (Class Rank 4/15)</h4>
+        <div class="meta">Lebanese University (LU) | Oct 2014 – Sep 2015 | Beirut, Lebanon</div>
+      </div>
+
+      <div class="cv-item">
+        <h4>B.Sc. in Pure Mathematics</h4>
+        <div class="meta">Lebanese University (LU) | Oct 2008 – Sep 2012 | Beirut, Lebanon</div>
+      </div>
+    </div>
+
+    <!-- Research Projects & Courses -->
+    <div class="cv-section">
+      <h2>Research Projects & Advanced Courses</h2>
+      <div class="cv-item expandable" onclick="this.classList.toggle('expanded')">
+        <h4>🔬 Nonlinear Porous Medium Equation (Scientific Computing Project)</h4>
+        <div class="content">Voronoi FVM, Rothe method, Implicit Euler, Julia (ExtendableGrids.jl, DifferentialEquations.jl) — 1D & 2D simulations.</div>
+      </div>
+      <div class="cv-item expandable" onclick="this.classList.toggle('expanded')">
+        <h4>🔬 Semi-discrete Optimal Transport</h4>
+        <div class="content">Monge-Kantorovich, c-transform, Laguerre cells, Gradient Descent, Gaussian Noise.</div>
+      </div>
+      <!-- Add more expandable items for other projects/courses from PDFs -->
+    </div>
+
+    <!-- Achievements -->
+    <div class="cv-section">
+      <h2>Achievements & Scholarships</h2>
+      <ul>
+        <li>Received A's in Master's Thesis and Research Internship (Koopman Theory)</li>
+        <li>Scholarship from Region Nouvelle-Aquitaine for excellence in Mathematics (UPPA)</li>
+        <li>Ranked 1st in Number Theory (LU, Master 1)</li>
+        <li>Excellent grades in Numerical PDEs, Scientific Computing, Bayesian Modelling, Nonlinear Optimization (TUB)</li>
+      </ul>
+    </div>
+
+  </main>
+
+  <footer>© 2026 Moussa Atwi</footer>
+</body>
+</html>
