@@ -9,7 +9,11 @@
   <link rel="stylesheet" href="style.css">
   <style>
     body { background: linear-gradient(180deg,#020617,var(--bg)); }
-    .cv-page { max-width: 1100px; margin: 0 auto; padding: 2rem 4vw 6rem; }
+    .cv-page { 
+      max-width: 1100px; 
+      margin: 0 auto; 
+      padding: 2rem 4vw 6rem; 
+    }
     .cv-section { margin-bottom: 3.8rem; }
     .cv-section-title {
       font-family: 'Playfair Display', serif;
@@ -30,7 +34,13 @@
       margin-bottom: 1.3rem;
       transition: all 0.3s ease;
     }
-    .cv-card:hover { transform: translateY(-4px); box-shadow: 0 15px 40px rgba(0,0,0,0.5); }
+    .cv-card:hover { 
+      transform: translateY(-4px); 
+      box-shadow: 0 15px 40px rgba(0,0,0,0.5); 
+    }
+    .cv-card-header {
+      margin-bottom: 1rem;
+    }
     .cv-details-body {
       margin-top: 1rem;
       padding: 1.1rem 1.4rem;
@@ -40,13 +50,29 @@
       line-height: 1.7;
       font-size: 0.93rem;
     }
-    .gpa-tag { background: rgba(134,239,172,0.1); color: #86efac; padding: 0.1rem 0.5rem; border-radius: 999px; font-size: 0.78rem; }
-    .pdf-row { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
+    .gpa-tag { 
+      background: rgba(134,239,172,0.1); 
+      color: #86efac; 
+      padding: 0.1rem 0.5rem; 
+      border-radius: 999px; 
+      font-size: 0.78rem; 
+    }
+    .pdf-row { 
+      display: flex; 
+      gap: 1rem; 
+      flex-wrap: wrap; 
+      margin-bottom: 3rem; 
+    }
     .pdf-btn {
-      display: inline-flex; align-items: center; gap: 0.6rem;
-      padding: 0.55rem 1.2rem; border-radius: 999px;
-      border: 1px solid rgba(56,189,248,0.25); color: var(--accent);
-      background: rgba(56,189,248,0.07); text-decoration: none;
+      display: inline-flex; 
+      align-items: center; 
+      gap: 0.6rem;
+      padding: 0.55rem 1.2rem; 
+      border-radius: 999px;
+      border: 1px solid rgba(56,189,248,0.25); 
+      color: var(--accent);
+      background: rgba(56,189,248,0.07); 
+      text-decoration: none;
     }
   </style>
 </head>
@@ -115,7 +141,7 @@
           <h5>Master's Thesis & Internship (ZIB)</h5>
           <p><strong>Title:</strong> "Approximation of Koopman Operators Using Random Basis Functions"</p>
           <p>Extended Dynamic Mode Decomposition (EDMD) with Random Gaussians and Neural Networks (trained & untrained). Grade: A</p>
-
+          
           <h5>Key Courses (A grades)</h5>
           <ul>
             <li>Numerical Methods for PDEs</li>
@@ -136,7 +162,7 @@
         <div class="cv-details-body">
           <h5>Master's Thesis (Bordeaux)</h5>
           <p><strong>Title:</strong> "Semi-discrete Optimal Transport for Large-Scale Problems"</p>
-
+          
           <h5>Key Projects (UPPA)</h5>
           <ul>
             <li><strong>Porous Media:</strong> Homogenization based on reactive porous media flow models. DuMuX simulation of Buckley-Leverett equation (1D & 2D)</li>
@@ -176,7 +202,7 @@
   <!-- RESEARCH EXPERIENCE -->
   <div class="cv-section" id="research">
     <h2 class="cv-section-title"><i class="fa-solid fa-flask"></i> Research Experience</h2>
-
+    
     <div class="cv-card">
       <strong>Student Researcher — Koopman Theory</strong> (Internship + Master's Thesis)<br>
       Zuse Institute Berlin (ZIB) | Sep 2022 – May 2023 | Berlin, Germany
