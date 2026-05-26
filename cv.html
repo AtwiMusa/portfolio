@@ -3,146 +3,315 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Curriculum Vitae - Moussa Atwi</title>
+  <title>Curriculum Vitae — Moussa Atwi</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@500;700&family=Cairo:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css">
   <style>
-    .cv-section { margin-bottom: 3rem; }
-    .cv-item {
-      background: var(--card);
-      padding: 1.5rem;
-      border-radius: 1rem;
-      margin-bottom: 1.2rem;
-      border-left: 4px solid var(--accent);
+    body { background: linear-gradient(180deg,#020617,var(--bg)); }
+    .cv-page { 
+      max-width: 1100px; 
+      margin: 0 auto; 
+      padding: 2rem 4vw 6rem; 
     }
-    .cv-item h4 { margin: 0 0 0.5rem 0; color: var(--accent); }
-    .cv-item .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 0.8rem; }
-    .expandable { cursor: pointer; }
-    .expandable .content { display: none; }
-    .expandable.expanded .content { display: block; }
+    .cv-section { margin-bottom: 3.8rem; }
+    .cv-section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: var(--accent);
+      border-bottom: 1px solid rgba(56,189,248,0.25);
+      padding-bottom: 0.6rem;
+      margin-bottom: 1.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .cv-card {
+      background: #111827;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 1.1rem;
+      padding: 1.6rem 1.9rem;
+      margin-bottom: 1.3rem;
+      transition: all 0.3s ease;
+    }
+    .cv-card:hover { 
+      transform: translateY(-4px); 
+      box-shadow: 0 15px 40px rgba(0,0,0,0.5); 
+    }
+    .cv-card-header {
+      margin-bottom: 1rem;
+    }
+    .cv-details-body {
+      margin-top: 1rem;
+      padding: 1.1rem 1.4rem;
+      background: rgba(2,6,23,0.6);
+      border-radius: 0.7rem;
+      border-left: 3px solid var(--accent);
+      line-height: 1.7;
+      font-size: 0.93rem;
+      color: var(--text);
+    }
+    .cv-details-body h5 {
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.02em;
+    }
+    .cv-details-body ul {
+      margin-top: 0.4rem;
+      padding-left: 1.2rem;
+    }
+    .cv-details-body li {
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+    details.cv-details summary {
+      cursor: pointer;
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 0.5rem 0 0 0;
+      margin-top: 0.8rem;
+      outline: none;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      opacity: 0.85;
+      transition: opacity 0.2s;
+    }
+    details.cv-details summary:hover { opacity: 1; }
+    details.cv-details summary::before {
+      content: '▸';
+      font-size: 0.8rem;
+      transition: transform 0.25s;
+      display: inline-block;
+    }
+    details.cv-details[open] summary::before {
+      transform: rotate(90deg);
+    }
+    .gpa-tag { 
+      background: rgba(134,239,172,0.1); 
+      color: #86efac; 
+      padding: 0.1rem 0.5rem; 
+      border-radius: 999px; 
+      font-size: 0.78rem; 
+    }
+    .pdf-row { 
+      display: flex; 
+      gap: 1rem; 
+      flex-wrap: wrap; 
+      margin-bottom: 3rem; 
+    }
+    .pdf-btn {
+      display: inline-flex; 
+      align-items: center; 
+      gap: 0.6rem;
+      padding: 0.55rem 1.2rem; 
+      border-radius: 999px;
+      border: 1px solid rgba(56,189,248,0.25); 
+      color: var(--accent);
+      background: rgba(56,189,248,0.07); 
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Moussa Atwi — Curriculum Vitae</h1>
-    <nav class="back-nav top-right">
-      <a href="index.html#cv">← Back to Portfolio</a>
-    </nav>
-  </header>
 
-  <main style="max-width: 1000px; margin: 0 auto; padding: 2rem 1.5rem;">
+<header>
+  <h1>Curriculum Vitae</h1>
+  <div class="title-lines">
+    <span class="line"></span>
+    <span class="line"></span>
+  </div>
+  <nav class="back-nav top-right">
+    <a href="index.html#cv">← Back to Portfolio</a>
+  </nav>
+</header>
+
+<main class="cv-page">
+
+  <!-- PDF Downloads -->
+  <div class="pdf-row">
+    <a href="pdfs/Latest_version.pdf" target="_blank" class="pdf-btn">
+      <i class="fa-solid fa-file-pdf"></i> Current CV (PDF)
+    </a>
+    <a href="pdfs/General_version.pdf" target="_blank" class="pdf-btn">
+      <i class="fa-solid fa-file-pdf"></i> Extended Academic CV (PDF)
+    </a>
+  </div>
+
+  <!-- CURRENT POSITIONS -->
+  <div class="cv-section" id="current-positions">
+    <h2 class="cv-section-title"><i class="fa-solid fa-building-columns"></i> Current Positions</h2>
+
+    <!-- PhD Research -->
+    <div class="cv-card">
+      <div class="cv-card-header">
+        <strong>Doctoral Researcher in Applied Mathematics</strong> — RWTH Aachen University<br>
+        <em>Aug 2023 – Present | Aachen, Germany</em>
+      </div>
+      <details class="cv-details">
+        <summary>Research Details</summary>
+        <div class="cv-details-body">
+          <p><strong>Thesis:</strong> "Sparse Exit Wave Reconstruction via Deep Unfolding"</p>
+          <p>Phase Retrieval · Transmission Electron Microscopy · Deep Unfolding · Proximal Gradient Algorithm · Complex-Valued Optimization</p>
+          <p style="margin-top:0.7rem; color: var(--muted); font-size:0.88rem;">Preprint: <em>"A generalization bound for exit wave reconstruction via deep unfolding"</em> — arXiv 2025</p>
+        </div>
+      </details>
+    </div>
+
+    <!-- E-Learning -->
+    <div class="cv-card">
+      <div class="cv-card-header">
+        <strong>E-Learning &amp; Assessment Assistant</strong> — RWTH Aachen University<br>
+        <em>2024 – Present | Aachen, Germany</em>
+      </div>
+      <details class="cv-details">
+        <summary>Responsibilities</summary>
+        <div class="cv-details-body">
+          <ul>
+            <li>Managing conceptual (Verständnisaufgaben) and calculation (Rechenaufgaben) exercises via Dynexite</li>
+            <li>Coordinating Bonuspunktetests (BPT) and online assessment workflows</li>
+            <li>Publishing exercises, solutions, and announcements</li>
+            <li>Reviewing and grading submissions, handling student feedback and complaints</li>
+            <li>Uploading grades to Moodle and maintaining assessment records</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="cv-section" id="education">
+    <h2 class="cv-section-title"><i class="fa-solid fa-graduation-cap"></i> Education</h2>
+
+    <!-- TUB -->
+    <div class="cv-card">
+      <strong>M.Sc. in Scientific Computing</strong> <span class="gpa-tag">GPA 1.2 (Excellent)</span><br>
+      Technical University of Berlin (TUB) | Apr 2021 – May 2023 | Berlin, Germany
+      <details class="cv-details">
+        <summary>Master's Thesis, Internship &amp; Courses</summary>
+        <div class="cv-details-body">
+          <h5>Master's Thesis &amp; Research Internship — Zuse Institute Berlin (ZIB) &nbsp;<span class="gpa-tag">Grade: A</span></h5>
+          <p><strong>Title:</strong> "Approximation of Koopman Operators Using Random Basis Functions"</p>
+          <p>Extended Dynamic Mode Decomposition (EDMD) with Random Gaussians and Neural Networks (trained &amp; untrained). Python · Deeptime framework.</p>
+
+          <h5 style="margin-top:1rem;">Key Courses &nbsp;<span class="gpa-tag">All A grades</span></h5>
+          <ul>
+            <li>Numerical Methods for PDEs</li>
+            <li>Scientific Computing</li>
+            <li>Probabilistic and Bayesian Modelling in ML and AI</li>
+            <li>Nonlinear Optimization (Seminar)</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+
+    <!-- UPPA -->
+    <div class="cv-card">
+      <strong>M.Sc. in Mathematics, Modeling and Simulation</strong><br>
+      University of Pau and Pays de l'Adour (UPPA) | Oct 2019 – Sep 2020 | Pau, France
+      <details class="cv-details">
+        <summary>Thesis, Courses &amp; Projects</summary>
+        <div class="cv-details-body">
+          <h5>Master's Thesis — Université de Bordeaux</h5>
+          <p><strong>Title:</strong> "Semi-discrete Optimal Transport for Large-Scale Problems"</p>
+          <p>Monge–Kantorovich problem, c-transform, Laguerre cells, Gradient Descent &amp; Stochastic Gradient Descent for image processing applications.</p>
+
+          <h5 style="margin-top:1rem;">Courses &amp; Projects — UPPA</h5>
+          <ul>
+            <li>
+              <strong>Numerical Analysis of PDEs</strong> — Inverse problem for wave propagation using discontinuous Galerkin approximation in Matlab.
+            </li>
+            <li>
+              <strong>Industrial Software</strong> (Fluid Mechanics / Industrial Codes) — Physical and mathematical modeling with ANSYS-FLUENT and elsA-ONERA for compressible &amp; incompressible flows.
+            </li>
+            <li>
+              <strong>Porous Media</strong> — Homogenization of reactive porous media flow; DuMuX simulation of the Buckley–Leverett equation in 1D &amp; 2D.
+            </li>
+            <li>
+              <strong>Finite Element Methods</strong> — Piecewise linear FEM for 1D elliptic equations; estimated order of convergence on uniform and non-uniform meshes in Matlab.
+            </li>
+          </ul>
+        </div>
+      </details>
+    </div>
+
+    <!-- LIU -->
+    <div class="cv-card">
+      <strong>M.Sc. in Applied Mathematics</strong> <span class="gpa-tag">Rank 1 · GPA 4.0 US (1.0 / 20/20)</span><br>
+      Lebanese International University (LIU) | Feb 2018 – Aug 2019 | Beirut, Lebanon
+      <details class="cv-details">
+        <summary>Master's Thesis</summary>
+        <div class="cv-details-body">
+          <p><strong>Title:</strong> "Decay Rates of a Timoshenko System with Kelvin-Voigt Damping"</p>
+          <p>Proved exponential/polynomial decay rates depending on material coefficients.</p>
+        </div>
+      </details>
+    </div>
+
+    <!-- LU Master 1 -->
+    <div class="cv-card">
+      <strong>Master 1 in Pure Mathematics</strong> (1st year of a 2-year Master's)<br>
+      Lebanese University (LU) | Oct 2014 – Sep 2015 | Beirut, Lebanon
+    </div>
+
+    <!-- LU BSc -->
+    <div class="cv-card">
+      <strong>B.Sc. in Pure Mathematics</strong><br>
+      Lebanese University (LU) | Oct 2008 – Sep 2012 | Beirut, Lebanon
+    </div>
+  </div>
+
+  <!-- RESEARCH EXPERIENCE -->
+  <div class="cv-section" id="research">
+    <h2 class="cv-section-title"><i class="fa-solid fa-flask"></i> Research Experience</h2>
     
-    <!-- Contact -->
-    <div class="cv-section">
-      <h2>Contact</h2>
-      <p><strong>Email:</strong> musa-atwi@hotmail.com | <strong>Phone:</strong> (+49) 015118507765 | <strong>Location:</strong> Aachen, Germany</p>
+    <div class="cv-card">
+      <strong>Student Researcher — Koopman Theory</strong> (Internship + Master's Thesis)<br>
+      Zuse Institute Berlin (ZIB) | Sep 2022 – May 2023 | Berlin, Germany
+      <details class="cv-details">
+        <summary>Details</summary>
+        <div class="cv-details-body">
+          <p><strong>Title:</strong> "Approximation of Koopman Operators Using Random Basis Functions"</p>
+          <p>EDMD with random Gaussians and neural networks using Deeptime framework.</p>
+        </div>
+      </details>
     </div>
 
-    <!-- Experience -->
-    <div class="cv-section">
-      <h2>Professional Experience</h2>
-      
-      <div class="cv-item">
-        <h4>Doctoral Researcher (75% Position)</h4>
-        <div class="meta">RWTH Aachen University | Aug 2023 – Present | Aachen, Germany</div>
-        <strong>Sparse Exit Wave Reconstruction via Deep Unfolding</strong><br>
-        Phase Retrieval, Image Processing, Optimization, Deep Neural Networks. Developing hybrid model-based and data-driven approaches for Transmission Electron Microscopy.
-      </div>
-
-      <div class="cv-item">
-        <h4>E-Learning and Assessment Assistant (25% Position)</h4>
-        <div class="meta">RWTH Aachen University | 2024 – Present | Aachen, Germany</div>
-        <ul>
-          <li>Managed Verständnisaufgaben and Rechenaufgaben via Dynexite</li>
-          <li>Coordinated Bonuspunktetests (BPT) and online assessment workflows</li>
-          <li>Published exercises, solutions, and announcements</li>
-          <li>Reviewed, graded submissions, and handled student feedback/complaints</li>
-          <li>Uploaded grades to Moodle and maintained assessment records</li>
-        </ul>
-      </div>
-
-      <div class="cv-item">
-        <h4>Student Researcher – Koopman Theory (Internship + Master's Thesis)</h4>
-        <div class="meta">Zuse Institute Berlin (ZIB) | Sep 2022 – May 2023 | Berlin, Germany</div>
-        <strong>"Approximation of Koopman Operators Using Random Basis Functions"</strong><br>
-        EDMD with Random Gaussians and Neural Networks (trained & untrained). Python + Deeptime framework.
-      </div>
-
-      <div class="cv-item">
-        <h4>Student Researcher – Optimal Transport (Internship + Thesis)</h4>
-        <div class="meta">Université de Bordeaux | Feb 2020 – Aug 2020 | Bordeaux, France</div>
-        <strong>"Semi-discrete Optimal Transport for Large-Scale Problems"</strong><br>
-        Gradient Descent & Stochastic Gradient Descent for image processing and ML applications.
-      </div>
-
-      <div class="cv-item">
-        <h4>Other Positions</h4>
-        <div class="meta">Berlin, Germany</div>
-        <ul>
-          <li>Grocery Delivery Rider (Gorillas GmbH) – Oct 2021 – Apr 2022</li>
-          <li>Rapid Corona Test Assistant – Jun 2021 – Aug 2021</li>
-        </ul>
-      </div>
+    <div class="cv-card">
+      <strong>Student Researcher — Optimal Transport</strong> (Internship + Master's Thesis)<br>
+      Université de Bordeaux | Feb 2020 – Aug 2020 | Bordeaux, France
+      <details class="cv-details">
+        <summary>Details</summary>
+        <div class="cv-details-body">
+          <p><strong>Title:</strong> "Semi-discrete Optimal Transport for Large-Scale Problems"</p>
+          <p>Gradient Descent & Stochastic Gradient Descent for image processing applications.</p>
+        </div>
+      </details>
     </div>
+  </div>
 
-    <!-- Education -->
-    <div class="cv-section">
-      <h2>Education</h2>
-      
-      <div class="cv-item">
-        <h4>M.Sc. in Scientific Computing (GPA 1.2 ~ Excellent)</h4>
-        <div class="meta">Technical University of Berlin (TUB) | Apr 2021 – May 2023 | Berlin, Germany</div>
-      </div>
-
-      <div class="cv-item">
-        <h4>M.Sc. in Mathematics, Modeling and Simulation</h4>
-        <div class="meta">University of Pau and Pays de l'Adour (UPPA) | Oct 2019 – Sep 2020 | Pau, France</div>
-      </div>
-
-      <div class="cv-item">
-        <h4>M.Sc. in Mathematics (Rank 1, GPA 1.0 ~ Excellent)</h4>
-        <div class="meta">Lebanese International University (LIU) | Feb 2018 – Aug 2019 | Beirut, Lebanon</div>
-      </div>
-
-      <div class="cv-item">
-        <h4>Master 1 in Pure Mathematics (Class Rank 4/15)</h4>
-        <div class="meta">Lebanese University (LU) | Oct 2014 – Sep 2015 | Beirut, Lebanon</div>
-      </div>
-
-      <div class="cv-item">
-        <h4>B.Sc. in Pure Mathematics</h4>
-        <div class="meta">Lebanese University (LU) | Oct 2008 – Sep 2012 | Beirut, Lebanon</div>
-      </div>
-    </div>
-
-    <!-- Research Projects & Courses -->
-    <div class="cv-section">
-      <h2>Research Projects & Advanced Courses</h2>
-      <div class="cv-item expandable" onclick="this.classList.toggle('expanded')">
-        <h4>🔬 Nonlinear Porous Medium Equation (Scientific Computing Project)</h4>
-        <div class="content">Voronoi FVM, Rothe method, Implicit Euler, Julia (ExtendableGrids.jl, DifferentialEquations.jl) — 1D & 2D simulations.</div>
-      </div>
-      <div class="cv-item expandable" onclick="this.classList.toggle('expanded')">
-        <h4>🔬 Semi-discrete Optimal Transport</h4>
-        <div class="content">Monge-Kantorovich, c-transform, Laguerre cells, Gradient Descent, Gaussian Noise.</div>
-      </div>
-      <!-- Add more expandable items for other projects/courses from PDFs -->
-    </div>
-
-    <!-- Achievements -->
-    <div class="cv-section">
-      <h2>Achievements & Scholarships</h2>
-      <ul>
-        <li>Received A's in Master's Thesis and Research Internship (Koopman Theory)</li>
-        <li>Scholarship from Region Nouvelle-Aquitaine for excellence in Mathematics (UPPA)</li>
-        <li>Ranked 1st in Number Theory (LU, Master 1)</li>
-        <li>Excellent grades in Numerical PDEs, Scientific Computing, Bayesian Modelling, Nonlinear Optimization (TUB)</li>
+  <!-- ACHIEVEMENTS -->
+  <div class="cv-section" id="achievements">
+    <h2 class="cv-section-title"><i class="fa-solid fa-trophy"></i> Achievements</h2>
+    <div class="cv-card">
+      <ul style="padding-left: 1.2rem; line-height: 1.8;">
+        <li>A's in Master's Thesis, Research Internship, and key courses at TU Berlin</li>
+        <li>Ranked 1st in M.Sc. Applied Mathematics at LIU (GPA 4.0 US)</li>
+        <li>Excellence Scholarship from Région Nouvelle-Aquitaine (France)</li>
+        <li>Ranked 1st in Number Theory — Master 1, Lebanese University</li>
+        <li>Preprint: "A generalization bound for exit wave reconstruction via deep unfolding" (arXiv 2025)</li>
       </ul>
     </div>
+  </div>
 
-  </main>
+</main>
 
-  <footer>© 2026 Moussa Atwi</footer>
+<footer>© 2026 Moussa Atwi · Mathematics & Poetry</footer>
 </body>
 </html>
+
+
