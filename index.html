@@ -220,30 +220,40 @@
 
     <section id="cv">
       <h2>Curriculum Vitae</h2>
-      <p style="color: var(--muted); margin-bottom: 1.5rem;">
-        Comprehensive academic and professional profile.
+      <p style="color: var(--muted); margin-bottom: 2rem;">
+        Comprehensive academic and professional profile. Click on any card below to explore details.
       </p>
-      
-      <a href="cv.html" class="full-collection-btn" style="display: inline-flex; margin-bottom: 2rem;">
-        <i class="fa-solid fa-file-lines"></i>
-        <span>View Full CV</span>
-      </a>
     
-      <div class="cards" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
-        <div class="card">
+      <div class="cards" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+    
+        <div class="card" onclick="window.location.href='cv.html#current-positions'" style="cursor:pointer;">
           <h3>Current Positions</h3>
-          <p><strong>PhD Researcher (75%)</strong> – Sparse Exit Wave Reconstruction via Deep Unfolding @ RWTH Aachen</p>
-          <p><strong>E-Learning & Assessment Assistant (25%)</strong> – Digital teaching support</p>
+          <p><strong>Doctoral Researcher</strong> — Sparse Exit Wave Reconstruction via Deep Unfolding @ RWTH Aachen University</p>
+          <p><strong>E-Learning & Assessment Assistant</strong> — Digital teaching support</p>
         </div>
-        <div class="card">
+    
+        <div class="card" onclick="window.location.href='cv.html#education'" style="cursor:pointer;">
           <h3>Education</h3>
-          <p>M.Sc. Scientific Computing (TUB) • M.Sc. Mathematics (LIU, UPPA) • Strong background in Applied Math & Scientific Computing</p>
+          <p>M.Sc. Scientific Computing (TUB) • M.Sc. Mathematics, Modeling & Simulation (UPPA) • M.Sc. Applied Mathematics (LIU, Rank 1)</p>
         </div>
-        <div class="card">
-          <h3>Key Expertise</h3>
-          <p>Deep Unfolding • Phase Retrieval • Optimal Transport • Koopman Operators • Numerical PDEs • Optimization</p>
+    
+        <div class="card" onclick="window.location.href='cv.html#research'" style="cursor:pointer;">
+          <h3>Research Experience</h3>
+          <p>Koopman Theory (ZIB) • Optimal Transport (Bordeaux) • Deep Unfolding & Phase Retrieval (RWTH)</p>
         </div>
+    
+        <div class="card" onclick="window.location.href='cv.html#achievements'" style="cursor:pointer;">
+          <h3>Achievements</h3>
+          <p>Multiple A's • Excellence Scholarship • Published Preprint • Top Rankings</p>
+        </div>
+    
       </div>
+    
+      <p style="margin-top: 2rem;">
+        <a href="cv.html" class="full-collection-btn">
+          <i class="fa-solid fa-file-lines"></i> View Full Detailed CV
+        </a>
+      </p>
     </section>
 
     <section id="contact">
