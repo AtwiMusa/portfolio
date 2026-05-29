@@ -7,29 +7,21 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <script>
-    MathJax = {
-      tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
-        displayMath: [['$$', '$$'], ['\\[', '\\]']]
-      }
-    };
+    MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] } };
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
 </head>
 <body>
 
+<!-- ══ HEADER ══ -->
 <header>
   <h1>Moussa Atwi</h1>
-  <p>PhD Student in Mathematics · Nonlinear Inverse Problems · Deep Unfolding · Scientific Computing · Arabic Poetry</p>
-  <div class="title-lines">
-    <span class="line"></span>
-    <span class="line"></span>
-  </div>
+  <p>Mathematics · Scientific Computing · Machine Learning · Poetry</p>
+  <div class="title-lines"><span class="line"></span><span class="line"></span></div>
   <nav>
-    <a href="#about">About</a>
-    <a href="#publications">Publications</a>
+    <a href="#research">Research</a>
+    <a href="#resume">Resume</a>
     <a href="#poetry">Poetry</a>
-    <a href="#cv">CV</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
@@ -37,91 +29,127 @@
 <main>
 
   <!-- ══════════════════════════════════════════ -->
-  <!-- ABOUT                                      -->
+  <!-- RESEARCH & PUBLICATIONS                    -->
   <!-- ══════════════════════════════════════════ -->
-  <section id="about">
-    <h2><i class="fa-solid fa-user"></i> About Me</h2>
-    <div class="about about-styled">
+  <section id="research">
+    <h2><i class="fa-solid fa-flask-vial"></i> Research &amp; Publications</h2>
+
+    <!-- Short intro -->
+    <div class="about about-styled" style="margin-bottom:2rem;">
       <div class="about-image">
         <img src="Port_Image.jpg" alt="Moussa Atwi" />
         <span class="image-ring"></span>
       </div>
       <div class="about-text">
-        <p class="about-intro">Mathematics · Scientific Computing · Machine Learning · Poetry</p>
+        <p class="about-intro">PhD · RWTH Aachen University</p>
         <p>
-          I am a <strong>PhD student in Applied Mathematics</strong> at RWTH Aachen University, working on
-          <strong>nonlinear inverse problems</strong> with a focus on
-          <strong>exit wave reconstruction</strong> and <strong>phase retrieval</strong>
-          arising in Transmission Electron Microscopy (TEM).
+          I work on <strong>nonlinear inverse problems</strong> — specifically exit wave reconstruction
+          and phase retrieval in Transmission Electron Microscopy, using
+          <strong>deep unfolding</strong> and proximal gradient methods.
         </p>
         <p>
-          My research combines <strong>deep unfolding</strong>, proximal gradient algorithms,
-          and sparse reconstruction methods. I am also interested in optimal transport,
-          Koopman theory, and Bayesian modelling.
+          M.Sc. Scientific Computing (TU Berlin) · M.Sc. Mathematics (UPPA, France) ·
+          M.Sc. Applied Mathematics (LIU, Lebanon, Rank 1). Also an Arabic poet —
+          <em>رَشْفَةُ أَلَمِ</em> contains more than 80 romantic poems.
         </p>
-        <p>
-          I hold an M.Sc. in Scientific Computing from TU Berlin (GPA 1.2),
-          an M.Sc. in Mathematics, Modeling and Simulation from UPPA (France, excellence scholarship),
-          and an M.Sc. in Applied Mathematics from LIU, Lebanon (Rank 1, GPA 4.0).
-        </p>
-        <p>
-          Alongside research, I have teaching experience at the high-school and university level,
-          and I write <strong>Arabic romantic poetry</strong> — collected in
-          <em>رَشْفَةُ أَلَمِ</em>, a volume of more than 80 poems.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════ -->
-  <!-- PUBLICATIONS                               -->
-  <!-- ══════════════════════════════════════════ -->
-  <section id="publications">
-    <h2><i class="fa-solid fa-book"></i> Publications &amp; Preprints</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>A generalization bound for exit wave reconstruction via deep unfolding</h3>
-        <p class="pub-date">Preprint · arXiv 2025</p>
-        <details class="abstract-details">
-          <summary>Show Abstract &amp; Keywords</summary>
-          <div class="abstract-content">
-            <p>
-              Transmission Electron Microscopy enables high-resolution imaging of materials,
-              but the resulting images are difficult to interpret directly.
-              One way to address this is exit wave reconstruction — the recovery of the
-              complex-valued electron wave at the specimen's exit plane from intensity-only
-              measurements. This is an inverse problem with a nonlinear forward model.
-              We consider a simplified forward model, making the problem equivalent to phase
-              retrieval, and propose a discretized regularized variational formulation.
-              To solve the resulting non-convex problem, we employ the proximal gradient
-              algorithm (PGA) and unfold its iterations into a neural network, where each
-              layer corresponds to one PGA step with learnable parameters. This unrolling
-              approach, inspired by LISTA, enables improved reconstruction quality,
-              interpretability, and implicit dictionary learning from data.
-              We analyze the effect of parameter perturbations and show that they can
-              accumulate exponentially with the number of layers $L$. Building on proof
-              techniques of Behboodi et al., originally developed for LISTA, we extend
-              the analysis to our nonlinear setting and establish generalization error
-              bounds of order $\mathcal{O}(\sqrt{L})$. Numerical experiments support
-              the exponential growth of parameter perturbations.
-            </p>
-            <p class="keywords">
-              <strong>Keywords:</strong> phase retrieval · TEM imaging · sparse reconstruction ·
-              deep unfolding · proximal gradient algorithm · generalization error · Rademacher complexity.
-            </p>
-          </div>
-        </details>
-        <div class="pub-links">
-          <a href="pdfs/exit-wave-deep-unfolding.pdf" target="_blank">
-            <i class="fa-solid fa-file-pdf"></i> View PDF
+        <!-- SFB links -->
+        <div class="sfb-links">
+          <a href="https://sfb1481.rwth-aachen.de/research/area-a/project-a08" target="_blank" class="sfb-badge">
+            <img src="https://sfb1481.rwth-aachen.de/typo3conf/ext/sitepackage/Resources/Public/Favicons/ms-icon-144x144.png"
+                 alt="SFB 1481"
+                 onerror="this.style.display='none'">
+            Project A08
           </a>
-          <a href="https://arxiv.org/abs/2511.06413" target="_blank">
-            <i class="fa-solid fa-arrow-up-right-from-square"></i> arXiv
+          <a href="https://sfb1481.rwth-aachen.de/" target="_blank" class="sfb-badge">
+            <img src="https://sfb1481.rwth-aachen.de/typo3conf/ext/sitepackage/Resources/Public/Favicons/ms-icon-144x144.png"
+                 alt="SFB 1481"
+                 onerror="this.style.display='none'">
+            SFB 1481 — Sparsity &amp; Singular Structures
           </a>
         </div>
       </div>
     </div>
+
+    <!-- Preprint -->
+    <div class="card">
+      <h3>A generalization bound for exit wave reconstruction via deep unfolding</h3>
+      <p class="pub-date">Preprint · arXiv 2025</p>
+      <details class="abstract-details">
+        <summary>Abstract &amp; Keywords</summary>
+        <div class="abstract-content">
+          <p>
+            Transmission Electron Microscopy enables high-resolution imaging of materials,
+            but the resulting images are difficult to interpret directly.
+            One way to address this is exit wave reconstruction — the recovery of the
+            complex-valued electron wave at the specimen's exit plane from intensity-only
+            measurements — an inverse problem with a nonlinear forward model.
+            We consider a simplified forward model making the problem equivalent to phase retrieval,
+            and propose a discretized regularized variational formulation. To solve the resulting
+            non-convex problem, we employ the proximal gradient algorithm (PGA) and unfold its
+            iterations into a neural network, where each layer corresponds to one PGA step with
+            learnable parameters. This unrolling approach, inspired by LISTA, enables improved
+            reconstruction quality, interpretability, and implicit dictionary learning from data.
+            We establish generalization error bounds of order $\mathcal{O}(\sqrt{L})$.
+          </p>
+          <p class="keywords">
+            Keywords: phase retrieval · TEM imaging · sparse reconstruction · deep unfolding ·
+            proximal gradient algorithm · generalization error · Rademacher complexity.
+          </p>
+        </div>
+      </details>
+      <div class="pub-links">
+        <a href="pdfs/exit-wave-deep-unfolding.pdf" target="_blank">
+          <i class="fa-solid fa-file-pdf"></i> PDF
+        </a>
+        <a href="https://arxiv.org/abs/2511.06413" target="_blank">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> arXiv
+        </a>
+      </div>
+    </div>
+
   </section>
+
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- RESUME                                     -->
+  <!-- ══════════════════════════════════════════ -->
+  <section id="resume">
+    <h2><i class="fa-solid fa-file-lines"></i> Resume</h2>
+
+    <div class="cv-tiles-grid">
+      <a href="cv.html#research" class="cv-tile">
+        <div class="cv-tile-title"><i class="fa-solid fa-flask-vial"></i> Research Experience</div>
+      </a>
+      <a href="cv.html#education" class="cv-tile">
+        <div class="cv-tile-title"><i class="fa-solid fa-graduation-cap"></i> Education</div>
+      </a>
+      <a href="cv.html#achievements" class="cv-tile">
+        <div class="cv-tile-title"><i class="fa-solid fa-trophy"></i> Achievements</div>
+      </a>
+      <a href="cv.html#skills" class="cv-tile">
+        <div class="cv-tile-title"><i class="fa-solid fa-code"></i> Skills</div>
+      </a>
+      <a href="cv.html#languages" class="cv-tile">
+        <div class="cv-tile-title"><i class="fa-solid fa-language"></i> Languages</div>
+      </a>
+      <a href="cv.html#other" class="cv-tile">
+        <div class="cv-tile-title"><i class="fa-solid fa-chalkboard-user"></i> Other Work</div>
+      </a>
+    </div>
+
+    <div style="text-align:center; margin-top:0.5rem;">
+      <div class="pdf-row" style="justify-content:center; margin-bottom:0;">
+        <a href="cv.html" class="full-collection-btn">
+          <i class="fa-solid fa-file-lines"></i> Full Resume
+        </a>
+        <a href="pdfs/Latest_version.pdf" target="_blank" class="pdf-btn">
+          <i class="fa-solid fa-file-pdf"></i> Download PDF
+        </a>
+      </div>
+    </div>
+
+  </section>
+
 
   <!-- ══════════════════════════════════════════ -->
   <!-- POETRY                                     -->
@@ -146,24 +174,19 @@
           <h3 class="poem-title">الخَرَابُ وَالرَّحِيلُ</h3>
           <div class="poem-content">
             <div class="poem-preview"><br>
-              هَلْ لَا شَعَرْتَ يَا هَذَا، أَنَّكَ أَحْدَثْتَ خَرَابًا<br>
-              وَإِلَيْكَ رَحَلْتُ بِلَا شَكْوَى، وَكَأَنِّي خُلِقْتُ أَهْوَاكَ<br>
-              قُلْ لِي مَا حَلَّ بِقَلْبَيْنَا، وَكَيْفَ نَسِيتَ شَوَارِعَنَا<br>
-              هُنَا كُنَّا نَتَعَانَقُ حُبًّا، وَهُنَا أَهْدَيْتَنِي أَزْهَارًا ...
-            </div>
+هَلْ لَا شَعَرْتَ يَا هَذَا، أَنَّكَ أَحْدَثْتَ خَرَابًا
+وَإِلَيْكَ رَحَلْتُ بِلَا شَكْوَى، وَكَأَنِّي خُلِقْتُ أَهْوَاكَ
+قُلْ لِي مَا حَلَّ بِقَلْبَيْنَا، وَكَيْفَ نَسِيتَ شَوَارِعَنَا
+هُنَا كُنَّا نَتَعَانَقُ حُبًّا، وَهُنَا أَهْدَيْتَنِي أَزْهَارًا ...</div>
             <div class="poem-full">
-              هَلْ لَا شَعَرْتَ يَا هَذَا، أَنَّكَ أَحْدَثْتَ خَرَابًا<br>
-              وَإِلَيْكَ رَحَلْتُ بِلَا شَكْوَى، وَكَأَنِّي خُلِقْتُ أَهْوَاكَ<br>
-              قُلْ لِي مَا حَلَّ بِقَلْبَيْنَا، وَكَيْفَ نَسِيتَ شَوَارِعَنَا<br>
-              هُنَا كُنَّا نَتَعَانَقُ حُبًّا، وَهُنَا أَهْدَيْتَنِي أَزْهَارًا<br>
-              كَيْفَ مَزَّقْتَ عَوَاطِفَنَا، وَكَتَبْتَ رَحِيلَ ذِكْرَانَا<br>
-              وَكُؤُوسُ الخَمْرِ تُعَانِقُنِي، وَعِطْرُكَ فِي كُلِّ ثَارَ<br>
-              أَصْبَحْتُ بَعْدَكَ شَاعِرَةً، وَدُمُوعِي أَضْحَتْ أَبْيَاتًا<br>
-              وَغَفَوْتُ أَحْضُنُ صُورَتَنَا، أَشْكُو لِمَبْسَمِكَ وَعَيْنَاكَ<br>
-              كَيْفَ كَتَبْتَ نِهَايَتَنَا، وَرَحَلْتَ دُونَ اسْتِئْذَانَ<br>
-              أَيُّ الأَسْرَارِ هِيَ أَنْتَ، وَكَيْفَ خُلِقْتَ إِنْسَانًا<br>
-              ظُلْمُ الأَفْئِدَةِ حَرَامٌ، وَأَشَدُّهُ لَوْ تَدْرِي عِقَابًا
-            </div>
+هَلْ لَا شَعَرْتَ يَا هَذَا، أَنَّكَ أَحْدَثْتَ خَرَابًا
+وَإِلَيْكَ رَحَلْتُ بِلَا شَكْوَى، وَكَأَنِّي خُلِقْتُ أَهْوَاكَ
+قُلْ لِي مَا حَلَّ بِقَلْبَيْنَا، وَكَيْفَ نَسِيتَ شَوَارِعَنَا
+هُنَا كُنَّا نَتَعَانَقُ حُبًّا، وَهُنَا أَهْدَيْتَنِي أَزْهَارًا
+كَيْفَ مَزَّقْتَ عَوَاطِفَنَا، وَكَتَبْتَ رَحِيلَ ذِكْرَانَا
+أَصْبَحْتُ بَعْدَكَ شَاعِرَةً، وَدُمُوعِي أَضْحَتْ أَبْيَاتًا
+كَيْفَ كَتَبْتَ نِهَايَتَنَا، وَرَحَلْتَ دُونَ اسْتِئْذَانَ
+ظُلْمُ الأَفْئِدَةِ حَرَامٌ، وَأَشَدُّهُ لَوْ تَدْرِي عِقَابًا</div>
           </div>
           <div class="expand-toggle">اقرأ المزيد</div>
         </div>
@@ -174,23 +197,19 @@
           <h3 class="poem-title">الهَجْرُ وَالْعَوْدَةُ</h3>
           <div class="poem-content">
             <div class="poem-preview"><br>
-              يَا هَاجِرِي<br>
-              كَيْفَ مَرَرْتِ غَرِيبَةً وَكَأَنَّنِي<br>
-              مَا كُنْتُ عَيْنَيْكِ وَكُنْتُ الْحُبَّ الأَجْمَلِ<br>
-              أنا لَسْتُ أَدْرِي فِي الْهَوَى أَيُّ الْحَنِينِ أَنْتِ ...
-            </div>
+يَا هَاجِرِي
+كَيْفَ مَرَرْتِ غَرِيبَةً وَكَأَنَّنِي
+مَا كُنْتُ عَيْنَيْكِ وَكُنْتُ الْحُبَّ الأَجْمَلِ
+أنا لَسْتُ أَدْرِي فِي الْهَوَى أَيُّ الْحَنِينِ أَنْتِ ...</div>
             <div class="poem-full">
-              يَا هَاجِرِي<br>
-              كَيْفَ مَرَرْتِ غَرِيبَةً وَكَأَنَّنِي<br>
-              مَا كُنْتُ عَيْنَيْكِ وَكُنْتُ الْحُبَّ الأَجْمَلِ<br>
-              أنا لَسْتُ أَدْرِي فِي الْهَوَى أَيُّ الْحَنِينِ أَنْتِ<br>
-              كَيْفَ أَتَيْتِ وَكَيْفَ عَبَرْتِ وَكَيْفَ هَجَرْتِ<br>
-              أَتَظُنِّ أَنَّكِ بَعْدَ هَذَا هَزَمْتِنِي<br>
-              فِي الْحُبِّ لَا مَهْزُومٌ وَلَا مُنْتَصِرِ<br>
-              هَلْ لَا نَعُودُ بَعْدَ هَجْرِنَا مَرَّةً، وَأَسِيرُ بَيْنَ الْعَالَمِينَ وَأَنْتِ لِي<br>
-              وَأَذُوبُ فِيكِ بِكُلِّ دَقِيقَةٍ وَأَبُوحُ لِلْأَحْضَانِ كَيْفَ كَسَرْتِنِي<br>
-              وَأَعُودُ مِنْ بَعْدِ الْوِصَالِ بِقُبْلَةٍ لَا تُفَارِقُنِي حَتَّى نَنْتَهِي
-            </div>
+يَا هَاجِرِي
+كَيْفَ مَرَرْتِ غَرِيبَةً وَكَأَنَّنِي
+مَا كُنْتُ عَيْنَيْكِ وَكُنْتُ الْحُبَّ الأَجْمَلِ
+أنا لَسْتُ أَدْرِي فِي الْهَوَى أَيُّ الْحَنِينِ أَنْتِ
+كَيْفَ أَتَيْتِ وَكَيْفَ عَبَرْتِ وَكَيْفَ هَجَرْتِ
+فِي الْحُبِّ لَا مَهْزُومٌ وَلَا مُنْتَصِرِ
+وَأَذُوبُ فِيكِ بِكُلِّ دَقِيقَةٍ وَأَبُوحُ لِلْأَحْضَانِ كَيْفَ كَسَرْتِنِي
+وَأَعُودُ مِنْ بَعْدِ الْوِصَالِ بِقُبْلَةٍ لَا تُفَارِقُنِي حَتَّى نَنْتَهِي</div>
           </div>
           <div class="expand-toggle">اقرأ المزيد</div>
         </div>
@@ -201,22 +220,19 @@
           <h3 class="poem-title">فِقْدَانُ الحَبِيبِ</h3>
           <div class="poem-content">
             <div class="poem-preview"><br>
-              أَيْنَ أَنَا الآنَ؟<br>
-              كُلُّ مَا فِيكِ اليَوْمَ قَدْ بَانَ، كُلُّ مَاضِينَا قَدْ هَانَ<br>
-              أَيْنَ الحَنِينُ، أَيْنَ العِنَاقُ، وَأَيْنَ كُلُّ مَا كَانَ؟<br>
-              نَهَدَاتُكِ عَلَى صَدْرِي أَيْنَ هِيَ الآنَ؟ ...
-            </div>
+أَيْنَ أَنَا الآنَ؟
+كُلُّ مَا فِيكِ اليَوْمَ قَدْ بَانَ، كُلُّ مَاضِينَا قَدْ هَانَ
+أَيْنَ الحَنِينُ، أَيْنَ العِنَاقُ، وَأَيْنَ كُلُّ مَا كَانَ؟
+نَهَدَاتُكِ عَلَى صَدْرِي أَيْنَ هِيَ الآنَ؟ ...</div>
             <div class="poem-full">
-              أَيْنَ أَنَا الآنَ؟<br>
-              كُلُّ مَا فِيكِ اليَوْمَ قَدْ بَانَ، كُلُّ مَاضِينَا قَدْ هَانَ<br>
-              أَيْنَ الحَنِينُ، أَيْنَ العِنَاقُ، وَأَيْنَ كُلُّ مَا كَانَ؟<br>
-              نَهَدَاتُكِ عَلَى صَدْرِي أَيْنَ هِيَ الآنَ؟<br>
-              كُتِبَ الرَّحِيلُ وَالْوَقْتُ قَدْ حَانَ، وَثَغْرُكِ الخَمْرِيُّ لِغَيْرِي قَدْ لَانَ<br>
-              قِصَصُ الهَوَى تُبْكِينَا، تُعَذِّبُنَا أَحْيَانًا<br>
-              لَا تَرْحَلِي، فَبَعْضُ بَدَايَاتِ الحُبِّ نِيسَانَ<br>
-              أَنَا لَا أُنَاشِدُكِ الرُّجُوعَ إِلَى حُضْنِي الآنَ، فَكُلُّ مَا كَانَ قَدْ فَانَ<br>
-              وَلَكِنْ، لَا تَقْتُلِي نَفْسَكِ انْتِقَامَ عَاشِقٍ وَلْهَانَ
-            </div>
+أَيْنَ أَنَا الآنَ؟
+كُلُّ مَا فِيكِ اليَوْمَ قَدْ بَانَ، كُلُّ مَاضِينَا قَدْ هَانَ
+أَيْنَ الحَنِينُ، أَيْنَ العِنَاقُ، وَأَيْنَ كُلُّ مَا كَانَ؟
+نَهَدَاتُكِ عَلَى صَدْرِي أَيْنَ هِيَ الآنَ؟
+كُتِبَ الرَّحِيلُ وَالْوَقْتُ قَدْ حَانَ
+قِصَصُ الهَوَى تُبْكِينَا، تُعَذِّبُنَا أَحْيَانًا
+لَا تَرْحَلِي، فَبَعْضُ بَدَايَاتِ الحُبِّ نِيسَانَ
+وَلَكِنْ، لَا تَقْتُلِي نَفْسَكِ انْتِقَامَ عَاشِقٍ وَلْهَانَ</div>
           </div>
           <div class="expand-toggle">اقرأ المزيد</div>
         </div>
@@ -234,45 +250,6 @@
     </p>
   </section>
 
-  <!-- ══════════════════════════════════════════ -->
-  <!-- CV                                         -->
-  <!-- ══════════════════════════════════════════ -->
-  <section id="cv">
-    <h2><i class="fa-solid fa-file-lines"></i> Curriculum Vitae</h2>
-    <p style="color:var(--muted); margin-bottom:1.8rem; font-size:0.95rem; font-style:italic;">
-      Comprehensive academic and professional profile. Click any card to explore details.
-    </p>
-
-    <div class="cards">
-
-      <div class="card" onclick="window.location.href='cv.html#research'" style="cursor:pointer;">
-        <h3>Research Experience</h3>
-        <p>PhD at RWTH Aachen · Koopman Theory at ZIB Berlin · Optimal Transport at Bordeaux · E-Learning Assistant</p>
-      </div>
-
-      <div class="card" onclick="window.location.href='cv.html#education'" style="cursor:pointer;">
-        <h3>Education</h3>
-        <p>M.Sc. Scientific Computing (TUB, GPA 1.2) · M.Sc. Mathematics (UPPA, Scholarship) · M.Sc. Applied Mathematics (LIU, Rank 1) · Master 1 &amp; B.Sc. Pure Mathematics (LU)</p>
-      </div>
-
-      <div class="card" onclick="window.location.href='cv.html#achievements'" style="cursor:pointer;">
-        <h3>Achievements</h3>
-        <p>arXiv Preprint 2025 · Excellence Scholarship · Grade 1.0 at ZIB · Rank 1st at LIU · Rank 1st in Number Theory at LU</p>
-      </div>
-
-      <div class="card" onclick="window.location.href='cv.html#skills'" style="cursor:pointer;">
-        <h3>Skills</h3>
-        <p>PDEs · ML · Deep Unfolding · Optimal Transport · Python · Julia · Matlab · C/C++ · LaTeX</p>
-      </div>
-
-    </div>
-
-    <p style="margin-top:2rem;">
-      <a href="cv.html" class="full-collection-btn">
-        <i class="fa-solid fa-file-lines"></i> View Full Detailed CV
-      </a>
-    </p>
-  </section>
 
   <!-- ══════════════════════════════════════════ -->
   <!-- CONTACT                                    -->
@@ -281,24 +258,19 @@
     <h2><i class="fa-solid fa-envelope"></i> Contact</h2>
     <div class="contact-row">
       <a href="mailto:atwi@ssd.rwth-aachen.de" class="contact-item" data-tooltip="Send email">
-        <i class="fa-solid fa-envelope"></i>
-        <span>Email</span>
+        <i class="fa-solid fa-envelope"></i><span>Email</span>
       </a>
-      <a href="https://github.com/AtwiMusa" target="_blank" class="contact-item" data-tooltip="GitHub repositories">
-        <i class="fa-brands fa-github"></i>
-        <span>GitHub</span>
+      <a href="https://github.com/AtwiMusa" target="_blank" class="contact-item" data-tooltip="GitHub">
+        <i class="fa-brands fa-github"></i><span>GitHub</span>
       </a>
-      <a href="https://www.linkedin.com/in/musaatwi/" target="_blank" class="contact-item" data-tooltip="LinkedIn profile">
-        <i class="fa-brands fa-linkedin"></i>
-        <span>LinkedIn</span>
+      <a href="https://www.linkedin.com/in/musaatwi/" target="_blank" class="contact-item" data-tooltip="LinkedIn">
+        <i class="fa-brands fa-linkedin"></i><span>LinkedIn</span>
       </a>
-      <a href="https://www.researchgate.net/profile/Moussa-Atwi" target="_blank" class="contact-item" data-tooltip="ResearchGate profile">
-        <i class="fa-brands fa-researchgate"></i>
-        <span>ResearchGate</span>
+      <a href="https://www.researchgate.net/profile/Moussa-Atwi" target="_blank" class="contact-item" data-tooltip="ResearchGate">
+        <i class="fa-brands fa-researchgate"></i><span>ResearchGate</span>
       </a>
       <a href="https://scholar.google.com" target="_blank" class="contact-item" data-tooltip="Google Scholar">
-        <i class="fa-solid fa-graduation-cap"></i>
-        <span>Google Scholar</span>
+        <i class="fa-solid fa-graduation-cap"></i><span>Scholar</span>
       </a>
     </div>
   </section>
@@ -306,7 +278,6 @@
 </main>
 
 <footer>© 2026 Moussa Atwi &nbsp;·&nbsp; Mathematics · Scientific Computing · Machine Learning · Poetry</footer>
-
 <script src="js/script.js" defer></script>
 </body>
 </html>
