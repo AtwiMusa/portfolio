@@ -1,701 +1,630 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Academic Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Mono:wght@300;400;500&family=Spectral:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet"/>
-<style>
-  :root {
-    --bg: #0d0f14;
-    --surface: #13161e;
-    --surface2: #1a1e2a;
-    --border: #252a38;
-    --accent: #c8a96e;
-    --accent2: #7eb8c9;
-    --text: #e8e4da;
-    --muted: #8a8880;
-    --highlight: #d4c5a0;
-    --red: #c97878;
-  }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Spectral', serif;
-    font-size: 17px;
-    line-height: 1.75;
-    min-height: 100vh;
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Curriculum Vitae — Moussa Atwi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@500;700&family=Cairo:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { background: linear-gradient(180deg,#020617,var(--bg)); }
+    .cv-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 4vw 6rem;
+    }
+    .cv-section { margin-bottom: 3.8rem; }
+    .cv-section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: var(--accent);
+      border-bottom: 1px solid rgba(56,189,248,0.25);
+      padding-bottom: 0.6rem;
+      margin-bottom: 1.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .cv-card {
+      background: #111827;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 1.1rem;
+      padding: 1.6rem 1.9rem;
+      margin-bottom: 1.3rem;
+      transition: all 0.3s ease;
+    }
+    .cv-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+    }
+    .cv-card-header { margin-bottom: 1rem; }
+    .cv-details-body {
+      margin-top: 1rem;
+      padding: 1.1rem 1.4rem;
+      background: rgba(2,6,23,0.6);
+      border-radius: 0.7rem;
+      border-left: 3px solid var(--accent);
+      line-height: 1.7;
+      font-size: 0.93rem;
+      color: var(--text);
+    }
+    .cv-details-body h5 {
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      margin-top: 1rem;
+      letter-spacing: 0.02em;
+    }
+    .cv-details-body h5:first-child { margin-top: 0; }
+    .cv-details-body ul {
+      margin-top: 0.4rem;
+      padding-left: 1.2rem;
+    }
+    .cv-details-body li {
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+    details.cv-details summary {
+      cursor: pointer;
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 0.5rem 0 0 0;
+      margin-top: 0.8rem;
+      outline: none;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      opacity: 0.85;
+      transition: opacity 0.2s;
+    }
+    details.cv-details summary:hover { opacity: 1; }
+    details.cv-details summary::before {
+      content: '▸';
+      font-size: 0.8rem;
+      transition: transform 0.25s;
+      display: inline-block;
+    }
+    details.cv-details[open] summary::before { transform: rotate(90deg); }
 
-  /* ── NAV ── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: rgba(13,15,20,0.92);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border);
-    padding: 0 2rem;
-    display: flex; align-items: center; justify-content: space-between;
-    height: 52px;
-  }
-  .nav-name { font-family: 'EB Garamond', serif; font-size: 1.1rem; color: var(--accent); letter-spacing: .04em; }
-  .nav-links { display: flex; gap: 1.6rem; list-style: none; }
-  .nav-links a { font-family: 'DM Mono', monospace; font-size: .72rem; color: var(--muted); text-decoration: none; letter-spacing: .08em; text-transform: uppercase; transition: color .2s; }
-  .nav-links a:hover { color: var(--accent); }
+    .tag {
+      display: inline-block;
+      padding: 0.1rem 0.55rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      margin-left: 0.4rem;
+    }
+    .tag-green  { background: rgba(134,239,172,0.1); color: #86efac; }
+    .tag-blue   { background: rgba(56,189,248,0.12); color: #38bdf8; }
+    .tag-amber  { background: rgba(251,191,36,0.12); color: #fbbf24; }
 
-  /* ── HERO ── */
-  header {
-    padding: 120px 2rem 70px;
-    max-width: 860px; margin: 0 auto;
-    border-bottom: 1px solid var(--border);
-  }
-  .grade-note {
-    display: inline-block;
-    font-family: 'DM Mono', monospace; font-size: .68rem;
-    color: var(--accent2); border: 1px solid var(--accent2);
-    padding: .2rem .7rem; border-radius: 3px;
-    margin-bottom: 1.4rem; letter-spacing: .07em;
-  }
-  h1 { font-family: 'EB Garamond', serif; font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 400; line-height: 1.15; color: var(--highlight); margin-bottom: .5rem; }
-  .subtitle { font-family: 'DM Mono', monospace; font-size: .8rem; color: var(--accent); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 1.2rem; }
-  .hero-desc { color: var(--muted); max-width: 620px; font-style: italic; font-size: .97rem; }
-  .hero-links { margin-top: 1.6rem; display: flex; gap: 1rem; flex-wrap: wrap; }
-  .btn {
-    font-family: 'DM Mono', monospace; font-size: .72rem; letter-spacing: .08em;
-    padding: .45rem 1.1rem; border-radius: 3px; text-decoration: none; cursor: pointer;
-    transition: all .2s; border: 1px solid;
-  }
-  .btn-primary { background: var(--accent); color: var(--bg); border-color: var(--accent); }
-  .btn-primary:hover { background: transparent; color: var(--accent); }
-  .btn-outline { background: transparent; color: var(--accent2); border-color: var(--accent2); }
-  .btn-outline:hover { background: var(--accent2); color: var(--bg); }
+    .pdf-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+    .pdf-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.55rem 1.2rem;
+      border-radius: 999px;
+      border: 1px solid rgba(56,189,248,0.25);
+      color: var(--accent);
+      background: rgba(56,189,248,0.07);
+      text-decoration: none;
+      font-size: 0.92rem;
+      transition: all 0.3s ease;
+    }
+    .pdf-btn:hover {
+      background: rgba(56,189,248,0.15);
+      transform: translateY(-2px);
+    }
 
-  /* ── LAYOUT ── */
-  main { max-width: 860px; margin: 0 auto; padding: 0 2rem 6rem; }
+    /* attach slot — placeholder for future PDF links */
+    .attach-slot {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin-top: 0.7rem;
+      padding: 0.3rem 0.9rem;
+      border-radius: 999px;
+      border: 1px dashed rgba(56,189,248,0.35);
+      color: var(--muted);
+      font-size: 0.82rem;
+      cursor: default;
+      opacity: 0.7;
+    }
+    .attach-slot a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .attach-slot a:hover { text-decoration: underline; }
 
-  section { padding: 4rem 0 2.5rem; border-bottom: 1px solid var(--border); }
-  section:last-child { border-bottom: none; }
-
-  h2 {
-    font-family: 'EB Garamond', serif; font-size: 1.55rem; font-weight: 400;
-    color: var(--accent); margin-bottom: 2rem; padding-bottom: .5rem;
-    border-bottom: 1px solid var(--border); letter-spacing: .02em;
-  }
-  h3 { font-family: 'EB Garamond', serif; font-size: 1.2rem; font-weight: 600; color: var(--highlight); margin-bottom: .25rem; }
-  h4 { font-family: 'DM Mono', monospace; font-size: .75rem; color: var(--accent2); letter-spacing: .07em; text-transform: uppercase; margin-bottom: .6rem; }
-
-  /* ── ENTRY CARD ── */
-  .entry {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: 5px; padding: 1.6rem 1.8rem; margin-bottom: 1.4rem;
-    position: relative;
-  }
-  .entry-meta {
-    display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;
-    margin-bottom: .7rem;
-  }
-  .tag {
-    font-family: 'DM Mono', monospace; font-size: .65rem; letter-spacing: .07em;
-    padding: .18rem .6rem; border-radius: 2px; text-transform: uppercase;
-  }
-  .tag-phd { background: #2a1f3a; color: #b89edc; border: 1px solid #4a3a6a; }
-  .tag-res { background: #1a2a2a; color: var(--accent2); border: 1px solid #2a4a4a; }
-  .tag-edu { background: #1a2218; color: #7ec97e; border: 1px solid #2a4a2a; }
-  .tag-work { background: #2a2218; color: #c9b07e; border: 1px solid #4a3a28; }
-  .date { font-family: 'DM Mono', monospace; font-size: .7rem; color: var(--muted); }
-  .institution { font-family: 'DM Mono', monospace; font-size: .75rem; color: var(--accent); }
-
-  p { margin-bottom: .6rem; }
-  ul { margin: .5rem 0 .7rem 1.2rem; }
-  li { margin-bottom: .3rem; font-size: .95rem; color: var(--text); }
-
-  /* ── GRADE BADGE ── */
-  .grade-badge {
-    display: inline-block;
-    font-family: 'DM Mono', monospace; font-size: .68rem;
-    background: #2a1f10; color: var(--accent); border: 1px solid var(--accent);
-    padding: .15rem .55rem; border-radius: 2px; margin: .3rem .3rem .3rem 0;
-  }
-  .grade-badge.a { background: #1a2a18; color: #7ec97e; border-color: #7ec97e; }
-  .grade-badge.blue { background: #1a2030; color: var(--accent2); border-color: var(--accent2); }
-
-  /* ── PDF ATTACH ── */
-  .pdf-attach {
-    display: inline-flex; align-items: center; gap: .5rem;
-    font-family: 'DM Mono', monospace; font-size: .68rem; letter-spacing: .06em;
-    color: var(--muted); border: 1px dashed var(--border);
-    padding: .3rem .8rem; border-radius: 3px; margin-top: .6rem;
-    cursor: pointer; transition: all .2s; text-decoration: none;
-  }
-  .pdf-attach:hover { border-color: var(--accent); color: var(--accent); }
-  .pdf-attach input[type=file] { display: none; }
-  .pdf-attach-label { display: inline-flex; align-items: center; gap: .4rem; cursor: pointer; }
-
-  /* ── LINK / PREPRINT ── */
-  a.paper-link {
-    color: var(--accent2); text-decoration: none; border-bottom: 1px solid transparent;
-    transition: border-color .2s;
-  }
-  a.paper-link:hover { border-bottom-color: var(--accent2); }
-
-  /* ── COURSES GRID ── */
-  .courses {
-    display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .6rem;
-  }
-  .course-tag {
-    font-family: 'DM Mono', monospace; font-size: .65rem;
-    background: var(--surface2); border: 1px solid var(--border);
-    color: var(--muted); padding: .2rem .55rem; border-radius: 2px;
-  }
-
-  /* ── SKILLS GRID ── */
-  .skills-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(220px,1fr)); gap: 1rem; }
-  .skill-block { background: var(--surface); border: 1px solid var(--border); border-radius: 4px; padding: 1rem 1.2rem; }
-  .skill-block h4 { margin-bottom: .5rem; }
-  .skill-list { list-style: none; margin: 0; padding: 0; }
-  .skill-list li { font-size: .88rem; color: var(--muted); padding: .12rem 0; }
-
-  /* ── LANGUAGES ── */
-  .lang-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: .5rem; }
-  .lang-name { font-size: .95rem; }
-  .lang-level { font-family: 'DM Mono', monospace; font-size: .68rem; color: var(--accent); letter-spacing: .06em; }
-  .lang-bar { height: 3px; background: var(--border); border-radius: 2px; margin-top: .15rem; }
-  .lang-fill { height: 100%; background: var(--accent); border-radius: 2px; }
-
-  /* ── ACHIEVEMENTS ── */
-  .ach-item { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: .9rem; }
-  .ach-icon { font-size: 1.1rem; margin-top: .15rem; flex-shrink: 0; }
-  .ach-text { font-size: .93rem; }
-
-  /* ── FOOTER ── */
-  footer { text-align: center; padding: 2.5rem 1rem; font-family: 'DM Mono', monospace; font-size: .68rem; color: var(--muted); border-top: 1px solid var(--border); }
-
-  @media(max-width:600px) {
-    nav { padding: 0 1rem; }
-    header, main { padding-left: 1rem; padding-right: 1rem; }
-    h1 { font-size: 1.9rem; }
-  }
-</style>
+    .grade-note {
+      font-size: 0.82rem;
+      color: var(--muted);
+      font-style: italic;
+      margin-bottom: 0.5rem;
+    }
+  </style>
 </head>
 <body>
 
-<!-- ═══════════════════════════════ NAV ═══════════════════════════════ -->
-<nav>
-  <span class="nav-name">Academic Portfolio</span>
-  <ul class="nav-links">
-    <li><a href="#research">Research</a></li>
-    <li><a href="#achievements">Achievements</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#other">Other Work</a></li>
-  </ul>
-</nav>
-
-<!-- ═══════════════════════════════ HERO ══════════════════════════════ -->
 <header>
-  <div class="grade-note">Note — German grading scale: 1.0 = Excellent (equivalent to 4.0 USA GPA / Grade A)</div>
-  <p class="subtitle">Mathematics · Scientific Computing · Deep Learning</p>
-  <h1>Moussa Atwi</h1>
-  <p class="hero-desc">
-    PhD candidate and researcher in applied mathematics, scientific computing, and deep learning — 
-    with a focus on inverse problems, phase retrieval, and learned reconstruction methods. 
-    Research spanning TU Berlin, Zuse Institute Berlin (ZIB), and Université de Pau et des Pays de l'Adour (UPPA).
-  </p>
-  <div class="hero-links">
-    <a href="mailto:" class="btn btn-primary">Contact</a>
-    <a href="#research" class="btn btn-outline">View Research</a>
+  <h1>Curriculum Vitae</h1>
+  <div class="title-lines">
+    <span class="line"></span>
+    <span class="line"></span>
   </div>
+  <nav class="back-nav top-right">
+    <a href="index.html#cv">← Back to Portfolio</a>
+  </nav>
 </header>
 
-<main>
+<main class="cv-page">
 
-<!-- ═══════════════════════════════ RESEARCH EXPERIENCE ══════════════ -->
-<section id="research">
-  <h2>Research Experience</h2>
-
-  <!-- PhD -->
-  <div class="entry">
-    <div class="entry-meta">
-      <span class="tag tag-phd">PhD Research</span>
-      <span class="date">2023 – Present</span>
-      <span class="institution">Technische Universität Berlin (TU Berlin) &amp; Zuse Institute Berlin (ZIB)</span>
-    </div>
-    <h3>Doctoral Research in Applied Mathematics &amp; Deep Learning</h3>
-    <p style="color:var(--muted);font-size:.88rem;font-style:italic;">Note: This is a doctoral (PhD) research position — not a postdoctoral position.</p>
-    <p>
-      Conducting doctoral research at the intersection of deep learning, inverse problems, and phase retrieval,
-      with emphasis on learned iterative algorithms and deep unfolding. Key contributions include the development of 
-      generalization bounds for exit wave reconstruction methods using deep unfolding architectures applied to 
-      electron microscopy data.
-    </p>
-    <ul>
-      <li>Research on deep unfolding networks for inverse problems and exit wave reconstruction in electron microscopy.</li>
-      <li>Theoretical analysis of generalization bounds for learned iterative solvers.</li>
-      <li>Collaboration with ZIB Berlin on numerical methods and scientific computing.</li>
-      <li>E-learning assistant / teaching support position alongside doctoral research.</li>
-    </ul>
-    <p>
-      <strong>Preprint:</strong>
-      <a class="paper-link" href="https://arxiv.org/abs/XXXX.XXXXX" target="_blank" rel="noopener">
-        "A generalization bound for exit wave reconstruction via deep unfolding" — arXiv 2025
-      </a>
-      &nbsp;
-      <a class="paper-link btn btn-outline" href="https://arxiv.org/abs/XXXX.XXXXX" target="_blank" rel="noopener" style="font-size:.68rem;padding:.25rem .7rem;">
-        View PDF ↗
-      </a>
-    </p>
-    <p style="color:var(--muted);font-size:.82rem;font-style:italic;">
-      ⬆ Replace the arXiv link above with the actual arXiv paper URL.
-    </p>
+  <!-- PDF Downloads -->
+  <div class="pdf-row">
+    <a href="pdfs/Latest_version.pdf" target="_blank" class="pdf-btn">
+      <i class="fa-solid fa-file-pdf"></i> Current CV (PDF)
+    </a>
+    <a href="pdfs/General_version.pdf" target="_blank" class="pdf-btn">
+      <i class="fa-solid fa-file-pdf"></i> Extended Academic CV (PDF)
+    </a>
   </div>
 
-  <!-- ZIB Internship -->
-  <div class="entry">
-    <div class="entry-meta">
-      <span class="tag tag-res">Research Internship</span>
-      <span class="date">2022 – 2023</span>
-      <span class="institution">Zuse Institute Berlin (ZIB), Berlin, Germany</span>
+  <!-- ══════════════════════════════════════════ -->
+  <!-- 1. RESEARCH EXPERIENCE                     -->
+  <!-- ══════════════════════════════════════════ -->
+  <div class="cv-section" id="research">
+    <h2 class="cv-section-title"><i class="fa-solid fa-flask"></i> Research Experience</h2>
+
+    <!-- PhD -->
+    <div class="cv-card">
+      <div class="cv-card-header">
+        <strong>PhD Researcher in Applied Mathematics</strong> — RWTH Aachen University<br>
+        <em>Aug 2023 – Present | Aachen, Germany</em>
+      </div>
+      <details class="cv-details">
+        <summary>Research Details</summary>
+        <div class="cv-details-body">
+          <h5>Thesis</h5>
+          <p><em>"Sparse Exit Wave Reconstruction via Deep Unfolding"</em></p>
+          <p>
+            Transmission Electron Microscopy (TEM) enables high-resolution imaging of materials, but the resulting images are difficult to interpret directly. The focus is on exit wave reconstruction — the recovery of the complex-valued electron wave at the specimen's exit plane from intensity-only measurements — an inverse problem with a nonlinear forward model. We consider a simplified forward model making the problem equivalent to phase retrieval, and propose a discretized regularized variational formulation. To solve the resulting non-convex problem, the proximal gradient algorithm (PGA) is employed and its iterations are unfolded into a neural network, where each layer corresponds to one PGA step with learnable parameters. This deep unrolling approach, inspired by LISTA, enables improved reconstruction quality, interpretability, and implicit dictionary learning from data.
+          </p>
+          <p><strong>Keywords:</strong> Phase Retrieval · Transmission Electron Microscopy · Deep Unfolding · Proximal Gradient Algorithm · Complex-Valued Optimization · Sparse Reconstruction · Rademacher Complexity</p>
+
+          <h5>Preprint (2025)</h5>
+          <p>
+            <em>"A generalization bound for exit wave reconstruction via deep unfolding"</em> — arXiv 2025<br>
+            <span style="margin-top:0.4rem; display:inline-flex; gap:0.6rem; flex-wrap:wrap;">
+              <a href="pdfs/exit-wave-deep-unfolding.pdf" target="_blank" class="pdf-btn" style="padding:0.3rem 0.9rem; font-size:0.83rem;">
+                <i class="fa-solid fa-file-pdf"></i> View PDF
+              </a>
+              <a href="https://arxiv.org/abs/2511.06413" target="_blank" class="pdf-btn" style="padding:0.3rem 0.9rem; font-size:0.83rem;">
+                <i class="fa-solid fa-external-link-alt"></i> arXiv
+              </a>
+            </span>
+          </p>
+        </div>
+      </details>
     </div>
-    <h3>Research Internship — Scientific Computing &amp; Inverse Problems</h3>
-    <div class="grade-badge a">Grade: A (Excellent)</div>
-    <p>
-      Internship at ZIB in the domain of inverse problems, numerical methods, and scientific computing.
-      Worked on reconstruction algorithms and numerical analysis relevant to imaging problems, 
-      contributing to methods later extended in the doctoral thesis.
-    </p>
-    <ul>
-      <li>Numerical implementation and analysis of reconstruction methods for inverse problems.</li>
-      <li>Work related to exit wave reconstruction and iterative solvers.</li>
-      <li>Collaboration with research groups at ZIB on computational mathematics.</li>
-    </ul>
-    <label class="pdf-attach">
-      <span class="pdf-attach-label">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-        Attach Internship Report PDF
-      </span>
-      <input type="file" accept=".pdf"/>
-    </label>
+
+    <!-- E-Learning -->
+    <div class="cv-card">
+      <div class="cv-card-header">
+        <strong>E-Learning &amp; Assessment Assistant</strong> — RWTH Aachen University<br>
+        <em>2024 – Present | Aachen, Germany</em>
+      </div>
+      <details class="cv-details">
+        <summary>Responsibilities</summary>
+        <div class="cv-details-body">
+          <ul>
+            <li>Managing conceptual (Verständnisaufgaben) and calculation (Rechenaufgaben) exercises via Dynexite</li>
+            <li>Coordinating Bonuspunktetests (BPT) and online assessment workflows</li>
+            <li>Publishing exercises, solutions, and announcements on Moodle</li>
+            <li>Reviewing and grading submissions, handling student feedback and complaints</li>
+            <li>Uploading grades to Moodle and maintaining assessment records</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+
+    <!-- ZIB Internship -->
+    <div class="cv-card">
+      <div class="cv-card-header">
+        <strong>Student Researcher — Koopman Theory</strong> — Zuse Institute Berlin (ZIB)<br>
+        <em>Sep 2022 – Dec 2022 | Berlin, Germany &nbsp;<span class="tag tag-green">Research Internship</span><span class="tag tag-amber">Grade: A</span></em>
+      </div>
+      <details class="cv-details">
+        <summary>Internship Details</summary>
+        <div class="cv-details-body">
+          <h5>Title</h5>
+          <p><em>"Approximation of Koopman Operators Using Random Basis Functions"</em></p>
+          <h5>Keywords</h5>
+          <p>Koopman operators · EDMD · Deeptime · Neural Networks · Gaussians</p>
+          <h5>Description</h5>
+          <p>Approximation of Koopman operators using Extended Dynamic Mode Decomposition (EDMD) combined with random Gaussians and randomly initialised neural networks on Deeptime. "Gaussian" and "Rinn" methods implemented in Python and applied to high-dimensional models to estimate Koopman's eigenfunctions and eigenvalues.</p>
+
+          <div class="attach-slot">
+            <i class="fa-solid fa-paperclip"></i>
+            Internship Report PDF — <em>attach here</em>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <!-- ZIB Master Thesis -->
+    <div class="cv-card">
+      <div class="cv-card-header">
+        <strong>Master's Thesis — Koopman Theory</strong> — Zuse Institute Berlin (ZIB)<br>
+        <em>Dec 2022 – May 2023 | Berlin, Germany &nbsp;<span class="tag tag-amber">Grade: 1.0 (Excellent / A)</span></em>
+      </div>
+      <details class="cv-details">
+        <summary>Thesis Details</summary>
+        <div class="cv-details-body">
+          <h5>Title</h5>
+          <p><em>"Approximation of Koopman Operators Using Random Basis Functions"</em></p>
+          <h5>Keywords</h5>
+          <p>Koopman operators · EDMD · Random Gaussians · Neural Networks</p>
+          <h5>Description</h5>
+          <p>A comprehensive study of Koopman operators and nonlinear dynamical systems, including the intrinsic coordinates where the dynamics behaves linearly (Koopman Eigenfunctions), invariant subspaces, Koopman embedding, and EDMD combined with Monomials, Random Gaussians, and Trained and Untrained Randomly Initialised Neural Networks. Implemented in Python using the Deeptime framework.</p>
+
+          <div class="attach-slot">
+            <i class="fa-solid fa-paperclip"></i>
+            Master's Thesis PDF — <em>attach here</em>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <!-- Bordeaux Optimal Transport -->
+    <div class="cv-card">
+      <div class="cv-card-header">
+        <strong>Student Researcher — Optimal Transport</strong> — Université de Bordeaux<br>
+        <em>Feb 2020 – Aug 2020 | Bordeaux, France &nbsp;<span class="tag tag-green">Research Internship + Master's Thesis</span></em>
+      </div>
+      <details class="cv-details">
+        <summary>Details</summary>
+        <div class="cv-details-body">
+          <h5>Title</h5>
+          <p><em>"Semi-discrete Optimal Transport for Large-Scale Problems"</em></p>
+          <h5>Keywords</h5>
+          <p>Monge–Kantorovich problem · c-transform · Laguerre cells · Gradient Descent · Stochastic Gradient Descent</p>
+          <h5>Description</h5>
+          <p>Studied the Monge and Kantorovich formulations of optimal transport, dual problem, c-transform, reformulation of the dual problem as convex optimization over Laguerre cells, gradient and stochastic gradient descent algorithms, impact of learning rate and number of iterations on the rate of convergence, and application to image processing problems with Gaussian noise.</p>
+
+          <div class="attach-slot">
+            <i class="fa-solid fa-paperclip"></i>
+            Master's Thesis PDF — <em>attach here</em>
+          </div>
+        </div>
+      </details>
+    </div>
+
+  </div><!-- /research -->
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- 2. ACHIEVEMENTS                            -->
+  <!-- ══════════════════════════════════════════ -->
+  <div class="cv-section" id="achievements">
+    <h2 class="cv-section-title"><i class="fa-solid fa-trophy"></i> Achievements</h2>
+    <div class="cv-card">
+      <p class="grade-note">Note: In the German grading system, 1.0 is the highest possible grade (Excellent), equivalent to GPA 4.0 (US) / Grade A.</p>
+      <ul style="padding-left: 1.2rem; line-height: 1.9;">
+        <li>Obtained grade <strong>1.0 (Excellent / A)</strong> in the Master's Thesis at Zuse Institute Berlin (ZIB) — Koopman Theory</li>
+        <li>Obtained grade <strong>A</strong> in the Research Internship at ZIB — Koopman Theory</li>
+        <li>Received grade <strong>1.0 (Excellent / A)</strong> in the following key courses at Technical University of Berlin:
+          <ul style="margin-top:0.4rem;">
+            <li>Numerical Methods for PDEs</li>
+            <li>Scientific Computing</li>
+            <li>Probabilistic and Bayesian Modelling in ML and AI</li>
+            <li>Seminar in Nonlinear Optimization</li>
+          </ul>
+        </li>
+        <li>Ranked <strong>1st</strong> in M.Sc. Applied Mathematics at Lebanese International University (LIU) — <strong>GPA 4.0 (US) / 20/20</strong>; received <strong>A</strong> in all required courses and in the Master's Thesis</li>
+        <li>Awarded the <strong>Excellence Scholarship from Région Nouvelle-Aquitaine (France)</strong> to pursue the Master's degree in Mathematics, Modeling and Simulation at the University of Pau and Pays de l'Adour (UPPA)</li>
+        <li>Ranked <strong>1st in Number Theory</strong> — Master 1 (first year of the Master's program), Lebanese University (LU), ranked <strong>4/15</strong> overall in the cohort</li>
+        <li>Preprint: <em>"A generalization bound for exit wave reconstruction via deep unfolding"</em> — arXiv 2025 &nbsp;
+          <a href="https://arxiv.org/abs/2511.06413" target="_blank" style="color:var(--accent); font-size:0.85rem;"><i class="fa-solid fa-external-link-alt"></i> arXiv</a>
+          &nbsp;
+          <a href="pdfs/exit-wave-deep-unfolding.pdf" target="_blank" style="color:var(--accent); font-size:0.85rem;"><i class="fa-solid fa-file-pdf"></i> PDF</a>
+        </li>
+      </ul>
+    </div>
   </div>
 
-  <!-- Master Thesis ZIB -->
-  <div class="entry">
-    <div class="entry-meta">
-      <span class="tag tag-res">Master Thesis</span>
-      <span class="date">2022 – 2023</span>
-      <span class="institution">Zuse Institute Berlin (ZIB) / Technische Universität Berlin</span>
+  <!-- ══════════════════════════════════════════ -->
+  <!-- 3. EDUCATION                               -->
+  <!-- ══════════════════════════════════════════ -->
+  <div class="cv-section" id="education">
+    <h2 class="cv-section-title"><i class="fa-solid fa-graduation-cap"></i> Education</h2>
+
+    <!-- PhD (brief, already in research) -->
+    <div class="cv-card">
+      <strong>PhD in Applied Mathematics</strong> <span class="tag tag-blue">In Progress</span><br>
+      RWTH Aachen University | Aug 2023 – Present | Aachen, Germany<br>
+      <span style="color:var(--muted); font-size:0.9rem;">See Research Experience for full details.</span>
     </div>
-    <h3>Master Thesis — Deep Unfolding for Inverse Problems</h3>
-    <div class="grade-badge">Grade: 1.0 — Excellent</div>
-    <p>
-      Master's thesis conducted at ZIB Berlin, focused on deep unfolding architectures applied to 
-      inverse problems, in particular exit wave reconstruction in electron microscopy. 
-      Developed theoretical and practical contributions that form the basis of the doctoral research 
-      and the 2025 arXiv preprint.
-    </p>
-    <ul>
-      <li>Deep unfolding framework design and implementation for phase retrieval / exit wave reconstruction.</li>
-      <li>Analysis of algorithm convergence and generalization properties.</li>
-      <li>Numerical experiments validating the proposed approach on electron microscopy benchmarks.</li>
-    </ul>
-    <label class="pdf-attach">
-      <span class="pdf-attach-label">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-        Attach Master Thesis PDF (TU Berlin / ZIB)
-      </span>
-      <input type="file" accept=".pdf"/>
-    </label>
-  </div>
 
-  <!-- Master Thesis Bordeaux -->
-  <div class="entry">
-    <div class="entry-meta">
-      <span class="tag tag-res">Master Thesis</span>
-      <span class="date">2021</span>
-      <span class="institution">Université de Pau et des Pays de l'Adour (UPPA), Pau, France</span>
+    <!-- TUB -->
+    <div class="cv-card">
+      <strong>M.Sc. in Scientific Computing</strong>
+      <span class="tag tag-green">GPA 1.2 · Excellent · ≈ 3.8 US</span><br>
+      Technical University of Berlin (TUB) | Apr 2021 – May 2023 | Berlin, Germany
+
+      <details class="cv-details">
+        <summary>Master's Thesis, Research Internship &amp; Courses</summary>
+        <div class="cv-details-body">
+          <p class="grade-note">1.0 is the highest grade (Excellent) in the German system, equivalent to GPA 4.0 (US) / Grade A.</p>
+
+          <h5>Master's Thesis — Zuse Institute Berlin (ZIB) &nbsp;<span class="tag tag-amber">Grade: 1.0 · Excellent · A</span></h5>
+          <p><em>"Approximation of Koopman Operators Using Random Basis Functions"</em></p>
+          <p>See Research Experience for full description.</p>
+          <div class="attach-slot"><i class="fa-solid fa-paperclip"></i> Master's Thesis PDF — <em>attach here</em></div>
+
+          <h5 style="margin-top:1.2rem;">Research Internship — Zuse Institute Berlin (ZIB) &nbsp;<span class="tag tag-amber">Grade: A</span></h5>
+          <p><em>"Approximation of Koopman Operators Using Random Basis Functions"</em></p>
+          <p>See Research Experience for full description.</p>
+          <div class="attach-slot"><i class="fa-solid fa-paperclip"></i> Internship Report PDF — <em>attach here</em></div>
+
+          <h5 style="margin-top:1.2rem;">Seminars (Reports &amp; Talks) &nbsp;<span class="tag tag-amber">Grade: A</span></h5>
+          <ul>
+            <li>
+              <strong>Optimal Transport</strong> — <em>"Entropic Regularization of Discrete and Continuous Optimal Transport"</em><br>
+              Keywords: Kantorovich Formulation, Regularized Problem, Discrete and Relative Entropies, Sinkhorn's Algorithm, Dual Formulation, KL-Divergence, Gibbs Kernel.<br>
+              Convergence with small and large regularization; scaling via Gibbs kernel; Sinkhorn algorithm for entropic optimal transport (EOT) with quadratic cost; strong duality of the dual problem.
+              <div class="attach-slot" style="margin-top:0.4rem;"><i class="fa-solid fa-paperclip"></i> Seminar Report PDF — <em>attach here</em></div>
+            </li>
+            <li style="margin-top:0.8rem;">
+              <strong>Nonlinear Optimization</strong> — <em>"Constrained Optimization and Duality. Applications to ML"</em><br>
+              Keywords: Lagrangian Relaxation and Duality, Coordinate Descent, SVM Dual, Norm Constrained Optimization, Barrier Methods.<br>
+              Primal and dual problems, constraint qualifications for strong duality; ML applications: norm-constrained optimization and formulation of SVM dual via coordinate and gradient descent.
+              <div class="attach-slot" style="margin-top:0.4rem;"><i class="fa-solid fa-paperclip"></i> Seminar Report PDF — <em>attach here</em></div>
+            </li>
+            <li style="margin-top:0.8rem;">
+              <strong>Porous Media</strong> — Homogenization of reactive porous media flow models; numerical simulation using DuMuX of the Buckley–Leverett equation for immiscible and incompressible two-phase flow in 1D (relative permeability) and 2D (analytic and random permeability) homogeneous porous media.
+              <div class="attach-slot" style="margin-top:0.4rem;"><i class="fa-solid fa-paperclip"></i> Seminar Report PDF — <em>attach here</em></div>
+            </li>
+          </ul>
+
+          <h5 style="margin-top:1.2rem;">Key Courses &nbsp;<span class="tag tag-amber">Grade: 1.0 · Excellent · A</span></h5>
+          <ul>
+            <li><strong>Numerical Methods for PDEs</strong> — Finite Elements: Interpolation Lemma, Bramble-Hilbert Lemma, Quasi-Uniform Decomposition, Aubin-Nitsche Lemma, L² and L∞ Error Estimates, Conforming and Non-Conforming FE, Strang Lemmata, Crouzeix-Raviart Element, Polygonal Approximation, A Posteriori Error Estimators.</li>
+            <li><strong>Scientific Computing</strong> — Project: Nonlinear Porous Medium Equation for gas transport in porous media; numerical methods for PDEs (Voronoi FVM); Julia implementation using Rothe method, Implicit Euler, ExtendableGrids.jl, DifferentialEquations.jl; 1D and 2D simulation results.</li>
+            <li><strong>Probabilistic and Bayesian Modelling in ML and AI</strong> — Maximum likelihood for exponential families, EM algorithm, Bayes inference and Gibbs sampler, conjugate priors, MCMC, Gaussian processes, Gaussian approximations to posterior densities, variational inference.</li>
+            <li><strong>Seminar in Nonlinear Optimization</strong> — See Seminars above.</li>
+            <li><strong>Nonlinear Optimization</strong> — Convex optimization, conjugate gradient and trust region methods, constrained nonlinear optimization, tangent and linearized cones, ACQ, LICQ, KKT conditions, critical cone, box constraints, active set and null-space methods, SQP method.</li>
+            <li><strong>Calculus of Variations and Optimal Control</strong> — Necessary conditions for global and local minimizers (Euler, Legendre, Jacobi, Weierstrass); problems with moving endpoints; Bolza problem, Pontryagin's Maximum Principle, Time Optimal Control, Linear Quadratic Optimal Control, Differential Riccati Equation.</li>
+            <li><strong>Stationary Linear/Nonlinear Elliptic PDEs of Second Order</strong> — Sobolev spaces, variational problems and operator equations, monotone operators, Galerkin methods, Lax-Milgram, Zarantonello; weak and weak* convergence, Browder-Minty and Brezis theorems; stationary Navier-Stokes equation.</li>
+            <li><strong>Numerical Mathematics/Analysis</strong> — One and multi-step methods for ODEs: Runge-Kutta, Adams-Bashforth, Adams-Moulton, BDF; consistency, order of convergence, stability regions, A-stability; boundary value and eigenvalue problems, power method, QR decomposition, Hessenberg reduction.</li>
+            <li><strong>Unsupervised ML and Python Programming for ML</strong> — Dataset analysis, Markov chains simulation, LLE, t-SNE, CCA, ICA, Autoencoders, HMMs, kernel machines, deep learning, anomaly detection.</li>
+            <li><strong>Optimal Transport (Project)</strong> — Semi-discrete optimal transport: Monge and Kantorovich problems, dual problem, c-transform, Laguerre cells, gradient descent, impact of learning rate and iterations.</li>
+          </ul>
+        </div>
+      </details>
     </div>
-    <h3>Master Thesis — Porous Media &amp; Industrial Software</h3>
-    <div class="grade-badge a">Obtained: A (Excellent)</div>
-    <p>
-      Master's thesis at UPPA (Bordeaux / Pau region) focusing on porous media modelling and 
-      the use of industrial simulation software. The work addressed numerical simulation of 
-      flow in porous media and associated computational challenges.
-    </p>
-    <ul>
-      <li>Numerical modelling and simulation of porous media flow.</li>
-      <li>Application and evaluation of industrial software tools for scientific simulation.</li>
-      <li>Analysis of model accuracy and computational performance.</li>
-    </ul>
-    <label class="pdf-attach">
-      <span class="pdf-attach-label">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-        Attach Master Thesis PDF (UPPA / Bordeaux)
-      </span>
-      <input type="file" accept=".pdf"/>
-    </label>
-    <br/>
-    <label class="pdf-attach" style="margin-top:.4rem;">
-      <span class="pdf-attach-label">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-        Attach Porous Media / Industrial Software Project PDF
-      </span>
-      <input type="file" accept=".pdf"/>
-    </label>
-  </div>
 
-</section>
+    <!-- UPPA -->
+    <div class="cv-card">
+      <strong>M.Sc. in Mathematics, Modeling and Simulation</strong>
+      <span class="tag tag-amber">Excellence Scholarship</span><br>
+      University of Pau and Pays de l'Adour (UPPA) | Oct 2019 – Sep 2020 | Pau, France
 
-<!-- ═══════════════════════════════ ACHIEVEMENTS ══════════════════════ -->
-<section id="achievements">
-  <h2>Achievements &amp; Honours</h2>
+      <details class="cv-details">
+        <summary>Thesis, Projects &amp; Courses</summary>
+        <div class="cv-details-body">
 
-  <div class="entry">
-    <div class="ach-item">
-      <span class="ach-icon">🏅</span>
-      <div class="ach-text">
-        <strong>Grade 1.0 (Excellent) in Master Thesis</strong> — Technische Universität Berlin / Zuse Institute Berlin.
-        Received 1.0 — the highest possible grade on the German academic scale (equivalent to 4.0 GPA / Grade A) — for the master's thesis on deep unfolding for inverse problems.
+          <h5>Master's Thesis — Université de Bordeaux</h5>
+          <p><em>"Semi-discrete Optimal Transport for Large-Scale Problems"</em></p>
+          <p>See Research Experience for full description.</p>
+          <div class="attach-slot"><i class="fa-solid fa-paperclip"></i> Master's Thesis PDF — <em>attach here</em></div>
+
+          <h5 style="margin-top:1.2rem;">Courses &amp; Projects</h5>
+          <ul>
+            <li>
+              <strong>Numerical Analysis of PDEs</strong> — Inverse problem for wave propagation using discontinuous Galerkin approximation, implemented in Matlab.
+            </li>
+            <li>
+              <strong>Industrial Software (Fluid Mechanics / Industrial Codes)</strong> — Physical and mathematical modeling for numerical simulation with ANSYS-FLUENT for compressible and incompressible fluids, and elsA-ONERA software for compressible flows.
+              <div class="attach-slot" style="margin-top:0.4rem;"><i class="fa-solid fa-paperclip"></i> Project Report PDF — <em>attach here</em></div>
+            </li>
+            <li>
+              <strong>Porous Media</strong> — Summarizing a paper on homogenization of reactive porous media flow; numerical simulation using DuMuX of the Buckley-Leverett equation for immiscible and incompressible two-phase flow in 1D and 2D porous media.
+              <div class="attach-slot" style="margin-top:0.4rem;"><i class="fa-solid fa-paperclip"></i> Project Report PDF — <em>attach here</em></div>
+            </li>
+          </ul>
+        </div>
+      </details>
+    </div>
+
+    <!-- LIU -->
+    <div class="cv-card">
+      <strong>M.Sc. in Applied Mathematics</strong>
+      <span class="tag tag-green">Rank 1 &nbsp;·&nbsp; GPA 4.0 US &nbsp;·&nbsp; 20/20</span><br>
+      Lebanese International University (LIU) | Feb 2018 – Aug 2019 | Beirut, Lebanon
+
+      <details class="cv-details">
+        <summary>Master's Thesis &amp; Courses</summary>
+        <div class="cv-details-body">
+
+          <h5>Master's Thesis &nbsp;<span class="tag tag-amber">Grade: A</span></h5>
+          <p><em>"Decay Rates of a Timoshenko System with Kelvin-Voigt Damping"</em></p>
+          <p><strong>Keywords:</strong> C₀-Semigroup · Timoshenko beam · Polynomial and Exponential stability.</p>
+          <p>Proved that the energy of the Timoshenko system with Kelvin-Voigt damping dissipates exponentially or polynomially, and that the decay rate depends on the properties of the material coefficient function.</p>
+          <div class="attach-slot"><i class="fa-solid fa-paperclip"></i> Master's Thesis PDF — <em>attach here</em></div>
+
+          <h5 style="margin-top:1.2rem;">Courses &nbsp;<span class="tag tag-amber">A in all courses &nbsp;·&nbsp; Rank 1</span></h5>
+          <ul>
+            <li><strong>Numerical Linear Algebra</strong></li>
+            <li><strong>Real Analysis</strong></li>
+            <li><strong>Topics in Statistics</strong></li>
+            <li><strong>Topology</strong></li>
+            <li>
+              <strong>Finite Element Methods</strong> — Project: Piecewise linear finite element methods for 1D elliptic equations; estimated order of convergence on uniform and non-uniform meshes in Matlab.
+              <div class="attach-slot" style="margin-top:0.4rem;"><i class="fa-solid fa-paperclip"></i> Project Report PDF — <em>attach here</em></div>
+            </li>
+          </ul>
+        </div>
+      </details>
+    </div>
+
+    <!-- LU Master 1 -->
+    <div class="cv-card">
+      <strong>Master 1 in Pure Mathematics</strong> <span class="tag tag-blue">Rank 4/15</span><br>
+      Lebanese University (LU) | Oct 2014 – Sep 2015 | Beirut, Lebanon
+
+      <details class="cv-details">
+        <summary>Courses &amp; Rankings</summary>
+        <div class="cv-details-body">
+          <h5>Courses &nbsp;<span class="tag tag-amber">Ranked 1st in Number Theory</span></h5>
+          <ul>
+            <li><strong>Functional Analysis</strong></li>
+            <li><strong>Differential Geometry</strong></li>
+            <li><strong>Field Theory</strong></li>
+            <li><strong>Distribution Theory</strong></li>
+            <li><strong>Probabilities</strong></li>
+            <li><strong>Commutative Algebra</strong></li>
+            <li><strong>Riemannian Geometry</strong></li>
+            <li><strong>Number Theory</strong> — <span class="tag tag-green">Ranked 1st in the cohort</span></li>
+            <li><strong>Spectral Theory</strong></li>
+          </ul>
+        </div>
+      </details>
+    </div>
+
+    <!-- LU BSc -->
+    <div class="cv-card">
+      <strong>B.Sc. in Pure Mathematics</strong><br>
+      Lebanese University (LU) | Oct 2008 – Sep 2012 | Beirut, Lebanon
+    </div>
+
+  </div><!-- /education -->
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- 4. SKILLS                                  -->
+  <!-- ══════════════════════════════════════════ -->
+  <div class="cv-section" id="skills">
+    <h2 class="cv-section-title"><i class="fa-solid fa-code"></i> Skills</h2>
+    <div class="cv-card">
+      <div class="cv-details-body" style="margin-top:0; border-left:none; background:transparent; padding:0;">
+
+        <h5>Scientific / Mathematical Skills</h5>
+        <ul>
+          <li>Numerical Simulation · Numerical Analysis · PDEs</li>
+          <li>Machine Learning (ML) · Neural Networks (NN) · Bayesian Inference</li>
+          <li>Calculus of Variations and Optimal Control</li>
+          <li>Optimal Transport · Nonlinear and Convex Optimization</li>
+          <li>Multi-step methods, Runge-Kutta, Finite Difference, Finite Element, and Finite Volume methods</li>
+          <li>Phase Retrieval · Deep Unfolding · Proximal Gradient Algorithm · Complex-Valued Optimization</li>
+          <li>Koopman Theory · Extended Dynamic Mode Decomposition (EDMD)</li>
+        </ul>
+
+        <h5>Computing Skills</h5>
+        <ul>
+          <li><strong>Languages:</strong> Python (TensorFlow, NumPy, Matplotlib) · Matlab · Julia · C/C++ · OpenMP/MPI</li>
+          <li><strong>Tools:</strong> Linux · LaTeX · VS Code · MS Word/Excel · SPSS · Dynexite · Moodle</li>
+          <li><strong>Frameworks:</strong> Deeptime · ExtendableGrids.jl · DifferentialEquations.jl · DuMuX · ANSYS-FLUENT · elsA-ONERA</li>
+        </ul>
+
+        <h5>Personal Skills</h5>
+        <ul>
+          <li>Strong ability to develop working relationships</li>
+          <li>Problem Solving · Adaptability · Decision Making · Fast Learner</li>
+          <li>Arabic Romantic Writings · Football</li>
+        </ul>
+
       </div>
     </div>
-    <div class="ach-item">
-      <span class="ach-icon">🏅</span>
-      <div class="ach-text">
-        <strong>Grade A (Excellent) in Research Internship</strong> — Zuse Institute Berlin (ZIB).
-        Received grade A in the research internship component of the TU Berlin Master programme.
-      </div>
-    </div>
-    <div class="ach-item">
-      <span class="ach-icon">🎓</span>
-      <div class="ach-text">
-        <strong>Received 1.0 (Excellent) in the following courses</strong> — TU Berlin Master (Scientific Computing / Mathematics):
-        <div class="courses" style="margin-top:.5rem;">
-          <span class="course-tag">Optimal Transport (Seminar)</span>
-          <span class="course-tag">Optimization (Seminar)</span>
-          <span class="course-tag">Porous Media (Seminar)</span>
-          <span class="course-tag">[Add further 1.0 courses here]</span>
+  </div>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- 5. LANGUAGES                               -->
+  <!-- ══════════════════════════════════════════ -->
+  <div class="cv-section" id="languages">
+    <h2 class="cv-section-title"><i class="fa-solid fa-language"></i> Languages</h2>
+    <div class="cv-card">
+      <div style="display:flex; flex-wrap:wrap; gap:1.5rem; align-items:center;">
+        <div style="text-align:center;">
+          <div style="font-weight:700; font-size:1.05rem;">Arabic</div>
+          <div style="color:var(--accent); font-size:0.85rem;">Native</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-weight:700; font-size:1.05rem;">English</div>
+          <div style="color:var(--accent); font-size:0.85rem;">C1 (Proficient)</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-weight:700; font-size:1.05rem;">German</div>
+          <div style="color:var(--accent); font-size:0.85rem;">A2</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-weight:700; font-size:1.05rem;">French</div>
+          <div style="color:var(--accent); font-size:0.85rem;">A1</div>
         </div>
       </div>
     </div>
-    <div class="ach-item">
-      <span class="ach-icon">🏆</span>
-      <div class="ach-text">
-        <strong>Rank 1st in Number Theory</strong> — Lebanese University (LU), Master 1. Achieved the highest rank in the cohort in the Number Theory course.
+  </div>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- 6. TEACHING & OTHER WORK                   -->
+  <!-- ══════════════════════════════════════════ -->
+  <div class="cv-section" id="other-work">
+    <h2 class="cv-section-title"><i class="fa-solid fa-chalkboard-teacher"></i> Teaching &amp; Other Work Experience</h2>
+
+    <!-- Math Teacher -->
+    <div class="cv-card">
+      <div class="cv-card-header">
+        <strong>Mathematics Teacher</strong> — Private Schools<br>
+        <em>2012 – 2018 | Beirut, Lebanon</em>
       </div>
-    </div>
-    <div class="ach-item">
-      <span class="ach-icon">🎓</span>
-      <div class="ach-text">
-        <strong>Rank 4/15</strong> — Lebanese University (LU), Master 1 overall cohort ranking.
-      </div>
-    </div>
-    <div class="ach-item">
-      <span class="ach-icon">🏅</span>
-      <div class="ach-text">
-        <strong>Grade A in Master Thesis</strong> — Lebanese International University (LIU). Received A in the master's thesis component.
-      </div>
-    </div>
-    <div class="ach-item">
-      <span class="ach-icon">🏅</span>
-      <div class="ach-text">
-        <strong>Grade A in all courses &amp; Rank 1</strong> — Lebanese International University (LIU) Master programme.
-        Received A in all courses and achieved Rank 1 in the cohort.
-      </div>
-    </div>
-    <div class="ach-item">
-      <span class="ach-icon">🎓</span>
-      <div class="ach-text">
-        <strong>Scholarship from Université de Pau et des Pays de l'Adour (UPPA)</strong> — Awarded a full scholarship to pursue the Master's programme in Pau, France. Demonstrates academic excellence recognized at an international level.
-      </div>
-    </div>
-    <div class="ach-item">
-      <span class="ach-icon">🏅</span>
-      <div class="ach-text">
-        <strong>Grade A in Master Thesis (UPPA)</strong> — Received grade A (Excellent) for the master's thesis on porous media and industrial software at UPPA.
-      </div>
-    </div>
-    <div class="ach-item">
-      <span class="ach-icon">📄</span>
-      <div class="ach-text">
-        <strong>Preprint Publication — arXiv 2025:</strong>
-        <a class="paper-link" href="https://arxiv.org/abs/XXXX.XXXXX" target="_blank" rel="noopener">
-          "A generalization bound for exit wave reconstruction via deep unfolding"
-        </a>
-        — outcome of doctoral research at TU Berlin / ZIB.
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════ EDUCATION ════════════════════════ -->
-<section id="education">
-  <h2>Education</h2>
-  <p style="color:var(--muted);font-size:.88rem;font-style:italic;margin-bottom:1.5rem;">
-    Full details of research outputs, theses, and courses are presented in the Research Experience section above.
-    The following provides a structured overview of degrees obtained.
-  </p>
-
-  <!-- TU Berlin -->
-  <div class="entry">
-    <div class="entry-meta">
-      <span class="tag tag-edu">Master of Science</span>
-      <span class="date">2020 – 2023</span>
-      <span class="institution">Technische Universität Berlin (TU Berlin), Berlin, Germany</span>
-    </div>
-    <h3>M.Sc. — Mathematics / Scientific Computing</h3>
-    <div class="grade-badge">Thesis: 1.0 — Excellent</div>
-    <div class="grade-badge a">Internship: A — Excellent</div>
-    <p>Master's programme at TU Berlin with thesis and research internship conducted at Zuse Institute Berlin (ZIB).
-    Focus on inverse problems, deep learning, and numerical mathematics.</p>
-
-    <h4 style="margin-top:1rem;">Seminars</h4>
-    <p style="font-size:.9rem;">Three seminars completed:</p>
-    <ul>
-      <li><strong>Seminar: Optimal Transport</strong>
-        <label class="pdf-attach" style="display:inline-flex;margin-left:.5rem;">
-          <span class="pdf-attach-label">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            Attach PDF
-          </span>
-          <input type="file" accept=".pdf"/>
-        </label>
-      </li>
-      <li><strong>Seminar: Optimization</strong>
-        <label class="pdf-attach" style="display:inline-flex;margin-left:.5rem;">
-          <span class="pdf-attach-label">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            Attach PDF
-          </span>
-          <input type="file" accept=".pdf"/>
-        </label>
-      </li>
-      <li><strong>Seminar: Porous Media</strong>
-        <label class="pdf-attach" style="display:inline-flex;margin-left:.5rem;">
-          <span class="pdf-attach-label">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            Attach PDF
-          </span>
-          <input type="file" accept=".pdf"/>
-        </label>
-      </li>
-    </ul>
-  </div>
-
-  <!-- UPPA -->
-  <div class="entry">
-    <div class="entry-meta">
-      <span class="tag tag-edu">Master 2</span>
-      <span class="date">2020 – 2021</span>
-      <span class="institution">Université de Pau et des Pays de l'Adour (UPPA), Pau, France</span>
-    </div>
-    <h3>M2 — Applied Mathematics (Scholarship Recipient)</h3>
-    <div class="grade-badge a">Thesis: A — Excellent</div>
-    <p>
-      Master 2 in applied mathematics at UPPA, pursued with a <strong>full scholarship awarded by UPPA</strong>.
-      Focus on numerical analysis, partial differential equations, and porous media modelling.
-      Thesis on porous media simulation and industrial software.
-    </p>
-    <h4 style="margin-top:1rem;">Selected Courses</h4>
-    <div class="courses">
-      <span class="course-tag">Numerical Analysis</span>
-      <span class="course-tag">Partial Differential Equations</span>
-      <span class="course-tag">Porous Media Modelling</span>
-      <span class="course-tag">Industrial Simulation Software</span>
-      <span class="course-tag">[Add further courses from CV]</span>
-    </div>
-  </div>
-
-  <!-- LIU -->
-  <div class="entry">
-    <div class="entry-meta">
-      <span class="tag tag-edu">Master of Science</span>
-      <span class="date">2018 – 2020</span>
-      <span class="institution">Lebanese International University (LIU), Lebanon</span>
-    </div>
-    <h3>M.Sc. — Mathematics</h3>
-    <div class="grade-badge a">All Courses: A — Excellent</div>
-    <div class="grade-badge a">Master Thesis: A — Excellent</div>
-    <div class="grade-badge blue">Rank: 1st in Cohort</div>
-    <p>
-      Master of Science in Mathematics at LIU. Obtained grade A in all courses, received A in the master's thesis, 
-      and achieved <strong>Rank 1</strong> in the cohort.
-    </p>
-
-    <h4 style="margin-top:1rem;">Received A in the following courses:</h4>
-    <div class="courses">
-      <span class="course-tag">Numerical Linear Algebra</span>
-      <span class="course-tag">Real Analysis</span>
-      <span class="course-tag">Topics in Statistics</span>
-      <span class="course-tag">Topology</span>
-      <span class="course-tag">Finite Element Methods</span>
+      <details class="cv-details">
+        <summary>Details</summary>
+        <div class="cv-details-body">
+          <p>Four years of experience teaching Mathematics in English for intermediate and secondary classes at private schools in Beirut, Lebanon. Subjects included algebra, calculus, geometry, and analysis at the high-school level.</p>
+        </div>
+      </details>
     </div>
 
-    <p style="margin-top:.9rem;font-size:.9rem;color:var(--muted);">
-      <em>Finite Element Methods Project:</em> Piecewise linear FEM for 1D elliptic equations; 
-      estimated order of convergence on uniform and non-uniform meshes in MATLAB.
-    </p>
-
-    <h4 style="margin-top:1rem;">Master Thesis</h4>
-    <p style="font-size:.9rem;">Obtained A (Excellent) in the master thesis.</p>
-    <label class="pdf-attach">
-      <span class="pdf-attach-label">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-        Attach Master Thesis PDF (LIU)
-      </span>
-      <input type="file" accept=".pdf"/>
-    </label>
-  </div>
-
-  <!-- LU Master 1 -->
-  <div class="entry">
-    <div class="entry-meta">
-      <span class="tag tag-edu">Master 1</span>
-      <span class="date">2016 – 2018</span>
-      <span class="institution">Lebanese University (LU), Lebanon</span>
+    <!-- Corona Test Center -->
+    <div class="cv-card">
+      <strong>Corona Test Center Staff</strong><br>
+      <em>Germany</em>
+      <details class="cv-details">
+        <summary>Details</summary>
+        <div class="cv-details-body">
+          <p>Worked at a COVID-19 testing center in Germany, administering tests and managing patient flow and documentation.</p>
+        </div>
+      </details>
     </div>
-    <h3>Master 1 — Pure Mathematics</h3>
-    <div class="grade-badge blue">Rank: 4 / 15</div>
-    <div class="grade-badge blue">Rank 1st in Number Theory</div>
-    <p>
-      Master 1 in Pure Mathematics at Lebanese University (LU). 
-      Ranked <strong>4th out of 15</strong> in the cohort. Achieved <strong>Rank 1st in Number Theory</strong>.
-    </p>
 
-    <h4 style="margin-top:1rem;">Courses:</h4>
-    <div class="courses">
-      <span class="course-tag">Functional Analysis</span>
-      <span class="course-tag">Differential Geometry</span>
-      <span class="course-tag">Field Theory</span>
-      <span class="course-tag">Distribution Theory</span>
-      <span class="course-tag">Probabilities</span>
-      <span class="course-tag">Commutative Algebra</span>
-      <span class="course-tag">Riemannian Geometry</span>
-      <span class="course-tag">Number Theory <span style="color:var(--accent);">(Rank 1st)</span></span>
-      <span class="course-tag">Spectral Theory</span>
+    <!-- Delivery -->
+    <div class="cv-card">
+      <strong>Delivery Driver</strong><br>
+      <em>Germany</em>
+      <details class="cv-details">
+        <summary>Details</summary>
+        <div class="cv-details-body">
+          <p>Worked as a delivery driver in Germany, developing time management, navigation, and customer service skills.</p>
+        </div>
+      </details>
     </div>
-  </div>
 
-</section>
-
-<!-- ═══════════════════════════════ SKILLS ════════════════════════════ -->
-<section id="skills">
-  <h2>Skills &amp; Languages</h2>
-
-  <div class="skills-grid" style="margin-bottom:2rem;">
-    <div class="skill-block">
-      <h4>Mathematics</h4>
-      <ul class="skill-list">
-        <li>Inverse Problems &amp; Phase Retrieval</li>
-        <li>Numerical Linear Algebra</li>
-        <li>Partial Differential Equations</li>
-        <li>Finite Element Methods</li>
-        <li>Functional Analysis</li>
-        <li>Optimal Transport</li>
-        <li>Spectral Theory</li>
-      </ul>
-    </div>
-    <div class="skill-block">
-      <h4>Computing &amp; Programming</h4>
-      <ul class="skill-list">
-        <li>Python (NumPy, PyTorch, SciPy)</li>
-        <li>MATLAB</li>
-        <li>Deep Learning / Neural Networks</li>
-        <li>Deep Unfolding Architectures</li>
-        <li>Scientific Computing</li>
-        <li>LaTeX</li>
-      </ul>
-    </div>
-    <div class="skill-block">
-      <h4>Research</h4>
-      <ul class="skill-list">
-        <li>Mathematical Writing &amp; Publishing</li>
-        <li>Algorithm Design &amp; Analysis</li>
-        <li>Numerical Experiments</li>
-        <li>Teaching &amp; E-Learning</li>
-        <li>Seminar Presentations</li>
-      </ul>
-    </div>
-  </div>
-
-  <h4 style="margin-bottom:1rem;">Languages</h4>
-  <div style="max-width:420px;">
-    <div>
-      <div class="lang-row"><span class="lang-name">Arabic</span><span class="lang-level">Native</span></div>
-      <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
-    </div>
-    <div style="margin-top:.8rem;">
-      <div class="lang-row"><span class="lang-name">English</span><span class="lang-level">Fluent / Professional</span></div>
-      <div class="lang-bar"><div class="lang-fill" style="width:90%"></div></div>
-    </div>
-    <div style="margin-top:.8rem;">
-      <div class="lang-row"><span class="lang-name">French</span><span class="lang-level">Professional</span></div>
-      <div class="lang-bar"><div class="lang-fill" style="width:78%"></div></div>
-    </div>
-    <div style="margin-top:.8rem;">
-      <div class="lang-row"><span class="lang-name">German</span><span class="lang-level">Intermediate / Working</span></div>
-      <div class="lang-bar"><div class="lang-fill" style="width:55%"></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════ OTHER WORK ════════════════════════ -->
-<section id="other">
-  <h2>Other Work Experience</h2>
-
-  <div class="entry">
-    <div class="entry-meta">
-      <span class="tag tag-work">Teaching</span>
-      <span class="date">Various periods</span>
-    </div>
-    <h3>Mathematics Teacher</h3>
-    <p>
-      Taught mathematics at secondary and university preparatory levels in Lebanon. 
-      Covered topics including algebra, calculus, and introductory analysis.
-    </p>
-  </div>
-
-  <div class="entry">
-    <div class="entry-meta">
-      <span class="tag tag-work">Other Employment</span>
-      <span class="date">Various periods, Germany</span>
-    </div>
-    <h3>Additional Work — Germany</h3>
-    <ul>
-      <li>
-        <strong>COVID-19 Test Centre — Test Administrator</strong>:
-        Administered PCR and rapid antigen tests at a corona testing centre. Responsible for sample collection, 
-        documentation, and adherence to hygiene and safety protocols.
-      </li>
-      <li>
-        <strong>Delivery Driver / Courier</strong>:
-        Worked as a delivery courier, managing timely and accurate parcel and food delivery within assigned routes.
-      </li>
-    </ul>
-  </div>
-
-</section>
+  </div><!-- /other-work -->
 
 </main>
 
-<footer>
-  <p>Academic Portfolio — Ahmad Abassi · Built with HTML/CSS · All grades use German scale: 1.0 = Excellent = A = 4.0 GPA</p>
-</footer>
+<footer>© 2026 Moussa Atwi · Mathematics &amp; Poetry</footer>
 
 <script>
-  // PDF attach: show filename after selection
-  document.querySelectorAll('.pdf-attach input[type=file]').forEach(input => {
-    input.addEventListener('change', e => {
-      const file = e.target.files[0];
-      if (file) {
-        const label = input.closest('.pdf-attach');
-        const span = label.querySelector('.pdf-attach-label');
-        span.innerHTML = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> ${file.name}`;
-        label.style.borderColor = 'var(--accent)';
-        label.style.color = 'var(--accent)';
-      }
-    });
-  });
-
-  // Poem card expand (preserved from original)
+  // poem card expand (kept for consistency with index)
   document.querySelectorAll('.poem-card').forEach(card => {
     card.addEventListener('click', () => {
       card.classList.toggle('expanded');
@@ -704,3 +633,4 @@
 </script>
 </body>
 </html>
+
