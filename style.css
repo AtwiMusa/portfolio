@@ -1,599 +1,1023 @@
+/* ═══════════════════════════════════════════════════════════
+   MOUSSA ATWI — PORTFOLIO
+   style.css — Shared across index.html, cv.html, poems.html
+   Aesthetic: Dark scholarly · Warm gold · Elegant serif
+   Fonts: EB Garamond (display) · DM Mono (labels) · Spectral (body)
+═══════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Mono:wght@300;400;500&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cairo:wght@300;400;500&display=swap');
+
+/* ── CSS VARIABLES ── */
 :root {
-  --bg: #0f172a;
-  --card: #111827;
-  --accent: #38bdf8;
-  --accent-soft: rgba(56,189,248,0.15);
-  --text: #e5e7eb;
-  --muted: #9ca3af;
+  --bg:        #0d0f14;
+  --bg2:       #080a0f;
+  --surface:   #13161e;
+  --surface2:  #1a1e2a;
+  --border:    #252a38;
+  --border2:   rgba(255,255,255,0.06);
+
+  --accent:    #c8a96e;        /* warm gold */
+  --accent2:   #7eb8c9;        /* steel blue */
+  --accent-soft: rgba(200,169,110,0.12);
+  --accent2-soft: rgba(126,184,201,0.10);
+
+  --text:      #e8e4da;
+  --muted:     #8a8880;
+  --highlight: #d4c5a0;
+  --green:     #7ec97e;
+  --red:       #c97878;
 }
-* {
+
+/* ── RESET ── */
+*, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
+html { scroll-behavior: smooth; }
+
 body {
-  font-family: 'Inter', sans-serif;
-  background: linear-gradient(180deg, #020617, var(--bg));
+  background: var(--bg);
   color: var(--text);
-  line-height: 1.7;
+  font-family: 'Spectral', serif;
+  font-size: 17px;
+  line-height: 1.75;
+  min-height: 100vh;
+  /* subtle grain texture overlay */
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(200,169,110,0.06) 0%, transparent 70%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
 }
+
+
+/* ═══════════════════════════════════════════
+   HEADER  (shared: index, cv, poems)
+═══════════════════════════════════════════ */
 header {
-  padding: 5rem 2rem 4rem;
+  position: relative;
+  padding: 5.5rem 2rem 4rem;
   text-align: center;
+  border-bottom: 1px solid var(--border);
 }
+
 header h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
+  font-family: 'EB Garamond', serif;
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 400;
+  color: var(--highlight);
+  line-height: 1.12;
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.01em;
 }
+
 header p {
-  max-width: 700px;
-  margin: 0 auto;
+  font-family: 'Spectral', serif;
+  font-size: 1rem;
   color: var(--muted);
-  font-size: 1.1rem;
+  max-width: 680px;
+  margin: 0 auto 0.5rem;
+  font-style: italic;
 }
-nav {
+
+/* decorative lines under header title */
+.title-lines {
   display: flex;
   justify-content: center;
   gap: 1rem;
+  margin: 0.8rem auto 0;
+}
+.title-lines .line {
+  width: 70px;
+  height: 1px;
+  background: var(--accent);
+  opacity: 0.5;
+  border-radius: 1px;
+}
+
+
+/* ── HEADER NAV ── */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
   flex-wrap: wrap;
-  margin-top: 2.5rem;
+  margin-top: 2rem;
 }
+
 nav a {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
   text-decoration: none;
-  color: var(--text);
-  padding: 0.6rem 1.1rem;
-  border-radius: 999px;
-  border: 1px solid var(--accent-soft);
-  background: transparent;
-  transition: all 0.3s ease;
-  font-size: 0.95rem;
-}
-nav a:hover {
-  background: var(--accent-soft);
-  color: var(--accent);
-  transform: translateY(-2px);
-}
-main {
-  max-width: none;
-  width: 100%;
-  padding: 3rem 8vw 5rem;
-  display: grid;
-  gap: 3rem;
-  margin: 0 auto;
-}
-@media (max-width: 800px) {
-  main {
-    padding: 3rem 1.5rem 5rem;
-  }
-}
-section {
-  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 1.5rem;
-  padding: 2.5rem;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-}
-section h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1.2rem;
-  font-family: 'Playfair Display', serif;
-}
-.about {
-  display: grid;
-  grid-template-columns: 180px 1fr;
-  gap: 2rem;
-  align-items: center;
-}
-.about img {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid var(--accent-soft);
-}
-.about p {
   color: var(--muted);
+  padding: 0.4rem 1rem;
+  border-radius: 2px;
+  border: 1px solid var(--border);
+  background: transparent;
+  transition: all 0.25s ease;
 }
+
+nav a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+/* back nav (cv.html, poems.html) */
+.back-nav {
+  position: absolute;
+  top: 5.5rem;
+  right: 4vw;
+}
+
+.back-nav a {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.07em;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 0.35rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  background: rgba(13,15,20,0.7);
+  backdrop-filter: blur(6px);
+  transition: all 0.25s;
+}
+
+.back-nav a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.top-right { /* alias */
+  position: absolute;
+  top: 5.5rem;
+  right: 4vw;
+}
+
+
+/* ═══════════════════════════════════════════
+   MAIN LAYOUT
+═══════════════════════════════════════════ */
+main {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 3rem 5vw 6rem;
+}
+
+section {
+  margin-bottom: 4rem;
+}
+
+section h2 {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.7rem;
+  font-weight: 400;
+  color: var(--accent);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.8rem;
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+section h2 i { font-size: 1.1rem; }
+
+
+/* ═══════════════════════════════════════════
+   CARDS  (index.html publications, cv, etc.)
+═══════════════════════════════════════════ */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
+  gap: 1.4rem;
 }
+
 .card {
-  background: var(--card);
-  border-radius: 1.2rem;
-  padding: 1.8rem;
-  border: 1px solid rgba(255,255,255,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1.7rem 1.9rem;
+  transition: all 0.3s ease;
 }
+
 .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+  border-color: rgba(200,169,110,0.4);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.45);
+  transform: translateY(-4px);
 }
+
 .card h3 {
-  margin-bottom: 0.6rem;
-  font-size: 1.2rem;
+  font-family: 'EB Garamond', serif;
+  font-size: 1.15rem;
+  color: var(--highlight);
+  margin-bottom: 0.5rem;
 }
+
 .card p {
   color: var(--muted);
-  font-size: 0.95rem;
-  margin-bottom: 1rem;
+  font-size: 0.92rem;
+  margin-bottom: 0.8rem;
 }
+
 .card a {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
   color: var(--accent);
   text-decoration: none;
-  font-weight: 600;
-  font-size: 0.9rem;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
 }
-ul {
-  margin-top: 1rem;
-  padding-left: 1.2rem;
+
+.card a:hover { border-bottom-color: var(--accent); }
+
+
+/* ═══════════════════════════════════════════
+   ABOUT SECTION
+═══════════════════════════════════════════ */
+.about {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 2.2rem;
+  align-items: center;
 }
-li {
-  margin-bottom: 0.5rem;
+
+.about-styled {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 2rem 2.2rem;
+}
+
+.about-image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.about-image img {
+  width: 165px;
+  height: 165px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(200,169,110,0.35);
+  position: relative;
+  z-index: 1;
+}
+
+.image-ring {
+  position: absolute;
+  width: 178px;
+  height: 178px;
+  border-radius: 50%;
+  border: 1px solid rgba(200,169,110,0.15);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.about-intro {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.8rem !important;
+}
+
+.about-text p {
   color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 0.7rem;
 }
-footer {
-  text-align: center;
-  padding: 2.5rem 1rem;
-  color: var(--muted);
-  font-size: 0.9rem;
-}
+
+.about-text p strong { color: var(--text); }
+
 @media (max-width: 700px) {
   .about {
     grid-template-columns: 1fr;
     text-align: center;
   }
-  .about img {
-    margin: 0 auto;
-  }
+  .about-image img { margin: 0 auto; }
 }
-/* CONTACT ICONS & TOOLTIP */
+
+
+/* ═══════════════════════════════════════════
+   PUBLICATIONS
+═══════════════════════════════════════════ */
+.pub-date {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.7rem;
+}
+
+.abstract-details {
+  margin: 1rem 0;
+  cursor: pointer;
+}
+
+.abstract-details summary {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.07em;
+  font-weight: 500;
+  color: var(--accent);
+  padding: 0.5rem 0;
+  outline: none;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: opacity 0.2s;
+  opacity: 0.85;
+}
+
+.abstract-details summary::-webkit-details-marker { display: none; }
+.abstract-details summary::before {
+  content: '▸';
+  font-size: 0.75rem;
+  transition: transform 0.25s;
+  display: inline-block;
+}
+.abstract-details[open] summary::before { transform: rotate(90deg); }
+.abstract-details summary:hover { opacity: 1; }
+
+.abstract-content {
+  background: rgba(200,169,110,0.04);
+  padding: 1rem 1.3rem;
+  border-radius: 3px;
+  border-left: 2px solid var(--accent);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin-top: 0.5rem;
+}
+
+.abstract-content p { margin-bottom: 0.6rem; color: var(--text); }
+.keywords { color: var(--muted); font-style: italic; margin-top: 0.8rem !important; }
+
+.pub-links {
+  margin-top: 1rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.pub-links a {
+  color: var(--accent);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.85rem;
+  border: 1px solid rgba(200,169,110,0.3);
+  border-radius: 2px;
+  background: var(--accent-soft);
+  transition: all 0.2s;
+}
+
+.pub-links a:hover {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+}
+
+.pub-links i { font-size: 0.9rem; }
+
+
+/* ═══════════════════════════════════════════
+   PDF BUTTON  (shared)
+═══════════════════════════════════════════ */
+.pdf-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.45rem 1.1rem;
+  border-radius: 2px;
+  border: 1px solid rgba(200,169,110,0.3);
+  color: var(--accent);
+  background: var(--accent-soft);
+  text-decoration: none;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  transition: all 0.25s ease;
+}
+
+.pdf-btn:hover {
+  background: var(--accent);
+  color: var(--bg);
+  transform: translateY(-2px);
+}
+
+.pdf-row {
+  display: flex;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+
+/* ═══════════════════════════════════════════
+   CONTACT
+═══════════════════════════════════════════ */
 .contact-row {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 1.2rem;
+  gap: 1rem;
   margin-top: 1.5rem;
 }
+
 .contact-item {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  padding: 0.6rem 1.1rem;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.1);
+  gap: 0.55rem;
+  padding: 0.5rem 1.1rem;
+  border-radius: 2px;
+  background: var(--surface);
+  border: 1px solid var(--border);
   color: var(--text);
   text-decoration: none;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  transition: all 0.25s ease;
   position: relative;
 }
+
 .contact-item i {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--accent);
 }
+
 .contact-item:hover {
   background: var(--accent-soft);
-  transform: translateY(-3px);
+  border-color: rgba(200,169,110,0.4);
+  transform: translateY(-2px);
+  color: var(--accent);
 }
+
 .contact-item::after {
   content: attr(data-tooltip);
   position: absolute;
   bottom: -2.2rem;
   left: 50%;
   transform: translateX(-50%);
-  background: #020617;
+  background: var(--surface2);
   color: var(--muted);
   padding: 0.3rem 0.6rem;
-  font-size: 0.75rem;
-  border-radius: 0.4rem;
+  font-size: 0.68rem;
+  border-radius: 2px;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s;
   white-space: nowrap;
-}
-.contact-item:hover::after {
-  opacity: 1;
-}
-/* Publications enhancements */
-.pub-date {
-  color: var(--muted);
-  font-size: 0.95rem;
-  margin-bottom: 0.8rem;
-}
-.abstract-details {
-  margin: 1.2rem 0;
-  cursor: pointer;
-}
-.abstract-details summary {
-  font-weight: 600;
-  color: var(--accent);
-  font-size: 0.95rem;
-  padding: 0.6rem 0;
-  outline: none;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-.abstract-details summary::marker {
-  color: var(--accent);
-}
-.abstract-details[open] summary {
-  margin-bottom: 0.8rem;
-}
-.abstract-content {
-  background: rgba(255,255,255,0.04);
-  padding: 1rem 1.2rem;
-  border-radius: 0.8rem;
-  border-left: 3px solid var(--accent);
-  font-size: 0.92rem;
-  line-height: 1.6;
-}
-.abstract-content p {
-  margin-bottom: 0.8rem;
-}
-.keywords {
-  color: var(--muted);
-  font-style: italic;
-  margin-top: 1rem !important;
-}
-.pub-links {
-  margin-top: 1rem;
-  font-size: 0.95rem;
-}
-.pub-links a {
-  color: var(--accent);
-  text-decoration: none;
-  font-weight: 600;
-  margin-right: 0.5rem;
-}
-.pub-links a:hover {
-  text-decoration: underline;
-}
-.pub-links i {
-  margin-right: 0.4rem;
-  font-size: 1rem;
-}
-/* Arabic Romantic Poetry - 2 Wide Cards Side by Side */
-.poetry-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Always 2 columns */
-  gap: 1.2rem;
-  margin-top: 0rem;
-}
-.poem-card-wrapper {
-  cursor: pointer;
-}
-.poem-card {
-  position: relative;
-  background: var(--card);
-  border-radius: 1.0rem;
-  padding: 1.2rem 1.4rem;
-  border: 1px solid rgba(56,189,248,0.2);
-  box-shadow: 0 12px 35px rgba(0,0,0,0.35);
-  transition: all 0.5s ease;
-  transform: perspective(1000px) rotateX(2deg);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-.poem-card.expanded {
-  transform: translateY(-8px) perspective(1000px) rotateX(0deg);
-  box-shadow: 0 25px 50px rgba(56,189,248,0.2);
-  border-color: var(--accent);
-}
-.poem-card:hover {
-  transform: translateY(-12px) perspective(1000px) rotateX(0deg);
-  box-shadow: 0 25px 50px rgba(56,189,248,0.2);
-  border-color: var(--accent);
-}
-/* Corner decorations */
-.poem-card::before,
-.poem-card::after {
-  content: '';
-  position: absolute;
-  width: 50px;
-  height: 30px;
-  border: 2px solid var(--accent);
-  opacity: 0.25;
-  transition: opacity 0.4s ease;
-}
-.poem-card::before {
-  top: 18px;
-  left: 18px;
-  border-right: none;
-  border-bottom: none;
-}
-.poem-card::after {
-  bottom: 18px;
-  right: 18px;
-  border-left: none;
-  border-top: none;
-}
-.poem-card:hover::before,
-.poem-card:hover::after {
-  opacity: 0.5;
-}
-.poem-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.2rem;
-  text-align: center;
-  margin-bottom: 0rem;
-  color: var(--accent);
-  font-weight: 200;
-}
-.poem-preview,
-.poem-full {
-  font-family: 'Playfair Display', sans-serif;
-  font-size: 0.85rem;
-  line-height: 1.0;
-  font-weight: 5;
-  color: var(--text);
-  text-align: right;
-  white-space: pre-line; /* Respects your <br> tags */
-  padding-left: 0.05rem;   
-  padding-right: 0.6rem;
-  margin-top: -1.0rem;     /* ← ADD THIS: pulls text upward */
-  /* your existing padding if any */
-}
-.poem-full {
-  display: none;
-}
-.poem-card.expanded .poem-preview {
-  display: none;
-}
-.poem-card.expanded .poem-full {
-  display: block;
-  animation: fadeIn 0.6s ease;
-  margin-top: 0.5rem;
-  padding-top: 0.5rem;
-  border-top: 1px solid rgba(56,189,248,0.2);
-}
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.expand-toggle {
-  text-align: center;
-  margin-top: 0rem; /* Reduced gap from last line to "اقرأ المزيد" */
-  color: var(--accent);
-  font-weight: 600;
-  font-size: 0.6rem;
-}
-.poem-card.expanded .expand-toggle {
-  color: var(--muted);
-  margin-top: 0.5rem;
-}
-/* Responsive: Stack on mobile */
-@media (max-width: 900px) {
-  .poetry-grid {
-    grid-template-columns: 1fr;
-  }
-  .poem-card {
-    padding: 2.5rem 2rem;
-  }
-}
-.expand-toggle {
-  text-align: center;
-  margin-top: 0.1rem;
-  color: var(--accent);
-  font-weight: 100;
-  font-size: 0.6rem;
+  border: 1px solid var(--border);
 }
 
-.poem-card.expanded .expand-toggle {
-  display: none;   /* ← ADD THIS BLOCK */
-}
-.poem-card.expanded .poem-full {
-  display: block;
-  animation: fadeIn 0.6s ease;
-  margin-top: 0.8rem;                 /* Keeps top spacing */
-  padding-top: 0.8rem;
-  padding-bottom: 2.5rem;             /* ← ADD THIS: adds space at the bottom */
-  border-top: 1px solid rgba(56,189,248,0.2);
-  white-space: pre-line;
-}
-.poetry-page .poetry-grid {
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 4 on wide, 3 on medium, 2/1 on small */
-  gap: 2rem;
-  max-width: none; /* Full space */
-  padding: 0 2rem; /* Breathing room on sides */
-}
-/* Natural bottom breathing room for short poems (no toggle) */
-.poem-card:not(.expanded) .poem-content {
-  padding-bottom: 1.5rem; /* Soft space at bottom for 1-3 line poems */
-}
-
-/* When expanded (long poems), keep normal padding */
-.poem-card.expanded .poem-content {
-  padding-bottom: 1rem;
-}
-
-/* "اقرأ المزيد" only appears on long poems (those with toggle in HTML) */
-.expand-toggle {
-  text-align: center;
-  margin-top: -1.5rem;
-  color: var(--accent);
-  font-weight: 100;
-  font-size: 0.7rem;
-  opacity: 0.7;
-}
-
-.poem-card.expanded .expand-toggle {
-  display: none;
-}
-
-/* .....*/
-
-.poetry-header {
-  text-align: left;
-  margin-bottom: 1.0rem;
-}
-
-.poetry-header h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;           /* Matches your other section titles */
-  font-weight: 700;
-  color: var(--text);
-  display: inline-block;
-  margin: 0;
-}
-
-.collection-name {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;           /* Slightly smaller but still prominent */
-  color: var(--accent);        /* Your beautiful blue */
-  font-weight: 800;
-  margin-left: 1.2rem;
-  opacity: 0.8;
-}
-
-.poetry-description em {
-  font-style: normal;
-  color: var(--accent);
-  font-weight: 200;
-}
-.desc-en {
-  display: block;
-}
-
-.desc-ar {
-  display: block;
-  direction: rtl;              /* Makes Arabic start from the right */
-  text-align: right;           /* Aligns the whole line to the right */
-  margin-top: 0.0rem;
-}
-.poetry-description {
-  font-size: 1rem;
-  color: var(--muted);
-  margin: 1.0rem 0 2.0rem 0;   /* Space below title, space before poems */
-  line-height: 1.7;
-}
+.contact-item:hover::after { opacity: 1; }
 
 
-
+/* ═══════════════════════════════════════════
+   FULL COLLECTION BUTTON
+═══════════════════════════════════════════ */
 .poetry-link {
   text-align: center;
-  margin: 2.5rem auto 0.2rem;
+  margin: 2.5rem auto 0.5rem;
 }
 
 .full-collection-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-  padding: 0.5rem 1.2rem;              /* Smaller padding → smaller button */
-  font-size: 1.0rem;                  /* Slightly smaller text */
-  font-weight: 400;
+  gap: 0.9rem;
+  padding: 0.55rem 1.5rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
   color: var(--accent);
-  background: rgba(201, 217, 224, 0.15); /* Much softer background (was 0.15+) */
-  border: 1px solid rgb(57, 107, 129); /* Softer, less bright border */
-  border-radius: 999px;
+  background: var(--accent-soft);
+  border: 1px solid rgba(200,169,110,0.3);
+  border-radius: 2px;
   text-decoration: none;
-  transition: all 0.4s ease;
-  box-shadow: 0 4px 12px rgba(14, 70, 94, 0.08); /* Very subtle shadow */
+  transition: all 0.3s ease;
 }
 
 .full-collection-btn:hover {
-  transform: translateY(-3px);         /* Smaller lift on hover */
-  background: rgba(56, 189, 248, 0.18); /* Slightly stronger on hover, still soft */
-  box-shadow: 0 8px 20px rgba(56, 189, 248, 0.15);
-  color: white;
-}
-
-.full-collection-btn i {
-  font-size: 1.2rem;                   /* Slightly smaller icon */
-}
-
-.btn-en, .btn-ar {
-  font-size: inherit;
-}
-
-.btn-separator {
-  font-weight: 400;
-  opacity: 0.7;
-}
-
-
-/* Remove the pulse animation if you don't want any "light" movement */
-
-
-/* .......*/
-
-
-
-.title-lines {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;                   /* Space between the two lines */
-  margin: 0rem auto 0rem;  /* Reduced top/bottom space → brings poems closer */
-}
-
-.title-lines .line {
-  width: 80px;
-  height: 1px;
   background: var(--accent);
-  opacity: 0.6;
-}
-
-/* Optional: make the lines slightly thicker or softer */
-.title-lines .line {
-  height: 1.0px;
-  border-radius: 1px;
-}
-
-
-
-
-header {
-  position: relative;           /* Important - allows absolute positioning inside */
-  padding: 5rem 2rem 4rem;
-  text-align: center;
-}
-
-.back-nav {
-  position: absolute;
-  top: 6.0rem;                  /* Distance from top */
-  right: 10rem;                  /* Distance from right edge - adjust 2rem to 6rem as needed */
-}
-
-.back-nav a {
-  color: var(--muted);
-  font-size: 0.95rem;
-  text-decoration: none;
-  padding: 0.6rem 1.2rem;
-  border: 1px solid var(--accent-soft);
-  border-radius: 999px;
-  background: rgba(17,24,39,0.7);
-  backdrop-filter: blur(6px);
-  transition: all 0.3s ease;
-}
-
-.back-nav a:hover {
-  color: var(--accent);
-  background: var(--accent-soft);
+  color: var(--bg);
   transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(200,169,110,0.2);
 }
 
+.full-collection-btn i { font-size: 1rem; }
+.btn-en, .btn-ar { font-size: inherit; }
+.btn-separator { opacity: 0.5; }
 
+
+/* ═══════════════════════════════════════════
+   POETRY SECTION  (index.html preview)
+═══════════════════════════════════════════ */
+.poetry-header {
+  margin-bottom: 0.8rem;
+}
+
+.poetry-description {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin: 0.8rem 0 1.8rem;
+  line-height: 1.7;
+}
+
+.poetry-description em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+.desc-en { display: block; }
+.desc-ar {
+  display: block;
+  direction: rtl;
+  text-align: right;
+  margin-top: 0.2rem;
+}
 
 .collection-link {
-  color: var(--accent);            /* Your beautiful blue */
+  color: var(--accent);
   text-decoration: none;
   font-weight: 600;
-  font-size: 1.05em;               /* Slightly larger to stand out */
-  transition: all 0.3s ease;
-  padding: 0.2rem 0.4rem;
-  border-radius: 6px;
+  transition: all 0.25s;
 }
 
 .collection-link:hover {
-  color: whitesmoke;
-  background: rgba(56, 189, 248, 0.15); /* Soft glow on hover */
+  color: var(--highlight);
   text-decoration: underline;
   text-underline-offset: 4px;
+}
+
+
+/* ═══════════════════════════════════════════
+   POEM CARDS  (index preview + poems.html)
+═══════════════════════════════════════════ */
+.poetry-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+.poem-card-wrapper { cursor: pointer; }
+
+.poem-card {
+  position: relative;
+  background: var(--surface);
+  border-radius: 3px;
+  padding: 1.2rem 1.4rem 1.6rem;
+  border: 1px solid rgba(200,169,110,0.18);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.3);
+  transition: all 0.4s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* corner decorations */
+.poem-card::before,
+.poem-card::after {
+  content: '';
+  position: absolute;
+  width: 45px;
+  height: 28px;
+  border: 1px solid var(--accent);
+  opacity: 0.18;
+  transition: opacity 0.35s;
+  pointer-events: none;
+}
+.poem-card::before { top: 14px; left: 14px; border-right: none; border-bottom: none; }
+.poem-card::after  { bottom: 14px; right: 14px; border-left: none; border-top: none; }
+
+.poem-card:hover,
+.poem-card.expanded {
+  border-color: rgba(200,169,110,0.45);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.5);
+  transform: translateY(-5px);
+}
+
+.poem-card:hover::before,
+.poem-card:hover::after,
+.poem-card.expanded::before,
+.poem-card.expanded::after {
+  opacity: 0.45;
+}
+
+.poem-title {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+  text-align: center;
+  color: var(--accent);
+  margin-bottom: 0.3rem;
+}
+
+.poem-preview,
+.poem-full {
+  font-family: 'Spectral', serif;
+  font-size: 0.84rem;
+  line-height: 1.65;
+  color: var(--text);
+  text-align: right;
+  direction: rtl;
+  white-space: pre-line;
+  padding: 0 0.4rem;
+}
+
+.poem-full { display: none; }
+
+.poem-card.expanded .poem-preview { display: none; }
+
+.poem-card.expanded .poem-full {
+  display: block;
+  animation: fadeIn 0.5s ease;
+  margin-top: 0.6rem;
+  padding-top: 0.6rem;
+  padding-bottom: 1rem;
+  border-top: 1px solid rgba(200,169,110,0.15);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.expand-toggle {
+  text-align: center;
+  margin-top: 0.4rem;
+  color: var(--accent);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+  opacity: 0.7;
+}
+
+.poem-card.expanded .expand-toggle { display: none; }
+
+/* poems.html full page overrides */
+.poetry-page .poetry-grid {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.6rem;
+  padding: 0;
+  max-width: none;
+}
+
+@media (max-width: 900px) {
+  .poetry-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 580px) {
+  .poetry-grid { grid-template-columns: 1fr; }
+}
+
+
+/* ═══════════════════════════════════════════
+   CV PAGE  (cv.html specific classes)
+═══════════════════════════════════════════ */
+.cv-page {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 2rem 4vw 7rem;
+}
+
+.cv-section { margin-bottom: 4rem; }
+
+.cv-section-title {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--accent);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  letter-spacing: 0.02em;
+}
+
+/* CV entry card */
+.cv-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1.5rem 1.8rem;
+  margin-bottom: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.cv-card:hover {
+  border-color: rgba(200,169,110,0.35);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.4);
+  transform: translateY(-2px);
+}
+
+/* Entry meta row */
+.entry-meta {
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.entry-date {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+.entry-place {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+}
+
+/* Tags */
+.tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.07em;
+  padding: 0.14rem 0.55rem;
+  border-radius: 2px;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.tag-gold  { background: rgba(200,169,110,.1);  color: var(--accent);  border: 1px solid rgba(200,169,110,.28); }
+.tag-blue  { background: rgba(126,184,201,.08); color: var(--accent2); border: 1px solid rgba(126,184,201,.25); }
+.tag-green { background: rgba(126,201,126,.08); color: var(--green);   border: 1px solid rgba(126,201,126,.22); }
+.tag-red   { background: rgba(201,120,120,.08); color: var(--red);     border: 1px solid rgba(201,120,120,.22); }
+
+/* CV accordion */
+details.cv-details { margin-top: 0.75rem; }
+
+details.cv-details summary {
+  cursor: pointer;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.07em;
+  color: var(--accent);
+  padding: 0.38rem 0;
+  outline: none;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  opacity: 0.82;
+  transition: opacity 0.2s;
+}
+
+details.cv-details summary::-webkit-details-marker { display: none; }
+details.cv-details summary::before {
+  content: '▸';
+  font-size: 0.72rem;
+  transition: transform 0.22s;
+  display: inline-block;
+}
+details.cv-details[open] summary::before { transform: rotate(90deg); }
+details.cv-details summary:hover { opacity: 1; }
+
+/* CV details body */
+.cv-details-body {
+  margin-top: 0.8rem;
+  padding: 1rem 1.3rem;
+  background: rgba(13,15,20,0.55);
+  border-radius: 3px;
+  border-left: 2px solid var(--accent);
+  font-size: 0.9rem;
+  line-height: 1.75;
+}
+
+.cv-details-body h5 {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--accent2);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  margin: 1rem 0 0.4rem;
+}
+
+.cv-details-body h5:first-child { margin-top: 0; }
+.cv-details-body p  { color: var(--text); margin-bottom: 0.5rem; }
+.cv-details-body em { color: var(--muted); font-style: italic; }
+
+.cv-details-body ul { padding-left: 1.2rem; margin: 0.4rem 0 0.7rem; }
+.cv-details-body li { color: var(--text); margin-bottom: 0.4rem; font-size: 0.9rem; }
+
+/* PDF attach slot */
+.attach-slot {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+  margin-top: 0.65rem;
+  padding: 0.26rem 0.82rem;
+  border-radius: 2px;
+  border: 1px dashed rgba(200,169,110,0.32);
+  color: var(--muted);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.67rem;
+  letter-spacing: 0.04em;
+  opacity: 0.75;
+}
+
+.attach-slot a { color: var(--accent); text-decoration: none; font-weight: 500; }
+.attach-slot a:hover { text-decoration: underline; }
+
+/* Grade note box */
+.grade-note {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--muted);
+  font-style: italic;
+  background: rgba(200,169,110,0.05);
+  border: 1px solid rgba(200,169,110,0.12);
+  padding: 0.45rem 0.85rem;
+  border-radius: 3px;
+  margin-bottom: 0.8rem;
+  display: inline-block;
+  line-height: 1.6;
+}
+
+/* Course chips */
+.course-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.32rem;
+  margin-top: 0.45rem;
+}
+
+.chip {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.62rem;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  padding: 0.16rem 0.5rem;
+  border-radius: 2px;
+  letter-spacing: 0.04em;
+}
+
+/* Skills grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.skill-block {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 1.1rem 1.3rem;
+  transition: border-color 0.25s;
+}
+
+.skill-block:hover { border-color: rgba(200,169,110,0.3); }
+
+.skill-block h5 {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  margin-bottom: 0.6rem;
+}
+
+.skill-list { list-style: none; padding: 0; margin: 0; }
+.skill-list li { font-size: 0.87rem; color: var(--muted); padding: 0.1rem 0; }
+
+/* Language bars */
+.lang-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.8rem;
+  margin-top: 0.5rem;
+}
+
+.lang-item { min-width: 130px; }
+
+.lang-name {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.05rem;
+  color: var(--highlight);
+}
+
+.lang-level {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.67rem;
+  color: var(--accent);
+  letter-spacing: 0.06em;
+  margin-top: 0.1rem;
+}
+
+.lang-bar {
+  height: 2px;
+  background: var(--border);
+  border-radius: 2px;
+  margin-top: 0.35rem;
+}
+
+.lang-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+/* Achievements list */
+.ach-list { list-style: none; padding: 0; }
+
+.ach-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.ach-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.ach-icon { font-size: 1.05rem; flex-shrink: 0; margin-top: 0.1rem; }
+
+.ach-text { font-size: 0.91rem; color: var(--text); line-height: 1.65; }
+.ach-text strong { color: var(--highlight); }
+
+
+/* ═══════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════ */
+footer {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  letter-spacing: 0.05em;
+}
+
+
+/* ═══════════════════════════════════════════
+   UTILITY
+═══════════════════════════════════════════ */
+ul { margin-top: 0.8rem; padding-left: 1.2rem; }
+li  { margin-bottom: 0.4rem; color: var(--muted); }
+
+strong { color: var(--text); }
+
+a { color: var(--accent); }
+
+::selection {
+  background: rgba(200,169,110,0.2);
+  color: var(--highlight);
+}
+
+/* scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg2); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════ */
+@media (max-width: 800px) {
+  main { padding: 2rem 1.2rem 5rem; }
+  .cv-page { padding: 1.5rem 1.2rem 5rem; }
+  header { padding: 4.5rem 1.2rem 3rem; }
+  .back-nav, .top-right { top: 4rem; right: 1.2rem; }
+}
+
+@media (max-width: 580px) {
+  header h1 { font-size: 1.9rem; }
+  section h2 { font-size: 1.4rem; }
+  .cards { grid-template-columns: 1fr; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .contact-row { gap: 0.6rem; }
+  .lang-grid { gap: 1.2rem; }
 }
