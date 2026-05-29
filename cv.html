@@ -3,42 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Curriculum Vitae — Moussa Atwi</title>
+  <title>Resume — Moussa Atwi</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 
 <header>
-  <h1>Curriculum Vitae</h1>
-  <div class="title-lines">
-    <span class="line"></span>
-    <span class="line"></span>
-  </div>
+  <h1>Resume</h1>
+  <div class="title-lines"><span class="line"></span><span class="line"></span></div>
   <nav class="back-nav top-right">
-    <a href="index.html#cv">← Back to Portfolio</a>
+    <a href="index.html#resume">← Back</a>
   </nav>
 </header>
 
 <main class="cv-page">
 
-  <p class="grade-note">
-    German grading scale: 1.0 = Sehr gut / Excellent = A = 4.0 GPA (US) ≈ 96–100% &nbsp;·&nbsp;
-    1.3 = A⁻ = 3.7 GPA ≈ 90–95% &nbsp;·&nbsp;
-    1.7 = B+ = 3.3 GPA ≈ 85–89% &nbsp;·&nbsp;
-    2.0 = B = 3.0 GPA ≈ 80–84%
-  </p>
+  <!-- Grade scale — once only -->
+  <span class="grade-note">
+    Grading: Grade A · Excellent = 1.0 (German) = 4.0 GPA (US) ≈ 96–100% &nbsp;·&nbsp;
+    A⁻ = 1.3 = 3.7 GPA ≈ 90–95% &nbsp;·&nbsp;
+    B+ = 1.7 = 3.3 GPA ≈ 85–89%
+  </span>
 
   <div class="pdf-row">
     <a href="pdfs/Latest_version.pdf" target="_blank" class="pdf-btn">
-      <i class="fa-solid fa-file-pdf"></i> Current CV (PDF)
+      <i class="fa-solid fa-file-pdf"></i> Current CV
     </a>
     <a href="pdfs/General_version.pdf" target="_blank" class="pdf-btn">
-      <i class="fa-solid fa-file-pdf"></i> Extended Academic CV (PDF)
+      <i class="fa-solid fa-file-pdf"></i> Extended Academic CV
     </a>
   </div>
 
-  <!-- 1. RESEARCH EXPERIENCE -->
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- 1. RESEARCH EXPERIENCE                     -->
+  <!-- ══════════════════════════════════════════ -->
   <div class="cv-section" id="research">
     <h2 class="cv-section-title"><i class="fa-solid fa-flask-vial"></i> Research Experience</h2>
 
@@ -52,17 +52,23 @@
       <details class="cv-details">
         <summary>Research Details &amp; Preprint</summary>
         <div class="cv-details-body">
-          <h5>Thesis Title</h5>
+          <h5>Thesis</h5>
           <p><em>"Sparse Exit Wave Reconstruction via Deep Unfolding"</em></p>
-          <h5>Keywords</h5>
-          <p>Phase Retrieval · TEM Imaging · Deep Unfolding · Proximal Gradient Algorithm · Complex-Valued Optimization · Sparse Reconstruction · Rademacher Complexity</p>
-          <h5>Description</h5>
-          <p>Transmission Electron Microscopy (TEM) enables high-resolution imaging of materials, but the resulting images are difficult to interpret directly. The focus is on exit wave reconstruction — the recovery of the complex-valued electron wave at the specimen's exit plane from intensity-only measurements — an inverse problem with a nonlinear forward model. We consider a simplified forward model making the problem equivalent to phase retrieval, and propose a discretized regularized variational formulation. To solve the resulting non-convex problem, the proximal gradient algorithm (PGA) is employed and its iterations are unfolded into a neural network, where each layer corresponds to one PGA step with learnable parameters. This deep unrolling approach, inspired by LISTA, enables improved reconstruction quality, interpretability, and implicit dictionary learning from data.</p>
+          <span class="kw">Phase Retrieval · TEM Imaging · Deep Unfolding · Proximal Gradient Algorithm · Complex-Valued Optimization · Sparse Reconstruction · Rademacher Complexity</span>
+          <p>Transmission Electron Microscopy (TEM) enables high-resolution imaging of materials. The focus is on exit wave reconstruction — recovery of the complex-valued electron wave at the specimen's exit plane from intensity-only measurements — an inverse problem with a nonlinear forward model. We propose a discretized regularized variational formulation, solve it via proximal gradient algorithm (PGA) unfolded into a neural network, inspired by LISTA, enabling improved reconstruction quality and implicit dictionary learning from data.</p>
           <h5>📄 Preprint — arXiv 2025</h5>
           <p><em>"A generalization bound for exit wave reconstruction via deep unfolding"</em></p>
-          <div class="pdf-row" style="margin-top:0.5rem; margin-bottom:0;">
-            <a href="pdfs/exit-wave-deep-unfolding.pdf" target="_blank" class="pdf-btn"><i class="fa-solid fa-file-pdf"></i> View PDF</a>
+          <div class="pdf-row" style="margin:0.5rem 0 0;">
+            <a href="pdfs/exit-wave-deep-unfolding.pdf" target="_blank" class="pdf-btn"><i class="fa-solid fa-file-pdf"></i> PDF</a>
             <a href="https://arxiv.org/abs/2511.06413" target="_blank" class="pdf-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> arXiv</a>
+            <a href="https://sfb1481.rwth-aachen.de/research/area-a/project-a08" target="_blank" class="sfb-badge">
+              <img src="https://sfb1481.rwth-aachen.de/typo3conf/ext/sitepackage/Resources/Public/Favicons/ms-icon-144x144.png" alt="" onerror="this.style.display='none'">
+              Project A08
+            </a>
+            <a href="https://sfb1481.rwth-aachen.de/" target="_blank" class="sfb-badge">
+              <img src="https://sfb1481.rwth-aachen.de/typo3conf/ext/sitepackage/Resources/Public/Favicons/ms-icon-144x144.png" alt="" onerror="this.style.display='none'">
+              SFB 1481
+            </a>
           </div>
         </div>
       </details>
@@ -79,11 +85,11 @@
         <summary>Responsibilities</summary>
         <div class="cv-details-body">
           <ul>
-            <li>Managing conceptual (Verständnisaufgaben) and calculation (Rechenaufgaben) exercises via Dynexite</li>
+            <li>Managing conceptual and calculation exercises via Dynexite</li>
             <li>Coordinating Bonuspunktetests (BPT) and online assessment workflows</li>
             <li>Publishing exercises, solutions, and announcements on Moodle</li>
-            <li>Reviewing and grading submissions; handling student feedback and complaints</li>
-            <li>Uploading grades to Moodle and maintaining assessment records</li>
+            <li>Reviewing and grading submissions; handling student feedback</li>
+            <li>Uploading grades and maintaining assessment records</li>
           </ul>
         </div>
       </details>
@@ -94,19 +100,17 @@
         <span class="tag tag-green">Research Internship</span>
         <span class="entry-date">Sep 2022 – Dec 2022</span>
         <span class="entry-place">Zuse Institute Berlin (ZIB) · Berlin, Germany</span>
+        <span class="tag tag-gold">Grade A · Excellent</span>
       </div>
       <strong>Student Researcher — Koopman Theory</strong>
-      <span class="tag tag-gold">Grade: A · Excellent</span>
       <details class="cv-details">
-        <summary>Internship Details</summary>
+        <summary>Details</summary>
         <div class="cv-details-body">
           <h5>Title</h5>
           <p><em>"Approximation of Koopman Operators Using Random Basis Functions"</em></p>
-          <h5>Keywords</h5>
-          <p>Koopman operators · EDMD · Deeptime · Neural Networks · Gaussians</p>
-          <h5>Description</h5>
-          <p>Approximation of Koopman operators using Extended Dynamic Mode Decomposition (EDMD) combined with random Gaussians and randomly initialised neural networks on Deeptime. "Gaussian" and "Rinn" methods implemented in Python and applied to high-dimensional models to estimate Koopman's eigenfunctions and eigenvalues.</p>
-          <div class="attach-slot"><i class="fa-solid fa-paperclip"></i> Internship Report PDF — <em>attach here</em></div>
+          <span class="kw">Koopman operators · EDMD · Deeptime · Neural Networks · Gaussians</span>
+          <p>Approximation of Koopman operators using EDMD combined with random Gaussians and randomly initialised neural networks on Deeptime. Implemented in Python and applied to high-dimensional models to estimate Koopman's eigenfunctions and eigenvalues.</p>
+          <div class="attach-slot"><i class="fa-solid fa-paperclip"></i> Internship Report — <em>attach here</em></div>
         </div>
       </details>
     </div>
@@ -116,18 +120,16 @@
         <span class="tag tag-green">Master's Thesis</span>
         <span class="entry-date">Dec 2022 – May 2023</span>
         <span class="entry-place">Zuse Institute Berlin (ZIB) · Berlin, Germany</span>
+        <span class="tag tag-gold">Grade A · Excellent</span>
       </div>
       <strong>Master's Thesis — Koopman Theory</strong>
-      <span class="tag tag-gold">Grade: 1.0 · Excellent · A · 4.0 GPA</span>
       <details class="cv-details">
-        <summary>Thesis Details</summary>
+        <summary>Details</summary>
         <div class="cv-details-body">
           <h5>Title</h5>
           <p><em>"Approximation of Koopman Operators Using Random Basis Functions"</em></p>
-          <h5>Keywords</h5>
-          <p>Koopman operators · EDMD · Random Gaussians · Neural Networks</p>
-          <h5>Description</h5>
-          <p>A comprehensive study of Koopman operators and nonlinear dynamical systems, including the intrinsic coordinates where the dynamics behaves linearly (Koopman Eigenfunctions), invariant subspaces, Koopman embedding, and EDMD combined with Monomials, Random Gaussians, and Trained and Untrained Randomly Initialised Neural Networks. Implemented in Python using the Deeptime framework.</p>
+          <span class="kw">Koopman operators · EDMD · Random Gaussians · Neural Networks</span>
+          <p>Comprehensive study of Koopman operators and nonlinear dynamical systems, including Koopman Eigenfunctions, invariant subspaces, Koopman embedding, and EDMD combined with Monomials, Random Gaussians, and Trained and Untrained Randomly Initialised Neural Networks.</p>
           <div class="attach-slot"><i class="fa-solid fa-paperclip"></i> Master's Thesis PDF — <em>attach here</em></div>
         </div>
       </details>
@@ -135,29 +137,30 @@
 
     <div class="cv-card">
       <div class="entry-meta">
-        <span class="tag tag-green">Research Internship + Master's Thesis</span>
+        <span class="tag tag-green">Internship + Master's Thesis</span>
         <span class="entry-date">Feb 2020 – Aug 2020</span>
         <span class="entry-place">Université de Bordeaux · Bordeaux, France</span>
+        <span class="tag tag-blue">Full-time · 35 hrs/week</span>
       </div>
       <strong>Student Researcher — Optimal Transport</strong>
-      <span class="tag tag-blue">Full-time · 35 hrs/week</span>
       <details class="cv-details">
         <summary>Details</summary>
         <div class="cv-details-body">
           <h5>Title</h5>
           <p><em>"Semi-discrete Optimal Transport for Large-Scale Problems"</em></p>
-          <h5>Keywords</h5>
-          <p>Convex Duality · Image Modeling · Gradient Descent · Stochastic Gradient Descent</p>
-          <h5>Description</h5>
-          <p>Implemented gradient descent and stochastic gradient descent algorithms in Python to solve large-scale semi-discrete optimal transport problems arising in image processing and machine learning. Studied the Monge and Kantorovich formulations, dual problem, c-transform, reformulation as convex optimization over Laguerre cells, and evaluated algorithmic efficiency and convergence toward optimal solutions.</p>
-          <div class="attach-slot"><i class="fa-solid fa-paperclip"></i> Master's Thesis (Mémoire) PDF — <em>attach here</em></div>
+          <span class="kw">Convex Duality · Image Modeling · Gradient Descent · Stochastic Gradient Descent</span>
+          <p>Implemented gradient descent and stochastic gradient descent in Python to solve large-scale semi-discrete optimal transport problems in image processing and machine learning. Studied Monge and Kantorovich formulations, dual problem, c-transform, Laguerre cells, and convergence behavior.</p>
+          <div class="attach-slot"><i class="fa-solid fa-paperclip"></i> Master's Thesis PDF — <em>attach here</em></div>
         </div>
       </details>
     </div>
 
   </div>
 
-  <!-- 2. EDUCATION -->
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- 2. EDUCATION                               -->
+  <!-- ══════════════════════════════════════════ -->
   <div class="cv-section" id="education">
     <h2 class="cv-section-title"><i class="fa-solid fa-graduation-cap"></i> Education</h2>
 
@@ -168,7 +171,7 @@
         <span class="entry-place">RWTH Aachen University · Aachen, Germany</span>
       </div>
       <strong>PhD in Applied Mathematics</strong>
-      <p style="color:var(--muted); font-size:0.88rem; margin-top:0.3rem; font-style:italic;">See Research Experience for full details.</p>
+      <p style="color:var(--muted); font-size:0.87rem; margin-top:0.2rem; font-style:italic;">See Research Experience for full details.</p>
     </div>
 
     <div class="cv-card">
@@ -176,48 +179,112 @@
         <span class="tag tag-gold">M.Sc.</span>
         <span class="entry-date">Apr 2021 – May 2023</span>
         <span class="entry-place">Technical University of Berlin (TUB) · Berlin, Germany</span>
+        <span class="tag tag-gold">GPA 1.2 · Excellent</span>
       </div>
       <strong>M.Sc. in Scientific Computing</strong>
-      <span class="tag tag-gold">GPA 1.2 · Excellent · ≈ 3.8 US</span>
       <details class="cv-details">
-        <summary>Thesis, Internship, Seminars &amp; Courses</summary>
+        <summary>Thesis, Seminars &amp; Courses</summary>
         <div class="cv-details-body">
-          <h5>Master's Thesis — ZIB &nbsp;<span class="tag tag-gold">1.0 · Excellent · A · 4.0 GPA</span></h5>
+
+          <h5>Master's Thesis — ZIB &nbsp;<span class="tag tag-gold">Grade A · Excellent</span></h5>
           <p><em>"Approximation of Koopman Operators Using Random Basis Functions"</em> — see Research Experience.</p>
-          <div class="attach-slot"><i class="fa-solid fa-paperclip"></i> Master's Thesis PDF — <em>attach here</em></div>
-          <h5>Research Internship — ZIB &nbsp;<span class="tag tag-gold">Grade: A · Excellent</span></h5>
+          <div class="attach-slot"><i class="fa-solid fa-paperclip"></i> Thesis PDF — <em>attach here</em></div>
+
+          <h5>Research Internship — ZIB &nbsp;<span class="tag tag-gold">Grade A · Excellent</span></h5>
           <p><em>"Approximation of Koopman Operators Using Random Basis Functions"</em> — see Research Experience.</p>
-          <div class="attach-slot"><i class="fa-solid fa-paperclip"></i> Internship Report PDF — <em>attach here</em></div>
-          <h5>Seminars (Reports &amp; Talks)</h5>
-          <ul>
-            <li>
-              <strong>Optimal Transport</strong> &nbsp;<span class="tag tag-gold">1.3 · A⁻ · 3.7 GPA · Excellent</span><br>
-              <em>"Entropic Regularization of Discrete and Continuous Optimal Transport"</em><br>
-              Keywords: Kantorovich Formulation · Sinkhorn's Algorithm · KL-Divergence · Gibbs Kernel · Dual Formulation.<br>
-              Convergence with small and large regularization; Sinkhorn algorithm for EOT with quadratic cost; strong duality of the dual problem.
-              <div class="attach-slot" style="margin-top:0.4rem;"><i class="fa-solid fa-paperclip"></i> Seminar Report PDF — <em>attach here</em></div>
-            </li>
-            <li style="margin-top:0.7rem;">
-              <strong>Nonlinear Optimization</strong> &nbsp;<span class="tag tag-gold">1.0 · A · 4.0 GPA · Excellent</span><br>
-              <em>"Constrained Optimization and Duality. Applications to ML"</em><br>
-              Keywords: Lagrangian Relaxation · Coordinate Descent · SVM Dual · Norm Constrained Optimization · Barrier Methods.<br>
-              Primal and dual problems, constraint qualifications for strong duality; formulation of SVM dual via coordinate and gradient descent.
-              <div class="attach-slot" style="margin-top:0.4rem;"><i class="fa-solid fa-paperclip"></i> Seminar Report PDF — <em>attach here</em></div>
-            </li>
-          </ul>
-          <h5>Project: Scientific Computing &nbsp;<span class="tag tag-gold">1.0 · A · Excellent</span></h5>
+          <div class="attach-slot"><i class="fa-solid fa-paperclip"></i> Internship Report — <em>attach here</em></div>
+
+          <h5>Seminars</h5>
+          <div class="course-item">
+            <details>
+              <summary><strong>Optimal Transport</strong> &nbsp;<span class="tag tag-gold">Grade A · Excellent</span></summary>
+              <div class="course-desc">
+                <span class="kw">Kantorovich Formulation · Sinkhorn's Algorithm · KL-Divergence · Gibbs Kernel · Dual Formulation</span>
+                Convergence with small and large regularization; Sinkhorn algorithm for EOT with quadratic cost; strong duality of the dual problem. <em>"Entropic Regularization of Discrete and Continuous Optimal Transport"</em>
+                <div style="margin-top:0.5rem;"><div class="attach-slot"><i class="fa-solid fa-paperclip"></i> Seminar Report — <em>attach here</em></div></div>
+              </div>
+            </details>
+          </div>
+          <div class="course-item">
+            <details>
+              <summary><strong>Nonlinear Optimization</strong> &nbsp;<span class="tag tag-gold">Grade A · Excellent</span></summary>
+              <div class="course-desc">
+                <span class="kw">Lagrangian Relaxation · Coordinate Descent · SVM Dual · Norm Constrained Optimization · Barrier Methods</span>
+                Primal and dual problems, constraint qualifications for strong duality; formulation of SVM dual via coordinate and gradient descent. <em>"Constrained Optimization and Duality. Applications to ML"</em>
+                <div style="margin-top:0.5rem;"><div class="attach-slot"><i class="fa-solid fa-paperclip"></i> Seminar Report — <em>attach here</em></div></div>
+              </div>
+            </details>
+          </div>
+
+          <h5>Project: Scientific Computing &nbsp;<span class="tag tag-gold">Grade A · Excellent</span></h5>
           <p>Nonlinear Porous Medium Equation — "Gas transport in porous medium". Numerical methods for PDEs (Voronoi FVM), Julia implementation using Rothe method, Implicit Euler, ExtendableGrids.jl, DifferentialEquations.jl, 1D and 2D simulation results.</p>
-          <div class="attach-slot"><i class="fa-solid fa-paperclip"></i> Project Report PDF — <em>attach here</em></div>
-          <h5>Key Courses &nbsp;<span class="tag tag-gold">1.0 · A · Excellent (unless noted)</span></h5>
-          <ul>
-            <li><strong>Nonlinear Optimization</strong> — Convex optimization, conjugate gradient and trust region methods, constrained nonlinear optimization, tangent and linearized cones, ACQ, LICQ, KKT conditions, critical cone, box constraints, active set and null-space methods, SQP method.</li>
-            <li><strong>Calculus of Variations and Optimal Control</strong> — Necessary conditions for global and local minimizers (Euler, Legendre, Jacobi, Weierstrass); Bolza problem, Pontryagin's Maximum Principle, Time Optimal Control, Linear Quadratic Optimal Control, Differential Riccati Equation.</li>
-            <li><strong>Numerical Methods for PDEs</strong> — Finite Elements: Interpolation Lemma, Bramble-Hilbert Lemma, Quasi-Uniform Decomposition, Aubin-Nitsche Lemma, L² and L∞ Error Estimates, Conforming and Non-Conforming FE, Strang Lemmata, Crouzeix-Raviart Element, A Posteriori Error Estimators.</li>
-            <li><strong>Numerical Mathematics/Analysis</strong> — Runge-Kutta, Adams-Bashforth, Adams-Moulton, BDF; consistency, order of convergence, stability regions, A-stability; boundary value and eigenvalue problems, QR decomposition, Hessenberg reduction.</li>
-            <li><strong>Stationary Linear/Nonlinear Elliptic PDEs of Second Order</strong> — Sobolev spaces, variational problems, monotone operators, Galerkin methods, Lax-Milgram, Zarantonello; weak and weak* convergence, Browder-Minty, Brezis; stationary Navier-Stokes equation.</li>
-            <li><strong>Probabilistic and Bayesian Modelling in ML and AI</strong> — Maximum likelihood for exponential families, EM algorithm, Bayes inference, Gibbs sampler, conjugate priors, MCMC, Gaussian processes, variational inference.</li>
-            <li><strong>Unsupervised ML and Python Programming for ML</strong> — Dataset analysis, Markov chains, LLE, t-SNE, CCA, ICA, Autoencoders, HMMs, kernel machines, deep learning, anomaly detection.</li>
-          </ul>
+          <div class="attach-slot"><i class="fa-solid fa-paperclip"></i> Project Report — <em>attach here</em></div>
+
+          <h5>Courses &nbsp;<span class="tag tag-gold">Grade A · Excellent</span></h5>
+          <div class="course-item">
+            <details>
+              <summary><strong>Nonlinear Optimization</strong></summary>
+              <div class="course-desc">
+                <span class="kw">Convex optimization · Conjugate gradient · Trust region methods · Constrained optimization · ACQ · LICQ · KKT conditions · Active set · Null-space methods · SQP</span>
+                Tangent and linearized cones, constraint qualifications for KKT, critical cone, box constraints, active set and null-space methods, SQP method.
+              </div>
+            </details>
+          </div>
+          <div class="course-item">
+            <details>
+              <summary><strong>Calculus of Variations and Optimal Control</strong></summary>
+              <div class="course-desc">
+                <span class="kw">Euler · Legendre · Jacobi · Weierstrass conditions · Bolza problem · Pontryagin's Maximum Principle · Differential Riccati Equation</span>
+                Necessary conditions for global and local minimizers; problems with moving endpoints; Time Optimal Control, Linear Quadratic Optimal Control.
+              </div>
+            </details>
+          </div>
+          <div class="course-item">
+            <details>
+              <summary><strong>Numerical Methods for PDEs</strong></summary>
+              <div class="course-desc">
+                <span class="kw">Finite Elements · Interpolation Lemma · Bramble-Hilbert · Aubin-Nitsche · Strang Lemmata · Crouzeix-Raviart · A Posteriori Error Estimators</span>
+                L² and L∞ error estimates, conforming and non-conforming FE, polygonal approximation of curved boundaries.
+              </div>
+            </details>
+          </div>
+          <div class="course-item">
+            <details>
+              <summary><strong>Numerical Mathematics/Analysis</strong></summary>
+              <div class="course-desc">
+                <span class="kw">Runge-Kutta · Adams-Bashforth · Adams-Moulton · BDF · A-stability · QR decomposition · Hessenberg reduction</span>
+                One and multi-step methods for ODEs; consistency, order of convergence, stability regions; boundary value and eigenvalue problems.
+              </div>
+            </details>
+          </div>
+          <div class="course-item">
+            <details>
+              <summary><strong>Stationary Linear/Nonlinear Elliptic PDEs</strong></summary>
+              <div class="course-desc">
+                <span class="kw">Sobolev spaces · Galerkin methods · Lax-Milgram · Zarantonello · Browder-Minty · Brezis · Navier-Stokes</span>
+                Variational problems and operator equations, monotone operators; weak and weak* convergence; application to stationary Navier-Stokes equation.
+              </div>
+            </details>
+          </div>
+          <div class="course-item">
+            <details>
+              <summary><strong>Probabilistic and Bayesian Modelling in ML and AI</strong></summary>
+              <div class="course-desc">
+                <span class="kw">EM algorithm · Gibbs sampler · Conjugate priors · MCMC · Gaussian processes · Variational inference</span>
+                Maximum likelihood for exponential families, Bayes inference, Gaussian approximations to posterior densities.
+              </div>
+            </details>
+          </div>
+          <div class="course-item">
+            <details>
+              <summary><strong>Unsupervised ML and Python Programming for ML</strong></summary>
+              <div class="course-desc">
+                <span class="kw">LLE · t-SNE · CCA · ICA · Autoencoders · HMMs · Kernel machines · Anomaly detection</span>
+                Dataset analysis, simulation of Markov chains, deep learning and structured predictions.
+              </div>
+            </details>
+          </div>
+
         </div>
       </details>
     </div>
@@ -227,26 +294,36 @@
         <span class="tag tag-gold">M.Sc.</span>
         <span class="entry-date">Oct 2019 – Sep 2020</span>
         <span class="entry-place">University of Pau and Pays de l'Adour (UPPA) · Pau, France</span>
+        <span class="tag tag-green">🎓 Excellence Scholarship</span>
       </div>
       <strong>M.Sc. in Mathematics, Modeling and Simulation</strong>
-      <span class="tag tag-green">🎓 Excellence Scholarship</span>
       <details class="cv-details">
         <summary>Thesis, Projects &amp; Courses</summary>
         <div class="cv-details-body">
           <h5>Master's Thesis — Université de Bordeaux</h5>
-          <p><em>"Semi-discrete Optimal Transport for Large-Scale Problems"</em> — completed as full-time stage/mémoire (35 hrs/week), Feb–Aug 2020. See Research Experience for full description.</p>
-          <div class="attach-slot"><i class="fa-solid fa-paperclip"></i> Master's Thesis PDF — <em>attach here</em></div>
+          <p><em>"Semi-discrete Optimal Transport for Large-Scale Problems"</em> — full-time stage/mémoire, Feb–Aug 2020. See Research Experience.</p>
+          <div class="attach-slot"><i class="fa-solid fa-paperclip"></i> Thesis PDF — <em>attach here</em></div>
           <h5>Projects</h5>
-          <ul>
-            <li>
-              <strong>Porous Media</strong> — Homogenization of reactive porous media flow; numerical simulation using DuMuX of the Buckley-Leverett equation for immiscible and incompressible two-phase flow in 1D (relative permeability) and 2D (analytic and random permeability) homogeneous porous media.
-              <div class="attach-slot" style="margin-top:0.4rem;"><i class="fa-solid fa-paperclip"></i> Project Report PDF — <em>attach here</em></div>
-            </li>
-            <li style="margin-top:0.6rem;">
-              <strong>Fluid Mechanics / Industrial Software</strong> — Physical and mathematical modeling for numerical simulation; ANSYS-FLUENT for compressible and incompressible fluids; elsA-ONERA for compressible flows.
-              <div class="attach-slot" style="margin-top:0.4rem;"><i class="fa-solid fa-paperclip"></i> Project Report PDF — <em>attach here</em></div>
-            </li>
-          </ul>
+          <div class="course-item">
+            <details>
+              <summary><strong>Porous Media</strong></summary>
+              <div class="course-desc">
+                <span class="kw">DuMuX · Buckley-Leverett equation · Relative permeability · Homogenization</span>
+                Numerical simulation of immiscible and incompressible two-phase flow in 1D and 2D homogeneous porous media.
+                <div style="margin-top:0.5rem;"><div class="attach-slot"><i class="fa-solid fa-paperclip"></i> Project Report — <em>attach here</em></div></div>
+              </div>
+            </details>
+          </div>
+          <div class="course-item">
+            <details>
+              <summary><strong>Fluid Mechanics / Industrial Software</strong></summary>
+              <div class="course-desc">
+                <span class="kw">ANSYS-FLUENT · elsA-ONERA · Compressible flows</span>
+                Physical and mathematical modeling for numerical simulation of compressible and incompressible fluids.
+                <div style="margin-top:0.5rem;"><div class="attach-slot"><i class="fa-solid fa-paperclip"></i> Project Report — <em>attach here</em></div></div>
+              </div>
+            </details>
+          </div>
           <h5>Courses</h5>
           <div class="course-chips">
             <span class="chip">Numerical Analysis of PDEs</span>
@@ -256,7 +333,6 @@
             <span class="chip">Industrial Software</span>
             <span class="chip">Wave Propagation</span>
           </div>
-          <p style="margin-top:0.6rem; font-size:0.88rem; color:var(--muted); font-style:italic;">Wave Propagation: Implemented on Matlab an inverse problem to determine the nature of a propagation medium using discontinuous Galerkin approximation.</p>
         </div>
       </details>
     </div>
@@ -266,25 +342,32 @@
         <span class="tag tag-gold">M.Sc.</span>
         <span class="entry-date">Feb 2018 – Jun 2019</span>
         <span class="entry-place">Lebanese International University (LIU) · Beirut, Lebanon</span>
+        <span class="tag tag-green">Rank 1 · GPA 4.0</span>
       </div>
       <strong>M.Sc. in Applied Mathematics</strong>
-      <span class="tag tag-green">Rank 1 · GPA 4.0 US · 20/20</span>
       <details class="cv-details">
-        <summary>Master's Thesis &amp; Courses</summary>
+        <summary>Thesis &amp; Courses</summary>
         <div class="cv-details-body">
-          <h5>Master's Thesis &nbsp;<span class="tag tag-gold">Grade: A · Excellent</span></h5>
+          <h5>Master's Thesis &nbsp;<span class="tag tag-gold">Grade A · Excellent</span></h5>
           <p><em>"Decay Rates of a Timoshenko System with Kelvin-Voigt Damping"</em></p>
-          <p><strong>Keywords:</strong> C₀-Semigroup · Timoshenko beam · Polynomial and Exponential stability.</p>
-          <p>Proved that the energy of the Timoshenko system with Kelvin-Voigt damping dissipates exponentially or polynomially, and that the decay rate depends on the properties of the material coefficient function.</p>
-          <div class="attach-slot"><i class="fa-solid fa-paperclip"></i> Master's Thesis PDF — <em>attach here</em></div>
-          <h5>Courses &nbsp;<span class="tag tag-gold">A in all courses · Rank 1</span></h5>
-          <ul>
-            <li><strong>Numerical Linear Algebra</strong></li>
-            <li><strong>Real Analysis</strong></li>
-            <li><strong>Topics in Statistics</strong></li>
-            <li><strong>Topology</strong></li>
-            <li><strong>Finite Element Methods</strong> — Project: Piecewise linear FEM for 1D elliptic equations; estimated order of convergence on uniform and non-uniform meshes in Matlab.</li>
-          </ul>
+          <span class="kw">C₀-Semigroup · Timoshenko beam · Polynomial and Exponential stability</span>
+          <p>Proved that the energy dissipates exponentially or polynomially, and that the decay rate depends on the properties of the material coefficient function.</p>
+          <div class="attach-slot"><i class="fa-solid fa-paperclip"></i> Thesis PDF — <em>attach here</em></div>
+          <h5>Courses &nbsp;<span class="tag tag-gold">Grade A · Excellent — all courses</span></h5>
+          <div class="course-item">
+            <details>
+              <summary><strong>Finite Element Methods</strong></summary>
+              <div class="course-desc">
+                Project: Piecewise linear FEM for 1D elliptic equations; estimated order of convergence on uniform and non-uniform meshes in Matlab.
+              </div>
+            </details>
+          </div>
+          <div class="course-chips" style="margin-top:0.5rem;">
+            <span class="chip">Numerical Linear Algebra</span>
+            <span class="chip">Real Analysis</span>
+            <span class="chip">Topics in Statistics</span>
+            <span class="chip">Topology</span>
+          </div>
         </div>
       </details>
     </div>
@@ -294,13 +377,12 @@
         <span class="tag tag-blue">Master 1</span>
         <span class="entry-date">Oct 2014 – Sep 2015</span>
         <span class="entry-place">Lebanese University (LU) · Beirut, Lebanon</span>
+        <span class="tag tag-blue">Rank 4/15</span>
       </div>
       <strong>Master 1 in Pure Mathematics</strong>
-      <span class="tag tag-blue">Class Rank 4/15</span>
       <details class="cv-details">
-        <summary>Courses &amp; Rankings</summary>
+        <summary>Courses</summary>
         <div class="cv-details-body">
-          <h5>Courses &nbsp;<span class="tag tag-gold">Ranked 1st in Number Theory</span></h5>
           <div class="course-chips">
             <span class="chip">Functional Analysis</span>
             <span class="chip">Differential Geometry</span>
@@ -309,7 +391,7 @@
             <span class="chip">Probabilities</span>
             <span class="chip">Commutative Algebra</span>
             <span class="chip">Riemannian Geometry</span>
-            <span class="chip" style="border-color:var(--accent); color:var(--accent);">Number Theory ★ Rank 1st</span>
+            <span class="chip" style="border-color:var(--accent);color:var(--accent);">Number Theory ★ Rank 1st</span>
             <span class="chip">Spectral Theory</span>
           </div>
         </div>
@@ -327,7 +409,10 @@
 
   </div>
 
-  <!-- 3. ACHIEVEMENTS -->
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- 3. ACHIEVEMENTS                            -->
+  <!-- ══════════════════════════════════════════ -->
   <div class="cv-section" id="achievements">
     <h2 class="cv-section-title"><i class="fa-solid fa-trophy"></i> Achievements</h2>
     <div class="cv-card">
@@ -335,101 +420,94 @@
         <li class="ach-item">
           <span class="ach-icon">📄</span>
           <div class="ach-text">
-            <strong>Preprint Publication — arXiv 2025:</strong>
-            <em>"A generalization bound for exit wave reconstruction via deep unfolding"</em> — outcome of doctoral research at RWTH Aachen / ZIB.
+            <strong>Preprint — arXiv 2025:</strong>
+            <em>"A generalization bound for exit wave reconstruction via deep unfolding"</em>
             &nbsp;<a href="https://arxiv.org/abs/2511.06413" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> arXiv</a>
             &nbsp;<a href="pdfs/exit-wave-deep-unfolding.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> PDF</a>
           </div>
         </li>
         <li class="ach-item">
           <span class="ach-icon">🎓</span>
-          <div class="ach-text">
-            <strong>Excellence Scholarship — Région Nouvelle-Aquitaine (France):</strong> Awarded a full scholarship to pursue the Master's in Mathematics, Modeling and Simulation at UPPA. Academic excellence recognized at an international level.
-          </div>
+          <div class="ach-text"><strong>Excellence Scholarship — Région Nouvelle-Aquitaine (France)</strong> to pursue the M.Sc. at UPPA, Pau.</div>
         </li>
         <li class="ach-item">
           <span class="ach-icon">🏅</span>
-          <div class="ach-text">
-            <strong>Grade 1.0 (Excellent · A · 4.0 GPA US)</strong> in the Master's Thesis at Zuse Institute Berlin (ZIB) — Koopman Theory.
-          </div>
+          <div class="ach-text"><strong>Grade A · Excellent</strong> in the Master's Thesis and Research Internship at ZIB Berlin — Koopman Theory.</div>
         </li>
         <li class="ach-item">
           <span class="ach-icon">🏅</span>
-          <div class="ach-text">
-            <strong>Grade A (Excellent)</strong> in the Research Internship at ZIB — Koopman Theory.
-          </div>
-        </li>
-        <li class="ach-item">
-          <span class="ach-icon">🏅</span>
-          <div class="ach-text">
-            <strong>Grade 1.0 (Excellent · A · 4.0 GPA)</strong> in the following key courses at TU Berlin:
-            Numerical Methods for PDEs · Scientific Computing · Probabilistic and Bayesian Modelling in ML and AI · Seminar in Nonlinear Optimization.
-          </div>
+          <div class="ach-text"><strong>Grade A · Excellent</strong> in the following courses at TU Berlin: Numerical Methods for PDEs · Scientific Computing · Probabilistic and Bayesian Modelling · Seminar in Nonlinear Optimization.</div>
         </li>
         <li class="ach-item">
           <span class="ach-icon">🏆</span>
-          <div class="ach-text">
-            <strong>Rank 1st</strong> in M.Sc. Applied Mathematics — Lebanese International University (LIU).
-            <strong>GPA 4.0 (US) / 20/20.</strong> Received <strong>A</strong> in all required courses and in the Master's Thesis.
-          </div>
+          <div class="ach-text"><strong>Rank 1st — M.Sc. Applied Mathematics, LIU Lebanon.</strong> Grade A · Excellent in all courses and Master's Thesis.</div>
         </li>
         <li class="ach-item">
           <span class="ach-icon">🏆</span>
-          <div class="ach-text">
-            <strong>Ranked 1st in Number Theory</strong> — Master 1, Lebanese University (LU). Overall rank <strong>4/15</strong> in the cohort.
-          </div>
+          <div class="ach-text"><strong>Ranked 1st in Number Theory</strong> — Master 1, Lebanese University. Overall rank 4/15 in the cohort.</div>
         </li>
       </ul>
     </div>
   </div>
 
-  <!-- 4. SKILLS -->
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- 4. SKILLS                                  -->
+  <!-- ══════════════════════════════════════════ -->
   <div class="cv-section" id="skills">
     <h2 class="cv-section-title"><i class="fa-solid fa-code"></i> Skills</h2>
-    <div class="skills-grid">
-      <div class="skill-block">
-        <h5>Scientific &amp; Mathematical</h5>
-        <ul class="skill-list">
-          <li>Numerical Simulation &amp; Numerical Analysis</li>
-          <li>PDEs · Phase Retrieval</li>
-          <li>Machine Learning (ML) · Neural Networks</li>
-          <li>Bayesian Inference</li>
-          <li>Calculus of Variations &amp; Optimal Control</li>
-          <li>Optimal Transport</li>
-          <li>Nonlinear &amp; Convex Optimization</li>
-          <li>Koopman Theory · EDMD</li>
-          <li>Deep Unfolding · Proximal Gradient</li>
-          <li>Multi-step methods · Runge-Kutta</li>
-          <li>Finite Difference · Finite Element · Finite Volume</li>
-        </ul>
-      </div>
-      <div class="skill-block">
-        <h5>Computing</h5>
-        <ul class="skill-list">
-          <li>Python — TensorFlow · NumPy · Matplotlib</li>
-          <li>Matlab · Julia · C/C++ · OpenMP/MPI</li>
-          <li>Linux · LaTeX · VS Code</li>
-          <li>MS Word / Excel · SPSS</li>
-          <li>Deeptime · ExtendableGrids.jl</li>
-          <li>DifferentialEquations.jl · DuMuX</li>
-          <li>ANSYS-FLUENT · elsA-ONERA</li>
-          <li>Dynexite · Moodle</li>
-        </ul>
-      </div>
-      <div class="skill-block">
-        <h5>Personal</h5>
-        <ul class="skill-list">
-          <li>Strong working relationships</li>
-          <li>Problem Solving &amp; Adaptability</li>
-          <li>Decision Making &amp; Fast Learner</li>
-          <li>Arabic Romantic Writings</li>
-          <li>Football</li>
-        </ul>
+    <div class="cv-card">
+      <div class="skills-flat">
+
+        <div class="skills-category">
+          <div class="skills-category-title">Scientific &amp; Mathematical</div>
+          <ul>
+            <li>Numerical Simulation &amp; Numerical Analysis</li>
+            <li>PDEs · Phase Retrieval</li>
+            <li>Machine Learning · Neural Networks</li>
+            <li>Bayesian Inference</li>
+            <li>Calculus of Variations &amp; Optimal Control</li>
+            <li>Optimal Transport</li>
+            <li>Nonlinear &amp; Convex Optimization</li>
+            <li>Koopman Theory · EDMD</li>
+            <li>Deep Unfolding · Proximal Gradient</li>
+            <li>Finite Difference · Finite Element · Finite Volume</li>
+            <li>Runge-Kutta · Multi-step methods</li>
+          </ul>
+        </div>
+
+        <div class="skills-category">
+          <div class="skills-category-title">Computing</div>
+          <ul>
+            <li>Python — TensorFlow · NumPy · Matplotlib</li>
+            <li>Matlab · Julia · C/C++ · OpenMP/MPI</li>
+            <li>Linux · LaTeX · VS Code · SPSS</li>
+            <li>MS Word / Excel</li>
+            <li>Deeptime · ExtendableGrids.jl · DifferentialEquations.jl</li>
+            <li>DuMuX · ANSYS-FLUENT · elsA-ONERA</li>
+            <li>Dynexite · Moodle</li>
+          </ul>
+        </div>
+
+        <div class="skills-category">
+          <div class="skills-category-title">Personal</div>
+          <ul>
+            <li>Problem Solving &amp; Adaptability</li>
+            <li>Decision Making &amp; Fast Learner</li>
+            <li>Strong working relationships</li>
+            <li>Arabic Romantic Writings</li>
+            <li>Football</li>
+          </ul>
+        </div>
+
       </div>
     </div>
   </div>
 
-  <!-- 5. LANGUAGES -->
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- 5. LANGUAGES                               -->
+  <!-- ══════════════════════════════════════════ -->
   <div class="cv-section" id="languages">
     <h2 class="cv-section-title"><i class="fa-solid fa-language"></i> Languages</h2>
     <div class="cv-card">
@@ -441,26 +519,29 @@
         </div>
         <div class="lang-item">
           <div class="lang-name">English</div>
-          <div class="lang-level">C1 · Full Professional</div>
+          <div class="lang-level">Full Professional</div>
           <div class="lang-bar"><div class="lang-fill" style="width:90%"></div></div>
         </div>
         <div class="lang-item">
           <div class="lang-name">German</div>
-          <div class="lang-level">B1 · Intermediate</div>
+          <div class="lang-level">B1</div>
           <div class="lang-bar"><div class="lang-fill" style="width:50%"></div></div>
         </div>
         <div class="lang-item">
           <div class="lang-name">French</div>
-          <div class="lang-level">A1 · Basic</div>
-          <div class="lang-bar"><div class="lang-fill" style="width:20%"></div></div>
+          <div class="lang-level">A1</div>
+          <div class="lang-bar"><div class="lang-fill" style="width:18%"></div></div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- 6. TEACHING & OTHER WORK -->
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- 6. OTHER WORK                              -->
+  <!-- ══════════════════════════════════════════ -->
   <div class="cv-section" id="other">
-    <h2 class="cv-section-title"><i class="fa-solid fa-chalkboard-user"></i> Teaching &amp; Other Work</h2>
+    <h2 class="cv-section-title"><i class="fa-solid fa-chalkboard-user"></i> Other Work</h2>
 
     <div class="cv-card">
       <div class="entry-meta">
@@ -472,8 +553,8 @@
       <details class="cv-details">
         <summary>Details</summary>
         <div class="cv-details-body">
-          <p>Teaching mathematics in high schools in English for intermediate and secondary levels. Classes: Grades 6, 7, 8, and 10.</p>
-          <p>Also provided private tutoring in university-level mathematics — Real Analysis and Algebra — as well as high-school level mathematics.</p>
+          <p>Teaching mathematics in English at intermediate and secondary levels — Grades 6, 7, 8, and 10.</p>
+          <p>Private tutoring in university-level Real Analysis and Algebra, and high-school mathematics.</p>
         </div>
       </details>
     </div>
@@ -488,8 +569,8 @@
       <details class="cv-details">
         <summary>Details</summary>
         <div class="cv-details-body">
-          <p><strong>Keywords:</strong> Urban mobility · E-bike delivery.</p>
-          <p>Picked up grocery orders from the warehouse and delivered them to customers across Berlin using E-bikes, ensuring timely service and customer satisfaction.</p>
+          <span class="kw">Urban mobility · E-bike delivery</span>
+          <p>Picked up grocery orders from the warehouse and delivered them across Berlin using E-bikes.</p>
         </div>
       </details>
     </div>
@@ -500,12 +581,12 @@
         <span class="entry-date">Jun 2021 – Aug 2021</span>
         <span class="entry-place">Teststation Kantstrasse · Berlin, Germany</span>
       </div>
-      <strong>COVID-19 Test Center — Rapid Corona Test</strong>
+      <strong>COVID-19 Test Center Staff</strong>
       <details class="cv-details">
         <summary>Details</summary>
         <div class="cv-details-body">
-          <p><strong>Keywords:</strong> COVID-19 testing.</p>
-          <p>Performed Schnelltest (rapid antigen tests) at the Kantstrasse test station in Berlin. Guided customers through the registration and testing process.</p>
+          <span class="kw">COVID-19 testing · Schnelltest</span>
+          <p>Performed rapid antigen tests at the Kantstrasse station in Berlin. Guided customers through registration and testing process.</p>
         </div>
       </details>
     </div>
@@ -515,7 +596,6 @@
 </main>
 
 <footer>© 2026 Moussa Atwi &nbsp;·&nbsp; Mathematics · Scientific Computing · Machine Learning · Poetry</footer>
-
 <script src="js/script.js" defer></script>
 </body>
 </html>
