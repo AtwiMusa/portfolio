@@ -640,7 +640,7 @@ section h2 i { font-size: 1.05rem; }
 ..poem-preview {
   font-family: 'Amiri serif; /* changed from Cairo */
   font-size: 1.25rem;
-  line-height: 2.8;
+  line-height: 3.0;
   font-weight: 400;
   color: var(--text);
   text-align: right;
@@ -656,7 +656,7 @@ section h2 i { font-size: 1.05rem; }
 }
 .poem-full {
   font-family: 'Amiri', serif; /* changed from Cairo */
-  font-size: 1.25rem;
+  font-size: 1.20rem;
   line-height: 1.82;
   font-weight: 400;
   color: var(--text);
