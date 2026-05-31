@@ -626,11 +626,11 @@ section h2 i { font-size: 1.05rem; }
 
 .poem-title {
   font-family: 'EB Garamond', serif;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 500;
   text-align: center;
   color: var(--accent);
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.7rem;
   flex-shrink: 0;
 }
 .poem-content {
