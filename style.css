@@ -3,8 +3,7 @@
    style.css — Shared across index.html, cv.html, poems.html
 ═══════════════════════════════════════════════════════════ */
 
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Mono:wght@300;400;500&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cairo:wght@300;400;500&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Mono:wght@300;400;500&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cairo:wght@300;400;500&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap');
 :root {
   --bg:           #0d0f14;
   --bg2:          #080a0f;
@@ -639,7 +638,7 @@ section h2 i { font-size: 1.05rem; }
 }
 /* Arabic — Cairo font, 4-line preview */
 ..poem-preview {
-  font-family: 'EB Garamond', serif; /* changed from Cairo */
+  font-family: 'Amiri serif; /* changed from Cairo */
   font-size: 0.96rem;
   line-height: 2.4;
   font-weight: 400;
@@ -653,7 +652,7 @@ section h2 i { font-size: 1.05rem; }
   display: block;
 }
 .poem-full {
-  font-family: 'EB Garamond', serif; /* changed from Cairo */
+  font-family: 'Amiri', serif; /* changed from Cairo */
   font-size: 0.96rem;
   line-height: 1.82;
   font-weight: 400;
