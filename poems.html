@@ -10,34 +10,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <!-- Your existing CSS -->
   <link rel="stylesheet" href="style.css">
-  <style>
-    /* Full poems page grid - more space, responsive */
-    .poetry-page .poetry-grid {
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2.5rem;
-      padding: 0rem;
-      max-width: none;
-    }
-    @media (max-width: 1200px) {
-      .poetry-page .poetry-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-    @media (max-width: 900px) {
-      .poetry-page .poetry-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-    @media (max-width: 600px) {
-      .poetry-page .poetry-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-    /* Hide expand toggle when expanded */
-    .poem-card.expanded .expand-toggle {
-      display: none;
-    }
-  </style>
 </head>
 <body>
   <header>
