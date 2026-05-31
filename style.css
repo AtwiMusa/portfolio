@@ -211,6 +211,7 @@ section h2 i { font-size: 1.05rem; }
   color: var(--accent);
   display: flex;
   align-items: center;
+  justify-content: center; /* add this */
   gap: 0.5rem;
 }
 .cv-tile-title i { font-size: 0.88rem; }
