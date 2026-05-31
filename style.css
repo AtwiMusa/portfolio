@@ -128,7 +128,7 @@ nav a:hover { color: var(--accent); border-color: var(--accent); background: var
 
 /* ── MAIN LAYOUT — wider ── */
 main {
-  max-width: 1100px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 3rem 2vw 6rem;
 }
@@ -476,7 +476,7 @@ section h2 i { font-size: 1.05rem; }
 
 /* ── CV PAGE — wider ── */
 .cv-page {
-  max-width: 1100px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 2rem 2vw 7rem;
 }
