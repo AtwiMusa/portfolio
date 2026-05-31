@@ -638,8 +638,8 @@ section h2 i { font-size: 1.05rem; }
   overflow: hidden;
 }
 /* Arabic — Cairo font, 4-line preview */
-.poem-preview {
-  font-family: 'Cairo', sans-serif;
+..poem-preview {
+  font-family: 'EB Garamond', serif; /* changed from Cairo */
   font-size: 0.96rem;
   line-height: 2.4;
   font-weight: 400;
@@ -653,7 +653,7 @@ section h2 i { font-size: 1.05rem; }
   display: block;
 }
 .poem-full {
-  font-family: 'Cairo', sans-serif;
+  font-family: 'EB Garamond', serif; /* changed from Cairo */
   font-size: 0.96rem;
   line-height: 1.82;
   font-weight: 400;
