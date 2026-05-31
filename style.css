@@ -689,18 +689,35 @@ section h2 i { font-size: 1.05rem; }
 }
 .poem-card.expanded .expand-toggle { display: none; }
 
-/* poems.html full page — height off, auto-fill columns */
+/* poems.html full page — 2 columns, no height limit */
 .poetry-page .poetry-grid {
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.4rem;
   padding: 0;
   max-width: none;
+}
+.poetry-page .poem-card-wrapper {
+  height: fit-content;
 }
 .poetry-page .poem-preview {
   height: unset;
   overflow: visible;
   display: block;
-  white-space: pre-line;
+  white-space: nowrap; /* ← prevents line breaking */
+  text-overflow: clip;
+  line-height: 2.4;   /* ← same good spacing as main page */
+}
+.poetry-page .poem-full {
+  line-height: 2.0;   /* ← good spacing in expanded view */
+}
+
+@media (max-width: 700px) {
+  .poetry-page .poetry-grid {
+    grid-template-columns: 1fr; /* 1 column on mobile */
+  }
+  .poetry-page .poem-preview {
+    white-space: normal; /* allow wrap on very small screens */
+  }
 }
 
 @media (max-width: 820px) {
