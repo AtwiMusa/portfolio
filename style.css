@@ -425,14 +425,14 @@ section h2 i { font-size: 1.05rem; }
 .poem-preview {
   font-family: 'Cairo', sans-serif;
   font-size: 0.96rem;
-  line-height: 1.82;
+  line-height: 2.4; /* increased from 1.82 */
   font-weight: 400;
   color: var(--text);
   text-align: right;
   direction: rtl;
   white-space: normal;
   padding: 0 0.2rem;
-  height: calc(0.96rem * 1.82 * 4); /* exactly 4 lines */
+  height: calc(1em * 2.4 * 4 + 0.5em);
   overflow: hidden;
   display: block;
 }
