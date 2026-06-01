@@ -71,7 +71,7 @@
 
     <div class="cv-card">
       <div class="entry-meta">
-        <span class="tag tag-blue">PhD Research</span>
+        <span class="tag tag-gold">PhD Research</span>
         <span class="entry-date">Aug 2023 – Present</span>
         <span class="entry-place">RWTH Aachen University · Aachen, Germany</span>
       </div>
@@ -104,7 +104,7 @@
     <div class="cv-card">
       <div class="entry-meta">
         <span class="tag tag-gold">Teaching Support</span>
-        <span class="entry-date">2024 – Present</span>
+        <span class="entry-date">Apr 2026 – Present</span>
         <span class="entry-place">RWTH Aachen University · Aachen, Germany</span>
       </div>
       <strong>E-Learning &amp; Assessment Assistant</strong>
@@ -124,7 +124,7 @@
 
     <div class="cv-card">
       <div class="entry-meta">
-        <span class="tag tag-green">Research Internship</span>
+        <span class="tag tag-gold">Research Internship</span>
         <span class="entry-date">Sep 2022 – Dec 2022</span>
         <span class="entry-place">Zuse Institute Berlin (ZIB) · Berlin, Germany</span>
         <span class="tag tag-gold">Grade A · Excellent</span>
@@ -134,17 +134,37 @@
         <summary>Details</summary>
         <div class="cv-details-body">
           <h5>Title</h5>
-          <p><em>"Approximation of Koopman Operators Using Random Basis Functions"</em></p>
-          <span class="kw">Koopman operators · EDMD · Deeptime · Neural Networks · Gaussians</span>
-          <p>Approximation of Koopman operators using EDMD combined with random Gaussians and randomly initialised neural networks on Deeptime. Implemented in Python and applied to high-dimensional models to estimate Koopman's eigenfunctions and eigenvalues.</p>
-          <div class="attach-slot"><i class="fa-solid fa-paperclip"></i> Internship Report — <em>attach here</em></div>
+          <p><em>"Approximation of Koopman Operators by Randomly Chosen Basis Functions"</em></p>
+          <div class="course-chips">
+            <span class="chip">Koopman Operators</span>
+            <span class="chip">EDMD</span>
+            <span class="chip">RDMD</span>
+            <span class="chip">Random Gaussians</span>
+            <span class="chip">Randomized Neural Networks</span>
+            <span class="chip">TensorFlow</span>
+            <span class="chip">Deeptime</span>
+            <span class="chip">Euler–Maruyama</span>
+            <span class="chip">Metastable Regions</span>
+          </div>
+          <h5>Implementation</h5>
+          <p>Built three new Python classes — Gaussian, Rinn, and Genbasis — using TensorFlow and Deeptime, combining EDMD with randomly chosen basis functions to approximate Koopman eigenfunctions and eigenvalues.</p>
+          <h5>Results</h5>
+          <p>Applied to high-dimensional stochastic systems including 1D and 2D Brownian motion on a torus and 2D triple-well potential. Achieved accurate identification of metastable regions using as few as 45–59 Gaussian basis functions, outperforming standard monomial-based EDMD.</p>
+          <div class="pdf-row" style="margin:0.5rem 0 0;">
+            <a href="pdfs/Internship_Report___RDMD.pdf" target="_blank" class="pdf-btn">
+              <i class="fa-solid fa-file-pdf"></i> Internship Report
+            </a>
+              <a href="https://github.com/AtwiMusa/RDMD" target="_blank" class="pdf-btn">
+                <i class="fa-brands fa-github"></i> Code Repository
+              </a>
+          </div>
         </div>
       </details>
     </div>
 
     <div class="cv-card">
       <div class="entry-meta">
-        <span class="tag tag-green">Master's Thesis</span>
+        <span class="tag tag-gold">Master's Thesis</span>
         <span class="entry-date">Dec 2022 – May 2023</span>
         <span class="entry-place">Zuse Institute Berlin (ZIB) · Berlin, Germany</span>
         <span class="tag tag-gold">Grade A · Excellent</span>
@@ -154,17 +174,40 @@
         <summary>Details</summary>
         <div class="cv-details-body">
           <h5>Title</h5>
-          <p><em>"Approximation of Koopman Operators Using Random Basis Functions"</em></p>
-          <span class="kw">Koopman operators · EDMD · Random Gaussians · Neural Networks</span>
-          <p>Comprehensive study of Koopman operators and nonlinear dynamical systems, including Koopman Eigenfunctions, invariant subspaces, Koopman embedding, and EDMD combined with Monomials, Random Gaussians, and Trained and Untrained Randomly Initialised Neural Networks.</p>
-          <div class="attach-slot"><i class="fa-solid fa-paperclip"></i> Master's Thesis PDF — <em>attach here</em></div>
+          <p><em>"Approximation of Koopman Operators by Randomly Chosen Basis Functions"</em></p>
+          <div class="course-chips">
+            <span class="chip">Koopman Operators</span>
+            <span class="chip">EDMD</span>
+            <span class="chip">RDMD</span>
+            <span class="chip">DMD</span>
+            <span class="chip">Random Gaussians</span>
+            <span class="chip">RINNs</span>
+            <span class="chip">Spectral Analysis</span>
+            <span class="chip">Metastable Regions</span>
+            <span class="chip">Stochastic Differential Equations</span>
+            <span class="chip">Euler–Maruyama</span>
+            <span class="chip">TensorFlow</span>
+            <span class="chip">Deeptime</span>
+            <span class="chip">Python</span>
+          </div>
+          <p>Comprehensive theoretical and numerical study of the Koopman operator framework for nonlinear dynamical systems, covering spectral analysis, invariant subspaces, Koopman embedding, and data-driven approximation via EDMD.</p>
+          <h5>Implementation & Results</h5>
+          <p>Implemented and compared three families of basis functions — monomials up to order 10, random Gaussians, and randomly initialized neural networks (RINNs) — applied to 1D Ornstein–Uhlenbeck process and 2D double-, triple-, and quadruple-well stochastic systems. Demonstrated that random Gaussians consistently outperform monomials in approximating dominant Koopman eigenfunctions, achieving accurate metastable region identification with far fewer basis functions.</p>
+          <div class="pdf-row" style="margin:0.5rem 0 0;">
+            <a href="pdfs/Master_Thesis_TUB-1.pdf" target="_blank" class="pdf-btn">
+              <i class="fa-solid fa-file-pdf"></i> Master's Thesis
+            </a>
+            <a href="https://github.com/AtwiMusa/RDMD" target="_blank" class="pdf-btn">
+              <i class="fa-brands fa-github"></i> Code Repository
+            </a>
+          </div>
         </div>
       </details>
     </div>
 
     <div class="cv-card">
       <div class="entry-meta">
-        <span class="tag tag-green">Internship + Master's Thesis</span>
+        <span class="tag tag-gold">Internship + Master's Thesis</span>
         <span class="entry-date">Feb 2020 – Aug 2020</span>
         <span class="entry-place">Université de Bordeaux · Bordeaux, France</span>
         <span class="tag tag-blue">Full-time · 35 hrs/week</span>
@@ -175,9 +218,18 @@
         <div class="cv-details-body">
           <h5>Title</h5>
           <p><em>"Semi-discrete Optimal Transport for Large-Scale Problems"</em></p>
-          <span class="kw">Convex Duality · Image Modeling · Gradient Descent · Stochastic Gradient Descent</span>
+          <div class="course-chips">
+            <span class="chip">Convex Duality</span>
+            <span class="chip">Image Modeling</span>
+            <span class="chip">Gradient Descent</span>
+            <span class="chip">Stochastic Gradient Descent</span>
+          </div>
           <p>Implemented gradient descent and stochastic gradient descent in Python to solve large-scale semi-discrete optimal transport problems in image processing and machine learning. Studied Monge and Kantorovich formulations, dual problem, c-transform, Laguerre cells, and convergence behavior.</p>
-          <div class="attach-slot"><i class="fa-solid fa-paperclip"></i> Master's Thesis PDF — <em>attach here</em></div>
+          <div class="pdf-row" style="margin:0.5rem 0 0;">
+          <a href="pdfs/Optimal_Transportation___Master_Thesis.pdf" target="_blank" class="pdf-btn">
+            <i class="fa-solid fa-file-pdf"></i> Master's Thesis
+          </a>
+        </div>
         </div>
       </details>
     </div>
@@ -206,14 +258,14 @@
         <span class="tag tag-gold">M.Sc.</span>
         <span class="entry-date">Apr 2021 – May 2023</span>
         <span class="entry-place">Technical University of Berlin (TUB) · Berlin, Germany</span>
-        <span class="tag tag-gold">GPA 1.2 · Excellent</span>
+        <span class="tag tag-gold">GPA 1.2 = Grade A · Excellent</span>
       </div>
       <strong>M.Sc. in Scientific Computing</strong>
       <details class="cv-details">
         <summary>Thesis, Seminars &amp; Courses</summary>
         <div class="cv-details-body">
 
-          <h5>Master's Thesis — ZIB &nbsp;<span class="tag tag-gold">Grade A · Excellent</span></h5>
+          <h5>Master's Thesis — Zuse Institute Berlin (ZIB) &nbsp;<span class="tag tag-gold">Grade A · Excellent</span></h5>
           <p><em>"Approximation of Koopman Operators Using Random Basis Functions"</em> — see Research Experience.</p>
           <div class="attach-slot"><i class="fa-solid fa-paperclip"></i> Thesis PDF — <em>attach here</em></div>
 
@@ -477,6 +529,60 @@
     </div>
   </div>
 
+  <!-- ══════════════════════════════════════════ -->
+  <!-- LICENSES & CERTIFICATES                    -->
+  <!-- ══════════════════════════════════════════ -->
+  <div class="cv-section" id="certificates">
+    <h2 class="cv-section-title">
+      <i class="fa-solid fa-certificate"></i> Licenses &amp; Certificates
+    </h2>
+
+    <div class="cv-card">
+      <div class="entry-meta">
+        <span class="tag tag-blue">Specialization</span>
+        <span class="entry-date">2024</span>
+        <span class="entry-place">Coursera · DeepLearning.AI &amp; Stanford</span>
+      </div>
+      <strong>Machine Learning Specialization</strong>
+      <p style="color:var(--muted); font-size:0.88rem; margin-top:0.3rem;">
+        A 3-course specialization covering supervised learning, unsupervised learning,
+        recommender systems, and reinforcement learning.
+      </p>
+      <div class="pdf-row" style="margin-top:0.8rem; margin-bottom:0;">
+        <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/PNTBQZMFZUX8"
+          target="_blank" class="pdf-btn">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> Specialization Certificate
+        </a>
+      </div>
+      <details class="cv-details" style="margin-top:0.8rem;">
+        <summary>3 Individual Course Certificates</summary>
+        <div class="cv-details-body">
+          <div class="pdf-row" style="margin-bottom:0.6rem;">
+            <a href="https://www.coursera.org/account/accomplishments/verify/ET84JW4WZ7A9"
+              target="_blank" class="pdf-btn">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              Supervised Machine Learning: Regression and Classification
+            </a>
+          </div>
+          <div class="pdf-row" style="margin-bottom:0.6rem;">
+            <a href="https://www.coursera.org/account/accomplishments/verify/Z3A5GZYRUG3E"
+              target="_blank" class="pdf-btn">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              Advanced Learning Algorithms
+            </a>
+          </div>
+          <div class="pdf-row" style="margin-bottom:0;">
+            <a href="https://www.coursera.org/account/accomplishments/verify/WNKFQHQWYL5R"
+              target="_blank" class="pdf-btn">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              Unsupervised Learning, Recommenders, Reinforcement Learning
+            </a>
+          </div>
+        </div>
+      </details>
+    </div>
+
+  </div>
 
   <!-- ══════════════════════════════════════════ -->
   <!-- 4. SKILLS                                  -->
