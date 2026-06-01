@@ -78,14 +78,14 @@ header p {
   align-items: center;
   gap: 0;
   margin: 0.9rem auto 1rem;
-  width: 100%;
-  max-width: 600px;
+  width: fit-content;  /* ← change from 100% to fit-content */
+  max-width: none;     /* ← remove the 600px limit */
 }
 .title-lines .line {
   height: 1px;
   background: var(--accent);
   border-radius: 1px;
-  flex: 1;
+  width: 120px; /* fixed width instead of flex: 1 */
   opacity: 0.4;
 }
 
@@ -725,6 +725,74 @@ section h2 i { font-size: 1.05rem; }
 @media (max-width: 520px) {
   .poetry-grid { grid-template-columns: 1fr; }
 }
+
+/* ── GRADE TABLE ── */
+.grade-details {
+  margin-bottom: 1.8rem;
+}
+.grade-details summary {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.07em;
+  color: var(--accent);
+  padding: 0.38rem 1rem;
+  border: 1px solid rgba(200,169,110,0.3);
+  border-radius: 999px;
+  background: var(--accent-soft);
+  list-style: none;
+  outline: none;
+  transition: all 0.25s;
+}
+.grade-details summary::-webkit-details-marker { display: none; }
+.grade-details summary::before {
+  content: '▸';
+  font-size: 0.68rem;
+  transition: transform 0.2s;
+  display: inline-block;
+}
+.grade-details[open] summary::before { transform: rotate(90deg); }
+.grade-details summary:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+.grade-table-wrapper {
+  margin-top: 0.8rem;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.grade-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+}
+.grade-table th {
+  background: var(--surface2);
+  color: var(--accent);
+  padding: 0.5rem 0.9rem;
+  text-align: left;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border);
+}
+.grade-table td {
+  padding: 0.38rem 0.9rem;
+  color: var(--text);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.grade-table tr:last-child td { border-bottom: none; }
+.grade-table tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+.grade-table td:first-child {
+  color: var(--accent);
+  font-weight: 500;
+  min-width: 50px;
+}
+
 
 /* ── CV PAGE ── */
 .cv-page {
