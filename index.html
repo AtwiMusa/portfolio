@@ -25,8 +25,9 @@
     <span class="line"></span>
   </div>
   <nav>
-    <a href="#research">Research</a>
-    <a href="#resume">Resume</a>
+    <a href="#about">About</a>
+    <a href="#publications">Publications</a>
+    <a href="#resume">CV</a>
     <a href="#poetry">Poetry</a>
     <a href="#contact">Contact</a>
   </nav>
@@ -34,11 +35,11 @@
 
 <main>
 
-  <!-- RESEARCH & PUBLICATIONS -->
-  <section id="research">
-    <h2><i class="fa-solid fa-flask-vial"></i> Research &amp; Publications</h2>
+  <!-- ABOUT -->
+  <section id="about">
+    <h2><i class="fa-solid fa-user"></i> Between Equations &amp; Verses</h2>
 
-    <div class="about about-styled" style="margin-bottom:2rem;">
+    <div class="about about-styled">
       <div class="about-image">
         <img src="Port_Image.jpg" alt="Moussa Atwi" />
         <span class="image-ring"></span>
@@ -46,30 +47,26 @@
       <div class="about-text">
         <p class="about-intro">PhD · RWTH Aachen University</p>
         <p>
-          I work on <strong>nonlinear inverse problems</strong> — specifically exit wave reconstruction
-          and phase retrieval in Transmission Electron Microscopy, using
-          <strong>deep unfolding</strong> and proximal gradient methods.
+          I develop <strong>hybrid models for exit wave reconstruction</strong> — a problem from
+          electron microscopy and a variant of <strong>phase retrieval</strong>. The idea is to
+          unfold classical <strong>optimization</strong> algorithms into trainable
+          <strong>neural networks</strong> (<strong>deep unfolding</strong>), built in
+          <strong>Python / PyTorch</strong>, and to study how these networks behave — for example,
+          how well they <strong>generalize</strong> to unseen data.
         </p>
         <p>
-          <strong>M.Sc. in Scientific Computing</strong> (TU Berlin) ·
-          <strong>M.Sc. in Mathematics, Modeling and Simulation</strong> (UPPA, France) ·
-          <strong>M.Sc. in Applied Mathematics</strong> (LIU, Lebanon, Rank 1).
-          Also an Arabic poet — <em>رَشْفَةُ أَلَمِ</em> contains more than 80 romantic poems.
+          <strong>M.Sc. in Scientific Computing</strong> — Technische Universität Berlin ·
+          <strong>M.Sc. in Mathematics, Modeling &amp; Simulation</strong> — Université de Pau et des Pays de l'Adour, France ·
+          <strong>M.Sc. in Applied Mathematics</strong> — Lebanese International University.
+          I'm also an Arabic poet — <em>رَشْفَةُ أَلَمِ</em> gathers more than 80 romantic poems.
         </p>
-        <div class="sfb-links">
-          <a href="https://sfb1481.rwth-aachen.de/research/area-a/project-a08" target="_blank" class="sfb-badge">
-            <img src="https://sfb1481.rwth-aachen.de/typo3conf/ext/sitepackage/Resources/Public/Favicons/ms-icon-144x144.png"
-                 alt="SFB 1481" onerror="this.style.display='none'">
-            Project A08
-          </a>
-          <a href="https://sfb1481.rwth-aachen.de/" target="_blank" class="sfb-badge">
-            <img src="https://sfb1481.rwth-aachen.de/typo3conf/ext/sitepackage/Resources/Public/Favicons/ms-icon-144x144.png"
-                 alt="SFB 1481" onerror="this.style.display='none'">
-            SFB 1481 — Sparsity &amp; Singular Structures
-          </a>
-        </div>
       </div>
     </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section id="publications">
+    <h2><i class="fa-solid fa-flask-vial"></i> Publications</h2>
 
     <div class="card">
       <h3>A generalization bound for exit wave reconstruction via deep unfolding</h3>
@@ -91,10 +88,15 @@
             reconstruction quality, interpretability, and implicit dictionary learning from data.
             We establish generalization error bounds of order $\mathcal{O}(\sqrt{L})$.
           </p>
-          <p class="keywords">
-            Keywords: phase retrieval · TEM imaging · sparse reconstruction · deep unfolding ·
-            proximal gradient algorithm · generalization error · Rademacher complexity.
-          </p>
+          <div class="kw-chips">
+            <span class="kw-chip">phase retrieval</span>
+            <span class="kw-chip">TEM imaging</span>
+            <span class="kw-chip">sparse reconstruction</span>
+            <span class="kw-chip">deep unfolding</span>
+            <span class="kw-chip">proximal gradient algorithm</span>
+            <span class="kw-chip">generalization error</span>
+            <span class="kw-chip">Rademacher complexity</span>
+          </div>
         </div>
       </details>
       <div class="pub-links">
@@ -104,48 +106,119 @@
         <a href="https://arxiv.org/abs/2511.06413" target="_blank">
           <i class="fa-solid fa-arrow-up-right-from-square"></i> arXiv
         </a>
+        <a href="https://sfb1481.rwth-aachen.de/research/area-a/project-a08" target="_blank" class="sfb-badge">
+          <img src="https://sfb1481.rwth-aachen.de/typo3conf/ext/sitepackage/Resources/Public/Favicons/ms-icon-144x144.png"
+               alt="SFB 1481" onerror="this.style.display='none'">
+          Project A08
+        </a>
+        <a href="https://sfb1481.rwth-aachen.de/" target="_blank" class="sfb-badge">
+          <img src="https://sfb1481.rwth-aachen.de/typo3conf/ext/sitepackage/Resources/Public/Favicons/ms-icon-144x144.png"
+               alt="SFB 1481" onerror="this.style.display='none'">
+          SFB 1481 — Sparsity &amp; Singular Structures
+        </a>
       </div>
     </div>
 
   </section>
 
-  <!-- RESUME -->
+  <!-- CURRICULUM VITAE -->
   <section id="resume">
-    <h2><i class="fa-solid fa-file-lines"></i> Resume</h2>
+    <h2><i class="fa-solid fa-file-lines"></i> Curriculum Vitae</h2>
+
+    <div class="cv-glance">
+      <p class="glance-label">At a glance</p>
+      <p class="glance-role">PhD Researcher — Computational Mathematics &amp; Machine Learning</p>
+      <p class="glance-org">RWTH Aachen University · IGPM · SFB 1481</p>
+
+      <div class="glance-grid">
+        <div class="glance-col">
+          <p class="glance-label">Education</p>
+          <div class="glance-timeline">
+            <div class="glance-tl-item">
+              <span class="glance-dot gold"></span>
+              <div class="glance-deg">Ph.D. — in progress</div>
+              <div class="glance-inst">RWTH Aachen University · 2023–present</div>
+            </div>
+            <div class="glance-tl-item">
+              <span class="glance-dot"></span>
+              <div class="glance-deg">M.Sc. Scientific Computing</div>
+              <div class="glance-inst">Technische Universität Berlin · 2021–2023</div>
+            </div>
+            <div class="glance-tl-item">
+              <span class="glance-dot"></span>
+              <div class="glance-deg">M.Sc. Mathematics, Modeling &amp; Simulation</div>
+              <div class="glance-inst">Université de Pau et des Pays de l'Adour · 2019–2020</div>
+            </div>
+            <div class="glance-tl-item">
+              <span class="glance-dot"></span>
+              <div class="glance-deg">M.Sc. Applied Mathematics</div>
+              <div class="glance-inst">Lebanese International University · 2018–2019</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="glance-col">
+          <p class="glance-label">Focus &amp; tools</p>
+          <div class="glance-chips">
+            <span class="kw-chip">Phase retrieval</span>
+            <span class="kw-chip">Deep unfolding</span>
+            <span class="kw-chip">Inverse problems</span>
+            <span class="kw-chip">Nonlinear optimization</span>
+            <span class="kw-chip">Data-driven methods</span>
+            <span class="kw-chip">Deep learning</span>
+          </div>
+          <p class="glance-label" style="margin-top:1.3rem;">Highlights</p>
+          <div class="glance-highlights">
+            <div><i class="fa-solid fa-graduation-cap"></i> 3 master's degrees, 3 countries</div>
+            <div><i class="fa-solid fa-file-lines"></i> Preprint on arXiv (2025)</div>
+            <div><i class="fa-solid fa-feather"></i> Published Arabic poet</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glance-cta">
+        <a href="cv.html" class="full-collection-btn btn-lg">
+          <i class="fa-solid fa-book-open"></i>
+          Click here to read my full CV
+          <span class="btn-separator">→</span>
+        </a>
+      </div>
+    </div>
+
+    <p class="glance-label glance-jump-label">Or jump straight to</p>
     <div class="cv-tiles-grid">
       <a href="cv.html#research" class="cv-tile">
         <div class="cv-tile-title"><i class="fa-solid fa-flask-vial"></i> Research Experience</div>
+        <div class="cv-tile-sub">Optimization · deep unfolding</div>
       </a>
       <a href="cv.html#education" class="cv-tile">
         <div class="cv-tile-title"><i class="fa-solid fa-graduation-cap"></i> Education</div>
+        <div class="cv-tile-sub">PhD · 3 × M.Sc.</div>
       </a>
       <a href="cv.html#achievements" class="cv-tile">
         <div class="cv-tile-title"><i class="fa-solid fa-trophy"></i> Achievements</div>
+        <div class="cv-tile-sub">Awards &amp; honors</div>
       </a>
       <a href="cv.html#certificates" class="cv-tile">
-        <div class="cv-tile-title">
-          <i class="fa-solid fa-certificate"></i> Certificates
-        </div>
+        <div class="cv-tile-title"><i class="fa-solid fa-certificate"></i> Licenses &amp; Certificates</div>
+        <div class="cv-tile-sub">Courses &amp; certificates</div>
       </a>
       <a href="cv.html#skills" class="cv-tile">
         <div class="cv-tile-title"><i class="fa-solid fa-code"></i> Skills</div>
-      </a>
-      <a href="cv.html#languages" class="cv-tile">
-        <div class="cv-tile-title"><i class="fa-solid fa-language"></i> Languages</div>
+        <div class="cv-tile-sub">Inverse problems · Deep learning </div>
       </a>
       <a href="cv.html#other" class="cv-tile">
         <div class="cv-tile-title"><i class="fa-solid fa-chalkboard-user"></i> Other Work</div>
+        <div class="cv-tile-sub">Teaching &amp; more</div>
       </a>
-    </div>
-    <div style="text-align:center;">
-      <div class="pdf-row" style="justify-content:center; margin-bottom:0;">
-        <a href="cv.html" class="full-collection-btn">
-          <i class="fa-solid fa-file-lines"></i> Full Resume
-        </a>
-        <a href="pdfs/Latest_version.pdf" target="_blank" class="pdf-btn">
-          <i class="fa-solid fa-file-pdf"></i> Download PDF
-        </a>
-      </div>
+      <a href="cv.html#hobbies" class="cv-tile">
+        <div class="cv-tile-title"><i class="fa-solid fa-heart"></i> Hobbies</div>
+        <div class="cv-tile-sub">Cooking · Football</div>
+      </a>
+      <a href="cv.html#languages" class="cv-tile">
+        <div class="cv-tile-title"><i class="fa-solid fa-language"></i> Languages</div>
+        <div class="cv-tile-sub">4 languages</div>
+      </a>
     </div>
   </section>
 
@@ -235,7 +308,7 @@
     </div>
 
     <p class="poetry-link">
-      <a href="poems.html" class="full-collection-btn">
+      <a href="poems.html" class="full-collection-btn btn-lg">
         <i class="fa-solid fa-book-open"></i>
         <span class="btn-en">Read the full collection</span>
         <span class="btn-separator">→</span>
@@ -248,7 +321,7 @@
   <section id="contact">
     <h2><i class="fa-solid fa-envelope"></i> Contact</h2>
     <div class="contact-row">
-      <a href="mailto:atwi@ssd.rwth-aachen.de" class="contact-item" data-tooltip="Send email">
+      <a href="mailto:musa-atwi@hotmail.com" class="contact-item" data-tooltip="Send email">
         <i class="fa-solid fa-envelope"></i><span>Email</span>
       </a>
       <a href="https://github.com/AtwiMusa" target="_blank" class="contact-item" data-tooltip="GitHub">
@@ -259,9 +332,6 @@
       </a>
       <a href="https://www.researchgate.net/profile/Moussa-Atwi" target="_blank" class="contact-item" data-tooltip="ResearchGate">
         <i class="fa-brands fa-researchgate"></i><span>ResearchGate</span>
-      </a>
-      <a href="https://scholar.google.com" target="_blank" class="contact-item" data-tooltip="Google Scholar">
-        <i class="fa-solid fa-graduation-cap"></i><span>Scholar</span>
       </a>
     </div>
   </section>
