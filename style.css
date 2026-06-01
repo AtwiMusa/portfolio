@@ -643,6 +643,14 @@ section h2 i { font-size: 1.05rem; }
   font-size: 0.8rem;
   color: var(--muted);
 }
+.glance-grade {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  margin-top: 0.2rem;
+}
+.glance-grade i { font-size: 0.58rem; margin-right: 0.1rem; }
 .glance-chips {
   display: flex;
   flex-wrap: wrap;
