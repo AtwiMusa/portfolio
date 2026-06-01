@@ -625,7 +625,7 @@ section h2 i { font-size: 1.05rem; }
 
 .poem-title {
   font-family: 'EB Garamond', serif;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 500;
   text-align: center;
   color: var(--accent);
@@ -639,8 +639,8 @@ section h2 i { font-size: 1.05rem; }
 /* Arabic — Cairo font, 4-line preview */
 ..poem-preview {
   font-family: 'Amiri serif; /* changed from Cairo */
-  font-size: 1.30rem;
-  line-height: 3.2;
+  font-size: 1.25rem;
+  line-height: 2.6;
   font-weight: 400;
   color: var(--text);
   text-align: right;
@@ -652,7 +652,7 @@ section h2 i { font-size: 1.05rem; }
   display: block;
 }
 .poetry-page .poem-preview {
-  line-height: 2.8;
+  line-height: 2.4;
 }
 .poem-full {
   font-family: 'Amiri', serif; /* changed from Cairo */
