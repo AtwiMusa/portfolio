@@ -639,8 +639,8 @@ section h2 i { font-size: 1.05rem; }
 /* Arabic — Cairo font, 4-line preview */
 ..poem-preview {
   font-family: 'Amiri serif; /* changed from Cairo */
-  font-size: 1.25rem;
-  line-height: 3.0;
+  font-size: 1.30rem;
+  line-height: 3.2;
   font-weight: 400;
   color: var(--text);
   text-align: right;
@@ -652,11 +652,11 @@ section h2 i { font-size: 1.05rem; }
   display: block;
 }
 .poetry-page .poem-preview {
-  line-height: 2.4;
+  line-height: 2.8;
 }
 .poem-full {
   font-family: 'Amiri', serif; /* changed from Cairo */
-  font-size: 1.20rem;
+  font-size: 1.15rem;
   line-height: 1.82;
   font-weight: 400;
   color: var(--text);
