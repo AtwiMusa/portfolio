@@ -637,7 +637,7 @@ section h2 i { font-size: 1.05rem; }
   overflow: hidden;
 }
 /* Arabic — Cairo font, 4-line preview */
-..poem-preview {
+.poem-preview {
   font-family: 'Amiri serif; /* changed from Cairo */
   font-size: 1.25rem;
   line-height: 2.6;
