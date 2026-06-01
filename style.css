@@ -118,9 +118,10 @@ nav a:hover {
 
 .back-nav,
 .top-right {
-  position: absolute;
-  top: 5rem;
-  right: 3vw;
+  position: fixed;
+  top: 1.5rem;
+  right: 2rem;
+  z-index: 999;
 }
 .back-nav a,
 .top-right a {
