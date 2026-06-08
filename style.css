@@ -643,14 +643,20 @@ section h2 i { font-size: 1.05rem; }
   font-size: 0.8rem;
   color: var(--muted);
 }
-.glance-grade {
-  font-family: 'DM Mono', monospace;
-  font-size: 0.6rem;
-  letter-spacing: 0.05em;
-  color: var(--accent);
-  margin-top: 0.2rem;
+.glance-deg-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  flex-wrap: wrap;
 }
-.glance-grade i { font-size: 0.58rem; margin-right: 0.1rem; }
+.glance-grade {
+  font-family: 'EB Garamond', serif;
+  font-size: 0.85rem;
+  color: var(--accent);
+  white-space: nowrap;
+}
+.glance-grade i { font-size: 0.7rem; margin-right: 0.15rem; }
+.glance-grade .g-sep { margin: 0 0.55rem; }
 .glance-chips {
   display: flex;
   flex-wrap: wrap;
@@ -708,6 +714,50 @@ section h2 i { font-size: 1.05rem; }
   text-decoration: underline;
   text-underline-offset: 4px;
 }
+
+/* ── Poetry masthead (main page) + inner-page header ── */
+.poetry-masthead { text-align: center; margin: 0.2rem 0 1.9rem; }
+.pm-title {
+  font-family: 'Amiri', 'EB Garamond', serif;
+  font-weight: 500;
+  font-size: clamp(1.45rem, 3.25vw, 1.95rem);
+  color: var(--accent);
+  line-height: 1.5;
+  text-decoration: none;
+  display: inline-block;
+  transition: color 0.25s;
+}
+.pm-title:hover { color: var(--highlight); }
+.pm-meta { font-size: 0.92rem; color: var(--muted); }
+.pm-translit {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.13em;
+  color: var(--accent);
+}
+.pm-meaning { font-style: italic; color: var(--highlight); }
+
+/* enlarged ❀ rule for the two big headers */
+.poetry-masthead .poem-rule,
+header .poem-rule { margin: 0.45rem auto 0.75rem; gap: 0.6rem; }
+.poetry-masthead .poem-rule::before, .poetry-masthead .poem-rule::after,
+header .poem-rule::before, header .poem-rule::after { width: 54px; }
+.poetry-masthead .poem-rule .pr-flower,
+header .poem-rule .pr-flower { font-size: 1.1rem; }
+header .pm-meta { margin-top: 0.15rem; }
+
+/* center the description inside the masthead */
+.poetry-masthead .poetry-description { text-align: center; max-width: 34rem; margin: 0.9rem auto 0; }
+.poetry-masthead .desc-ar { text-align: center; }
+
+/* ── Amiri for Arabic titles + verse text ── */
+.pm-title,
+h1[lang="ar"],
+.poem-title,
+.poem-preview,
+.poem-full { font-family: 'Amiri', 'EB Garamond', serif; }
+h1[lang="ar"] { font-weight: 500; font-size: clamp(1.6rem, 4vw, 2.1rem); }
+
 
 /* ── POEM CARDS — always 3 per row, equal size, 4-line preview ── */
 .poetry-grid {
@@ -778,7 +828,8 @@ section h2 i { font-size: 1.05rem; }
   margin-bottom: 0.7rem;
   flex-shrink: 0;
 }
-#poetry .poem-title { margin-bottom: 0.4rem; }
+#poetry .poem-title,
+.poetry-page .poem-title { margin-bottom: 0.4rem; }
 .poem-rule {
   display: flex;
   align-items: center;
@@ -843,7 +894,8 @@ section h2 i { font-size: 1.05rem; }
   padding-bottom: 0.7rem;
   border-top: 1px solid rgba(200,169,110,0.14);
 }
-#poetry .poem-card.expanded .poem-full {
+#poetry .poem-card.expanded .poem-full,
+.poetry-page .poem-card.expanded .poem-full {
   border-top: none;
   margin-top: 0;
   padding-top: 0;
@@ -864,7 +916,8 @@ section h2 i { font-size: 1.05rem; }
 }
 .poem-card.expanded .expand-toggle { display: none; }
 
-#poetry .expand-toggle {
+#poetry .expand-toggle,
+.poetry-page .expand-toggle {
   font-size: 0.72rem;
   opacity: 1;
   cursor: pointer;
@@ -875,15 +928,18 @@ section h2 i { font-size: 1.05rem; }
   margin-top: 0.6rem;
   transition: color 0.2s ease;
 }
-#poetry .expand-toggle::after {
+#poetry .expand-toggle::after,
+.poetry-page .expand-toggle::after {
   content: "\f103";
   font-family: "Font Awesome 6 Free";
   font-weight: 900;
   font-size: 0.95rem;
   animation: toggleNudge 1.7s ease-in-out infinite;
 }
-#poetry .expand-toggle:hover { color: var(--highlight); }
-#poetry .poem-card.expanded .expand-toggle { display: none; }
+#poetry .expand-toggle:hover,
+.poetry-page .expand-toggle:hover { color: var(--highlight); }
+#poetry .poem-card.expanded .expand-toggle,
+.poetry-page .poem-card.expanded .expand-toggle { display: none; }
 @keyframes toggleNudge {
   0%, 100% { transform: translateY(0); opacity: 0.65; }
   50%      { transform: translateY(3px); opacity: 1; }
@@ -900,12 +956,13 @@ section h2 i { font-size: 1.05rem; }
   height: fit-content;
 }
 .poetry-page .poem-preview {
-  height: unset;
-  overflow: visible;
   display: block;
-  white-space: nowrap; /* ← prevents line breaking */
-  text-overflow: clip;
-  line-height: 2.4;   /* ← same good spacing as main page */
+  white-space: nowrap;            /* never break a verse line */
+  height: calc(2.25em * 2);       /* exactly two lines, equal across the row */
+  line-height: 2.25;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to left, #000 82%, transparent 100%);
+  mask-image: linear-gradient(to left, #000 82%, transparent 100%);
 }
 .poetry-page .poem-full {
   line-height: 2.0;   /* ← good spacing in expanded view */
@@ -914,9 +971,6 @@ section h2 i { font-size: 1.05rem; }
 @media (max-width: 700px) {
   .poetry-page .poetry-grid {
     grid-template-columns: 1fr; /* 1 column on mobile */
-  }
-  .poetry-page .poem-preview {
-    white-space: normal; /* allow wrap on very small screens */
   }
 }
 
