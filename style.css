@@ -15,7 +15,7 @@
   --accent-soft:  rgba(200,169,110,0.12);
   --accent2-soft: rgba(126,184,201,0.10);
   --text:         #e8e4da;
-  --muted:        #8a8880;
+  --muted:        #a8a59c;
   --highlight:    #d4c5a0;
   --green:        #7ec97e;
   --red:          #c97878;
@@ -32,7 +32,7 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: 'Spectral', serif;
-  font-size: 17px;
+  font-size: 18.5px;
   line-height: 1.75;
   min-height: 100vh;
   background-image:
@@ -1047,6 +1047,16 @@ h1[lang="ar"] { font-weight: 500; font-size: clamp(1.6rem, 4vw, 2.1rem); }
   font-weight: 500;
   min-width: 50px;
 }
+.cv-toprow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+.cv-toprow .grade-details { margin-bottom: 0; }
+.cv-toprow .pdf-row { margin-bottom: 0; }
 
 
 /* ── CV PAGE ── */
