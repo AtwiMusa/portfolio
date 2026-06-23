@@ -3,15 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Resume — Moussa Atwi</title>
+  <title>Curriculum Vitae — Moussa Atwi</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 
-<header>
-  <h1>Resume</h1>
+<header class="cv-top">
+  <h1>Curriculum Vitae</h1>
   <div class="title-lines"><span class="line"></span><span class="line"></span></div>
+  <nav class="cv-nav">
+    <a href="#research">Research</a>
+    <a href="#education">Education</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#certificates">Certificates</a>
+    <a href="#skills">Skills</a>
+    <a href="#other">Other Work</a>
+    <a href="#hobbies">Hobbies</a>
+    <a href="#languages">Languages</a>
+  </nav>
   <nav class="back-nav top-right">
     <a href="index.html#resume">← Back</a>
   </nav>
@@ -76,11 +86,7 @@
           <p><em>"Sparse Exit Wave Reconstruction via Deep Unfolding"</em></p>
           <p>Transmission Electron Microscopy (TEM) enables high-resolution imaging of materials. The focus is on exit wave reconstruction — recovery of the complex-valued electron wave at the specimen's exit plane from intensity-only measurements — an inverse problem with a nonlinear forward model. We propose a discretized regularized variational formulation, solve it via proximal gradient algorithm (PGA) unfolded into a neural network, inspired by LISTA, enabling improved reconstruction quality and implicit dictionary learning from data.</p>
           <span class="kw">Phase Retrieval · Deep Unfolding · Proximal Gradient Algorithm · Complex-Valued Optimization · Sparse Reconstruction · Rademacher Complexity</span>
-          <h5>📄 Preprint — arXiv 2025</h5>
-          <p><em>"A generalization bound for exit wave reconstruction via deep unfolding"</em></p>
-          <div class="pdf-row" style="margin:0.5rem 0 0;">
-            <a href="pdfs/exit-wave-deep-unfolding.pdf" target="_blank" class="pdf-btn"><i class="fa-solid fa-file-pdf"></i> PDF</a>
-            <a href="https://arxiv.org/abs/2511.06413" target="_blank" class="pdf-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> arXiv</a>
+          <div class="pdf-row" style="margin:0.7rem 0 0;">
             <a href="https://sfb1481.rwth-aachen.de/research/area-a/project-a08" target="_blank" class="sfb-badge">
               <img src="https://sfb1481.rwth-aachen.de/typo3conf/ext/sitepackage/Resources/Public/Favicons/ms-icon-144x144.png" alt="" onerror="this.style.display='none'">
               Project A08
@@ -89,6 +95,14 @@
               <img src="https://sfb1481.rwth-aachen.de/typo3conf/ext/sitepackage/Resources/Public/Favicons/ms-icon-144x144.png" alt="" onerror="this.style.display='none'">
               SFB 1481
             </a>
+            <!-- THESIS PDF: when ready, change this <span> to <a href="pdfs/your-thesis.pdf" target="_blank" class="pdf-btn"> and remove the "pdf-btn-soon" version below -->
+            <span class="pdf-btn pdf-btn-soon"><i class="fa-solid fa-file-pdf"></i> Thesis (in preparation)</span>
+          </div>
+          <h5>📄 Preprint — arXiv 2025</h5>
+          <p><em>"A generalization bound for exit wave reconstruction via deep unfolding"</em></p>
+          <div class="pdf-row" style="margin:0.5rem 0 0;">
+            <a href="pdfs/exit-wave-deep-unfolding.pdf" target="_blank" class="pdf-btn"><i class="fa-solid fa-file-pdf"></i> PDF</a>
+            <a href="https://arxiv.org/abs/2511.06413" target="_blank" class="pdf-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> arXiv</a>
           </div>
         </div>
       </details>
