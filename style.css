@@ -1572,3 +1572,274 @@ a { color: var(--accent); }
   .lang-grid { gap: 1rem; }
   .poetry-grid { grid-template-columns: 1fr; }
 }
+
+/* ── EDUCATION TABS ── */
+.edu-tabs { margin-top: 0.75rem; }
+.edu-pills {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.9rem;
+}
+.edu-pill {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.06em;
+  padding: 0.32rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  background: var(--surface2);
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+.edu-pill:hover { border-color: var(--accent); color: var(--accent); }
+.edu-pill.active {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+  font-weight: 500;
+}
+.edu-panel { display: none; }
+.edu-panel.active {
+  display: block;
+  animation: eduFade 0.2s ease;
+}
+@keyframes eduFade {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.edu-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.edu-item:last-child { border-bottom: none; padding-bottom: 0; }
+.edu-item-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 7px;
+  background: var(--accent-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.edu-item-icon i { color: var(--accent); font-size: 0.88rem; }
+.edu-item-body { flex: 1; min-width: 0; }
+.edu-item-title {
+  font-family: 'EB Garamond', serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--highlight);
+  line-height: 1.35;
+  margin-bottom: 0.3rem;
+}
+.edu-item-desc {
+  font-size: 0.86rem;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-bottom: 0.35rem;
+  text-align: justify;
+  text-justify: inter-word;
+}
+.edu-links {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.55rem;
+}
+.edu-course-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid rgba(200,169,110,0.18);
+}
+.edu-course-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 0.8rem;
+}
+.edu-course-entry {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  font-size: 0.84rem;
+}
+.edu-course-entry:last-child { border-bottom: none; }
+.edu-grade-a .edu-course-name { color: var(--text); }
+.edu-grade-other .edu-course-name { color: var(--muted); }
+.edu-course-g {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--accent);
+  font-weight: 500;
+  flex-shrink: 0;
+  margin-left: 0.4rem;
+}
+
+/* ── EDUCATION COURSES — expandable items with desc+kw ── */
+.edu-course-items { display: flex; flex-direction: column; gap: 0; }
+.edu-course-item {
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.edu-course-item:last-child { border-bottom: none; }
+.edu-course-item-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.3rem;
+}
+.edu-course-item-name {
+  font-family: 'EB Garamond', serif;
+  font-size: 0.97rem;
+  font-weight: 500;
+  color: var(--highlight);
+}
+.edu-course-item-other .edu-course-item-name { color: var(--muted); }
+.edu-course-item-desc {
+  font-size: 0.83rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 0.28rem;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* ── PUB-STYLE EXPAND ITEMS (used in Education + Research) ── */
+.pub-expand-item {
+  border-bottom: 1px solid var(--border);
+  padding: 0.75rem 0;
+}
+.pub-expand-item:last-child { border-bottom: none; padding-bottom: 0; }
+.pub-expand-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.pub-expand-header:hover .pub-expand-title { color: var(--highlight); }
+.pub-expand-icon {
+  flex-shrink: 0;
+  width: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pub-expand-icon i {
+  color: var(--accent);
+  font-size: 0.82rem;
+}
+.pub-expand-title {
+  font-family: 'EB Garamond', serif;
+  font-size: 1rem;
+  color: var(--accent);
+  line-height: 1.4;
+  flex: 1;
+}
+.pub-expand-box {
+  display: none;
+  margin: 0.65rem 0 0 1.7rem;
+  padding: 1rem 1.3rem;
+  background: rgba(200,169,110,0.04);
+  border-left: 2px solid var(--accent);
+  border-radius: 8px;
+  animation: eduFade 0.2s ease;
+}
+.pub-expand-item.open .pub-expand-box { display: block; }
+.pub-expand-desc {
+  font-size: 0.89rem;
+  color: var(--text);
+  line-height: 1.75;
+  margin-bottom: 0.75rem;
+  text-align: justify;
+  text-justify: inter-word;
+}
+.pub-expand-links {
+  display: flex;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+  margin: 0.6rem 0 0 1.7rem;
+}
+
+/* ── COURSE GROUP PILLS (Grade A / Other) ── */
+.edu-cgroup-pills {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.85rem;
+}
+.edu-cgroup-pill {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.05em;
+  padding: 0.35rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(200,169,110,0.35);
+  color: var(--accent);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+.edu-cgroup-pill:hover { background: var(--accent-soft); }
+.edu-cgroup-pill.active { background: var(--accent); color: var(--bg); border-color: var(--accent); font-weight: 500; }
+.edu-cgroup-panel { display: none; }
+.edu-cgroup-panel.active { display: block; animation: eduFade 0.18s ease; }
+
+/* ── COURSE SWITCHER ── */
+.edu-course-switcher { padding-top: 0.2rem; }
+.edu-course-sw-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 0.75rem;
+}
+.edu-course-sw-pill {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.04em;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--accent);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+.edu-course-sw-pill:hover { border-color: var(--accent); background: var(--accent-soft); }
+.edu-course-sw-pill.active { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+.edu-course-sw-panel { display: none; }
+.edu-course-sw-panel.active {
+  display: block;
+  animation: eduFade 0.18s ease;
+  padding: 0.6rem 0 0;
+}
+.edu-course-sw-title {
+  font-family: 'EB Garamond', serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--accent);
+  margin-bottom: 0.45rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.edu-course-sw-desc {
+  font-size: 0.89rem;
+  color: var(--text);
+  line-height: 1.75;
+  text-align: justify;
+  text-justify: inter-word;
+}
