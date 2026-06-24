@@ -79,33 +79,60 @@
         <span class="tag tag-blue">Full-time · 30 hrs/week</span>
       </div>
       <strong>Doctoral Researcher — Machine Learning &amp; Inverse Problems</strong>
-      <details class="cv-details">
-        <summary>Research Details &amp; Preprint</summary>
-        <div class="cv-details-body">
-          <h5>Thesis</h5>
-          <p><em>"Sparse Exit Wave Reconstruction via Deep Unfolding"</em></p>
-          <p>Transmission Electron Microscopy (TEM) enables high-resolution imaging of materials. The focus is on exit wave reconstruction — recovery of the complex-valued electron wave at the specimen's exit plane from intensity-only measurements — an inverse problem with a nonlinear forward model. We propose a discretized regularized variational formulation, solve it via proximal gradient algorithm (PGA) unfolded into a neural network, inspired by LISTA, enabling improved reconstruction quality and implicit dictionary learning from data.</p>
-          <span class="kw">Phase Retrieval · Deep Unfolding · Proximal Gradient Algorithm · Complex-Valued Optimization · Sparse Reconstruction · Rademacher Complexity</span>
-          <div class="pdf-row" style="margin:0.7rem 0 0;">
-            <a href="https://sfb1481.rwth-aachen.de/research/area-a/project-a08" target="_blank" class="sfb-badge">
-              <img src="https://sfb1481.rwth-aachen.de/typo3conf/ext/sitepackage/Resources/Public/Favicons/ms-icon-144x144.png" alt="" onerror="this.style.display='none'">
-              Project A08
-            </a>
-            <a href="https://sfb1481.rwth-aachen.de/" target="_blank" class="sfb-badge">
-              <img src="https://sfb1481.rwth-aachen.de/typo3conf/ext/sitepackage/Resources/Public/Favicons/ms-icon-144x144.png" alt="" onerror="this.style.display='none'">
-              SFB 1481
-            </a>
-            <!-- THESIS PDF: when ready, change this <span> to <a href="pdfs/your-thesis.pdf" target="_blank" class="pdf-btn"> and remove the "pdf-btn-soon" version below -->
-            <span class="pdf-btn pdf-btn-soon"><i class="fa-solid fa-file-pdf"></i> Thesis (in preparation)</span>
-          </div>
-          <h5>📄 Preprint — arXiv 2025</h5>
-          <p><em>"A generalization bound for exit wave reconstruction via deep unfolding"</em></p>
-          <div class="pdf-row" style="margin:0.5rem 0 0;">
-            <a href="pdfs/exit-wave-deep-unfolding.pdf" target="_blank" class="pdf-btn"><i class="fa-solid fa-file-pdf"></i> PDF</a>
-            <a href="https://arxiv.org/abs/2511.06413" target="_blank" class="pdf-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> arXiv</a>
+      <div class="edu-tabs" style="margin-top:0.75rem;">
+        <div class="edu-pills">
+          <span class="edu-pill active" onclick="eduTab(this,'res-thesis')">Thesis</span>
+          <span class="edu-pill" onclick="eduTab(this,'res-preprint')">Preprint</span>
+        </div>
+        <div class="edu-panel active" id="res-thesis">
+          <div class="pub-expand-item" id="res-thesis-item">
+            <div class="pub-expand-header" onclick="pubExpand('res-thesis-item')">
+              <span class="pub-expand-icon"><i class="fa-solid fa-circle-plus"></i></span>
+              <span class="pub-expand-title">Sparse Exit Wave Reconstruction via Deep Unfolding</span>
+            </div>
+            <div class="pub-expand-box">
+              <p class="pub-expand-desc">Transmission Electron Microscopy (TEM) enables high-resolution imaging of materials. The focus is on exit wave reconstruction — recovery of the complex-valued electron wave at the specimen's exit plane from intensity-only measurements — an inverse problem with a nonlinear forward model. We propose a discretized regularized variational formulation, solve it via proximal gradient algorithm (PGA) unfolded into a neural network, inspired by LISTA, enabling improved reconstruction quality and implicit dictionary learning from data.</p>
+              <div class="kw-chips">
+                <span class="kw-chip">Phase Retrieval</span>
+                <span class="kw-chip">Deep Unfolding</span>
+                <span class="kw-chip">Proximal Gradient Algorithm</span>
+                <span class="kw-chip">Complex-Valued Optimization</span>
+                <span class="kw-chip">Sparse Reconstruction</span>
+                <span class="kw-chip">Rademacher Complexity</span>
+              </div>
+            </div>
+            <div class="pub-expand-links">
+              <a href="https://sfb1481.rwth-aachen.de/research/area-a/project-a08" target="_blank" class="sfb-badge"><img src="https://sfb1481.rwth-aachen.de/typo3conf/ext/sitepackage/Resources/Public/Favicons/ms-icon-144x144.png" alt="" onerror="this.style.display='none'"> Project A08</a>
+              <a href="https://sfb1481.rwth-aachen.de/" target="_blank" class="sfb-badge"><img src="https://sfb1481.rwth-aachen.de/typo3conf/ext/sitepackage/Resources/Public/Favicons/ms-icon-144x144.png" alt="" onerror="this.style.display='none'"> SFB 1481 — Sparsity &amp; Singular Structures</a>
+              <a href="https://github.com/AtwiMusa" target="_blank" class="pdf-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+              <span class="pdf-btn pdf-btn-soon"><i class="fa-solid fa-file-pdf"></i> Thesis (in preparation)</span>
+            </div>
           </div>
         </div>
-      </details>
+        <div class="edu-panel" id="res-preprint">
+          <div class="pub-expand-item" id="res-preprint-item">
+            <div class="pub-expand-header" onclick="pubExpand('res-preprint-item')">
+              <span class="pub-expand-icon"><i class="fa-solid fa-circle-plus"></i></span>
+              <span class="pub-expand-title">A generalization bound for exit wave reconstruction via deep unfolding</span>
+            </div>
+            <div class="pub-expand-box">
+              <p class="pub-expand-desc">We propose a proximal gradient algorithm (PGA) unfolded into a neural network — inspired by LISTA — where each layer corresponds to one PGA step with learnable parameters, applied to exit wave reconstruction as a phase retrieval problem. This enables improved reconstruction quality, interpretability, and implicit dictionary learning from data. We establish generalization error bounds of order O(√L) using Rademacher complexity.</p>
+              <div class="kw-chips">
+                <span class="kw-chip">Generalization Bounds</span>
+                <span class="kw-chip">Rademacher Complexity</span>
+                <span class="kw-chip">Deep Unfolding</span>
+                <span class="kw-chip">Phase Retrieval</span>
+                <span class="kw-chip">LISTA</span>
+                <span class="kw-chip">Proximal Gradient Algorithm</span>
+              </div>
+            </div>
+            <div class="pub-expand-links">
+              <a href="pdfs/exit-wave-deep-unfolding.pdf" target="_blank" class="pdf-btn"><i class="fa-solid fa-file-pdf"></i> PDF</a>
+              <a href="https://arxiv.org/abs/2511.06413" target="_blank" class="pdf-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> arXiv 2025</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="cv-card">
@@ -220,33 +247,48 @@
         <span class="tag tag-blue">Full-time · 30 hrs/week · IGPM · SFB 1481</span>
       </div>
       <strong>PhD — Sparse Exit Wave Reconstruction via Deep Unfolding</strong>
-      <details class="cv-details">
-        <summary>Thesis Details &amp; Links</summary>
-        <div class="cv-details-body">
-          <h5>Thesis Title</h5>
-          <p><em>Sparse Exit Wave Reconstruction via Deep Unfolding</em></p>
-          <p>Transmission Electron Microscopy (TEM) enables high-resolution imaging of materials. The focus is on exit wave reconstruction — recovery of the complex-valued electron wave at the specimen's exit plane from intensity-only measurements — an inverse problem with a nonlinear forward model. We propose a discretized regularized variational formulation, solve it via proximal gradient algorithm (PGA) unfolded into a neural network, inspired by LISTA, enabling improved reconstruction quality and implicit dictionary learning from data.</p>
-          <span class="kw">Phase Retrieval · Deep Unfolding · Proximal Gradient Algorithm · Complex-Valued Optimization · Sparse Reconstruction · Rademacher Complexity</span>
-          <div class="pdf-row" style="margin:0.7rem 0 0;">
-            <a href="https://sfb1481.rwth-aachen.de/research/area-a/project-a08" target="_blank" class="sfb-badge">
-              <img src="https://sfb1481.rwth-aachen.de/typo3conf/ext/sitepackage/Resources/Public/Favicons/ms-icon-144x144.png" alt="" onerror="this.style.display='none'">
-              Project A08
-            </a>
-            <a href="https://sfb1481.rwth-aachen.de/" target="_blank" class="sfb-badge">
-              <img src="https://sfb1481.rwth-aachen.de/typo3conf/ext/sitepackage/Resources/Public/Favicons/ms-icon-144x144.png" alt="" onerror="this.style.display='none'">
-              SFB 1481 — Sparsity &amp; Singular Structures
-            </a>
-            <a href="https://github.com/AtwiMusa" target="_blank" class="pdf-btn"><i class="fa-brands fa-github"></i> GitHub</a>
-            <span class="pdf-btn pdf-btn-soon"><i class="fa-solid fa-file-pdf"></i> Thesis (in preparation)</span>
-          </div>
-          <h5>📄 Preprint — arXiv 2025</h5>
-          <p><em>A generalization bound for exit wave reconstruction via deep unfolding</em></p>
-          <div class="pdf-row" style="margin:0.5rem 0 0;">
-            <a href="pdfs/exit-wave-deep-unfolding.pdf" target="_blank" class="pdf-btn"><i class="fa-solid fa-file-pdf"></i> PDF</a>
-            <a href="https://arxiv.org/abs/2511.06413" target="_blank" class="pdf-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> arXiv</a>
+      <div class="edu-tabs" style="margin-top:0.75rem;">
+        <div class="edu-pills">
+          <span class="edu-pill active" onclick="eduTab(this,'phd-thesis')">Thesis</span>
+          <span class="edu-pill" onclick="eduTab(this,'phd-preprint')">Preprint</span>
+        </div>
+        <div class="edu-panel active" id="phd-thesis">
+          <div class="pub-expand-item" id="phd-thesis-item">
+            <div class="pub-expand-header" onclick="pubExpand('phd-thesis-item')">
+              <span class="pub-expand-icon"><i class="fa-solid fa-circle-plus"></i></span>
+              <span class="pub-expand-title">Sparse Exit Wave Reconstruction via Deep Unfolding</span>
+            </div>
+                        <div class="pub-expand-box">
+              <p class="pub-expand-desc">Transmission Electron Microscopy (TEM) enables high-resolution imaging of materials. The focus is on exit wave reconstruction — recovery of the complex-valued electron wave at the specimen's exit plane from intensity-only measurements — an inverse problem with a nonlinear forward model. We propose a discretized regularized variational formulation, solve it via proximal gradient algorithm (PGA) unfolded into a neural network, inspired by LISTA, enabling improved reconstruction quality and implicit dictionary learning from data.</p>
+              <div class="kw-chips"><span class="kw-chip">Phase Retrieval</span><span class="kw-chip">Deep Unfolding</span><span class="kw-chip">Proximal Gradient Algorithm</span><span class="kw-chip">Complex-Valued Optimization</span><span class="kw-chip">Sparse Reconstruction</span><span class="kw-chip">Rademacher Complexity</span></div>
+            </div>
+          
+            <div class="pub-expand-links">
+              <a href="https://sfb1481.rwth-aachen.de/research/area-a/project-a08" target="_blank" class="sfb-badge"><img src="https://sfb1481.rwth-aachen.de/typo3conf/ext/sitepackage/Resources/Public/Favicons/ms-icon-144x144.png" alt="" onerror="this.style.display='none'"> Project A08</a>
+              <a href="https://sfb1481.rwth-aachen.de/" target="_blank" class="sfb-badge"><img src="https://sfb1481.rwth-aachen.de/typo3conf/ext/sitepackage/Resources/Public/Favicons/ms-icon-144x144.png" alt="" onerror="this.style.display='none'"> SFB 1481 — Sparsity &amp; Singular Structures</a>
+              <a href="https://github.com/AtwiMusa" target="_blank" class="pdf-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+              <span class="pdf-btn pdf-btn-soon"><i class="fa-solid fa-file-pdf"></i> Thesis (in preparation)</span>
+            </div>
           </div>
         </div>
-      </details>
+        <div class="edu-panel" id="phd-preprint">
+          <div class="pub-expand-item" id="phd-preprint-item">
+            <div class="pub-expand-header" onclick="pubExpand('phd-preprint-item')">
+              <span class="pub-expand-icon"><i class="fa-solid fa-circle-plus"></i></span>
+              <span class="pub-expand-title">A generalization bound for exit wave reconstruction via deep unfolding</span>
+            </div>
+                        <div class="pub-expand-box">
+              <p class="pub-expand-desc">We propose a proximal gradient algorithm (PGA) unfolded into a neural network — inspired by LISTA — where each layer corresponds to one PGA step with learnable parameters, applied to exit wave reconstruction as a phase retrieval problem. This enables improved reconstruction quality, interpretability, and implicit dictionary learning from data. We establish generalization error bounds of order O(√L) using Rademacher complexity.</p>
+              <div class="kw-chips"><span class="kw-chip">Generalization Bounds</span><span class="kw-chip">Rademacher Complexity</span><span class="kw-chip">Deep Unfolding</span><span class="kw-chip">Phase Retrieval</span></div>
+            </div>
+          
+            <div class="pub-expand-links">
+              <a href="pdfs/exit-wave-deep-unfolding.pdf" target="_blank" class="pdf-btn"><i class="fa-solid fa-file-pdf"></i> PDF</a>
+              <a href="https://arxiv.org/abs/2511.06413" target="_blank" class="pdf-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> arXiv 2025</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="cv-card">
@@ -257,141 +299,161 @@
         <span class="tag tag-gold">GPA 1.2 = Grade A · Excellent</span>
       </div>
       <strong>M.Sc. in Scientific Computing</strong>
-      <details class="cv-details">
-        <summary>Thesis, Projects, Seminars &amp; Courses</summary>
-        <div class="cv-details-body">
+      <div class="edu-tabs" style="margin-top:0.75rem;">
+        <div class="edu-pills">
+          <span class="edu-pill active" onclick="eduTab(this,'tub-thesis')">Master's Thesis</span>
+          <span class="edu-pill" onclick="eduTab(this,'tub-internship')">Research Internship</span>
+          <span class="edu-pill" onclick="eduTab(this,'tub-project')">Project</span>
+          <span class="edu-pill" onclick="eduTab(this,'tub-seminars')">Seminars</span>
+          <span class="edu-pill" onclick="eduTab(this,'tub-courses')">Courses</span>
+        </div>
 
-          <h5>Master's Thesis — Zuse Institute Berlin (ZIB) &nbsp;<span class="tag tag-gold">Grade A · Excellent</span></h5>
-          <p><em>Approximation of Koopman Operators by Randomly Chosen Basis Functions</em></p>
-          <p>Studied the theory of Koopman operators for nonlinear dynamical systems, including Koopman eigenfunctions, intrinsic coordinates where the dynamics become linear, invariant subspaces, and Koopman embedding. Compared Extended Dynamic Mode Decomposition (EDMD) with monomials, random Gaussians, and trained and untrained randomly-initialized neural networks (RINNs); this use of random bases is known as Random Dynamic Mode Decomposition (RDMD).</p>
-          <span class="kw">Koopman Operators · EDMD · RDMD · Random Gaussians · RINNs · Spectral Analysis · TensorFlow</span>
-          <div class="pdf-row" style="margin:0.5rem 0 0.9rem;">
-            <a href="pdfs/Master_Thesis_TUB-1.pdf" target="_blank" class="pdf-btn"><i class="fa-solid fa-file-pdf"></i> Master's Thesis</a>
-            <a href="https://github.com/AtwiMusa/RDMD" target="_blank" class="pdf-btn"><i class="fa-brands fa-github"></i> Code Repository</a>
+        <div class="edu-panel active" id="tub-thesis">
+          <div class="pub-expand-item" id="tub-thesis-item">
+            <div class="pub-expand-header" onclick="pubExpand('tub-thesis-item')">
+              <span class="pub-expand-icon"><i class="fa-solid fa-circle-plus"></i></span>
+              <span class="pub-expand-title">Master's Thesis — Approximation of Koopman Operators by Randomly Chosen Basis Functions <span class="tag tag-gold" style="margin-left:6px;">Grade A · Excellent</span></span>
+            </div>
+                        <div class="pub-expand-box">
+              <p class="pub-expand-desc">Studied the theory of Koopman operators for nonlinear dynamical systems, including Koopman eigenfunctions, intrinsic coordinates where the dynamics become linear, invariant subspaces, and Koopman embedding. Compared Extended Dynamic Mode Decomposition (EDMD) with monomials, random Gaussians, and trained and untrained randomly-initialized neural networks (RINNs) — known as Random Dynamic Mode Decomposition (RDMD).</p>
+              <div class="kw-chips"><span class="kw-chip">EDMD</span><span class="kw-chip">RDMD</span><span class="kw-chip">Koopman Operators</span><span class="kw-chip">Random Gaussians</span><span class="kw-chip">RINNs</span><span class="kw-chip">Spectral Analysis</span><span class="kw-chip">TensorFlow</span></div>
+            </div>
+          
+            <div class="pub-expand-links">
+              <a href="pdfs/Master_Thesis_TUB-1.pdf" target="_blank" class="pdf-btn"><i class="fa-solid fa-file-pdf"></i> Master's Thesis</a>
+              <a href="https://github.com/AtwiMusa/RDMD" target="_blank" class="pdf-btn"><i class="fa-brands fa-github"></i> Code Repository</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="edu-panel" id="tub-internship">
+          <div class="pub-expand-item" id="tub-internship-item">
+            <div class="pub-expand-header" onclick="pubExpand('tub-internship-item')">
+              <span class="pub-expand-icon"><i class="fa-solid fa-circle-plus"></i></span>
+              <span class="pub-expand-title">Research Internship — Approximation of Koopman Operators by Randomly Chosen Basis Functions <span class="tag tag-gold" style="margin-left:6px;">Grade A · Excellent</span></span>
+            </div>
+                        <div class="pub-expand-box">
+              <p class="pub-expand-desc">Built three Python classes — Gaussian, Rinn, and Genbasis — applying Extended Dynamic Mode Decomposition (EDMD) with random Gaussians and randomly-initialized neural networks to estimate Koopman eigenfunctions and eigenvalues on high-dimensional models. This use of random bases is known as Random Dynamic Mode Decomposition (RDMD).</p>
+              <div class="kw-chips"><span class="kw-chip">Extended Dynamic Mode Decomposition (EDMD)</span><span class="kw-chip">Random Dynamic Mode Decomposition (RDMD)</span><span class="kw-chip">Random Gaussians</span><span class="kw-chip">RINNs</span><span class="kw-chip">Python</span></div>
+            </div>
+          
+            <div class="pub-expand-links">
+              <a href="pdfs/Internship_Report___RDMD.pdf" target="_blank" class="pdf-btn"><i class="fa-solid fa-file-pdf"></i> Internship Report</a>
+              <a href="https://github.com/AtwiMusa/RDMD" target="_blank" class="pdf-btn"><i class="fa-brands fa-github"></i> Code Repository</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="edu-panel" id="tub-project">
+          <div class="pub-expand-item" id="tub-project-item">
+            <div class="pub-expand-header" onclick="pubExpand('tub-project-item')">
+              <span class="pub-expand-icon"><i class="fa-solid fa-circle-plus"></i></span>
+              <span class="pub-expand-title">Scientific Computing — Gas Transport in Porous Medium <span class="tag tag-gold" style="margin-left:6px;">Excellent 1.0</span></span>
+            </div>
+                        <div class="pub-expand-box">
+              <p class="pub-expand-desc">Numerical solution of the nonlinear Porous Medium Equation using the Voronoi Finite Volume Method in Julia (Rothe method, Implicit Euler); 1D and 2D simulations validated against the Barenblatt solution; performance improved using DifferentialEquations.jl.</p>
+              <div class="kw-chips"><span class="kw-chip">Porous Medium Equation</span><span class="kw-chip">Voronoi Finite Volume Method</span><span class="kw-chip">Rothe Method</span><span class="kw-chip">Barenblatt Solution</span><span class="kw-chip">Julia</span></div>
+            </div>
+          
+            <div class="pub-expand-links">
+              <a href="pdfs/Scie_Com_report.pdf" target="_blank" class="pdf-btn"><i class="fa-solid fa-file-pdf"></i> Project Report</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="edu-panel" id="tub-seminars">
+          <div class="pub-expand-item" id="tub-sem1-item">
+            <div class="pub-expand-header" onclick="pubExpand('tub-sem1-item')">
+              <span class="pub-expand-icon"><i class="fa-solid fa-circle-plus"></i></span>
+              <span class="pub-expand-title">The Entropic Optimal Transport <span class="tag tag-gold" style="margin-left:6px;">Grade A · Excellent</span></span>
+            </div>
+                        <div class="pub-expand-box">
+              <p class="pub-expand-desc">Approximation of the optimal transport problem via entropic regularization: proved convergence as ε→0, characterized the solution via the Gibbs kernel and Kullback-Leibler projection, derived Sinkhorn's algorithm, and established strong duality of the continuous entropic optimal transport dual.</p>
+              <div class="kw-chips"><span class="kw-chip">Kantorovich Formulation</span><span class="kw-chip">Entropic Regularization</span><span class="kw-chip">Kullback-Leibler Divergence</span><span class="kw-chip">Gibbs Kernel</span><span class="kw-chip">Sinkhorn's Algorithm</span><span class="kw-chip">Strong Duality</span></div>
+            </div>
+          
+            <div class="pub-expand-links">
+              <a href="pdfs/Seminar__The_Entropic_Optimal_Transport.pdf" target="_blank" class="pdf-btn"><i class="fa-solid fa-file-pdf"></i> Seminar Report</a>
+            </div>
+          </div>
+          <div class="pub-expand-item" id="tub-sem2-item">
+            <div class="pub-expand-header" onclick="pubExpand('tub-sem2-item')">
+              <span class="pub-expand-icon"><i class="fa-solid fa-circle-plus"></i></span>
+              <span class="pub-expand-title">Constrained Optimization and Duality — Applications to Machine Learning <span class="tag tag-gold" style="margin-left:6px;">Grade A · Excellent</span></span>
+            </div>
+                        <div class="pub-expand-box">
+              <p class="pub-expand-desc">Primal and dual approaches to constrained optimization; formulated the Support Vector Machine (SVM) dual via Lagrangian relaxation and solved it using coordinate and gradient descent; covered norm-constrained optimization in Principal Component Analysis (PCA) and Singular Value Decomposition (SVD), and logarithmic barrier methods.</p>
+              <div class="kw-chips"><span class="kw-chip">Lagrangian Relaxation</span><span class="kw-chip">KKT Conditions</span><span class="kw-chip">Support Vector Machine Dual</span><span class="kw-chip">Coordinate Descent</span><span class="kw-chip">Barrier Methods</span></div>
+            </div>
+          
+            <div class="pub-expand-links">
+              <a href="pdfs/Seminar__Nonlinear_Optimization_.pdf" target="_blank" class="pdf-btn"><i class="fa-solid fa-file-pdf"></i> Seminar Report</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="edu-panel" id="tub-courses">
+
+          <div class="pub-expand-item" id="tub-courses-a">
+            <div class="pub-expand-header" onclick="pubExpand('tub-courses-a')">
+              <span class="pub-expand-icon"><i class="fa-solid fa-circle-plus"></i></span>
+              <span class="pub-expand-title">Courses with Grade A · Excellent</span>
+            </div>
+            <div class="pub-expand-box">
+              <div class="edu-course-sw-pills" style="margin-bottom:0.75rem;">
+                <span class="edu-course-sw-pill active" onclick="courseSwitch(this,'tub-c0')">Calculus of Variations</span>
+                <span class="edu-course-sw-pill" onclick="courseSwitch(this,'tub-c1')">Numerical Methods for PDEs</span>
+                <span class="edu-course-sw-pill" onclick="courseSwitch(this,'tub-c2')">Numerical Mathematics</span>
+                <span class="edu-course-sw-pill" onclick="courseSwitch(this,'tub-c3')">Probabilistic &amp; Bayesian ML</span>
+                <span class="edu-course-sw-pill" onclick="courseSwitch(this,'tub-c4')">Stationary Elliptic PDEs</span>
+              </div>
+              <div class="edu-course-sw-panel active" id="tub-c0">
+                <div class="edu-course-sw-title">Calculus of Variations and Optimal Control</div>
+                <div class="edu-course-sw-desc">Necessary conditions for global and local minimizers (Euler, Legendre, Jacobi, Weierstrass), problems with moving endpoints; Pontryagin's Maximum Principle, Time Optimal Control, Linear Quadratic Optimal Control.</div>
+              </div>
+              <div class="edu-course-sw-panel" id="tub-c1">
+                <div class="edu-course-sw-title">Numerical Methods for PDEs</div>
+                <div class="edu-course-sw-desc">Finite element methods: interpolation and error analysis (L² and L<sup>∞</sup>), conforming and non-conforming finite elements, Strang lemmata, Crouzeix-Raviart element, a posteriori error estimators.</div>
+              </div>
+              <div class="edu-course-sw-panel" id="tub-c2">
+                <div class="edu-course-sw-title">Numerical Mathematics</div>
+                <div class="edu-course-sw-desc">One and multi-step methods for the numerical solution of Ordinary Differential Equations (ODEs): Runge-Kutta, Adams-Bashforth, Adams-Moulton, and Backward Differentiation Formulas (BDF); consistency, order of convergence, stability regions; boundary value and eigenvalue problems, QR decomposition.</div>
+              </div>
+              <div class="edu-course-sw-panel" id="tub-c3">
+                <div class="edu-course-sw-title">Probabilistic and Bayesian Modelling in ML and AI</div>
+                <div class="edu-course-sw-desc">Maximum likelihood for exponential families, Bayesian inference, Expectation-Maximization (EM) algorithm, Gibbs sampler, conjugate priors, Markov Chain Monte Carlo (MCMC), Gaussian processes, variational inference.</div>
+              </div>
+              <div class="edu-course-sw-panel" id="tub-c4">
+                <div class="edu-course-sw-title">Stationary Linear/Nonlinear Elliptic PDEs</div>
+                <div class="edu-course-sw-desc">Sobolev spaces, variational problems and operator equations, monotone operators (Browder-Minty, Brezis), weak convergence; application to the stationary Navier-Stokes equation.</div>
+              </div>
+            </div>
           </div>
 
-          <h5>Research Internship — ZIB &nbsp;<span class="tag tag-gold">Grade A · Excellent</span></h5>
-          <p><em>Approximation of Koopman Operators by Randomly Chosen Basis Functions</em></p>
-          <p>Built three Python classes — Gaussian, Rinn, and Genbasis — applying EDMD with random Gaussians and randomly-initialized neural networks to estimate Koopman eigenfunctions and eigenvalues on high-dimensional models.</p>
-          <span class="kw">Koopman Operators · EDMD · RDMD · Random Gaussians · RINNs · Python</span>
-          <div class="pdf-row" style="margin:0.5rem 0 0.9rem;">
-            <a href="pdfs/Internship_Report___RDMD.pdf" target="_blank" class="pdf-btn"><i class="fa-solid fa-file-pdf"></i> Internship Report</a>
-            <a href="https://github.com/AtwiMusa/RDMD" target="_blank" class="pdf-btn"><i class="fa-brands fa-github"></i> Code Repository</a>
-          </div>
-
-          <h5>Scientific Computing — Gas Transport in Porous Medium</h5>
-          <div class="course-item">
-            <details>
-              <summary><strong>Scientific Computing — Gas Transport in Porous Medium</strong> &nbsp;<span class="tag tag-gold">Excellent 1.0</span></summary>
-              <div class="course-desc">
-                <p>Numerical solution of the nonlinear Porous Medium Equation using the Voronoi Finite Volume Method in Julia (Rothe method, Implicit Euler); 1D and 2D simulations validated against the Barenblatt solution; performance improved using DifferentialEquations.jl.</p>
-                <span class="kw">Porous Medium Equation · Voronoi Finite Volume Method · Rothe Method · Barenblatt Solution · Julia</span>
-                <div style="margin-top:0.5rem;">
-                  <div class="pdf-row">
-                    <a href="pdfs/Scie_Com_report.pdf" target="_blank" class="pdf-btn"><i class="fa-solid fa-file-pdf"></i> Project Report</a>
-                  </div>
-                </div>
+          <div class="pub-expand-item" id="tub-courses-b">
+            <div class="pub-expand-header" onclick="pubExpand('tub-courses-b')">
+              <span class="pub-expand-icon"><i class="fa-solid fa-circle-plus"></i></span>
+              <span class="pub-expand-title">Other Courses</span>
+            </div>
+            <div class="pub-expand-box">
+              <div class="edu-course-sw-pills" style="margin-bottom:0.75rem;">
+                <span class="edu-course-sw-pill active" onclick="courseSwitch(this,'tub-c5')">Nonlinear Optimization</span>
+                <span class="edu-course-sw-pill" onclick="courseSwitch(this,'tub-c6')">Unsupervised ML</span>
               </div>
-            </details>
-          </div>
-
-          <h5>Seminars</h5>
-          <div class="course-item">
-            <details>
-              <summary><strong>The Entropic Optimal Transport</strong> &nbsp;<span class="tag tag-gold">Grade A · Excellent</span></summary>
-              <div class="course-desc">
-                <p>Approximation of the optimal transport problem via entropic regularization: proved convergence of the regularized solution as ε→0, characterized it via the Gibbs kernel and Kullback-Leibler projection, derived Sinkhorn's algorithm, and established strong duality of the continuous entropic optimal transport dual.</p>
-                <span class="kw">Kantorovich Formulation · Entropic Regularization · Kullback-Leibler Divergence · Gibbs Kernel · Sinkhorn's Algorithm · Strong Duality</span>
-                <div style="margin-top:0.5rem;">
-                  <div class="pdf-row">
-                    <a href="pdfs/Seminar__The_Entropic_Optimal_Transport.pdf" target="_blank" class="pdf-btn"><i class="fa-solid fa-file-pdf"></i> Seminar Report</a>
-                  </div>
-                </div>
+              <div class="edu-course-sw-panel active" id="tub-c5">
+                <div class="edu-course-sw-title">Nonlinear Optimization</div>
+                <div class="edu-course-sw-desc">Convex optimization, conjugate gradient and trust region methods, constrained nonlinear optimization, tangent and linearized cones, constraint qualifications, active set and null-space methods, Sequential Quadratic Programming (SQP) method.</div>
               </div>
-            </details>
-          </div>
-          <div class="course-item">
-            <details>
-              <summary><strong>Constrained Optimization and Duality — Applications to Machine Learning</strong> &nbsp;<span class="tag tag-gold">Grade A · Excellent</span></summary>
-              <div class="course-desc">
-                <p>Primal and dual approaches to constrained optimization; formulated the Support Vector Machine (SVM) dual via Lagrangian relaxation and solved it using coordinate and gradient descent; covered norm-constrained optimization in Principal Component Analysis (PCA) and Singular Value Decomposition (SVD), and logarithmic barrier methods.</p>
-                <span class="kw">Lagrangian Relaxation · KKT Conditions · Support Vector Machine Dual · Coordinate Descent · Barrier Methods</span>
-                <div style="margin-top:0.5rem;">
-                  <div class="pdf-row">
-                    <a href="pdfs/Seminar__Nonlinear_Optimization_.pdf" target="_blank" class="pdf-btn"><i class="fa-solid fa-file-pdf"></i> Seminar Report</a>
-                  </div>
-                </div>
+              <div class="edu-course-sw-panel" id="tub-c6">
+                <div class="edu-course-sw-title">Unsupervised ML and Python Programming for ML</div>
+                <div class="edu-course-sw-desc">Dataset analysis, simulation of Markov chains, dimensionality reduction: Locally Linear Embedding (LLE), t-distributed Stochastic Neighbor Embedding (t-SNE), Canonical Correlation Analysis (CCA), Independent Component Analysis (ICA); autoencoders, Hidden Markov Models (HMMs), kernel machines, anomaly detection.</div>
               </div>
-            </details>
-          </div>
-
-          <h5>Courses</h5>
-          <div class="course-item">
-            <details>
-              <summary><strong>Nonlinear Optimization</strong></summary>
-              <div class="course-desc">
-                <p>Convex optimization, conjugate gradient and trust region methods, constrained nonlinear optimization, tangent and linearized cones, constraint qualifications, active set and null-space methods, Sequential Quadratic Programming (SQP) method.</p>
-                <span class="kw">Convex Optimization · KKT Conditions · Active Set · Null-Space Methods · Sequential Quadratic Programming</span>
-              </div>
-            </details>
-          </div>
-          <div class="course-item">
-            <details>
-              <summary><strong>Calculus of Variations and Optimal Control</strong> &nbsp;<span class="tag tag-gold">Grade A · Excellent</span></summary>
-              <div class="course-desc">
-                <p>Necessary conditions for global and local minimizers (Euler, Legendre, Jacobi, Weierstrass), problems with moving endpoints; Pontryagin's Maximum Principle, Time Optimal Control, Linear Quadratic Optimal Control.</p>
-                <span class="kw">Calculus of Variations · Bolza Problem · Pontryagin's Maximum Principle · Differential Riccati Equation</span>
-              </div>
-            </details>
-          </div>
-          <div class="course-item">
-            <details>
-              <summary><strong>Numerical Methods for PDEs</strong> &nbsp;<span class="tag tag-gold">Grade A · Excellent</span></summary>
-              <div class="course-desc">
-                <p>Finite element methods: interpolation and error analysis (L² and L<sup>&#8734;</sup>), conforming and non-conforming finite elements, Strang lemmata, Crouzeix-Raviart element, a posteriori error estimators.</p>
-                <span class="kw">Finite Elements · Bramble-Hilbert Lemma · Aubin-Nitsche Lemma · Strang Lemmata · A Posteriori Error Estimators</span>
-              </div>
-            </details>
-          </div>
-          <div class="course-item">
-            <details>
-              <summary><strong>Numerical Mathematics</strong> &nbsp;<span class="tag tag-gold">Grade A · Excellent</span></summary>
-              <div class="course-desc">
-                <p>One and multi-step methods for the numerical solution of Ordinary Differential Equations (ODEs): Runge-Kutta, Adams-Bashforth, Adams-Moulton, and Backward Differentiation Formulas (BDF); consistency, order of convergence, stability regions; boundary value and eigenvalue problems, QR decomposition.</p>
-                <span class="kw">Runge-Kutta · Adams-Bashforth · Backward Differentiation Formulas · A-Stability · QR Decomposition</span>
-              </div>
-            </details>
-          </div>
-          <div class="course-item">
-            <details>
-              <summary><strong>Stationary Linear/Nonlinear Elliptic PDEs</strong></summary>
-              <div class="course-desc">
-                <p>Sobolev spaces, variational problems and operator equations, monotone operators (Browder-Minty, Brezis), weak convergence; application to the stationary Navier-Stokes equation.</p>
-                <span class="kw">Sobolev Spaces · Lax-Milgram · Galerkin Methods · Monotone Operators · Navier-Stokes</span>
-              </div>
-            </details>
-          </div>
-          <div class="course-item">
-            <details>
-              <summary><strong>Probabilistic and Bayesian Modelling in ML and AI</strong> &nbsp;<span class="tag tag-gold">Grade A · Excellent</span></summary>
-              <div class="course-desc">
-                <p>Maximum likelihood for exponential families, Bayesian inference, Expectation-Maximization (EM) algorithm, Gibbs sampler, conjugate priors, Markov Chain Monte Carlo (MCMC), Gaussian processes, variational inference.</p>
-                <span class="kw">Expectation-Maximization · Markov Chain Monte Carlo · Gaussian Processes · Conjugate Priors · Variational Inference</span>
-              </div>
-            </details>
-          </div>
-          <div class="course-item">
-            <details>
-              <summary><strong>Unsupervised ML and Python Programming for ML</strong></summary>
-              <div class="course-desc">
-                <p>Dataset analysis, simulation of Markov chains, dimensionality reduction: Locally Linear Embedding (LLE), t-distributed Stochastic Neighbor Embedding (t-SNE), Canonical Correlation Analysis (CCA), Independent Component Analysis (ICA); autoencoders, Hidden Markov Models (HMMs), kernel machines, anomaly detection.</p>
-                <span class="kw">Locally Linear Embedding · t-SNE · Independent Component Analysis · Hidden Markov Models · Kernel Machines</span>
-              </div>
-            </details>
+            </div>
           </div>
 
         </div>
-      </details>
+
+      </div>
     </div>
 
     <div class="cv-card">
@@ -408,7 +470,7 @@
           <h5>Master's Thesis &amp; Research Internship — Université de Bordeaux</h5>
           <p><em>Semi-discrete Optimal Transport for Large-Scale Problems</em> — full-time stage/mémoire, Feb–Aug 2020.</p>
           <p>Implemented gradient descent and stochastic gradient descent in Python to solve large-scale semi-discrete optimal transport problems in image processing and machine learning. Studied Monge and Kantorovich formulations, dual problem, c-transform, Laguerre cells, and convergence behavior.</p>
-          <span class="kw">Optimal Transport · Convex Duality · Monge–Kantorovich · Laguerre Cells · Image Modeling · Gradient Descent · Stochastic Gradient Descent</span>
+          <div class="kw-chips"><span class="kw-chip">Optimal Transport</span><span class="kw-chip">Convex Duality</span><span class="kw-chip">Monge–Kantorovich</span><span class="kw-chip">Laguerre Cells</span><span class="kw-chip">Image Modeling</span><span class="kw-chip">Gradient Descent</span><span class="kw-chip">Stochastic Gradient Descent</span></div>
           <div class="pdf-row" style="margin:0.5rem 0 0.9rem;">
             <a href="pdfs/Optimal_Transportation___Master_Thesis.pdf" target="_blank" class="pdf-btn"><i class="fa-solid fa-file-pdf"></i> Master's Thesis</a>
           </div>
@@ -417,7 +479,7 @@
             <details>
               <summary><strong>Porous Media</strong></summary>
               <div class="course-desc">
-                <span class="kw">DuMuX · Buckley-Leverett equation · Relative permeability · Homogenization</span>
+                <div class="kw-chips"><span class="kw-chip">DuMuX</span><span class="kw-chip">Buckley-Leverett equation</span><span class="kw-chip">Relative permeability</span><span class="kw-chip">Homogenization</span></div>
                 Numerical simulation of immiscible and incompressible two-phase flow in 1D and 2D homogeneous porous media.
                 <div style="margin-top:0.5rem;"><div class="attach-slot"><i class="fa-solid fa-paperclip"></i> Project Report — <em>attach here</em></div></div>
               </div>
@@ -427,7 +489,7 @@
             <details>
               <summary><strong>Fluid Mechanics / Industrial Software</strong></summary>
               <div class="course-desc">
-                <span class="kw">ANSYS-FLUENT · elsA-ONERA · Compressible flows</span>
+                <div class="kw-chips"><span class="kw-chip">ANSYS-FLUENT</span><span class="kw-chip">elsA-ONERA</span><span class="kw-chip">Compressible flows</span></div>
                 Physical and mathematical modeling for numerical simulation of compressible and incompressible fluids.
                 <div style="margin-top:0.5rem;"><div class="attach-slot"><i class="fa-solid fa-paperclip"></i> Project Report — <em>attach here</em></div></div>
               </div>
@@ -459,7 +521,7 @@
         <div class="cv-details-body">
           <h5>Master's Thesis &nbsp;<span class="tag tag-gold">Grade A · Excellent</span></h5>
           <p><em>"Decay Rates of a Timoshenko System with Kelvin-Voigt Damping"</em></p>
-          <span class="kw">C₀-Semigroup · Timoshenko beam · Polynomial and Exponential stability</span>
+          <div class="kw-chips"><span class="kw-chip">C₀-Semigroup</span><span class="kw-chip">Timoshenko beam</span><span class="kw-chip">Polynomial and Exponential stability</span></div>
           <p>Proved that the energy dissipates exponentially or polynomially, and that the decay rate depends on the properties of the material coefficient function.</p>
           <div class="attach-slot"><i class="fa-solid fa-paperclip"></i> Thesis PDF — <em>attach here</em></div>
           <h5>Courses &nbsp;<span class="tag tag-gold">Grade A · Excellent — all courses</span></h5>
@@ -704,7 +766,7 @@
       <details class="cv-details">
         <summary>Details</summary>
         <div class="cv-details-body">
-          <span class="kw">Urban mobility · E-bike delivery</span>
+          <div class="kw-chips"><span class="kw-chip">Urban mobility</span><span class="kw-chip">E-bike delivery</span></div>
           <p>Picked up grocery orders from the warehouse and delivered them across Berlin using E-bikes.</p>
         </div>
       </details>
@@ -720,7 +782,7 @@
       <details class="cv-details">
         <summary>Details</summary>
         <div class="cv-details-body">
-          <span class="kw">COVID-19 testing · Schnelltest</span>
+          <div class="kw-chips"><span class="kw-chip">COVID-19 testing</span><span class="kw-chip">Schnelltest</span></div>
           <p>Performed rapid antigen tests at the Kantstrasse station in Berlin. Guided customers through registration and testing process.</p>
         </div>
       </details>
@@ -789,5 +851,38 @@
 
 <footer>© 2026 Moussa Atwi &nbsp;·&nbsp; Mathematics · Scientific Computing · Machine Learning · Poetry</footer>
 <script src="js/script.js" defer></script>
+<script>
+function eduTab(pill, panelId) {
+  var tabs = pill.closest('.edu-tabs');
+  tabs.querySelectorAll('.edu-pill').forEach(function(p){ p.classList.remove('active'); });
+  tabs.querySelectorAll('.edu-panel').forEach(function(p){ p.classList.remove('active'); });
+  pill.classList.add('active');
+  document.getElementById(panelId).classList.add('active');
+}
+function pubExpand(itemId) {
+  var item = document.getElementById(itemId);
+  var isOpen = item.classList.contains('open');
+  item.classList.toggle('open', !isOpen);
+  var icon = item.querySelector('.pub-expand-icon i');
+  if (icon) {
+    icon.className = isOpen ? 'fa-solid fa-circle-plus' : 'fa-solid fa-circle-minus';
+  }
+}
+function eduExpand(itemId) { pubExpand(itemId); }
+function courseGroup(pill, panelId) {
+  var sw = pill.closest('.edu-course-switcher');
+  sw.querySelectorAll('.edu-cgroup-pill').forEach(function(p){ p.classList.remove('active'); });
+  sw.querySelectorAll('.edu-cgroup-panel').forEach(function(p){ p.classList.remove('active'); });
+  pill.classList.add('active');
+  document.getElementById(panelId).classList.add('active');
+}
+function courseSwitch(pill, panelId) {
+  var container = pill.closest('.pub-expand-box') || pill.closest('.edu-course-switcher') || pill.closest('.edu-cgroup-panel');
+  container.querySelectorAll('.edu-course-sw-pill').forEach(function(p){ p.classList.remove('active'); });
+  container.querySelectorAll('.edu-course-sw-panel').forEach(function(p){ p.classList.remove('active'); });
+  pill.classList.add('active');
+  document.getElementById(panelId).classList.add('active');
+}
+</script>
 </body>
 </html>
