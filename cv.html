@@ -45,6 +45,11 @@
             </tr>
           </thead>
           <tbody>
+            <tr style="background:rgba(200,169,110,0.08); border-bottom: 1px solid rgba(200,169,110,0.25);">
+              <td colspan="5" style="color:var(--accent); font-family:'DM Mono',monospace; font-size:0.68rem; letter-spacing:0.04em; padding:0.4rem 0.9rem;">
+                ★ Highest grade: A = 1.0 (German) = 4.0 (USA)
+              </td>
+            </tr>
             <tr><td>A</td><td>1.0 – 1.5</td><td>4.0</td><td>90–100%</td><td>Sehr gut - Very good</td></tr>
             <tr><td>B</td><td>1.6 – 2.5</td><td>3.0</td><td>80–89%</td><td>Gut - Good</td></tr>
             <tr><td>C</td><td>2.6 – 3.5</td><td>2.0</td><td>70–79%</td><td>Befriedigend - Satisfactory</td></tr>
@@ -166,39 +171,62 @@
         <span class="tag tag-blue">Part-time · 20 hrs/week</span>
       </div>
       <strong>Student Researcher — Koopman Theory</strong>
-      <details class="cv-details">
-        <summary>Details</summary>
-        <div class="cv-details-body">
-          <h5>Title</h5>
-          <p><em>"Approximation of Koopman Operators by Randomly Chosen Basis Functions"</em></p>
-          <p>A single part-time research position at the Zuse Institute Berlin, which I used to complete a research internship and then write my master's thesis.</p>
-          <h5>Internship · Sep–Dec 2022</h5>
-          <p>Built three Python classes — Gaussian, Rinn, and Genbasis — that apply Extended Dynamic Mode Decomposition (EDMD) with random Gaussians and randomly-initialized neural networks to estimate the Koopman operator's eigenfunctions and eigenvalues on high-dimensional models. This use of random bases is known as Random Dynamic Mode Decomposition (RDMD).</p>
-          <h5>Master's Thesis · Dec 2022 – May 2023</h5>
-          <p>Studied the theory of Koopman operators for nonlinear dynamical systems, including Koopman eigenfunctions, the intrinsic coordinates where the dynamics become linear, as well as invariant subspaces and Koopman embedding, and compared EDMD with monomials, random Gaussians, and trained and untrained randomly-initialized neural networks.</p>
-          <div class="course-chips">
-            <span class="chip">Koopman Operators</span>
-            <span class="chip">EDMD</span>
-            <span class="chip">RDMD</span>
-            <span class="chip">Random Gaussians</span>
-            <span class="chip">RINNs</span>
-            <span class="chip">Spectral Analysis</span>
-            <span class="chip">Metastable Regions</span>
-            <span class="chip">TensorFlow</span>
-          </div>
-          <div class="pdf-row" style="margin:0.5rem 0 0;">
-            <a href="pdfs/Internship_Report___RDMD.pdf" target="_blank" class="pdf-btn">
-              <i class="fa-solid fa-file-pdf"></i> Internship Report
-            </a>
-            <a href="pdfs/Master_Thesis_TUB-1.pdf" target="_blank" class="pdf-btn">
-              <i class="fa-solid fa-file-pdf"></i> Master's Thesis
-            </a>
-            <a href="https://github.com/AtwiMusa/RDMD" target="_blank" class="pdf-btn">
-              <i class="fa-brands fa-github"></i> Code Repository
-            </a>
+      <div class="edu-tabs" style="margin-top:0.65rem; border-top: 1px solid var(--border); padding-top:0.75rem;">
+        <p style="font-size:0.85rem; color:var(--muted); margin-bottom:0.65rem; font-style:italic;">A single part-time research position at the Zuse Institute Berlin, completed as a research internship followed by a master's thesis.</p>
+        <div class="edu-pills">
+          <span class="edu-pill active" onclick="eduTab(this,'koopman-internship')">Research Internship</span>
+          <span class="edu-pill" onclick="eduTab(this,'koopman-thesis')">Master's Thesis</span>
+        </div>
+        <div class="edu-panel active" id="koopman-internship">
+          <div class="pub-expand-item" id="koopman-int-item">
+            <div class="pub-expand-header" onclick="pubExpand('koopman-int-item')">
+              <span class="pub-expand-icon"><i class="fa-solid fa-circle-plus"></i></span>
+              <span class="pub-expand-title">Approximation of Koopman Operators by Randomly Chosen Basis Functions <span class="tag tag-gold" style="margin-left:6px;">Sep–Dec 2022</span></span>
+            </div>
+            <div class="pub-expand-box">
+              <p class="pub-expand-desc">Built three Python classes — Gaussian, Rinn, and Genbasis — that apply Extended Dynamic Mode Decomposition (EDMD) with random Gaussians and randomly-initialized neural networks to estimate the Koopman operator's eigenfunctions and eigenvalues on high-dimensional models. This use of random bases is known as Random Dynamic Mode Decomposition (RDMD).</p>
+              <div class="kw-chips">
+                <span class="kw-chip">Koopman Operators</span>
+                <span class="kw-chip">EDMD</span>
+                <span class="kw-chip">RDMD</span>
+                <span class="kw-chip">Random Gaussians</span>
+                <span class="kw-chip">RINNs</span>
+                <span class="kw-chip">Spectral Analysis</span>
+                <span class="kw-chip">TensorFlow</span>
+              </div>
+            </div>
+            <div class="pub-expand-links">
+              <a href="pdfs/Internship_Report___RDMD.pdf" target="_blank" class="pdf-btn"><i class="fa-solid fa-file-pdf"></i> Internship Report</a>
+              <a href="https://github.com/AtwiMusa/RDMD" target="_blank" class="pdf-btn"><i class="fa-brands fa-github"></i> Code Repository</a>
+            </div>
           </div>
         </div>
-      </details>
+        <div class="edu-panel" id="koopman-thesis">
+          <div class="pub-expand-item" id="koopman-th-item">
+            <div class="pub-expand-header" onclick="pubExpand('koopman-th-item')">
+              <span class="pub-expand-icon"><i class="fa-solid fa-circle-plus"></i></span>
+              <span class="pub-expand-title">Approximation of Koopman Operators by Randomly Chosen Basis Functions <span class="tag tag-gold" style="margin-left:6px;">Dec 2022 – May 2023</span></span>
+            </div>
+            <div class="pub-expand-box">
+              <p class="pub-expand-desc">Studied the theory of Koopman operators for nonlinear dynamical systems, including Koopman eigenfunctions, the intrinsic coordinates where the dynamics become linear, as well as invariant subspaces and Koopman embedding, and compared EDMD with monomials, random Gaussians, and trained and untrained randomly-initialized neural networks.</p>
+              <div class="kw-chips">
+                <span class="kw-chip">Koopman Operators</span>
+                <span class="kw-chip">EDMD</span>
+                <span class="kw-chip">RDMD</span>
+                <span class="kw-chip">Random Gaussians</span>
+                <span class="kw-chip">RINNs</span>
+                <span class="kw-chip">Spectral Analysis</span>
+                <span class="kw-chip">Metastable Regions</span>
+                <span class="kw-chip">TensorFlow</span>
+              </div>
+            </div>
+            <div class="pub-expand-links">
+              <a href="pdfs/Master_Thesis_TUB-1.pdf" target="_blank" class="pdf-btn"><i class="fa-solid fa-file-pdf"></i> Master's Thesis</a>
+              <a href="https://github.com/AtwiMusa/RDMD" target="_blank" class="pdf-btn"><i class="fa-brands fa-github"></i> Code Repository</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="cv-card">
@@ -209,25 +237,26 @@
         <span class="tag tag-blue">Full-time · 35 hrs/week</span>
       </div>
       <strong>Student Researcher — Optimal Transport</strong>
-      <details class="cv-details">
-        <summary>Details</summary>
-        <div class="cv-details-body">
-          <h5>Title</h5>
-          <p><em>"Semi-discrete Optimal Transport for Large-Scale Problems"</em></p>
-          <p>Implemented gradient descent and stochastic gradient descent in Python to solve large-scale semi-discrete optimal transport problems in image processing and machine learning. Studied Monge and Kantorovich formulations, dual problem, c-transform, Laguerre cells, and convergence behavior.</p>
-          <div class="course-chips">
-            <span class="chip">Convex Duality</span>
-            <span class="chip">Image Modeling</span>
-            <span class="chip">Gradient Descent</span>
-            <span class="chip">Stochastic Gradient Descent</span>
+      <div class="pub-expand-item" id="res-ot-item" style="margin-top:0.65rem; border-top: 1px solid var(--border); padding-top:0.75rem;">
+        <div class="pub-expand-header" onclick="pubExpand('res-ot-item')">
+          <span class="pub-expand-icon"><i class="fa-solid fa-circle-plus"></i></span>
+          <span class="pub-expand-title">Semi-discrete Optimal Transport for Large-Scale Problems</span>
+        </div>
+        <div class="pub-expand-box">
+          <p class="pub-expand-desc">Implemented gradient descent and stochastic gradient descent in Python to solve large-scale semi-discrete optimal transport problems in image processing and machine learning. Studied Monge and Kantorovich formulations, dual problem, c-transform, Laguerre cells, and convergence behavior.</p>
+          <div class="kw-chips">
+            <span class="kw-chip">Convex Duality</span>
+            <span class="kw-chip">Monge–Kantorovich</span>
+            <span class="kw-chip">Laguerre Cells</span>
+            <span class="kw-chip">Image Modeling</span>
+            <span class="kw-chip">Gradient Descent</span>
+            <span class="kw-chip">Stochastic Gradient Descent</span>
           </div>
-          <div class="pdf-row" style="margin:0.5rem 0 0;">
-          <a href="pdfs/Optimal_Transportation___Master_Thesis.pdf" target="_blank" class="pdf-btn">
-            <i class="fa-solid fa-file-pdf"></i> Master's Thesis
-          </a>
         </div>
+        <div class="pub-expand-links">
+          <a href="pdfs/Optimal_Transportation___Master_Thesis.pdf" target="_blank" class="pdf-btn"><i class="fa-solid fa-file-pdf"></i> Master's Thesis</a>
         </div>
-      </details>
+      </div>
     </div>
 
   </div>
@@ -464,48 +493,88 @@
         <span class="tag tag-green">🎓 Excellence Scholarship</span>
       </div>
       <strong>M.Sc. in Mathematics, Modeling and Simulation</strong>
-      <details class="cv-details">
-        <summary>Thesis, Projects &amp; Courses</summary>
-        <div class="cv-details-body">
-          <h5>Master's Thesis &amp; Research Internship — Université de Bordeaux</h5>
-          <p><em>Semi-discrete Optimal Transport for Large-Scale Problems</em> — full-time stage/mémoire, Feb–Aug 2020.</p>
-          <p>Implemented gradient descent and stochastic gradient descent in Python to solve large-scale semi-discrete optimal transport problems in image processing and machine learning. Studied Monge and Kantorovich formulations, dual problem, c-transform, Laguerre cells, and convergence behavior.</p>
-          <div class="kw-chips"><span class="kw-chip">Optimal Transport</span><span class="kw-chip">Convex Duality</span><span class="kw-chip">Monge–Kantorovich</span><span class="kw-chip">Laguerre Cells</span><span class="kw-chip">Image Modeling</span><span class="kw-chip">Gradient Descent</span><span class="kw-chip">Stochastic Gradient Descent</span></div>
-          <div class="pdf-row" style="margin:0.5rem 0 0.9rem;">
-            <a href="pdfs/Optimal_Transportation___Master_Thesis.pdf" target="_blank" class="pdf-btn"><i class="fa-solid fa-file-pdf"></i> Master's Thesis</a>
-          </div>
-          <h5>Projects</h5>
-          <div class="course-item">
-            <details>
-              <summary><strong>Porous Media</strong></summary>
-              <div class="course-desc">
-                <div class="kw-chips"><span class="kw-chip">DuMuX</span><span class="kw-chip">Buckley-Leverett equation</span><span class="kw-chip">Relative permeability</span><span class="kw-chip">Homogenization</span></div>
-                Numerical simulation of immiscible and incompressible two-phase flow in 1D and 2D homogeneous porous media.
-                <div style="margin-top:0.5rem;"><div class="attach-slot"><i class="fa-solid fa-paperclip"></i> Project Report — <em>attach here</em></div></div>
+      <div class="edu-tabs" style="margin-top:0.75rem;">
+        <div class="edu-pills">
+          <span class="edu-pill active" onclick="eduTab(this,'uppa-thesis')">Thesis &amp; Internship</span>
+          <span class="edu-pill" onclick="eduTab(this,'uppa-projects')">Projects</span>
+          <span class="edu-pill" onclick="eduTab(this,'uppa-courses')">Courses</span>
+        </div>
+
+        <div class="edu-panel active" id="uppa-thesis">
+          <div class="pub-expand-item" id="uppa-thesis-item">
+            <div class="pub-expand-header" onclick="pubExpand('uppa-thesis-item')">
+              <span class="pub-expand-icon"><i class="fa-solid fa-circle-plus"></i></span>
+              <span class="pub-expand-title">Master's Thesis &amp; Research Internship — Semi-discrete Optimal Transport for Large-Scale Problems <span class="tag tag-gold" style="margin-left:6px;">Feb–Aug 2020</span></span>
+            </div>
+            <div class="pub-expand-box">
+              <p class="pub-expand-desc">Implemented gradient descent and stochastic gradient descent in Python to solve large-scale semi-discrete optimal transport problems in image processing and machine learning. Studied Monge and Kantorovich formulations, dual problem, c-transform, Laguerre cells, and convergence behavior.</p>
+              <div class="kw-chips">
+                <span class="kw-chip">Optimal Transport</span>
+                <span class="kw-chip">Convex Duality</span>
+                <span class="kw-chip">Monge–Kantorovich</span>
+                <span class="kw-chip">Laguerre Cells</span>
+                <span class="kw-chip">Image Modeling</span>
+                <span class="kw-chip">Gradient Descent</span>
+                <span class="kw-chip">Stochastic Gradient Descent</span>
               </div>
-            </details>
-          </div>
-          <div class="course-item">
-            <details>
-              <summary><strong>Fluid Mechanics / Industrial Software</strong></summary>
-              <div class="course-desc">
-                <div class="kw-chips"><span class="kw-chip">ANSYS-FLUENT</span><span class="kw-chip">elsA-ONERA</span><span class="kw-chip">Compressible flows</span></div>
-                Physical and mathematical modeling for numerical simulation of compressible and incompressible fluids.
-                <div style="margin-top:0.5rem;"><div class="attach-slot"><i class="fa-solid fa-paperclip"></i> Project Report — <em>attach here</em></div></div>
-              </div>
-            </details>
-          </div>
-          <h5>Courses</h5>
-          <div class="course-chips">
-            <span class="chip">Numerical Analysis of PDEs</span>
-            <span class="chip">Analysis of PDEs</span>
-            <span class="chip">High-Performance Computing</span>
-            <span class="chip">Porous Media</span>
-            <span class="chip">Industrial Software</span>
-            <span class="chip">Wave Propagation</span>
+            </div>
+            <div class="pub-expand-links">
+              <a href="pdfs/Optimal_Transportation___Master_Thesis.pdf" target="_blank" class="pdf-btn"><i class="fa-solid fa-file-pdf"></i> Master's Thesis</a>
+            </div>
           </div>
         </div>
-      </details>
+
+        <div class="edu-panel" id="uppa-projects">
+          <div class="pub-expand-item" id="uppa-proj1-item">
+            <div class="pub-expand-header" onclick="pubExpand('uppa-proj1-item')">
+              <span class="pub-expand-icon"><i class="fa-solid fa-circle-plus"></i></span>
+              <span class="pub-expand-title">Porous Media</span>
+            </div>
+            <div class="pub-expand-box">
+              <p class="pub-expand-desc">Numerical simulation of immiscible and incompressible two-phase flow in 1D and 2D homogeneous porous media using the DuMuX framework. Based on the Buckley-Leverett equation with relative permeability and homogenization techniques.</p>
+              <div class="kw-chips">
+                <span class="kw-chip">DuMuX</span>
+                <span class="kw-chip">Buckley-Leverett Equation</span>
+                <span class="kw-chip">Relative Permeability</span>
+                <span class="kw-chip">Homogenization</span>
+              </div>
+            </div>
+            <div class="pub-expand-links">
+              <a href="pdfs/Dumux_Porous_Media.pdf" target="_blank" class="pdf-btn"><i class="fa-solid fa-file-pdf"></i> Project Report</a>
+            </div>
+          </div>
+          <div class="pub-expand-item" id="uppa-proj2-item">
+            <div class="pub-expand-header" onclick="pubExpand('uppa-proj2-item')">
+              <span class="pub-expand-icon"><i class="fa-solid fa-circle-plus"></i></span>
+              <span class="pub-expand-title">Fluid Mechanics / Industrial Software</span>
+            </div>
+            <div class="pub-expand-box">
+              <p class="pub-expand-desc">Physical and mathematical modeling for the numerical simulation of compressible and incompressible fluids using ANSYS-FLUENT and elsA-ONERA industrial software.</p>
+              <div class="kw-chips">
+                <span class="kw-chip">ANSYS-FLUENT</span>
+                <span class="kw-chip">elsA-ONERA</span>
+                <span class="kw-chip">Compressible Flows</span>
+                <span class="kw-chip">Incompressible Flows</span>
+              </div>
+            </div>
+            <div class="pub-expand-links">
+              <a href="pdfs/Industrial_Software_report.pdf" target="_blank" class="pdf-btn"><i class="fa-solid fa-file-pdf"></i> Project Report</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="edu-panel" id="uppa-courses">
+          <div class="mono-course-list">
+            <span class="mono-course">Numerical Analysis of PDEs</span>
+            <span class="mono-course">Analysis of PDEs</span>
+            <span class="mono-course">High-Performance Computing</span>
+            <span class="mono-course">Porous Media</span>
+            <span class="mono-course">Industrial Software</span>
+            <span class="mono-course">Wave Propagation</span>
+          </div>
+        </div>
+
+      </div>
     </div>
 
     <div class="cv-card">
@@ -513,34 +582,71 @@
         <span class="tag tag-gold">M.Sc.</span>
         <span class="entry-date">Feb 2018 – Jun 2019</span>
         <span class="entry-place">Lebanese International University (LIU) · Beirut, Lebanon</span>
-        <span class="tag tag-green">Rank 1 · GPA 4.0</span>
+        <span class="tag tag-green">Rank 1 · GPA 4.0 = Grade A · Excellent</span>
       </div>
       <strong>M.Sc. in Applied Mathematics</strong>
-      <details class="cv-details">
-        <summary>Thesis &amp; Courses</summary>
-        <div class="cv-details-body">
-          <h5>Master's Thesis &nbsp;<span class="tag tag-gold">Grade A · Excellent</span></h5>
-          <p><em>"Decay Rates of a Timoshenko System with Kelvin-Voigt Damping"</em></p>
-          <div class="kw-chips"><span class="kw-chip">C₀-Semigroup</span><span class="kw-chip">Timoshenko beam</span><span class="kw-chip">Polynomial and Exponential stability</span></div>
-          <p>Proved that the energy dissipates exponentially or polynomially, and that the decay rate depends on the properties of the material coefficient function.</p>
-          <div class="attach-slot"><i class="fa-solid fa-paperclip"></i> Thesis PDF — <em>attach here</em></div>
-          <h5>Courses &nbsp;<span class="tag tag-gold">Grade A · Excellent — all courses</span></h5>
-          <div class="course-item">
-            <details>
-              <summary><strong>Finite Element Methods</strong></summary>
-              <div class="course-desc">
-                Project: Piecewise linear FEM for 1D elliptic equations; estimated order of convergence on uniform and non-uniform meshes in Matlab.
+      <div class="edu-tabs" style="margin-top:0.75rem;">
+        <div class="edu-pills">
+          <span class="edu-pill active" onclick="eduTab(this,'liu-thesis')">Master's Thesis</span>
+          <span class="edu-pill" onclick="eduTab(this,'liu-project')">Project</span>
+          <span class="edu-pill" onclick="eduTab(this,'liu-courses')">Courses</span>
+        </div>
+
+        <div class="edu-panel active" id="liu-thesis">
+          <div class="pub-expand-item" id="liu-thesis-item">
+            <div class="pub-expand-header" onclick="pubExpand('liu-thesis-item')">
+              <span class="pub-expand-icon"><i class="fa-solid fa-circle-plus"></i></span>
+              <span class="pub-expand-title">Decay Rates of a Timoshenko System with Kelvin-Voigt Damping <span class="tag tag-gold" style="margin-left:6px;">Grade A · Excellent</span></span>
+            </div>
+            <div class="pub-expand-box">
+              <p class="pub-expand-desc">Proved that the energy of the Timoshenko system with Kelvin-Voigt damping dissipates exponentially or polynomially, and that the decay rate depends on the properties of the material coefficient function. The main contribution is the proof of well-posedness of the considered problem with only one source of damping. We also consider the same system with only one dissipation source and prove that strong stability still holds.</p>
+              <div class="kw-chips">
+                <span class="kw-chip">C₀-Semigroup</span>
+                <span class="kw-chip">Timoshenko Beam</span>
+                <span class="kw-chip">Kelvin-Voigt Damping</span>
+                <span class="kw-chip">Polynomial Stability</span>
+                <span class="kw-chip">Exponential Stability</span>
+                <span class="kw-chip">Well-Posedness</span>
+                <span class="kw-chip">Strong Stability</span>
               </div>
-            </details>
-          </div>
-          <div class="course-chips" style="margin-top:0.5rem;">
-            <span class="chip">Numerical Linear Algebra</span>
-            <span class="chip">Real Analysis</span>
-            <span class="chip">Topics in Statistics</span>
-            <span class="chip">Topology</span>
+            </div>
+            <div class="pub-expand-links">
+              <a href="pdfs/Master_thesis__Stability_of_a_Timoshenko_system_with_local_Kevin___Voigt_damping.pdf" target="_blank" class="pdf-btn"><i class="fa-solid fa-file-pdf"></i> Master's Thesis</a>
+            </div>
           </div>
         </div>
-      </details>
+
+        <div class="edu-panel" id="liu-project">
+          <div class="pub-expand-item" id="liu-proj-item">
+            <div class="pub-expand-header" onclick="pubExpand('liu-proj-item')">
+              <span class="pub-expand-icon"><i class="fa-solid fa-circle-plus"></i></span>
+              <span class="pub-expand-title">Finite Element Methods <span class="tag tag-gold" style="margin-left:6px;">Grade A · Excellent</span></span>
+            </div>
+            <div class="pub-expand-box">
+              <p class="pub-expand-desc">Piecewise linear finite element methods for 1D elliptic equations. Estimated the order of convergence on uniform and non-uniform meshes in Matlab.</p>
+              <div class="kw-chips">
+                <span class="kw-chip">Finite Element Methods</span>
+                <span class="kw-chip">1D Elliptic Equations</span>
+                <span class="kw-chip">Order of Convergence</span>
+                <span class="kw-chip">Uniform Meshes</span>
+                <span class="kw-chip">Matlab</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="edu-panel" id="liu-courses">
+          <p style="font-size:0.8rem; color:var(--muted); font-style:italic; margin-bottom:0.5rem;">Grade A · Excellent — all courses</p>
+          <div class="mono-course-list">
+            <span class="mono-course">Finite Element Methods</span>
+            <span class="mono-course">Numerical Linear Algebra</span>
+            <span class="mono-course">Real Analysis</span>
+            <span class="mono-course">Topics in Statistics</span>
+            <span class="mono-course">Topology</span>
+          </div>
+        </div>
+
+      </div>
     </div>
 
     <div class="cv-card">
@@ -554,16 +660,20 @@
       <details class="cv-details">
         <summary>Courses</summary>
         <div class="cv-details-body">
-          <div class="course-chips">
-            <span class="chip">Functional Analysis</span>
-            <span class="chip">Differential Geometry</span>
-            <span class="chip">Field Theory</span>
-            <span class="chip">Distribution Theory</span>
-            <span class="chip">Probabilities</span>
-            <span class="chip">Commutative Algebra</span>
-            <span class="chip">Riemannian Geometry</span>
-            <span class="chip" style="border-color:var(--accent);color:var(--accent);">Number Theory ★ Rank 1st</span>
-            <span class="chip">Spectral Theory</span>
+          <div class="mono-course-list">
+            <span class="mono-course">Functional Analysis</span>
+            <span class="mono-course">Differential Geometry</span>
+            <span class="mono-course">Field Theory</span>
+            <span class="mono-course">Distribution Theory</span>
+            <span class="mono-course">Probabilities</span>
+            <span class="mono-course">Commutative Algebra</span>
+            <span class="mono-course">Riemannian Geometry</span>
+            <span class="mono-course">Number Theory <i class="fa-solid fa-trophy" style="font-size:0.7rem; color:var(--accent); margin-left:3px;"></i></span>
+            <span class="mono-course">Spectral Theory</span>
+          </div>
+          <div style="margin-top:0.55rem; display:flex; align-items:center; gap:0.45rem;">
+            <i class="fa-solid fa-trophy" style="font-size:0.78rem; color:var(--accent2);"></i>
+            <span style="font-family:'DM Mono',monospace; font-size:0.72rem; color:var(--accent2); letter-spacing:0.04em;">Ranked 1st in Number Theory</span>
           </div>
         </div>
       </details>
@@ -587,41 +697,72 @@
   <div class="cv-section" id="achievements">
     <h2 class="cv-section-title"><i class="fa-solid fa-trophy"></i> Achievements</h2>
     <div class="cv-card">
-      <ul class="ach-list">
-        <li class="ach-item">
-          <span class="ach-icon">📄</span>
-          <div class="ach-text">
-            <strong>Preprint — arXiv 2025:</strong>
-            <em>"A generalization bound for exit wave reconstruction via deep unfolding"</em>
-            &nbsp;<a href="https://arxiv.org/abs/2511.06413" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> arXiv</a>
-            &nbsp;<a href="pdfs/exit-wave-deep-unfolding.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> PDF</a>
+      <div class="edu-tabs">
+        <div class="edu-pills">
+          <span class="edu-pill active" onclick="eduTab(this,'ach-pub')">📄 Publications</span>
+          <span class="edu-pill" onclick="eduTab(this,'ach-awards')">🏅 Academic Awards</span>
+          <span class="edu-pill" onclick="eduTab(this,'ach-rank')">🏆 Rankings</span>
+          <span class="edu-pill" onclick="eduTab(this,'ach-poetry')">📖 Poetry</span>
+        </div>
+
+        <div class="edu-panel active" id="ach-pub">
+          <div style="margin-top:0.6rem; display:flex; align-items:flex-start; gap:0.75rem;">
+            <i class="fa-solid fa-file-lines" style="color:var(--accent); font-size:1.1rem; margin-top:0.15rem; flex-shrink:0;"></i>
+            <div>
+              <div style="font-family:'EB Garamond',serif; font-size:1rem; color:var(--accent); line-height:1.4; margin-bottom:0.5rem;">A generalization bound for exit wave reconstruction via deep unfolding</div>
+              <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+                <a href="https://arxiv.org/abs/2511.06413" target="_blank" class="ach-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> arXiv 2025</a>
+                <a href="pdfs/exit-wave-deep-unfolding.pdf" target="_blank" class="ach-link"><i class="fa-solid fa-file-pdf"></i> PDF</a>
+              </div>
+            </div>
           </div>
-        </li>
-        <li class="ach-item">
-          <span class="ach-icon">🎓</span>
-          <div class="ach-text"><strong>Excellence Scholarship — Région Nouvelle-Aquitaine (France)</strong> to pursue the M.Sc. at UPPA, Pau.</div>
-        </li>
-        <li class="ach-item">
-          <span class="ach-icon">🏅</span>
-          <div class="ach-text"><strong>Grade A · Excellent</strong> in the Master's Thesis and Research Internship at ZIB Berlin — Koopman Theory.</div>
-        </li>
-        <li class="ach-item">
-          <span class="ach-icon">🏅</span>
-          <div class="ach-text"><strong>Grade A · Excellent</strong> in the following courses at TU Berlin: Numerical Methods for PDEs · Scientific Computing · Probabilistic and Bayesian Modelling · Seminar in Nonlinear Optimization.</div>
-        </li>
-        <li class="ach-item">
-          <span class="ach-icon">🏆</span>
-          <div class="ach-text"><strong>Rank 1st — M.Sc. Applied Mathematics, LIU Lebanon.</strong> Grade A · Excellent in all courses and Master's Thesis.</div>
-        </li>
-        <li class="ach-item">
-          <span class="ach-icon">🏆</span>
-          <div class="ach-text"><strong>Ranked 1st in Number Theory</strong> — Master 1, Lebanese University. Overall rank 4/15 in the cohort.</div>
-        </li>
-        <li class="ach-item">
-          <span class="ach-icon">📖</span>
-          <div class="ach-text"><strong>Published Arabic poet</strong> — author of <em>رَشْفَةُ أَلَمِ</em>, a collection of 80+ original romantic poems.</div>
-        </li>
-      </ul>
+        </div>
+
+        <div class="edu-panel" id="ach-awards">
+          <ul class="ach-list" style="margin-top:0.5rem;">
+            <li class="ach-item">
+              <span class="ach-icon">🎓</span>
+              <div class="ach-text"><strong>Bourse d'excellence (Excellence Scholarship) — Région Nouvelle-Aquitaine, France</strong> — awarded to pursue the M.Sc. in Mathematics, Modeling and Simulation at the University of Pau and Pays de l'Adour (UPPA), Pau, France.</div>
+            </li>
+            <li class="ach-item">
+              <span class="ach-icon">🏅</span>
+              <div class="ach-text"><strong>Grade A · Excellent</strong> in the Master's Thesis and Research Internship at the Zuse Institute Berlin (ZIB).</div>
+            </li>
+            <li class="ach-item">
+              <span class="ach-icon">🏅</span>
+              <div class="ach-text">
+                <strong>Grade A · Excellent</strong> in the following courses and seminars at the Technical University of Berlin (M.Sc. in Scientific Computing):
+                <div style="margin-top:0.35rem; font-family:'DM Mono',monospace; font-size:0.72rem; color:var(--muted); line-height:1.9;">
+                  Numerical Methods for PDEs | Numerical Mathematics | Calculus of Variations | Probabilistic and Bayesian Modelling | Stationary Linear Elliptic PDEs | Seminar in Entropic Optimal Transport | Seminar in Nonlinear Optimization
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="edu-panel" id="ach-rank">
+          <ul class="ach-list" style="margin-top:0.5rem;">
+            <li class="ach-item">
+              <span class="ach-icon">🏆</span>
+              <div class="ach-text"><strong>Rank 1st — M.Sc. in Applied Mathematics, Lebanese International University (LIU), Lebanon.</strong> GPA 4.0 · Grade A · Excellent in all courses and Master's Thesis.</div>
+            </li>
+            <li class="ach-item">
+              <span class="ach-icon">🏆</span>
+              <div class="ach-text"><strong>Ranked 1st in Number Theory course</strong> — first year of the Master in Pure Mathematics, Lebanese University.</div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="edu-panel" id="ach-poetry">
+          <ul class="ach-list" style="margin-top:0.5rem;">
+            <li class="ach-item">
+              <span class="ach-icon">📖</span>
+              <div class="ach-text"><strong>Published Arabic poet</strong> — author of <em style="color:var(--accent2);">Rashfato Alami</em>, a collection of 80+ original romantic poems.</div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
     </div>
   </div>
 
@@ -634,50 +775,63 @@
     </h2>
 
     <div class="cv-card">
-      <div class="entry-meta">
-        <span class="tag tag-blue">Specialization</span>
-        <span class="entry-date">2024</span>
-        <span class="entry-place">Coursera · DeepLearning.AI &amp; Stanford</span>
-      </div>
-      <strong>Machine Learning Specialization</strong>
-      <p style="color:var(--muted); font-size:0.88rem; margin-top:0.3rem;">
-        A 3-course specialization covering supervised learning, unsupervised learning,
-        recommender systems, and reinforcement learning.
-      </p>
-      <div class="pdf-row" style="margin-top:0.8rem; margin-bottom:0;">
-        <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/PNTBQZMFZUX8"
-          target="_blank" class="pdf-btn">
-          <i class="fa-solid fa-arrow-up-right-from-square"></i> Specialization Certificate
-        </a>
-      </div>
-      <details class="cv-details" style="margin-top:0.8rem;">
-        <summary>3 Individual Course Certificates</summary>
-        <div class="cv-details-body">
-          <div class="pdf-row" style="margin-bottom:0.6rem;">
-            <a href="https://www.coursera.org/account/accomplishments/verify/ET84JW4WZ7A9"
-              target="_blank" class="pdf-btn">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i>
-              Supervised Machine Learning: Regression and Classification
-            </a>
-          </div>
-          <div class="pdf-row" style="margin-bottom:0.6rem;">
-            <a href="https://www.coursera.org/account/accomplishments/verify/Z3A5GZYRUG3E"
-              target="_blank" class="pdf-btn">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i>
-              Advanced Learning Algorithms
-            </a>
-          </div>
-          <div class="pdf-row" style="margin-bottom:0;">
-            <a href="https://www.coursera.org/account/accomplishments/verify/WNKFQHQWYL5R"
-              target="_blank" class="pdf-btn">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i>
-              Unsupervised Learning, Recommenders, Reinforcement Learning
-            </a>
+      <div class="edu-tabs">
+        <div class="edu-pills">
+          <span class="edu-pill active" onclick="eduTab(this,'cert-ml')">Machine Learning Specialization</span>
+          <span class="edu-pill" onclick="eduTab(this,'cert-ps')">Public Speaking Training</span>
+          <span class="edu-pill" onclick="eduTab(this,'cert-ub')">Unconscious Bias Training</span>
+        </div>
+
+        <div class="edu-panel active" id="cert-ml">
+          <div class="pub-expand-item" id="cert-ml-item">
+            <div class="pub-expand-header" onclick="pubExpand('cert-ml-item')">
+              <span class="pub-expand-icon"><i class="fa-solid fa-circle-plus"></i></span>
+              <span class="pub-expand-title">Machine Learning Specialization <span class="tag tag-blue" style="margin-left:6px;">Coursera · DeepLearning.AI &amp; Stanford · 2024</span></span>
+            </div>
+            <div class="pub-expand-box">
+              <p class="pub-expand-desc">A 3-course online specialization covering supervised learning (regression and classification), advanced learning algorithms, and unsupervised learning including recommender systems and reinforcement learning.</p>
+            </div>
+            <div class="pub-expand-links">
+              <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/PNTBQZMFZUX8" target="_blank" class="pdf-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Specialization Certificate</a>
+              <a href="https://www.coursera.org/account/accomplishments/verify/ET84JW4WZ7A9" target="_blank" class="pdf-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Course 1</a>
+              <a href="https://www.coursera.org/account/accomplishments/verify/Z3A5GZYRUG3E" target="_blank" class="pdf-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Course 2</a>
+              <a href="https://www.coursera.org/account/accomplishments/verify/WNKFQHQWYL5R" target="_blank" class="pdf-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Course 3</a>
+            </div>
           </div>
         </div>
-      </details>
-    </div>
 
+        <div class="edu-panel" id="cert-ps">
+          <div class="pub-expand-item" id="cert-ps-item">
+            <div class="pub-expand-header" onclick="pubExpand('cert-ps-item')">
+              <span class="pub-expand-icon"><i class="fa-solid fa-circle-plus"></i></span>
+              <span class="pub-expand-title">Public Speaking and Presentation Skills Training <span class="tag tag-blue" style="margin-left:6px;">RWTH Aachen · April 2025</span></span>
+            </div>
+            <div class="pub-expand-box">
+              <p class="pub-expand-desc">Certificate of Participation in a workshop focused on developing public speaking and presentation skills, as part of the Center for Young Academics Seminar and Workshop Programs at RWTH Aachen University.</p>
+            </div>
+            <div class="pub-expand-links">
+              <a href="pdfs/Teilnahmebescheinigung_Moussa Atwi.pdf" target="_blank" class="pdf-btn"><i class="fa-solid fa-file-pdf"></i> Certificate</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="edu-panel" id="cert-ub">
+          <div class="pub-expand-item" id="cert-ub-item">
+            <div class="pub-expand-header" onclick="pubExpand('cert-ub-item')">
+              <span class="pub-expand-icon"><i class="fa-solid fa-circle-plus"></i></span>
+              <span class="pub-expand-title">Unconscious Bias and Intercultural Training <span class="tag tag-blue" style="margin-left:6px;">RWTH Aachen · July 2025</span></span>
+            </div>
+            <div class="pub-expand-box">
+              <p class="pub-expand-desc">Certificate of Participation in a training session addressing unconscious bias awareness and intercultural communication skills, conducted by GenderIQ at RWTH Aachen University.</p>
+            </div>
+            <div class="pub-expand-links">
+              <a href="pdfs/Unconscious Bias.pdf" target="_blank" class="pdf-btn"><i class="fa-solid fa-file-pdf"></i> Certificate</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </div>
 
   <!-- ══════════════════════════════════════════ -->
@@ -686,47 +840,85 @@
   <div class="cv-section" id="skills">
     <h2 class="cv-section-title"><i class="fa-solid fa-code"></i> Skills</h2>
     <div class="cv-card">
-      <div class="skills-flat">
-
-        <div class="skills-category">
-          <div class="skills-category-title">Scientific &amp; Mathematical</div>
-          <ul>
-            <li>Numerical Simulation &amp; Numerical Analysis</li>
-            <li>PDEs · Phase Retrieval</li>
-            <li>Machine Learning · Neural Networks</li>
-            <li>Bayesian Inference</li>
-            <li>Calculus of Variations &amp; Optimal Control</li>
-            <li>Optimal Transport</li>
-            <li>Nonlinear &amp; Convex Optimization</li>
-            <li>Koopman Theory · EDMD</li>
-            <li>Deep Unfolding · Proximal Gradient</li>
-            <li>Finite Difference · Finite Element · Finite Volume</li>
-            <li>Runge-Kutta · Multi-step methods</li>
-          </ul>
+      <div class="skills-tabs">
+        <div class="edu-pills" style="margin-bottom:1rem;">
+          <span class="edu-pill active" onclick="skillTab(this,'sk-pers')">Personal</span>
+          <span class="edu-pill" onclick="skillTab(this,'sk-sci')">Scientific &amp; Mathematical</span>
+          <span class="edu-pill" onclick="skillTab(this,'sk-comp')">Computing</span>
         </div>
 
-        <div class="skills-category">
-          <div class="skills-category-title">Computing</div>
-          <ul>
-            <li>Python — TensorFlow · NumPy · Matplotlib</li>
-            <li>Matlab · Julia · C/C++ · OpenMP/MPI</li>
-            <li>Linux · LaTeX · VS Code · SPSS</li>
-            <li>MS Word / Excel</li>
-            <li>Deeptime · ExtendableGrids.jl · DifferentialEquations.jl</li>
-            <li>DuMuX · ANSYS-FLUENT · elsA-ONERA</li>
-            <li>Dynexite · Moodle</li>
-          </ul>
+                <div class="edu-panel" id="sk-sci">
+          <div class="sk-grid sk-grid-6">
+            <div class="sk-item"><span class="sk-pipe">|</span>Proximal Gradient Algorithm</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>Finite Difference Methods</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>Non-Convex Optimization</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>Calculus of Variations</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>Nonlinear Optimization</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>Finite Element Methods</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>Finite Volume Methods</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>Numerical Simulation</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>Convex Optimization</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>Linear Optimization</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>Runge-Kutta Methods</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>Numerical Analysis</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>Bayesian Inference</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>Multi-step Methods</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>Optimal Transport</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>Machine Learning</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>Phase Retrieval</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>Neural Networks</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>Optimal Control</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>Koopman Theory</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>Deep Unfolding</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>PDEs</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>EDMD</div>
+            <div class="sk-item sk-empty"></div>
+          </div>
         </div>
 
-        <div class="skills-category">
-          <div class="skills-category-title">Personal</div>
-          <ul>
-            <li>Problem Solving &amp; Adaptability</li>
-            <li>Decision Making &amp; Fast Learner</li>
-            <li>Strong working relationships</li>
-            <li>Arabic Romantic Writings</li>
-            <li>Football</li>
-          </ul>
+        <div class="edu-panel" id="sk-comp">
+          <div class="sk-grid sk-grid-6">
+            <div class="sk-item"><span class="sk-pipe">|</span>DifferentialEquations.jl</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>ExtendableGrids.jl</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>ANSYS-FLUENT</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>TensorFlow</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>Matplotlib</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>OpenMP/MPI</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>elsA-ONERA</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>Deeptime</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>Dynexite</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>PyTorch</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>VS Code</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>Python</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>Matlab</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>Moodle</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>NumPy</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>Julia</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>C/C++</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>Linux</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>LaTeX</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>DuMuX</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>SPSS</div>
+            <div class="sk-item sk-empty"></div>
+            <div class="sk-item sk-empty"></div>
+            <div class="sk-item sk-empty"></div>
+          </div>
+        </div>
+
+        <div class="edu-panel active" id="sk-pers">
+          <div class="sk-grid sk-grid-5">
+            <div class="sk-item"><span class="sk-pipe">|</span>Strong Working Relationships</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>Arabic Romantic Writings</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>Problem Solving</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>Decision Making</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>Adaptability</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>Fast Learner</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>Football</div>
+            <div class="sk-item sk-empty"></div>
+            <div class="sk-item sk-empty"></div>
+            <div class="sk-item sk-empty"></div>
+          </div>
+        </div>
         </div>
 
       </div>
@@ -741,51 +933,65 @@
     <h2 class="cv-section-title"><i class="fa-solid fa-chalkboard-user"></i> Other Work</h2>
 
     <div class="cv-card">
-      <div class="entry-meta">
-        <span class="tag tag-gold">Teaching</span>
-        <span class="entry-date">2012 – 2018</span>
-        <span class="entry-place">Private Schools · Beirut, Lebanon</span>
-      </div>
-      <strong>Mathematics Teacher</strong>
-      <details class="cv-details">
-        <summary>Details</summary>
-        <div class="cv-details-body">
-          <p>Teaching mathematics in English at intermediate and secondary levels — Grades 6, 7, 8, and 10.</p>
-          <p>Private tutoring in university-level Real Analysis and Algebra, and high-school mathematics.</p>
+      <div class="edu-tabs">
+        <div class="edu-pills">
+          <span class="edu-pill active" onclick="eduTab(this,'ow-teach')">Mathematics Teacher</span>
+          <span class="edu-pill" onclick="eduTab(this,'ow-gorilla')">Grocery Delivery Rider</span>
+          <span class="edu-pill" onclick="eduTab(this,'ow-covid')">COVID-19 Test Center</span>
         </div>
-      </details>
-    </div>
 
-    <div class="cv-card">
-      <div class="entry-meta">
-        <span class="tag tag-blue">Mini-job · 10 hrs/week</span>
-        <span class="entry-date">Oct 2021 – Apr 2022</span>
-        <span class="entry-place">Gorillas GmbH · Berlin, Germany</span>
-      </div>
-      <strong>Grocery Delivery Rider — E-Bike Courier</strong>
-      <details class="cv-details">
-        <summary>Details</summary>
-        <div class="cv-details-body">
-          <div class="kw-chips"><span class="kw-chip">Urban mobility</span><span class="kw-chip">E-bike delivery</span></div>
-          <p>Picked up grocery orders from the warehouse and delivered them across Berlin using E-bikes.</p>
+        <div class="edu-panel active" id="ow-teach">
+          <div class="pub-expand-item" id="ow-teach-item">
+            <div class="pub-expand-header" onclick="pubExpand('ow-teach-item')">
+              <span class="pub-expand-icon"><i class="fa-solid fa-circle-plus"></i></span>
+              <span class="pub-expand-title">Mathematics Teacher — Private Schools, Beirut, Lebanon <span class="tag tag-gold" style="margin-left:6px;">2012 – 2018</span></span>
+            </div>
+            <div class="pub-expand-box">
+              <p class="pub-expand-desc">Four years of experience teaching Mathematics in English at private schools, covering intermediate and secondary levels (Grades 6, 7, 8, and 10). Alongside school teaching, provided private tutoring to university students in Real Analysis and Algebra, and to high-school students in general mathematics.</p>
+              <div class="kw-chips">
+                <span class="kw-chip">Mathematics Teaching</span>
+                <span class="kw-chip">Secondary Education</span>
+                <span class="kw-chip">Private Tutoring</span>
+                <span class="kw-chip">High-School Mathematics</span>
+              </div>
+            </div>
+          </div>
         </div>
-      </details>
-    </div>
 
-    <div class="cv-card">
-      <div class="entry-meta">
-        <span class="tag tag-blue">Mini-job · 10 hrs/week</span>
-        <span class="entry-date">Jun 2021 – Aug 2021</span>
-        <span class="entry-place">Teststation Kantstrasse · Berlin, Germany</span>
-      </div>
-      <strong>COVID-19 Test Center Staff</strong>
-      <details class="cv-details">
-        <summary>Details</summary>
-        <div class="cv-details-body">
-          <div class="kw-chips"><span class="kw-chip">COVID-19 testing</span><span class="kw-chip">Schnelltest</span></div>
-          <p>Performed rapid antigen tests at the Kantstrasse station in Berlin. Guided customers through registration and testing process.</p>
+        <div class="edu-panel" id="ow-gorilla">
+          <div class="pub-expand-item" id="ow-gorilla-item">
+            <div class="pub-expand-header" onclick="pubExpand('ow-gorilla-item')">
+              <span class="pub-expand-icon"><i class="fa-solid fa-circle-plus"></i></span>
+              <span class="pub-expand-title">Grocery Delivery Rider — Gorillas GmbH, Berlin <span class="tag tag-blue" style="margin-left:6px;">Oct 2021 – Apr 2022</span> <span class="tag tag-blue">Mini-job · 10 hrs/week</span></span>
+            </div>
+            <div class="pub-expand-box">
+              <p class="pub-expand-desc">Picked up grocery orders from the warehouse and delivered them across Berlin using E-bikes.</p>
+              <div class="kw-chips">
+                <span class="kw-chip">Urban Mobility</span>
+                <span class="kw-chip">E-Bike Delivery</span>
+              </div>
+            </div>
+          </div>
         </div>
-      </details>
+
+        <div class="edu-panel" id="ow-covid">
+          <div class="pub-expand-item" id="ow-covid-item">
+            <div class="pub-expand-header" onclick="pubExpand('ow-covid-item')">
+              <span class="pub-expand-icon"><i class="fa-solid fa-circle-plus"></i></span>
+              <span class="pub-expand-title">COVID-19 Test Center Staff — Teststation Kantstrasse, Berlin <span class="tag tag-blue" style="margin-left:6px;">Jun – Aug 2021</span> <span class="tag tag-blue">Mini-job · 10 hrs/week</span></span>
+            </div>
+            <div class="pub-expand-box">
+              <p class="pub-expand-desc">Performed rapid antigen tests at the Kantstrasse station in Berlin. Guided customers through the registration and testing process.</p>
+              <div class="kw-chips">
+                <span class="kw-chip">COVID-19 Testing</span>
+                <span class="kw-chip">Schnelltest</span>
+                <span class="kw-chip">Customer Guidance</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
 
   </div>
@@ -797,21 +1003,15 @@
   <div class="cv-section" id="hobbies">
     <h2 class="cv-section-title"><i class="fa-solid fa-heart"></i> Hobbies &amp; Interests</h2>
     <div class="cv-card">
-      <div class="course-chips">
-        <span class="chip">Writing Arabic poetry</span>
-        <span class="chip">Cooking</span>
-        <span class="chip">Making desserts</span>
-        <span class="chip">Football</span>
-        <span class="chip">Raising pets &amp; animals</span>
-        <span class="chip">Socializing</span>
+      <p style="color:var(--muted); font-size:0.88rem; line-height:1.75; margin-bottom:0.65rem;">Beyond research and poetry, I find joy in cooking, city lights, and nature. Most of all, I love meeting people — I believe that the more we understand people and open up to new perspectives and traditions, the more we come to understand the world.</p>
+      <div style="display:flex; flex-wrap:wrap; align-items:center; gap:0; line-height:2.2;">
+        <span style="display:inline-flex; align-items:center; gap:5px; font-family:'DM Mono',monospace; font-size:0.73rem; color:var(--muted); white-space:nowrap;"><span style="font-size:1.3rem; line-height:1; position:relative; top:-0.15rem; filter:sepia(1) saturate(3) hue-rotate(5deg);">✍</span> Arabic Poetry</span><span style="color:var(--accent); opacity:0.5; margin:0 8px;">|</span>
+        <span style="display:inline-flex; align-items:center; gap:5px; font-family:'DM Mono',monospace; font-size:0.73rem; color:var(--muted); white-space:nowrap;"><span style="font-size:1.05rem;">🍳</span> Cooking</span><span style="color:var(--accent); opacity:0.5; margin:0 8px;">|</span>
+        <span style="display:inline-flex; align-items:center; gap:5px; font-family:'DM Mono',monospace; font-size:0.73rem; color:var(--muted); white-space:nowrap;">🍰 Making Desserts</span><span style="color:var(--accent); opacity:0.5; margin:0 8px;">|</span>
+        <span style="display:inline-flex; align-items:center; gap:5px; font-family:'DM Mono',monospace; font-size:0.73rem; color:var(--muted); white-space:nowrap;">⚽ Football</span><span style="color:var(--accent); opacity:0.5; margin:0 8px;">|</span>
+        <span style="display:inline-flex; align-items:center; gap:5px; font-family:'DM Mono',monospace; font-size:0.73rem; color:var(--muted); white-space:nowrap;">🐾 Raising Pets &amp; Animals</span><span style="color:var(--accent); opacity:0.5; margin:0 8px;">|</span>
+        <span style="display:inline-flex; align-items:center; gap:5px; font-family:'DM Mono',monospace; font-size:0.73rem; color:var(--muted); white-space:nowrap;">🤝 Socializing</span>
       </div>
-      <p style="color:var(--muted); font-size:0.9rem; margin-top:0.75rem;">
-        Beyond teaching, writing poetry, and research, I love cooking and making desserts,
-        and I find joy in nature and in city lights at night. I enjoy raising pets and animals,
-        and most of all I love meeting people — socializing lets me explore different cultures,
-        mindsets, and personalities. I believe that the more we understand people and open up to
-        new perspectives and traditions, the more we come to understand the world.
-      </p>
     </div>
   </div>
 
@@ -854,6 +1054,13 @@
 <script>
 function eduTab(pill, panelId) {
   var tabs = pill.closest('.edu-tabs');
+  tabs.querySelectorAll('.edu-pill').forEach(function(p){ p.classList.remove('active'); });
+  tabs.querySelectorAll('.edu-panel').forEach(function(p){ p.classList.remove('active'); });
+  pill.classList.add('active');
+  document.getElementById(panelId).classList.add('active');
+}
+function skillTab(pill, panelId) {
+  var tabs = pill.closest('.skills-tabs');
   tabs.querySelectorAll('.edu-pill').forEach(function(p){ p.classList.remove('active'); });
   tabs.querySelectorAll('.edu-panel').forEach(function(p){ p.classList.remove('active'); });
   pill.classList.add('active');
