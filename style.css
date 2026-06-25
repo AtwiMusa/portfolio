@@ -1426,43 +1426,40 @@ details.cv-details summary:hover { color: var(--highlight); }
   letter-spacing: 0.04em;
 }
 
-/* ── SKILLS flat list ── */
-.skills-flat { margin-top: 0.4rem; }
-.skills-category { margin-bottom: 1.3rem; }
-.skills-category-title {
+/* ── SKILLS tabbed 6-column grid ── */
+.skills-tabs { margin-top: 0.2rem; }
+/* sk-grid-6: each cell min 195px so "Finite Difference Methods" always fits */
+.sk-grid-6 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(195px, 1fr));
+  gap: 0;
+}
+/* sk-grid-5: personal — 5 cols, 2 rows */
+.sk-grid-5 {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(195px, 1fr));
+  gap: 0;
+}
+@media (max-width: 600px) {
+  .sk-grid-6, .sk-grid-5 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+.sk-item {
   font-family: 'DM Mono', monospace;
-  font-size: 0.68rem;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 0.55rem;
-  padding-bottom: 0.28rem;
-  border-bottom: 1px solid rgba(200,169,110,0.14);
-}
-.skills-category ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.25rem 1.4rem;
-}
-.skills-category ul li {
-  font-size: 0.88rem;
+  font-size: 0.70rem;
   color: var(--muted);
-  padding: 0;
-  margin: 0;
-  position: relative;
-  padding-left: 0.85rem;
-  text-align: left;
+  padding: 0.38rem 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.38rem;
+  min-height: 2rem;
+  white-space: nowrap;
 }
-.skills-category ul li::before {
-  content: '·';
-  position: absolute;
-  left: 0;
+.sk-item.sk-empty { visibility: hidden; }
+.sk-pipe {
   color: var(--accent);
-  font-size: 1rem;
-  line-height: 1.4;
+  opacity: 0.6;
+  font-size: 0.75rem;
+  flex-shrink: 0;
 }
 
 /* ── LANGUAGES ── */
@@ -1842,4 +1839,187 @@ a { color: var(--accent); }
   line-height: 1.75;
   text-align: justify;
   text-justify: inter-word;
+}
+
+/* ── MONO COURSE LIST (pipe-separated horizontal) ── */
+.mono-course-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0;
+  padding: 0.2rem 0;
+  line-height: 1.9;
+}
+.mono-course {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.76rem;
+  letter-spacing: 0.02em;
+  color: var(--accent);
+  white-space: nowrap;
+}
+.mono-course::after {
+  content: ' | ';
+  color: var(--accent);
+  opacity: 0.5;
+  margin: 0 0.4rem;
+}
+.mono-course:last-child::after {
+  content: '';
+  margin: 0;
+}
+
+/* ── ACHIEVEMENT LINKS ── */
+.ach-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.64rem;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  text-decoration: none;
+  padding: 0.2rem 0.65rem;
+  border: 1px solid rgba(200,169,110,0.3);
+  border-radius: 999px;
+  background: var(--accent-soft);
+  transition: all 0.2s ease;
+}
+.ach-link i { font-size: 0.62rem; }
+.ach-link:hover { background: var(--accent); color: var(--bg); }
+
+/* ── CERTIFICATES GRID ── */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.9rem;
+}
+@media (max-width: 900px) { .cert-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .cert-grid { grid-template-columns: 1fr; } }
+.cert-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  transition: all 0.25s ease;
+}
+.cert-card:hover {
+  border-color: rgba(200,169,110,0.35);
+  box-shadow: 0 6px 22px rgba(0,0,0,0.3);
+  transform: translateY(-2px);
+}
+.cert-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: var(--accent-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.cert-icon i { color: var(--accent); font-size: 0.95rem; }
+.cert-body { display: flex; flex-direction: column; gap: 0.25rem; flex: 1; }
+.cert-title {
+  font-family: 'EB Garamond', serif;
+  font-size: 0.98rem;
+  font-weight: 500;
+  color: var(--highlight);
+  line-height: 1.35;
+}
+.cert-issuer {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.64rem;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+}
+.cert-date {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.62rem;
+  color: var(--muted);
+  letter-spacing: 0.03em;
+}
+.cert-desc {
+  font-size: 0.83rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-top: 0.15rem;
+}
+.cert-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.4rem;
+}
+
+/* ── NEW ABOUT LAYOUT ── */
+.about-new {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 1.2rem;
+  align-items: start;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.5rem 1.8rem;
+}
+.about-new-photo {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid rgba(200,169,110,0.35);
+  flex-shrink: 0;
+}
+.about-new-body { display: flex; flex-direction: column; gap: 0.5rem; }
+.about-new-text {
+  font-size: 0.91rem;
+  color: var(--text);
+  line-height: 1.75;
+}
+.about-new-divider {
+  height: 0.5px;
+  background: var(--border);
+  margin: 0.2rem 0;
+}
+.about-new-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.3rem;
+}
+.about-new-degs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.about-new-deg {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+.about-new-flag { font-size: 1rem; flex-shrink: 0; line-height: 1; }
+.about-new-uni {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.67rem;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+}
+.about-new-msc {
+  font-size: 0.83rem;
+  color: var(--muted);
+}
+.about-new-poem {
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-style: italic;
+  margin-top: 0.1rem;
+}
+@media (max-width: 520px) {
+  .about-new { grid-template-columns: 1fr; }
+  .about-new-photo { margin: 0 auto; }
 }
