@@ -750,6 +750,8 @@ section h2 i { font-size: 1.05rem; }
   direction: rtl;
   text-align: right;
   margin-top: 0.18rem;
+  font-family: 'Amiri', 'Scheherazade New', serif;
+  font-size: 0.85rem;
 }
 .collection-link {
   color: var(--accent);
@@ -876,7 +878,7 @@ h1[lang="ar"] { font-weight: 500; font-size: clamp(1.6rem, 4vw, 2.1rem); }
   margin-bottom: 0.7rem;
   flex-shrink: 0;
 }
-#poetry .poem-title,
+#poetry .poem-title { margin-bottom: 0.1rem; font-size: 1.25rem; }
 .poetry-page .poem-title { margin-bottom: 0.4rem; }
 .poem-rule {
   display: flex;
@@ -916,10 +918,7 @@ h1[lang="ar"] { font-weight: 500; font-size: clamp(1.6rem, 4vw, 2.1rem); }
   display: block;
 }
 #poetry .poem-preview {
-  white-space: nowrap;
-  height: calc(2.25em * 2);
-  -webkit-mask-image: linear-gradient(to left, #000 82%, transparent 100%);
-  mask-image: linear-gradient(to left, #000 82%, transparent 100%);
+  display: none;
 }
 .poem-full {
   font-family: 'EB Garamond', serif;
@@ -964,7 +963,9 @@ h1[lang="ar"] { font-weight: 500; font-size: clamp(1.6rem, 4vw, 2.1rem); }
 }
 .poem-card.expanded .expand-toggle { display: none; }
 
-#poetry .expand-toggle,
+#poetry .expand-toggle {
+  display: none;
+}
 .poetry-page .expand-toggle {
   font-size: 0.72rem;
   opacity: 1;
@@ -1006,15 +1007,16 @@ h1[lang="ar"] { font-weight: 500; font-size: clamp(1.6rem, 4vw, 2.1rem); }
 .poetry-page .poem-preview {
   display: block;
   white-space: nowrap;            /* never break a verse line */
-  height: calc(2.25em * 2);       /* exactly two lines, equal across the row */
-  line-height: 2.25;
+  height: calc(1.8em * 2);        /* exactly two lines, tighter */
+  line-height: 1.8;
   overflow: hidden;
   -webkit-mask-image: linear-gradient(to left, #000 82%, transparent 100%);
   mask-image: linear-gradient(to left, #000 82%, transparent 100%);
 }
 .poetry-page .poem-full {
-  line-height: 2.0;   /* ← good spacing in expanded view */
+  line-height: 1.85;   /* tighter spacing in expanded view */
 }
+.poetry-page .poem-card { padding: 0.85rem 1.2rem 1.1rem; }
 
 @media (max-width: 700px) {
   .poetry-page .poetry-grid {
@@ -1440,8 +1442,23 @@ details.cv-details summary:hover { color: var(--highlight); }
   grid-template-columns: repeat(5, minmax(195px, 1fr));
   gap: 0;
 }
+/* sk-pers-row: personal — one row, uniform spacing, left aligned */
+.sk-pers-row {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.4rem 0;
+}
+.sk-pers-row .sk-item {
+  font-size: 0.66rem;
+  padding: 0;
+  min-height: auto;
+  white-space: nowrap;
+}
 @media (max-width: 600px) {
   .sk-grid-6, .sk-grid-5 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sk-pers-row { flex-wrap: wrap; }
 }
 .sk-item {
   font-family: 'DM Mono', monospace;
@@ -1959,8 +1976,8 @@ a { color: var(--accent); }
   position: relative;
 }
 .header-photo {
-  width: 138px;
-  height: 138px;
+  width: 156px;
+  height: 156px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid rgba(200,169,110,0.4);
@@ -2201,3 +2218,154 @@ a { color: var(--accent); }
   background: linear-gradient(90deg, rgba(200,169,110,0.4), transparent);
   margin-bottom: 1.3rem;
 }
+
+/* ── POETRY DESCRIPTION ROW (EN left / AR right) ── */
+.poetry-desc-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.poetry-desc-row .desc-en {
+  font-size: 0.86rem;
+  color: var(--muted);
+  max-width: 46%;
+  line-height: 1.6;
+}
+.poetry-desc-row .desc-ar {
+  font-family: 'Amiri', 'Scheherazade New', serif;
+  font-size: 1rem;
+  color: var(--muted);
+  max-width: 46%;
+  text-align: right;
+  line-height: 1.8;
+}
+
+/* ── LANGUAGES PILL ROW ── */
+.lang-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.lang-pill-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.lang-pill-name {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.05rem;
+  color: var(--text);
+}
+.lang-pill {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+  border: 0.5px solid var(--border);
+  border-radius: 999px;
+  padding: 0.18rem 0.7rem;
+  white-space: nowrap;
+}
+.lang-pill-gold {
+  color: var(--accent);
+  border-color: rgba(200,169,110,0.4);
+  background: rgba(200,169,110,0.06);
+}
+@media (max-width: 600px) {
+  .lang-row { flex-direction: column; align-items: flex-start; gap: 0.7rem; }
+}
+
+/* ── HEADER TAGLINE ── */
+.header-tagline {
+  text-align: center;
+  font-family: 'EB Garamond', serif;
+  font-size: 0.96rem;
+  font-style: normal;
+  text-transform: none;
+  letter-spacing: 0.01em;
+  color: var(--muted);
+  line-height: 1.6;
+  max-width: 720px;
+  margin: 1.1rem auto 0;
+  padding: 0 1rem;
+}
+
+/* ── POEM TABS (switchable) ── */
+.poem-tabs { margin-top: 0.5rem; }
+.poem-tab-pills {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.1rem;
+}
+.poem-tab-pill {
+  font-family: 'Amiri', 'EB Garamond', serif;
+  font-size: 1.05rem;
+  color: var(--accent);
+  border: 0.5px solid rgba(200,169,110,0.4);
+  border-radius: 999px;
+  padding: 0.35rem 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  direction: rtl;
+}
+.poem-tab-pill:hover { background: rgba(200,169,110,0.1); }
+.poem-tab-pill.active {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+}
+.poem-tab-panel { display: none; animation: eduFade 0.3s ease; }
+.poem-tab-panel.active { display: block; }
+.poem-tab-panel .poem-card {
+  max-width: 640px;
+  margin: 0 auto;
+  background: var(--surface);
+  border: 1px solid rgba(200,169,110,0.18);
+  border-radius: 10px;
+  padding: 0.9rem 1.4rem;
+  text-align: center;
+  cursor: pointer;
+}
+.poem-tab-panel .poem-preview {
+  display: block;
+  font-family: 'Amiri', 'EB Garamond', serif;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text);
+  text-align: center;
+  direction: rtl;
+  white-space: normal;
+  height: auto;
+}
+.poem-tab-panel .poem-full { display: none !important; }
+.poem-tab-panel .poem-card.expanded .poem-preview { display: none; }
+.poem-tab-panel .poem-card.expanded .poem-full {
+  display: block !important;
+  font-family: 'Amiri', 'EB Garamond', serif;
+  font-size: 1.15rem;
+  line-height: 2;
+  color: var(--text);
+  text-align: center;
+  direction: rtl;
+  white-space: pre-line;
+}
+@media (max-width: 600px) {
+  .poem-tab-pill { font-size: 0.95rem; padding: 0.3rem 0.9rem; }
+  .poem-tab-panel .poem-card { padding: 1.2rem 1rem; }
+  .poem-tab-panel .poem-full { font-size: 1.02rem; }
+}
+
+/* ── HOMEPAGE POEM CARDS — tightened, title-only, no arrow ── */
+#poetry .poem-card { padding: 0.4rem 1rem 0.45rem; }
+#poetry .poem-rule { margin: 0 0 0.05rem; }
+
+/* ── space between last poem line and bottom-right corner ── */
+.poem-card .poem-content { padding-bottom: 0.7rem; }
+.poetry-page .poem-card .poem-content { padding-bottom: 0.9rem; }
+#poetry .poem-card.expanded .poem-content { padding-bottom: 1rem; }
