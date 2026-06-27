@@ -19,6 +19,7 @@
     <h1>Moussa Atwi</h1>
     <p>Mathematics · Scientific Computing · Machine Learning · Poetry</p>
   </div>
+  <p class="header-tagline">Open to industry roles in mathematical modeling, scientific computing, and machine learning.</p>
   <div class="title-lines">
     <span class="line"></span>
     <span class="line"></span>
@@ -287,5 +288,14 @@
 
 <footer>© 2026 Moussa Atwi &nbsp;·&nbsp; Mathematics · Scientific Computing · Machine Learning · Poetry</footer>
 <script src="js/script.js" defer></script>
+<script>
+function poemTab(pill, panelId) {
+  var tabs = pill.closest('.poem-tabs');
+  tabs.querySelectorAll('.poem-tab-pill').forEach(function(p){ p.classList.remove('active'); });
+  tabs.querySelectorAll('.poem-tab-panel').forEach(function(p){ p.classList.remove('active'); });
+  pill.classList.add('active');
+  document.getElementById(panelId).classList.add('active');
+}
+</script>
 </body>
 </html>
