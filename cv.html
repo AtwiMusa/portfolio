@@ -61,7 +61,7 @@
 
     <div class="pdf-row">
       <a href="pdfs/cv-onepage.pdf" target="_blank" class="pdf-btn">
-        <i class="fa-solid fa-file-pdf"></i> One page CV
+        <i class="fa-solid fa-file-pdf"></i> One-Page CV
       </a>
       <a href="pdfs/cv-extended.pdf" target="_blank" class="pdf-btn">
         <i class="fa-solid fa-file-pdf"></i> Extended CV
@@ -793,9 +793,9 @@
             </div>
             <div class="pub-expand-links">
               <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/PNTBQZMFZUX8" target="_blank" class="pdf-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Specialization Certificate</a>
-              <a href="https://www.coursera.org/account/accomplishments/verify/ET84JW4WZ7A9" target="_blank" class="pdf-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Course 1</a>
-              <a href="https://www.coursera.org/account/accomplishments/verify/Z3A5GZYRUG3E" target="_blank" class="pdf-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Course 2</a>
-              <a href="https://www.coursera.org/account/accomplishments/verify/WNKFQHQWYL5R" target="_blank" class="pdf-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Course 3</a>
+              <a href="https://www.coursera.org/account/accomplishments/verify/ET84JW4WZ7A9" target="_blank" class="pdf-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Supervised Learning</a>
+              <a href="https://www.coursera.org/account/accomplishments/verify/Z3A5GZYRUG3E" target="_blank" class="pdf-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Advanced Learning Algorithms</a>
+              <a href="https://www.coursera.org/account/accomplishments/verify/WNKFQHQWYL5R" target="_blank" class="pdf-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Unsupervised Learning &amp; RL</a>
             </div>
           </div>
         </div>
@@ -842,28 +842,40 @@
     <div class="cv-card">
       <div class="skills-tabs">
         <div class="edu-pills" style="margin-bottom:1rem;">
-          <span class="edu-pill active" onclick="skillTab(this,'sk-pers')">Personal</span>
+          <span class="edu-pill active" onclick="skillTab(this,'sk-comp')">Computing</span>
           <span class="edu-pill" onclick="skillTab(this,'sk-sci')">Scientific &amp; Mathematical</span>
-          <span class="edu-pill" onclick="skillTab(this,'sk-comp')">Computing</span>
+          <span class="edu-pill" onclick="skillTab(this,'sk-pers')">Personal</span>
         </div>
 
-                <div class="edu-panel" id="sk-sci">
-          <div class="sk-grid sk-grid-6">
+                                <div class="edu-panel" id="sk-sci">
+          <div class="sk-group">
+            <div class="sk-group-label">Optimization</div>
+            <div class="sk-grid sk-grid-6">
             <div class="sk-item"><span class="sk-pipe">|</span>Linear Optimization</div>
             <div class="sk-item"><span class="sk-pipe">|</span>Nonlinear Optimization</div>
             <div class="sk-item"><span class="sk-pipe">|</span>Convex Optimization</div>
             <div class="sk-item"><span class="sk-pipe">|</span>Non-Convex Optimization</div>
-            <div class="sk-item"><span class="sk-pipe">|</span>Optimal Control</div>
             <div class="sk-item"><span class="sk-pipe">|</span>Optimal Transport</div>
             <div class="sk-item"><span class="sk-pipe">|</span>Calculus of Variations</div>
             <div class="sk-item"><span class="sk-pipe">|</span>Proximal Gradient Algorithm</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>Gradient Descent</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>Stochastic Gradient Descent</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>Phase Retrieval</div>
+            </div>
+          </div>
+          <div class="sk-group">
+            <div class="sk-group-label">Machine Learning</div>
+            <div class="sk-grid sk-grid-6">
             <div class="sk-item"><span class="sk-pipe">|</span>Machine Learning</div>
             <div class="sk-item"><span class="sk-pipe">|</span>Deep Learning</div>
             <div class="sk-item"><span class="sk-pipe">|</span>Neural Networks</div>
             <div class="sk-item"><span class="sk-pipe">|</span>Deep Unfolding</div>
             <div class="sk-item"><span class="sk-pipe">|</span>Bayesian Inference</div>
-            <div class="sk-item"><span class="sk-pipe">|</span>Phase Retrieval</div>
-            <div class="sk-item"><span class="sk-pipe">|</span>Koopman Theory</div>
+            </div>
+          </div>
+          <div class="sk-group">
+            <div class="sk-group-label">Numerical Methods &amp; Simulation</div>
+            <div class="sk-grid sk-grid-6">
             <div class="sk-item"><span class="sk-pipe">|</span>Finite Difference Methods</div>
             <div class="sk-item"><span class="sk-pipe">|</span>Finite Element Methods</div>
             <div class="sk-item"><span class="sk-pipe">|</span>Finite Volume Methods</div>
@@ -871,29 +883,53 @@
             <div class="sk-item"><span class="sk-pipe">|</span>Multi-step Methods</div>
             <div class="sk-item"><span class="sk-pipe">|</span>Numerical Simulation</div>
             <div class="sk-item"><span class="sk-pipe">|</span>Numerical Analysis</div>
+            </div>
+          </div>
+          <div class="sk-group">
+            <div class="sk-group-label">Dynamical Systems &amp; PDEs</div>
+            <div class="sk-grid sk-grid-6">
+            <div class="sk-item"><span class="sk-pipe">|</span>Koopman Theory</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>Dynamical Systems</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>Control Theory</div>
             <div class="sk-item"><span class="sk-pipe">|</span>Partial Differential Equations</div>
-            <div class="sk-item sk-empty"></div>
-            <div class="sk-item sk-empty"></div>
+            </div>
           </div>
         </div>
 
-        <div class="edu-panel" id="sk-comp">
-          <div class="sk-grid sk-grid-6">
+                <div class="edu-panel active" id="sk-comp">
+          <div class="sk-group">
+            <div class="sk-group-label">Programming Languages</div>
+            <div class="sk-grid sk-grid-6">
             <div class="sk-item"><span class="sk-pipe">|</span>Python</div>
-            <div class="sk-item"><span class="sk-pipe">|</span>NumPy</div>
-            <div class="sk-item"><span class="sk-pipe">|</span>Matplotlib</div>
-            <div class="sk-item"><span class="sk-pipe">|</span>PyTorch</div>
-            <div class="sk-item"><span class="sk-pipe">|</span>TensorFlow</div>
-            <div class="sk-item"><span class="sk-pipe">|</span>Deeptime</div>
             <div class="sk-item"><span class="sk-pipe">|</span>Julia</div>
-            <div class="sk-item"><span class="sk-pipe">|</span>DifferentialEquations.jl</div>
-            <div class="sk-item"><span class="sk-pipe">|</span>ExtendableGrids.jl</div>
             <div class="sk-item"><span class="sk-pipe">|</span>Matlab</div>
             <div class="sk-item"><span class="sk-pipe">|</span>C/C++</div>
             <div class="sk-item"><span class="sk-pipe">|</span>OpenMP/MPI</div>
+            </div>
+          </div>
+          <div class="sk-group">
+            <div class="sk-group-label">ML &amp; Scientific Libraries</div>
+            <div class="sk-grid sk-grid-6">
+            <div class="sk-item"><span class="sk-pipe">|</span>PyTorch</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>TensorFlow</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>NumPy</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>Matplotlib</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>Deeptime</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>DifferentialEquations.jl</div>
+            <div class="sk-item"><span class="sk-pipe">|</span>ExtendableGrids.jl</div>
+            </div>
+          </div>
+          <div class="sk-group">
+            <div class="sk-group-label">Simulation Software</div>
+            <div class="sk-grid sk-grid-6">
             <div class="sk-item"><span class="sk-pipe">|</span>DuMuX</div>
             <div class="sk-item"><span class="sk-pipe">|</span>ANSYS-FLUENT</div>
             <div class="sk-item"><span class="sk-pipe">|</span>elsA-ONERA</div>
+            </div>
+          </div>
+          <div class="sk-group">
+            <div class="sk-group-label">Tools &amp; Platforms</div>
+            <div class="sk-grid sk-grid-6">
             <div class="sk-item"><span class="sk-pipe">|</span>Git</div>
             <div class="sk-item"><span class="sk-pipe">|</span>GitHub</div>
             <div class="sk-item"><span class="sk-pipe">|</span>Linux</div>
@@ -902,11 +938,11 @@
             <div class="sk-item"><span class="sk-pipe">|</span>SPSS</div>
             <div class="sk-item"><span class="sk-pipe">|</span>Dynexite</div>
             <div class="sk-item"><span class="sk-pipe">|</span>Moodle</div>
-            <div class="sk-item sk-empty"></div>
+            </div>
           </div>
         </div>
 
-        <div class="edu-panel active" id="sk-pers">
+        <div class="edu-panel" id="sk-pers">
           <div class="sk-pers-row">
             <span class="sk-item"><span class="sk-pipe">|</span>Strong Working Relationships</span>
             <span class="sk-item"><span class="sk-pipe">|</span>Teamwork &amp; Collaboration</span>
