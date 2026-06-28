@@ -2417,4 +2417,17 @@ a { color: var(--accent); }
     gap: 0.35rem 0.8rem;
   }
   .sk-item { white-space: normal; }
+
+  /* 7. CV section tiles: full-width buttons; the icon+label group is
+        centered as a block but given a fixed width so all icons line up
+        and all labels start at the same point (centered AND aligned). */
+  .cv-tile { text-align: center; padding-left: 0.7rem; padding-right: 0.7rem; }
+  .cv-tile-title {
+    justify-content: flex-start;
+    width: 150px;
+    margin: 0 auto;
+    gap: 0.55rem;
+  }
+  .cv-tile-title i { width: 16px; text-align: center; }
+  .cv-tile-sub { text-align: center; }
 }
