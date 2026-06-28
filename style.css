@@ -2463,10 +2463,11 @@ a { color: var(--accent); }
     display: inline-flex;
     align-items: center;
     justify-content: flex-start;
-    width: 140px;
-    gap: 0.55rem;
+    width: 118px;
+    gap: 0.5rem;
     text-align: left;
+    transform: translateX(14px);
   }
-  .cv-tile-title i { width: 17px; text-align: center; flex-shrink: 0; }
+  .cv-tile-title i { width: 16px; text-align: center; flex-shrink: 0; }
   .cv-tile-sub { text-align: center; }
 }
