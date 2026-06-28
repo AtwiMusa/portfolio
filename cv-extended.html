@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moussa Atwi — Curriculum Vitae (Extended)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1c1c1a;--muted:#54534e;--faint:#8a8980;
+    --gold:#ba7517;--gold-deep:#9a610f;--gold-soft:#f4ecdb;
+    --line:#e4e2da;--paper:#ffffff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{font-size:14.5px;}
+  body{font-family:'EB Garamond',Georgia,serif;color:var(--ink);background:#e9e8e3;line-height:1.4;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .page{width:210mm;margin:1.1rem auto;background:var(--paper);padding:13mm 14mm;box-shadow:0 4px 22px rgba(0,0,0,0.14);}
+  .page-2{padding-top:12mm;}
+
+  /* HEADER */
+  .head{display:flex;justify-content:space-between;align-items:flex-start;gap:1.4rem;border-bottom:2px solid var(--ink);padding-bottom:0.6rem;}
+  .head h1{font-size:1.95rem;font-weight:600;letter-spacing:0.04em;line-height:1.02;}
+  .head .role{font-size:0.9rem;color:var(--gold);font-weight:500;margin-top:0.16rem;}
+  .head .tagline{font-size:0.8rem;color:var(--muted);margin-top:0.26rem;max-width:52ch;line-height:1.35;}
+  .head-right{text-align:right;font-family:'DM Mono',monospace;font-size:0.66rem;color:var(--muted);line-height:1.95;white-space:nowrap;padding-top:0.1rem;}
+  .head-right .row{display:flex;align-items:center;justify-content:flex-end;gap:6px;}
+  .head-right .links-row{display:flex;align-items:center;justify-content:flex-end;gap:14px;margin-top:2px;}
+  .head-right .links-row .lk{display:flex;align-items:center;gap:5px;}
+  .head-right a{color:var(--gold-deep);text-decoration:none;font-weight:500;border-bottom:0.5px solid rgba(186,117,23,0.4);}
+  .head-right .ic{color:var(--gold);width:11px;height:11px;display:inline-block;flex-shrink:0;}
+
+  .body{display:grid;grid-template-columns:1.42fr 1fr;gap:0 1.9rem;margin-top:0.85rem;}
+
+  .sec-title{font-family:'DM Mono',monospace;font-size:0.64rem;font-weight:500;text-transform:uppercase;letter-spacing:0.14em;color:var(--gold);border-bottom:0.5px solid var(--line);padding-bottom:0.24rem;margin:0 0 0.5rem;}
+  section{margin-bottom:0.9rem;break-inside:avoid;}
+
+  .entry{margin-bottom:0.62rem;padding-left:0.9rem;position:relative;break-inside:avoid;}
+  .entry::before{content:'';position:absolute;left:0;top:0.32rem;width:5px;height:5px;border-radius:50%;background:var(--gold);}
+  .entry-role{font-size:0.9rem;font-weight:600;color:var(--ink);line-height:1.16;}
+  .entry-place-row{display:flex;justify-content:space-between;align-items:baseline;gap:0.6rem;margin-top:0.02rem;}
+  .entry-place{font-size:0.77rem;color:var(--gold);font-style:italic;}
+  .entry-place-row .entry-place{flex:1;min-width:0;}
+  .for-master{color:var(--faint);font-style:normal;font-family:'DM Mono',monospace;font-size:0.6rem;}
+  .entry-date{font-family:'DM Mono',monospace;font-size:0.59rem;color:var(--faint);white-space:nowrap;flex-shrink:0;}
+  .entry-title{font-size:0.8rem;color:var(--ink);font-style:italic;margin-top:0.12rem;line-height:1.32;}
+  .entry-kw{font-family:'DM Mono',monospace;font-size:0.59rem;color:var(--gold-deep);margin-top:0.1rem;line-height:1.4;}
+  .entry-desc{font-size:0.78rem;color:var(--muted);margin-top:0.1rem;line-height:1.38;text-align:justify;}
+  .entry-tag{display:inline-block;font-family:'DM Mono',monospace;font-size:0.53rem;letter-spacing:0.03em;color:var(--gold-deep);background:var(--gold-soft);border-radius:3px;padding:1px 5px;margin-left:5px;vertical-align:middle;font-weight:500;}
+
+  .edu{margin-bottom:0.5rem;padding-left:0.9rem;position:relative;break-inside:avoid;}
+  .edu::before{content:'';position:absolute;left:0;top:0.3rem;width:5px;height:5px;border-radius:50%;background:var(--gold);}
+  .edu-deg{font-size:0.85rem;font-weight:600;line-height:1.14;}
+  .edu-meta{display:flex;justify-content:space-between;align-items:baseline;gap:0.5rem;margin-top:0.02rem;}
+  .edu-uni{font-size:0.76rem;color:var(--gold);font-style:italic;}
+  .edu-date{font-family:'DM Mono',monospace;font-size:0.57rem;color:var(--faint);white-space:nowrap;flex-shrink:0;}
+  .edu-honor{font-size:0.71rem;color:var(--muted);margin-top:0.03rem;}
+
+  .blist{list-style:none;}
+  .blist li{font-size:0.77rem;color:var(--muted);line-height:1.36;padding-left:0.9rem;position:relative;margin-bottom:0.32rem;}
+  .blist li::before{content:'';position:absolute;left:0;top:0.32rem;width:5px;height:5px;border-radius:50%;background:var(--gold);}
+  .blist b{color:var(--ink);font-weight:600;}
+
+  .skill-label{font-size:0.75rem;font-weight:600;color:var(--ink);margin:0.15rem 0 0.18rem;}
+  .skill-grid{display:grid;grid-template-columns:auto auto;justify-content:space-between;gap:0.16rem 1rem;margin-bottom:0.45rem;}
+  .skill-grid span{font-size:0.72rem;color:var(--muted);padding-left:0.72rem;position:relative;line-height:1.45;white-space:nowrap;}
+  .skill-grid span::before{content:'';position:absolute;left:0;top:0.42rem;width:4px;height:4px;border-radius:50%;background:var(--gold);}
+
+  .cert{margin-bottom:0.5rem;padding-left:0.9rem;position:relative;break-inside:avoid;}
+  .cert::before{content:'';position:absolute;left:0;top:0.3rem;width:5px;height:5px;border-radius:50%;background:var(--gold);}
+  .cert-name{font-size:0.79rem;font-weight:600;color:var(--ink);line-height:1.16;}
+  .cert-head{display:flex;justify-content:space-between;align-items:baseline;gap:0.5rem;}
+  .cert-date{font-family:'DM Mono',monospace;font-size:0.57rem;color:var(--faint);white-space:nowrap;flex-shrink:0;}
+  .cert-meta{font-size:0.74rem;color:var(--gold);font-style:italic;}
+  .cert-sub{font-size:0.71rem;color:var(--muted);line-height:1.34;margin-top:0.04rem;}
+  .cert-courses{list-style:none;margin-top:0.12rem;}
+  .cert-courses li{font-size:0.7rem;color:var(--muted);line-height:1.4;padding-left:0.7rem;position:relative;}
+  .cert-courses li::before{content:'';position:absolute;left:0;top:0.4rem;width:3.5px;height:3.5px;border-radius:50%;background:var(--gold);opacity:0.7;}
+
+  .lang-row{display:flex;flex-wrap:wrap;gap:0.35rem 0.85rem;}
+  .lang{font-size:0.77rem;color:var(--muted);}
+  .lang b{color:var(--ink);font-weight:600;}
+  .lang .lvl{font-family:'DM Mono',monospace;font-size:0.57rem;color:var(--gold);}
+
+  .poetry-note{font-size:0.76rem;color:var(--muted);line-height:1.4;}
+  .poetry-note .ar{font-family:'EB Garamond',serif;color:var(--gold);font-style:italic;}
+
+  @media print{body{background:#fff;}.page{margin:0;box-shadow:none;width:auto;padding:11mm 13mm;}.page-2{padding-top:12mm;break-before:page;}@page{size:A4;margin:0;}}
+  @media(max-width:760px){.page{width:auto;padding:7mm 6mm;}.body{grid-template-columns:1fr;gap:0;}.head{flex-direction:column;gap:0.6rem;}.head-right{text-align:left;}.head-right .row{justify-content:flex-start;}}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="head">
+    <div>
+      <h1>Moussa Atwi</h1>
+      <div class="role">PhD Researcher · Scientific Computing &amp; Machine Learning</div>
+      <div class="tagline">Open to industry roles in mathematical modeling, scientific computing, and machine learning.</div>
+    </div>
+    <div class="head-right">
+      <div class="row"><svg class="ic" viewBox="0 0 512 512" fill="currentColor"><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg><span>musa-atwi@hotmail.com</span></div>
+      <div class="row"><svg class="ic" viewBox="0 0 512 512" fill="currentColor"><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg><span>+49 015118507765</span></div>
+      <div class="row"><svg class="ic" viewBox="0 0 384 512" fill="currentColor"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg><span>Aachen, Germany</span></div>
+      <div class="links-row">
+        <span class="lk"><svg class="ic" viewBox="0 0 448 512" fill="currentColor"><path d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z"/></svg><a href="https://www.linkedin.com/in/musaatwi" target="_blank">Musa Atwi</a></span>
+        <span class="lk"><svg class="ic" viewBox="0 0 496 512" fill="currentColor"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8z"/></svg><a href="https://github.com/AtwiMusa" target="_blank">AtwiMusa</a></span>
+        <span class="lk"><svg class="ic" viewBox="0 0 512 512" fill="currentColor"><path d="M352 256c0 22.2-1.2 43.6-3.3 64l-185.3 0c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64l185.3 0c2.2 20.4 3.3 41.8 3.3 64zm28.8-64l123.1 0c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64l-123.1 0c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32l-116.7 0c-10-63.9-29.8-117.4-55.3-151.6 78.3 20.7 142 77.5 171.9 151.6zm-149.1 0l-176.6 0c6.1-36.4 15.5-68.6 27-94.7 10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5 11.6 26 20.9 58.2 27 94.7zm-209 0L18.6 160C48.6 85.9 112.2 29.1 190.6 8.4 165.1 42.6 145.3 96.1 135.3 160zM8.1 192l123.1 0c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64L8.1 320C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zM194.7 446.6c-11.6-26-20.9-58.2-27-94.6l176.6 0c-6.1 36.4-15.5 68.6-27 94.6-10.5 23.6-22.2 40.7-33.5 51.5C272.6 508.8 263.3 512 256 512s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6C112.2 482.9 48.6 426.1 18.6 352l116.7 0zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6 25.5-34.2 45.3-87.7 55.3-151.6l116.7 0z"/></svg><a href="https://atwiMusa.github.io/portfolio/" target="_blank">Portfolio</a></span>
+      </div>
+    </div>
+  </header>
+  <div class="body">
+    <!-- LEFT -->
+    <div>
+<section>
+        <div class="sec-title">Experience</div>
+        <div class="entry">
+          <div class="entry-role">PhD Researcher<span class="entry-tag">Full-time · 30 h/wk</span></div>
+          <div class="entry-place-row"><span class="entry-place">RWTH Aachen University · Germany</span><span class="entry-date">Aug 2023 – Present</span></div>
+          <div class="entry-title">"Sparse Exit Wave Reconstruction via Deep Unfolding"</div>
+          <div class="entry-desc">Incorporating data-driven learning into model-based exit wave reconstruction, a variant of phase retrieval arising in electron microscopy, by unfolding classical optimization algorithms into trainable neural networks.</div>
+          <div class="entry-kw">Phase Retrieval · Image Processing · Optimization · Deep Neural Networks</div>
+        </div>
+        <div class="entry" style="margin-bottom:0;">
+          <div class="entry-role" style="font-size:0.82rem;">Publication</div>
+          <div class="entry-title">"A generalization bound for exit wave reconstruction via deep unfolding"</div>
+          <div class="entry-kw">Preprint · related to PhD &nbsp;—&nbsp; <a href="https://arxiv.org/abs/2511.06413" target="_blank" style="color:var(--gold-deep);text-decoration:none;border-bottom:0.5px solid rgba(186,117,23,0.4);">arXiv 2025</a></div>
+        </div>
+      </section>
+
+
+
+<section>
+        <div class="entry">
+          <div class="entry-role">E-Learning &amp; Assessment Assistant<span class="entry-tag">Mini-job · 10 h/wk</span></div>
+          <div class="entry-place-row"><span class="entry-place">RWTH Aachen University · Germany</span><span class="entry-date">Apr 2026 – Present</span></div>
+          <div class="entry-desc">Managing exercises and online assessments via Dynexite, coordinating Bonus Points Tests, publishing materials on Moodle, and grading student work.</div>
+          <div class="entry-kw">Dynexite · Moodle · Online Assessment · Grading</div>
+        </div>
+        <div class="entry">
+          <div class="entry-role">Research Internship &amp; Master's Thesis<span class="entry-tag">Part-time · 20 h/wk</span></div>
+          <div class="entry-place-row"><span class="entry-place">Zuse Institute Berlin <span class="for-master">· for the M.Sc. at TU Berlin</span></span><span class="entry-date">Sep 2022 – May 2023</span></div>
+          <div class="entry-title">"Approximation of Koopman Operators Using Random Basis Functions"</div>
+          <div class="entry-desc">Studied Koopman operator theory and nonlinear dynamical systems, including Koopman eigenfunctions, invariant subspaces, and the Koopman embedding. Implemented Extended Dynamic Mode Decomposition combined with monomials, random Gaussians, and trained and untrained neural networks in Python.</div>
+          <div class="entry-kw">Koopman Operators · Neural Networks · Dynamical Systems</div>
+        </div>
+        <div class="entry">
+          <div class="entry-role">Research Internship &amp; Master's Thesis<span class="entry-tag">Full-time · 35 h/wk</span></div>
+          <div class="entry-place-row"><span class="entry-place">Université de Bordeaux <span class="for-master">· for the M.Sc. at UPPA, France</span></span><span class="entry-date">Feb – Aug 2020</span></div>
+          <div class="entry-title">"Semi-discrete Optimal Transport for Large-Scale Problems"</div>
+          <div class="entry-desc">Studied the Monge and Kantorovich problems, the dual formulation, the c-transform, and Laguerre cells. Implemented gradient descent algorithms in Python to solve large-scale semi-discrete optimal transport problems in image processing and machine learning, analysing convergence behaviour.</div>
+          <div class="entry-kw">Convex Duality · Image Modeling · Gradient Descent</div>
+        </div>
+        <div class="entry">
+          <div class="entry-role">Master's Thesis — Control Theory</div>
+          <div class="entry-place-row"><span class="entry-place">Lebanese International University · Lebanon</span><span class="entry-date">Feb – Aug 2019</span></div>
+          <div class="entry-title">"Decay Rates of a Timoshenko System with Kelvin-Voigt Damping"</div>
+          <div class="entry-desc">Proved that the energy of the Timoshenko system with Kelvin-Voigt damping dissipates exponentially or polynomially, with the decay rate depending on the properties of the material coefficient function.</div>
+          <div class="entry-kw">C0-Semigroup · Timoshenko Beam · Polynomial &amp; Exponential Stability</div>
+        </div>
+      </section>
+
+      <section>
+        <div class="entry" style="margin-bottom:0;">
+          <div class="entry-role">Mathematics Teacher</div>
+          <div class="entry-place-row"><span class="entry-place">Private Schools · Beirut, Lebanon</span><span class="entry-date">2012 – 2018</span></div>
+          <div class="entry-desc">Worked four years as a school teacher of mathematics in English at private high schools, covering intermediate and secondary levels from Grades 6 to 10. Alongside school teaching, provided private tutoring to university students in Real Analysis and Algebra, and to high-school students in general mathematics.</div>
+          <div class="entry-kw">Mathematics Teaching · Secondary Education · Private Tutoring</div>
+        </div>
+      </section>
+
+      <section style="margin-bottom:0;">
+        <div class="sec-title">Project · for the M.Sc. at LIU, Lebanon</div>
+        <div class="entry" style="margin-bottom:0;">
+          <div class="entry-role">Project — Finite Element Methods</div>
+          <div class="entry-title">"Piecewise Linear Finite Element Methods for a 1D Elliptic Equation"</div>
+          <div class="entry-desc">Estimated the order of convergence in Matlab on uniform and non-uniform meshes for a one-dimensional elliptic equation.</div>
+          <div class="entry-kw">Finite Element Method · Convergence Analysis · Matlab</div>
+        </div>
+      </section>
+    </div>
+    <!-- RIGHT -->
+    <div>
+<section>
+        <div class="sec-title">Education</div>
+        <div class="edu">
+          <div class="edu-deg">M.Sc. Scientific Computing</div>
+          <div class="edu-meta"><span class="edu-uni">Technische Universität Berlin</span><span class="edu-date">2021 – 2023</span></div>
+          <div class="edu-honor">GPA 1.2 · Excellent</div>
+        </div>
+        <div class="edu">
+          <div class="edu-deg">M.Sc. Mathematics, Modeling &amp; Simulation</div>
+          <div class="edu-meta"><span class="edu-uni">Université de Pau et des Pays de l'Adour</span><span class="edu-date">2019 – 2020</span></div>
+          <div class="edu-honor">Excellence Scholarship · Région Nouvelle-Aquitaine</div>
+        </div>
+        <div class="edu">
+          <div class="edu-deg">M.Sc. Applied Mathematics</div>
+          <div class="edu-meta"><span class="edu-uni">Lebanese International University</span><span class="edu-date">2018 – 2019</span></div>
+          <div class="edu-honor">Rank 1 · GPA 4.0 · Excellent</div>
+        </div>
+        <div class="edu">
+          <div class="edu-deg">Master 1, Pure Mathematics <span style="font-weight:400;font-size:0.72rem;color:var(--faint);">(1st Year of Master)</span></div>
+          <div class="edu-meta"><span class="edu-uni">Lebanese University</span><span class="edu-date">2014 – 2015</span></div>
+          <div class="edu-honor">Ranked 1st in Number Theory</div>
+        </div>
+        <div class="edu">
+          <div class="edu-deg">B.Sc. Pure Mathematics</div>
+          <div class="edu-meta"><span class="edu-uni">Lebanese University</span><span class="edu-date">2008 – 2012</span></div>
+        </div>
+      </section>
+
+      <section>
+        <div class="sec-title">Achievements</div>
+        <ul class="blist">
+          <li>Received <b>A</b> in the research internship, master's thesis, and most courses of the M.Sc. at TU Berlin.</li>
+          <li>Received <b>A</b> in all required courses of the M.Sc. at LIU.</li>
+          <li><b>Excellence Scholarship</b> from Région Nouvelle-Aquitaine to pursue the master's at the University of Pau.</li>
+          <li><b>Ranked 1st</b> in the Number Theory course, Master 1 at LU.</li>
+          <li>Published Arabic poet — <b>Rashfato Alami</b>, a collection of 80+ romantic poems.</li>
+        </ul>
+      </section>
+
+      <section>
+        <div class="sec-title">Skills</div>
+        <div class="skill-label">Scientific &amp; Mathematical</div>
+        <div class="skill-grid">
+          <span>Linear Optimization</span><span>Nonlinear Optimization</span>
+          <span>Convex Optimization</span><span>Non-Convex Optimization</span>
+          <span>Optimal Control</span><span>Optimal Transport</span>
+          <span>Proximal Gradient</span><span>Calculus of Variations</span>
+          <span>Machine &amp; Deep Learning</span><span>Neural Networks</span>
+          <span>Deep Unfolding</span><span>Bayesian Inference</span>
+          <span>Phase Retrieval</span><span>Koopman Theory</span>
+          <span>Numerical Simulation</span><span>FDM / FEM / FVM</span>
+          <span>Runge-Kutta Methods</span><span>Multi-step Methods</span>
+          <span>Numerical Analysis</span><span>Partial Differential Equations</span>
+        </div>
+        <div class="skill-label">Computing</div>
+        <div class="skill-grid">
+          <span>Python</span><span>NumPy · Matplotlib</span>
+          <span>PyTorch</span><span>TensorFlow</span>
+          <span>Deeptime</span><span>Julia</span>
+          <span>DifferentialEquations.jl</span><span>ExtendableGrids.jl</span>
+          <span>Matlab</span><span>C/C++ · OpenMP/MPI</span>
+          <span>DuMuX</span><span>ANSYS-FLUENT</span>
+          <span>elsA-ONERA</span><span>Git · GitHub</span>
+          <span>Linux · VS Code</span><span>LaTeX · SPSS</span>
+        </div>
+        <div class="skill-label">Personal</div>
+        <div class="skill-grid">
+          <span>Strong Working Relationships</span><span>Teamwork &amp; Collaboration</span>
+          <span>Problem Solving</span><span>Decision Making</span>
+          <span>Adaptability</span><span>Fast Learner</span>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<div class="page page-2">
+  <div class="body">
+    <!-- LEFT -->
+    <div>
+<section>
+        <div class="sec-title">Seminars &amp; Projects · for the M.Sc. at TU Berlin</div>
+
+        <div class="entry">
+          <div class="entry-role">Seminar — Optimal Transport</div>
+          <div class="entry-title">"Entropic Regularization of Discrete and Continuous Optimal Transport"</div>
+          <div class="entry-desc">Studied the Kantorovich and regularized problems, discrete and relative entropies, scaling through the Gibbs kernel, and Sinkhorn's algorithm for entropic optimal transport with quadratic cost. Derived the dual problem where strong duality holds.</div>
+          <div class="entry-kw">Sinkhorn's Algorithm · Dual Formulation · KL-Divergence · Gibbs Kernel</div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-role">Seminar — Nonlinear Optimization</div>
+          <div class="entry-title">"Constrained Optimization and Duality — Applications to ML"</div>
+          <div class="entry-desc">Studied primal and dual problems, constraint qualifications for strong duality, and norm-constrained optimization with barrier methods. Formulated the SVM dual, solved using coordinate and gradient descent methods.</div>
+          <div class="entry-kw">Lagrangian Duality · SVM Dual · Coordinate &amp; Gradient Descent</div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-role">Project — Scientific Computing</div>
+          <div class="entry-title">"Gas Transport in Porous Medium"</div>
+          <div class="entry-desc">Numerical solution of the nonlinear Porous Medium Equation using the Voronoi Finite Volume Method in Julia. Applied Rothe's method, the implicit Euler method, and ExtendableGrids.jl for space and time discretization, with 1D and 2D simulations and performance improvements via DifferentialEquations.jl.</div>
+          <div class="entry-kw">Porous Medium Equation · Voronoi FVM · Julia</div>
+        </div>
+      
+      </section>
+
+<section>
+        <div class="sec-title">Projects · for the M.Sc. at UPPA, France</div>
+
+        <div class="entry">
+          <div class="entry-role">Project — Porous Media Flow</div>
+          <div class="entry-title">"Two-Phase Flow in Homogeneous Porous Media"</div>
+          <div class="entry-desc">Summarized a paper on homogenization for reactive porous-media flow. Approximated the Buckley-Leverett equation for immiscible, incompressible two-phase flow in 1D and 2D homogeneous porous media using DuMuX, with analytic and random permeability.</div>
+          <div class="entry-kw">Buckley-Leverett Equation · DuMuX · Numerical Simulation</div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-role">Project — Fluid Mechanics</div>
+          <div class="entry-title">"Numerical Simulation of Compressible and Incompressible Fluids"</div>
+          <div class="entry-desc">Physical and mathematical modeling for numerical simulation. Used ANSYS-FLUENT for compressible and incompressible fluids and elsA-ONERA for compressible flows.</div>
+          <div class="entry-kw">ANSYS-FLUENT · elsA-ONERA · Compressible Flow</div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-role">Project — Wave Propagation</div>
+          <div class="entry-title">"Inverse Problem for Propagation Media"</div>
+          <div class="entry-desc">Implemented an inverse problem in Matlab to determine the nature of a propagation medium using a discontinuous Galerkin approximation.</div>
+          <div class="entry-kw">Inverse Problem · Discontinuous Galerkin · Matlab</div>
+        </div>
+      
+      </section>
+
+
+    </div>
+    <!-- RIGHT -->
+    <div>
+<section style="margin-bottom:0;">
+        <div class="sec-title">Other Experience</div>
+
+        <div class="entry">
+          <div class="entry-role">Grocery Delivery Rider<span class="entry-tag">Mini-job · 10 h/wk</span></div>
+          <div class="entry-place-row"><span class="entry-place">Gorillas GmbH · Berlin, Germany</span><span class="entry-date">Oct 2021 – Apr 2022</span></div>
+          <div class="entry-desc">Picked up grocery orders from the warehouse and delivered them to customers across Berlin by e-bike, ensuring timely service and customer satisfaction.</div>
+          <div class="entry-kw">Urban Mobility · E-bike Delivery</div>
+        </div>
+
+        <div class="entry" style="margin-bottom:0;">
+          <div class="entry-role">COVID-19 Test Center<span class="entry-tag">Mini-job · 10 h/wk</span></div>
+          <div class="entry-place-row"><span class="entry-place">Teststation Kantstrasse · Berlin</span><span class="entry-date">Jun – Aug 2021</span></div>
+          <div class="entry-desc">Performed rapid antigen tests and guided customers through the registration and testing process at the Kantstrasse test station in Berlin.</div>
+          <div class="entry-kw">COVID-19 Testing · Customer Assistance</div>
+        </div>
+      </section>
+
+      <section style="margin-top:0.8rem;">
+        <div class="sec-title">Licenses &amp; Certificates</div>
+        <div class="cert">
+          <div class="cert-head"><span class="cert-name">Machine Learning Specialization</span><span class="cert-date">2024</span></div>
+          <div class="cert-meta">Coursera · DeepLearning.AI &amp; Stanford</div>
+          <ul class="cert-courses">
+            <li>Supervised Learning: Regression &amp; Classification</li>
+            <li>Advanced Learning Algorithms</li>
+            <li>Unsupervised Learning, Recommenders &amp; Reinforcement Learning</li>
+          </ul>
+        </div>
+        <div class="cert">
+          <div class="cert-head"><span class="cert-name">Public Speaking &amp; Presentation Skills</span><span class="cert-date">2025</span></div>
+          <div class="cert-meta">RWTH Aachen University</div>
+        </div>
+        <div class="cert">
+          <div class="cert-head"><span class="cert-name">Unconscious Bias &amp; Intercultural Training</span><span class="cert-date">2025</span></div>
+          <div class="cert-meta">RWTH Aachen University</div>
+        </div>
+      </section>
+
+      <section style="margin-bottom:0;">
+        <div class="sec-title">Poetry</div>
+        <div class="poetry-note">Published Arabic poet — <span class="ar">Rashfato Alami</span>, a first volume of 80+ romantic poems. Read the collection on the <a href="https://atwiMusa.github.io/portfolio/" target="_blank" style="color:var(--gold-deep);text-decoration:none;border-bottom:0.5px solid rgba(186,117,23,0.4);">portfolio</a>.</div>
+      </section>
+
+      <section style="margin-top:0.8rem;">
+        <div class="sec-title">Languages</div>
+        <div class="lang-row">
+          <span class="lang"><b>Arabic</b> <span class="lvl">Native</span></span>
+          <span class="lang"><b>English</b> <span class="lvl">C1</span></span>
+          <span class="lang"><b>German</b> <span class="lvl">B1</span></span>
+          <span class="lang"><b>French</b> <span class="lvl">A1</span></span>
+        </div>
+      </section>
+
+      
+
+
+
+
+
+
+    </div>
+  </div>
+</div>
+</body>
+</html>
