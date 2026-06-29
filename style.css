@@ -26,7 +26,7 @@
   margin: 0;
   padding: 0;
 }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 
 body {
   background: var(--bg);
@@ -1039,6 +1039,20 @@ h1[lang="ar"] { font-weight: 500; font-size: clamp(1.6rem, 4vw, 2.1rem); }
 @media (max-width: 700px) {
   .poetry-page .poetry-grid {
     grid-template-columns: 1fr; /* 1 column on mobile */
+  }
+  .poetry-page .poem-preview {
+    white-space: normal;         /* allow Arabic text to wrap on mobile */
+    overflow: hidden;
+    height: auto;
+    max-height: calc(1.8em * 3); /* show up to 3 lines */
+  }
+  .poetry-page .poem-card {
+    overflow: hidden;
+    max-width: 100%;
+  }
+  .poem-card-wrapper {
+    max-width: 100%;
+    overflow: hidden;
   }
 }
 
@@ -2233,17 +2247,17 @@ a { color: var(--accent); }
 }
 .cv-view-btn {
   font-family: 'DM Mono', monospace;
-  font-size: 0.78rem;
+  font-size: 0.68rem;
   letter-spacing: 0.04em;
   color: var(--accent);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  border: 1px solid rgba(200,169,110,0.5);
+  gap: 0.45rem;
+  border: 1px solid rgba(200,169,110,0.35);
   border-radius: 999px;
-  padding: 0.5rem 1.4rem;
-  background: rgba(200,169,110,0.18);
+  padding: 0.38rem 1.1rem;
+  background: rgba(200,169,110,0.10);
   transition: all 0.2s ease;
   flex-shrink: 0;
 }
@@ -2421,18 +2435,29 @@ a { color: var(--accent); }
   }
   .header-top { padding-top: 0; }
 
-  /* 2 & 3. Title + button rows: stack, but button sized to its text
-        (not full width) and aligned left under the title. */
+  /* 2 & 3. Title + button rows: keep on same line, button small enough
+        to sit beside the title without wrapping. */
   .cv-head-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.6rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    flex-wrap: nowrap;
   }
   .cv-head-row .cv-view-btn {
-    width: auto;
-    font-size: 0.7rem;
-    padding: 0.45rem 1rem;
+    font-size: 0.58rem;
+    padding: 0.3rem 0.7rem;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
+  .cv-head-row .cv-head-h2 {
+    font-size: 1.05rem;
+  }
+
+  /* Education tab pills: shrink so all pills fit on one row (e.g. France:
+     Thesis & Internship · Projects · Courses all on one line). */
+  .edu-pills { flex-wrap: nowrap; overflow-x: auto; }
+  .edu-pill { font-size: 0.56rem; padding: 0.26rem 0.55rem; white-space: nowrap; }
 
   /* 4. Slightly smaller big headings so they don't dominate. */
   header h1 { font-size: 1.7rem; }
