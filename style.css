@@ -2496,13 +2496,33 @@ a { color: var(--accent); }
   .cv-tile-title i { width: 16px; text-align: center; flex-shrink: 0; }
   .cv-tile-sub { text-align: center; }
 
-  /* 8. pdf-btn rows (Internship Report + Code Repo, Master's Thesis + Code Repo,
-        One-Page CV + Extended CV): keep on one row, shrink buttons to fit. */
-  .pub-expand-links {
+  /* 8. Targeted one-row fixes (only the specific button pairs requested;
+        all other pdf-btn rows revert to wrapping as before). */
+  .cv-toprow {
     flex-wrap: nowrap;
-    margin-left: 0.5rem;
+    gap: 0.4rem;
   }
-  .pdf-btn {
+  .cv-toprow .grade-details summary {
+    font-size: 0.58rem;
+    padding: 0.3rem 0.55rem;
+    white-space: nowrap;
+  }
+  .cv-toprow .pdf-row {
+    flex-wrap: nowrap;
+    gap: 0.35rem;
+  }
+  .cv-toprow .pdf-row .pdf-btn {
+    font-size: 0.56rem;
+    padding: 0.3rem 0.55rem;
+    white-space: nowrap;
+    gap: 0.25rem;
+  }
+  #koopman-internship .pub-expand-links,
+  #koopman-thesis .pub-expand-links {
+    flex-wrap: nowrap;
+  }
+  #koopman-internship .pub-expand-links .pdf-btn,
+  #koopman-thesis .pub-expand-links .pdf-btn {
     font-size: 0.58rem;
     padding: 0.3rem 0.65rem;
     gap: 0.3rem;
@@ -2510,15 +2530,21 @@ a { color: var(--accent); }
   }
 
   /* 9. Poem lines: smaller font so each Arabic poetic line stays intact
-        and is not broken mid-verse. Boxes fit screen, lines stay whole. */
-  .poetry-page .poem-card { font-size: 0.82rem; }
-  .poetry-page .poem-full {
+        and is not broken mid-verse. Boxes fit screen, lines stay whole.
+        Applies to BOTH the full poems page AND the homepage 3-poem teaser. */
+  .poetry-page .poem-card,
+  #poetry .poem-card {
+    font-size: 0.82rem;
+  }
+  .poetry-page .poem-full,
+  #poetry .poem-full {
     font-size: 0.82rem;
     line-height: 1.75;
     white-space: nowrap;
     overflow-x: hidden;
   }
-  .poetry-page .poem-preview {
+  .poetry-page .poem-preview,
+  #poetry .poem-preview {
     font-size: 0.82rem;
   }
   .poem-title { font-size: 1rem !important; }
