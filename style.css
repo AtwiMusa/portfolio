@@ -2454,10 +2454,11 @@ a { color: var(--accent); }
     font-size: 1.05rem;
   }
 
-  /* Education tab pills: shrink so all pills fit on one row (e.g. France:
-     Thesis & Internship · Projects · Courses all on one line). */
-  .edu-pills { flex-wrap: nowrap; overflow-x: auto; }
-  .edu-pill { font-size: 0.56rem; padding: 0.26rem 0.55rem; white-space: nowrap; }
+  /* Education tab pills: by default they WRAP (stack) on mobile like
+        normal — only the France/UPPA pills (Thesis & Internship · Projects
+        · Courses) are short enough to force onto one row. */
+  .edu-pills-tight { flex-wrap: nowrap; }
+  .edu-pills-tight .edu-pill { font-size: 0.56rem; padding: 0.26rem 0.5rem; white-space: nowrap; }
 
   /* 4. Slightly smaller big headings so they don't dominate. */
   header h1 { font-size: 1.7rem; }
