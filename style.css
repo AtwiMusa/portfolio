@@ -2519,14 +2519,18 @@ a { color: var(--accent); }
     gap: 0.25rem;
   }
   #koopman-internship .pub-expand-links,
-  #koopman-thesis .pub-expand-links {
+  #koopman-thesis .pub-expand-links,
+  #tub-thesis .pub-expand-links,
+  #tub-internship .pub-expand-links {
     flex-wrap: nowrap;
   }
   #koopman-internship .pub-expand-links .pdf-btn,
-  #koopman-thesis .pub-expand-links .pdf-btn {
-    font-size: 0.58rem;
-    padding: 0.3rem 0.65rem;
-    gap: 0.3rem;
+  #koopman-thesis .pub-expand-links .pdf-btn,
+  #tub-thesis .pub-expand-links .pdf-btn,
+  #tub-internship .pub-expand-links .pdf-btn {
+    font-size: 0.56rem;
+    padding: 0.28rem 0.55rem;
+    gap: 0.25rem;
     white-space: nowrap;
   }
 
